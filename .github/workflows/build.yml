@@ -84,14 +84,7 @@ jobs:
       - name: Build
         working-directory: src
         run: |
-          QMAKE=$(find /mingw64 -name 'qmake.exe' 2>/dev/null | head -1)
-          if [ -z "$QMAKE" ]; then
-            echo "ERROR: qmake.exe not found under /mingw64"
-            pacman -Ql mingw-w64-x86_64-qt5-base | grep -i qmake
-            exit 1
-          fi
-          echo "Using qmake: $QMAKE"
-          "$QMAKE" "Nounours-Player.pro" CONFIG+=release
+          /mingw64/bin/qmake-qt5.exe "Nounours-Player.pro" CONFIG+=release
           make -j$(nproc)
 
       - name: Deploy — collect DLLs
@@ -100,7 +93,7 @@ jobs:
           cp src/build/nounours-player.exe deploy/
 
           # Qt DLLs (windeployqt gère svg, network, etc.)
-          windeployqt --release --no-translations deploy/nounours-player.exe
+          windeployqt-qt5 --release --no-translations deploy/nounours-player.exe
 
           # DLLs runtime MinGW (mpv, libzip, gcc, stdc++, winpthread…)
           ldd src/build/nounours-player.exe \
