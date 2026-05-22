@@ -80,13 +80,18 @@ jobs:
             mingw-w64-x86_64-qt5-tools \
             mingw-w64-x86_64-mpv \
             mingw-w64-x86_64-libzip
-          which qmake
-          qmake --version
 
       - name: Build
         working-directory: src
         run: |
-          qmake "Nounours-Player.pro" CONFIG+=release
+          QMAKE=$(find /mingw64 -name 'qmake.exe' 2>/dev/null | head -1)
+          if [ -z "$QMAKE" ]; then
+            echo "ERROR: qmake.exe not found under /mingw64"
+            pacman -Ql mingw-w64-x86_64-qt5-base | grep -i qmake
+            exit 1
+          fi
+          echo "Using qmake: $QMAKE"
+          "$QMAKE" "Nounours-Player.pro" CONFIG+=release
           make -j$(nproc)
 
       - name: Deploy — collect DLLs
