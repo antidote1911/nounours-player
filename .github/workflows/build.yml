@@ -67,21 +67,25 @@ jobs:
         with:
           msystem: MINGW64
           update: true
-          install: >-
-            make
-            mingw-w64-x86_64-gcc
-            mingw-w64-x86_64-pkg-config
-            mingw-w64-x86_64-qt5-base
-            mingw-w64-x86_64-qt5-svg
-            mingw-w64-x86_64-qt5-winextras
-            mingw-w64-x86_64-qt5-tools
-            mingw-w64-x86_64-mpv
+
+      - name: Install dependencies
+        run: |
+          pacman -S --noconfirm --needed \
+            make \
+            mingw-w64-x86_64-toolchain \
+            mingw-w64-x86_64-pkg-config \
+            mingw-w64-x86_64-qt5-base \
+            mingw-w64-x86_64-qt5-svg \
+            mingw-w64-x86_64-qt5-winextras \
+            mingw-w64-x86_64-qt5-tools \
+            mingw-w64-x86_64-mpv \
             mingw-w64-x86_64-libzip
+          which qmake
+          qmake --version
 
       - name: Build
         working-directory: src
         run: |
-          export PATH="/mingw64/bin:$PATH"
           qmake "Nounours-Player.pro" CONFIG+=release
           make -j$(nproc)
 
