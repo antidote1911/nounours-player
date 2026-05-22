@@ -1,4 +1,5 @@
-build*
+build/
+build[0-9]*/
 *.pro.*
 Makefile
 *.kdev4

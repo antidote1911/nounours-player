@@ -1,0 +1,113 @@
+name: Build Nounours-Player
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  release:
+    types: [published]
+
+jobs:
+  # ─────────────────────────────────────────────
+  # Linux x86_64
+  # ─────────────────────────────────────────────
+  linux:
+    name: Linux x86_64
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y \
+            qt5-qmake \
+            qtbase5-dev \
+            libqt5svg5-dev \
+            libqt5x11extras5-dev \
+            libmpv-dev \
+            libx11-dev \
+            pkg-config
+
+      - name: Build
+        working-directory: src
+        run: |
+          qmake "Nounours-Player.pro" CONFIG+=release
+          make -j$(nproc)
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nounours-player-linux-x86_64
+          path: src/build/nounours-player
+          if-no-files-found: error
+
+      - name: Attach to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: src/build/nounours-player
+
+  # ─────────────────────────────────────────────
+  # Windows x64  (MSYS2 / MinGW-w64)
+  # ─────────────────────────────────────────────
+  windows:
+    name: Windows x64
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            make
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-pkg-config
+            mingw-w64-x86_64-qt5
+            mingw-w64-x86_64-mpv
+            mingw-w64-x86_64-libzip
+
+      - name: Build
+        working-directory: src
+        run: |
+          qmake "Nounours-Player.pro" CONFIG+=release
+          make -j$(nproc)
+
+      - name: Deploy — collect DLLs
+        run: |
+          mkdir -p deploy
+          cp src/build/nounours-player.exe deploy/
+
+          # Qt DLLs (windeployqt gère svg, network, etc.)
+          windeployqt --release --no-translations deploy/nounours-player.exe
+
+          # DLLs runtime MinGW (mpv, libzip, gcc, stdc++, winpthread…)
+          ldd src/build/nounours-player.exe \
+            | grep '/mingw64/bin' \
+            | awk '{ print $3 }' \
+            | xargs -I{} cp -n {} deploy/
+
+      - name: Package
+        shell: pwsh
+        run: Compress-Archive -Path deploy\* -DestinationPath nounours-player-windows-x64.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nounours-player-windows-x64
+          path: nounours-player-windows-x64.zip
+          if-no-files-found: error
+
+      - name: Attach to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: nounours-player-windows-x64.zip
