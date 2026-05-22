@@ -71,7 +71,9 @@ jobs:
             make
             mingw-w64-x86_64-gcc
             mingw-w64-x86_64-pkg-config
-            mingw-w64-x86_64-qt5
+            mingw-w64-x86_64-qt5-base
+            mingw-w64-x86_64-qt5-svg
+            mingw-w64-x86_64-qt5-winextras
             mingw-w64-x86_64-mpv
             mingw-w64-x86_64-libzip
 
