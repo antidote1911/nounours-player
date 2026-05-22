@@ -74,6 +74,7 @@ jobs:
             make \
             mingw-w64-x86_64-toolchain \
             mingw-w64-x86_64-pkg-config \
+            mingw-w64-x86_64-angleproject \
             mingw-w64-x86_64-qt5-base \
             mingw-w64-x86_64-qt5-svg \
             mingw-w64-x86_64-qt5-winextras \
