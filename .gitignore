@@ -1,0 +1,13 @@
+build*
+*.pro.*
+Makefile
+*.kdev4
+*.qm
+*.out
+.tags*
+.qmake.stash
+target/
+node_modules/
+.env
+dist/
+__pycache__/
