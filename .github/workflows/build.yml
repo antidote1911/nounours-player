@@ -74,12 +74,14 @@ jobs:
             mingw-w64-x86_64-qt5-base
             mingw-w64-x86_64-qt5-svg
             mingw-w64-x86_64-qt5-winextras
+            mingw-w64-x86_64-qt5-tools
             mingw-w64-x86_64-mpv
             mingw-w64-x86_64-libzip
 
       - name: Build
         working-directory: src
         run: |
+          export PATH="/mingw64/bin:$PATH"
           qmake "Nounours-Player.pro" CONFIG+=release
           make -j$(nproc)
 
