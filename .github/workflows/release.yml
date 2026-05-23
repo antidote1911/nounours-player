@@ -110,6 +110,8 @@ jobs:
     name: Create Release
     needs: [linux, windows]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Download Linux artifact
