@@ -104,8 +104,7 @@ jobs:
             mingw-w64-x86_64-qt6-svg \
             mingw-w64-x86_64-qt6-tools \
             mingw-w64-x86_64-mpv \
-            mingw-w64-x86_64-libzip \
-            mingw-w64-x86_64-nsis
+            mingw-w64-x86_64-libzip
 
       - name: Build
         run: |
@@ -128,17 +127,15 @@ jobs:
           Compress-Archive -Path deploy\* -DestinationPath "nounoursplayer-${{ env.VERSION }}-win-portable.zip"
 
       - name: Build setup installer
+        shell: pwsh
         run: |
-          DEPLOY_WIN=$(cygpath -w "$(pwd)/deploy")
-          ICO_WIN=$(cygpath -w "$(pwd)/src/img/logo.ico")
-          OUT_WIN=$(cygpath -w "$(pwd)")
-          NSI_WIN=$(cygpath -w "$(pwd)/packaging/windows/installer.nsi")
-          makensis \
-            -DVERSION="$VERSION" \
-            -DDEPLOY_DIR="$DEPLOY_WIN" \
-            -DICO_PATH="$ICO_WIN" \
-            -DOUT_DIR="$OUT_WIN" \
-            "$NSI_WIN"
+          $src = (Get-Location).Path
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" `
+            /DMyAppVersion="${{ env.VERSION }}" `
+            /DMyDeployDir="$src\deploy" `
+            /DMyOutputDir="$src" `
+            /DMySourceDir="$src" `
+            "packaging\windows\installer.iss"
 
       - name: Upload portable artifact
         uses: actions/upload-artifact@v4
