@@ -26,6 +26,7 @@ jobs:
             cmake \
             ninja-build \
             qtbase5-dev \
+            qttools5-dev \
             libqt5svg5-dev \
             libqt5x11extras5-dev \
             libmpv-dev \

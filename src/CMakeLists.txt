@@ -15,7 +15,7 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/ui)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Network Svg Widgets LinguistTools)
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(MPV REQUIRED IMPORTED_TARGET mpv)
+pkg_check_modules(MPV REQUIRED mpv)
 
 set(SOURCES
     main.cpp
@@ -70,7 +70,7 @@ set(TS_FILES
 # ── Platform-specific ────────────────────────────────────────────────────────
 if(WIN32)
     find_package(Qt5 REQUIRED COMPONENTS WinExtras)
-    pkg_check_modules(LIBZIP REQUIRED IMPORTED_TARGET libzip)
+    pkg_check_modules(LIBZIP REQUIRED libzip)
     list(APPEND SOURCES platform/win.cpp)
     list(APPEND RESOURCES win_rsclist.qrc)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
@@ -84,7 +84,7 @@ elseif(APPLE)
     list(APPEND SOURCES platform/osx.cpp)
 elseif(UNIX)
     find_package(Qt5 REQUIRED COMPONENTS X11Extras)
-    pkg_check_modules(X11 REQUIRED IMPORTED_TARGET x11)
+    pkg_check_modules(X11 REQUIRED x11)
     list(APPEND SOURCES platform/linux.cpp)
 endif()
 
@@ -111,6 +111,7 @@ target_include_directories(nounours-player PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/ui
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets
     ${CMAKE_CURRENT_BINARY_DIR}
+    ${MPV_INCLUDE_DIRS}
 )
 
 # ── Link libraries ───────────────────────────────────────────────────────────
@@ -120,16 +121,18 @@ target_link_libraries(nounours-player PRIVATE
     Qt5::Network
     Qt5::Svg
     Qt5::Widgets
-    PkgConfig::MPV
+    ${MPV_LINK_LIBRARIES}
 )
 
 if(WIN32)
-    target_link_libraries(nounours-player PRIVATE Qt5::WinExtras PkgConfig::LIBZIP)
+    target_link_libraries(nounours-player PRIVATE Qt5::WinExtras ${LIBZIP_LINK_LIBRARIES})
+    target_include_directories(nounours-player PRIVATE ${LIBZIP_INCLUDE_DIRS})
     target_compile_definitions(nounours-player PRIVATE WINVER=0x0501 _WIN32_WINNT=0x0501)
     target_compile_options(nounours-player PRIVATE -pthread)
     target_link_options(nounours-player PRIVATE -pthread)
 elseif(UNIX AND NOT APPLE)
-    target_link_libraries(nounours-player PRIVATE Qt5::X11Extras PkgConfig::X11)
+    target_link_libraries(nounours-player PRIVATE Qt5::X11Extras ${X11_LINK_LIBRARIES})
+    target_include_directories(nounours-player PRIVATE ${X11_INCLUDE_DIRS})
 endif()
 
 # ── Build-time defines ───────────────────────────────────────────────────────
