@@ -119,7 +119,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="306"/>
         <source>Search Playlist</source>
-        <translation>Rechercher une liste de lecture</translation>
+        <translation>Rechercher une playlist</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="340"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="424"/>
         <source>Refresh Playlist</source>
-        <translation>Rafraichir la liste de lecture</translation>
+        <translation>Rafraichir la playlist</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="639"/>
@@ -244,7 +244,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="463"/>
         <source>Save Playlist</source>
-        <translation>Enregistrer la liste de lecture</translation>
+        <translation>Enregistrer la playlist</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1241"/>
@@ -359,7 +359,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="1462"/>
         <source>&amp;Show Playlist</source>
-        <translation>&amp;Afficher la liste de lecture</translation>
+        <translation>&amp;Afficher la playlist</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1481"/>
@@ -439,7 +439,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="1596"/>
         <source>&amp;Playlist</source>
-        <translation>&amp;Liste de lecture</translation>
+        <translation>&amp;Playlist</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1604"/>
@@ -975,7 +975,7 @@ Information : la valeur doit être comprise entre %0 et %1</translation>
     </message>
     <message>
         <source>Toggle playlist visibility</source>
-        <translation type="vanished">Bascule l&apos;affichage de la liste de lecture</translation>
+        <translation type="vanished">Bascule l&apos;affichage de la playlist</translation>
     </message>
     <message>
         <source>Open the last played file</source>
@@ -1003,11 +1003,11 @@ Information : la valeur doit être comprise entre %0 et %1</translation>
     </message>
     <message>
         <source>Play selected file on playlist</source>
-        <translation type="vanished">Lit le fichier sélectionné dans la liste de lecture</translation>
+        <translation type="vanished">Lit le fichier sélectionné dans la playlist</translation>
     </message>
     <message>
         <source>Remove selected file from playlist</source>
-        <translation type="vanished">Supprime le fichier sélectionné de la liste de lecture</translation>
+        <translation type="vanished">Supprime le fichier sélectionné de la playlist</translation>
     </message>
     <message>
         <source>executes mpv command</source>
@@ -1204,7 +1204,7 @@ Information : la valeur doit être comprise entre %0 et %1</translation>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="335"/>
         <source>R&amp;emove from Playlist</source>
-        <translation>R&amp;etirer de la liste de lecture</translation>
+        <translation>R&amp;etirer de la playlist</translation>
     </message>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="340"/>
@@ -1245,22 +1245,22 @@ Information : la valeur doit être comprise entre %0 et %1</translation>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="364"/>
         <source>Save Playlist</source>
-        <translation>Enregistrer la liste de lecture</translation>
+        <translation>Enregistrer la playlist</translation>
     </message>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="366"/>
         <source>M3U Playlist (*.m3u *.m3u8)</source>
-        <translation>Liste de lecture M3U (*.m3u *.m3u8)</translation>
+        <translation>Playlist M3U (*.m3u *.m3u8)</translation>
     </message>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="384"/>
         <source>Playlist saved</source>
-        <translation>Liste de lecture enregistrée</translation>
+        <translation>Playlist enregistrée</translation>
     </message>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="385"/>
         <source>Playlist saved. Open it now?</source>
-        <translation>Liste de lecture enregistrée. L’ouvrir maintenant ?</translation>
+        <translation>Playlist enregistrée. L’ouvrir maintenant ?</translation>
     </message>
 </context>
 <context>
