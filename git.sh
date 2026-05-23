@@ -374,14 +374,16 @@ do_purge_large_file() {
 do_release() {
   title "Release — Commit + Push + Tag"
 
-  # Version depuis le Cargo.toml workspace (ligne : version = "x.y.z")
-  local cargo_version=""
-  if [[ -f "Cargo.toml" ]]; then
-    cargo_version=$(sed -n 's/^version\s*=\s*"\(.*\)"/\1/p' Cargo.toml | head -1)
+  # Version depuis src/CMakeLists.txt (ligne : project(... VERSION x.y.z ...))
+  local cmake_version=""
+  if [[ -f "src/CMakeLists.txt" ]]; then
+    cmake_version=$(grep -oP 'VERSION\s+\K[0-9]+\.[0-9]+\.[0-9]+' src/CMakeLists.txt | head -1)
+  elif [[ -f "CMakeLists.txt" ]]; then
+    cmake_version=$(grep -oP 'VERSION\s+\K[0-9]+\.[0-9]+\.[0-9]+' CMakeLists.txt | head -1)
   fi
-  local suggested_tag="v${cargo_version}"
+  local suggested_tag="v${cmake_version}"
 
-  info "Version Cargo.toml : ${BOLD}${cargo_version:-inconnue}${RESET}"
+  info "Version CMakeLists.txt : ${BOLD}${cmake_version:-inconnue}${RESET}"
   info "Tags existants :"
   git tag --sort=-version:refname | head -5 || echo "  (aucun)"
   echo ""
