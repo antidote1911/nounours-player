@@ -3,12 +3,14 @@
 #include "nounoursengine.h"
 #include "mpvhandler.h"
 
+#include <QFile>
 #include <QListWidgetItem>
 #include <QMenu>
 #include <QFont>
 #include <QMessageBox>
 
-#include <algorithm> // for std::random_shuffle and std::sort
+#include <algorithm>
+#include <random>
 
 PlaylistWidget::PlaylistWidget(QWidget *parent) :
     QListWidget(parent),
@@ -242,7 +244,7 @@ void PlaylistWidget::Shuffle()
     for(int i = 0; i < count(); ++i)
         newPlaylist.append(this->item(i)->text());
 
-    std::random_shuffle(newPlaylist.begin(), newPlaylist.end());
+    std::shuffle(newPlaylist.begin(), newPlaylist.end(), std::mt19937{std::random_device{}()});
     // make current playing item the first
     auto iter = std::find(newPlaylist.begin(), newPlaylist.end(), file);
     std::swap(*iter, *newPlaylist.begin());

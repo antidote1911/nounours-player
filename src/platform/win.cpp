@@ -1,7 +1,7 @@
 #include "util.h"
 
 #include <QApplication>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QProcess>
 #include <QDir>
 
@@ -38,14 +38,14 @@ QString SettingsLocation()
 
 bool IsValidFile(QString path)
 {
-    QRegExp rx("^(\\.{1,2}|[a-z]:|\\\\\\\\)", Qt::CaseInsensitive); // relative path, network location, drive
-    return (rx.indexIn(path) != -1);
+    return QRegularExpression("^(\\.{1,2}|[a-z]:|\\\\\\\\)",
+        QRegularExpression::CaseInsensitiveOption).match(path).hasMatch();
 }
 
 bool IsValidLocation(QString loc)
 {
-    QRegExp rx("^([a-z]{2,}://|\\.{1,2}|[a-z]:|\\\\\\\\)", Qt::CaseInsensitive); // url, relative path, network location, drive
-    return (rx.indexIn(loc) != -1);
+    return QRegularExpression("^([a-z]{2,}://|\\.{1,2}|[a-z]:|\\\\\\\\)",
+        QRegularExpression::CaseInsensitiveOption).match(loc).hasMatch();
 }
 
 void ShowInFolder(QString path, QString file)

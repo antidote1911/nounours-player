@@ -1,7 +1,8 @@
 #include "gesturehandler.h"
 
 #include <QApplication>
-#include <QDesktopWidget>
+#include <QGuiApplication>
+#include <QScreen>
 
 #include "nounoursengine.h"
 #include "ui/mainwindow.h"
@@ -35,8 +36,9 @@ bool GestureHandler::Begin(int gesture_type, QPoint mousePos, QPoint windowPos)
         this->gesture_type = gesture_type;
         this->gesture_state = NONE;
         // calculate pixel ratios based on physical dpi
-        hRatio = qApp->desktop()->physicalDpiX() / 800.0;
-        vRatio = qApp->desktop()->physicalDpiY() / 450.0;
+        QScreen *screen = QGuiApplication::primaryScreen();
+        hRatio = screen ? screen->physicalDotsPerInchX() / 800.0 : 1.0;
+        vRatio = screen ? screen->physicalDotsPerInchY() / 450.0 : 1.0;
     }
     else
         return false;

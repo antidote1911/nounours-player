@@ -56,7 +56,7 @@ UpdateDialog::UpdateDialog(NounoursEngine *nounours, QWidget *parent) :
                     ui->timeRemainingLabel->setVisible(true);
                     if(timer != nullptr)
                         delete timer;
-                    timer = new QTime();
+                    timer = new QElapsedTimer();
                     timer->start();
                 }
                 else if(timer) // don't execute this if timer is not defined--this shouldn't happen though.. but it does
@@ -68,9 +68,9 @@ UpdateDialog::UpdateDialog(NounoursEngine *nounours, QWidget *parent) :
                     else
                         ui->timeRemainingLabel->setText(tr("Calculating..."));
 
-                    int time = timer->elapsed();
+                    qint64 time = timer->elapsed();
                     if(time != lastTime) // prevent cases when we're too fast haha
-                        lastSpeed = (percent-lastProgress)/(time-lastTime);
+                        lastSpeed = (percent-lastProgress)/double(time-lastTime);
 
                     lastTime = time;
                     lastProgress = percent;

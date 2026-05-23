@@ -25,10 +25,11 @@ jobs:
           sudo apt-get install -y \
             cmake \
             ninja-build \
-            qtbase5-dev \
-            qttools5-dev \
-            libqt5svg5-dev \
-            libqt5x11extras5-dev \
+            qt6-base-dev \
+            qt6-base-private-dev \
+            libqt6svg6-dev \
+            qt6-tools-dev \
+            qt6-l10n-tools \
             libmpv-dev \
             libx11-dev \
             pkg-config
@@ -77,10 +78,9 @@ jobs:
             mingw-w64-x86_64-ninja \
             mingw-w64-x86_64-pkg-config \
             mingw-w64-x86_64-angleproject \
-            mingw-w64-x86_64-qt5-base \
-            mingw-w64-x86_64-qt5-svg \
-            mingw-w64-x86_64-qt5-winextras \
-            mingw-w64-x86_64-qt5-tools \
+            mingw-w64-x86_64-qt6-base \
+            mingw-w64-x86_64-qt6-svg \
+            mingw-w64-x86_64-qt6-tools \
             mingw-w64-x86_64-mpv \
             mingw-w64-x86_64-libzip
 
@@ -93,7 +93,7 @@ jobs:
         run: |
           mkdir -p deploy
           cp build/nounours-player.exe deploy/
-          windeployqt-qt5 --release --no-translations deploy/nounours-player.exe
+          windeployqt6 --release --no-translations deploy/nounours-player.exe
           ldd build/nounours-player.exe \
             | grep '/mingw64/bin' \
             | awk '{ print $3 }' \

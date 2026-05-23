@@ -1,7 +1,7 @@
 #include "util.h"
 
+#include <QRegularExpression>
 #include <QTime>
-#include <QStringListIterator>
 #include <QDir>
 
 namespace Util {
@@ -9,8 +9,8 @@ namespace Util {
 
 bool IsValidUrl(QString url)
 {
-    QRegExp rx("^[a-z]{2,}://", Qt::CaseInsensitive); // url
-    return (rx.indexIn(url) != -1);
+    return QRegularExpression("^[a-z]{2,}://",
+        QRegularExpression::CaseInsensitiveOption).match(url).hasMatch();
 }
 
 QString FormatTime(int _time, int _totalTime)
@@ -71,17 +71,13 @@ QString FormatNumberWithAmpersand(int val, int length)
 
 QString HumanSize(qint64 size)
 {
-    // taken from http://comments.gmane.org/gmane.comp.lib.qt.general/34914
     float num = size;
-    QStringList list;
-    list << "KB" << "MB" << "GB" << "TB";
-
-    QStringListIterator i(list);
+    static const QStringList units = {"KB", "MB", "GB", "TB"};
     QString unit("bytes");
-
-    while(num >= 1024.0 && i.hasNext())
-     {
-        unit = i.next();
+    for (const QString &u : units) {
+        if (num < 1024.0)
+            break;
+        unit = u;
         num /= 1024.0;
     }
     return QString().setNum(num,'f',2)+" "+unit;

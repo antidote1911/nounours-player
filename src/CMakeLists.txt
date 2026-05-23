@@ -5,7 +5,7 @@ project(nounours-player
     LANGUAGES CXX
 )
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_AUTOMOC ON)
@@ -13,7 +13,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/ui)
 
-find_package(Qt5 REQUIRED COMPONENTS Core Gui Network Svg Widgets LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Network Svg Widgets LinguistTools)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
 
@@ -69,7 +69,6 @@ set(TS_FILES
 
 # ── Platform-specific ────────────────────────────────────────────────────────
 if(WIN32)
-    find_package(Qt5 REQUIRED COMPONENTS WinExtras)
     pkg_check_modules(LIBZIP REQUIRED libzip)
     list(APPEND SOURCES platform/win.cpp)
     list(APPEND RESOURCES win_rsclist.qrc)
@@ -83,13 +82,13 @@ if(WIN32)
 elseif(APPLE)
     list(APPEND SOURCES platform/osx.cpp)
 elseif(UNIX)
-    find_package(Qt5 REQUIRED COMPONENTS X11Extras)
+    find_package(Qt6 REQUIRED COMPONENTS GuiPrivate)
     pkg_check_modules(X11 REQUIRED x11)
     list(APPEND SOURCES platform/linux.cpp)
 endif()
 
 # ── Translations (.ts → .qm) ─────────────────────────────────────────────────
-qt5_add_translation(QM_FILES ${TS_FILES})
+qt6_add_translation(QM_FILES ${TS_FILES})
 add_custom_target(translations ALL DEPENDS ${QM_FILES})
 
 # ── Executable ───────────────────────────────────────────────────────────────
@@ -116,28 +115,28 @@ target_include_directories(nounours-player PRIVATE
 
 # ── Link libraries ───────────────────────────────────────────────────────────
 target_link_libraries(nounours-player PRIVATE
-    Qt5::Core
-    Qt5::Gui
-    Qt5::Network
-    Qt5::Svg
-    Qt5::Widgets
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Network
+    Qt6::Svg
+    Qt6::Widgets
     ${MPV_LINK_LIBRARIES}
 )
 
 if(WIN32)
-    target_link_libraries(nounours-player PRIVATE Qt5::WinExtras ${LIBZIP_LINK_LIBRARIES})
+    target_link_libraries(nounours-player PRIVATE ${LIBZIP_LINK_LIBRARIES})
     target_include_directories(nounours-player PRIVATE ${LIBZIP_INCLUDE_DIRS})
-    target_compile_definitions(nounours-player PRIVATE WINVER=0x0501 _WIN32_WINNT=0x0501)
+    target_compile_definitions(nounours-player PRIVATE WINVER=0x0601 _WIN32_WINNT=0x0601)
     target_compile_options(nounours-player PRIVATE -pthread)
     target_link_options(nounours-player PRIVATE -pthread)
 elseif(UNIX AND NOT APPLE)
-    target_link_libraries(nounours-player PRIVATE Qt5::X11Extras ${X11_LINK_LIBRARIES})
+    target_link_libraries(nounours-player PRIVATE Qt6::GuiPrivate ${X11_LINK_LIBRARIES})
     target_include_directories(nounours-player PRIVATE ${X11_INCLUDE_DIRS})
 endif()
 
 # ── Build-time defines ───────────────────────────────────────────────────────
 set(SETTINGS_FILE "nounoursplayer" CACHE STRING "Settings file name")
-set(NOUNOURS_LANG_PATH "" CACHE STRING "Runtime path for .qm translation files (empty = use installed path)")
+set(NOUNOURS_LANG_PATH "" CACHE STRING "Runtime path for .qm translation files")
 
 target_compile_definitions(nounours-player PRIVATE
     NOUNOURS_PLAYER_VERSION="${PROJECT_VERSION}"

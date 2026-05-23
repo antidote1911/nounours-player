@@ -2,7 +2,7 @@
 #define UPDATEDIALOG_H
 
 #include <QDialog>
-#include <QTime>
+#include <QElapsedTimer>
 
 
 namespace Ui {
@@ -28,12 +28,12 @@ private:
     Ui::UpdateDialog *ui;
     NounoursEngine *nounours;
 
-    QTime *timer;
+    QElapsedTimer *timer;
     double avgSpeed = 1,
            lastSpeed = 0;
     int lastProgress,
-        lastTime,
         state;
+    qint64 lastTime;
     bool init;
 };
 

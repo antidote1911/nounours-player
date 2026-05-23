@@ -43,7 +43,7 @@ namespace Mpv
         QString external_filename;
         QString codec;
 
-        bool operator==(const Track &t)
+        bool operator==(const Track &t) const
         {
             return (id == t.id);
         }

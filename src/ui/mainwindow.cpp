@@ -1,10 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <algorithm>
 #include <QtMath>
 #include <QLibraryInfo>
 #include <QMimeData>
-#include <QDesktopWidget>
+#include <QPointingDevice>
 
 #include "nounoursengine.h"
 #include "mpvhandler.h"
@@ -123,7 +124,7 @@ MainWindow::MainWindow(QWidget *parent):
                     // load the system translations provided by Qt
                     tmp = nounours->qtTranslator;
                     nounours->qtTranslator = new QTranslator();
-                    nounours->qtTranslator->load(QString("qt_%0").arg(lang), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+                    static_cast<void>(nounours->qtTranslator->load(QString("qt_%0").arg(lang), QLibraryInfo::path(QLibraryInfo::TranslationsPath)));
                     qApp->installTranslator(nounours->qtTranslator);
                     if(tmp != nullptr)
                         delete tmp;
@@ -131,7 +132,7 @@ MainWindow::MainWindow(QWidget *parent):
                     // load the application translations
                     tmp = nounours->translator;
                     nounours->translator = new QTranslator();
-                    nounours->translator->load(QString("nounours-player_%0").arg(lang), NOUNOURS_PLAYER_LANG_PATH);
+                    static_cast<void>(nounours->translator->load(QString("nounours-player_%0").arg(lang), NOUNOURS_PLAYER_LANG_PATH));
                     qApp->installTranslator(nounours->translator);
                     if(tmp != nullptr)
                         delete tmp;
@@ -182,8 +183,9 @@ MainWindow::MainWindow(QWidget *parent):
                 ui->actionShow_D_ebug_Output->setChecked(b);
                 ui->verticalWidget->setVisible(b);
                 mouseMoveEvent(new QMouseEvent(QMouseEvent::MouseMove,
-                                               QCursor::pos(),
-                                               Qt::NoButton,Qt::NoButton,Qt::NoModifier));
+                                               QCursor::pos(), QCursor::pos(),
+                                               Qt::NoButton,Qt::NoButton,Qt::NoModifier,
+                                               QPointingDevice::primaryPointingDevice()));
                 if(b)
                     ui->inputLineEdit->setFocus();
             });
@@ -286,15 +288,16 @@ MainWindow::MainWindow(QWidget *parent):
                     QString f = mpv->getFile(), file = mpv->getPath()+f;
                     if(f != QString() && maxRecent > 0)
                     {
-                        int i = recent.indexOf(file);
-                        if(i >= 0)
+                        auto it = std::find_if(recent.begin(), recent.end(),
+                            [&file](const Recent &r){ return r.path == file; });
+                        if(it != recent.end())
                         {
-                            int t = recent.at(i).time;
+                            int t = it->time;
                             if(t > 0 && resume)
                                 mpv->Seek(t);
-                            recent.removeAt(i);
+                            recent.erase(it);
                         }
-                        if(recent.isEmpty() || recent.front() != file)
+                        if(recent.isEmpty() || recent.front().path != file)
                         {
                             UpdateRecentFiles(); // update after initialization and only if the current file is different from the first recent
                             while(recent.length() > maxRecent-1)
@@ -955,12 +958,12 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
         if(gestures)
         {
             if(ui->mpvFrame->geometry().contains(event->pos())) // mouse is in the mpvFrame
-                nounours->gesture->Begin(GestureHandler::HSEEK_VVOLUME, event->globalPos(), pos());
+                nounours->gesture->Begin(GestureHandler::HSEEK_VVOLUME, event->globalPosition().toPoint(), pos());
             else if(!isFullScreen()) // not fullscreen
-                nounours->gesture->Begin(GestureHandler::MOVE, event->globalPos(), pos());
+                nounours->gesture->Begin(GestureHandler::MOVE, event->globalPosition().toPoint(), pos());
         }
         else if(!isFullScreen()) // not fullscreen
-            nounours->gesture->Begin(GestureHandler::MOVE, event->globalPos(), pos());
+            nounours->gesture->Begin(GestureHandler::MOVE, event->globalPosition().toPoint(), pos());
 
         if(ui->remainingLabel->rect().contains(ui->remainingLabel->mapFrom(this, event->pos()))) // clicked timeLayoutWidget
             setRemaining(!remaining); // todo: use a nounourscommand
@@ -987,7 +990,7 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *event)
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
-    if(nounours->gesture->Process(event->globalPos()))
+    if(nounours->gesture->Process(event->globalPosition().toPoint()))
         event->accept();
     else if(isFullScreenMode())
     {
@@ -996,13 +999,13 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 
         QRect playbackRect = geometry();
         playbackRect.setTop(playbackRect.bottom() - 60);
-        bool showPlayback = playbackRect.contains(event->globalPos());
+        bool showPlayback = playbackRect.contains(event->globalPosition().toPoint());
         ui->playbackLayoutWidget->setVisible(showPlayback || ui->outputTextEdit->isVisible());
         ui->seekBar->setVisible(showPlayback || ui->outputTextEdit->isVisible());
 
         QRect playlistRect = geometry();
         playlistRect.setLeft(playlistRect.right() - qCeil(playlistRect.width()/7.0));
-        bool showPlaylist = playlistRect.contains(event->globalPos());
+        bool showPlaylist = playlistRect.contains(event->globalPosition().toPoint());
         ShowPlaylist(showPlaylist);
 
         if(!(showPlayback || showPlaylist) && autohide)
@@ -1014,8 +1017,9 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 void MainWindow::leaveEvent(QEvent *event)
 {
     mouseMoveEvent(new QMouseEvent(QMouseEvent::MouseMove,
-                                   QCursor::pos(),
-                                   Qt::NoButton,Qt::NoButton,Qt::NoModifier));
+                                   QCursor::pos(), QCursor::pos(),
+                                   Qt::NoButton,Qt::NoButton,Qt::NoModifier,
+                                   QPointingDevice::primaryPointingDevice()));
     QMainWindow::leaveEvent(event);
 }
 
@@ -1036,7 +1040,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
-    if(event->delta() > 0)
+    if(event->angleDelta().y() > 0)
         mpv->Volume(mpv->getVolume()+5, true);
     else
         mpv->Volume(mpv->getVolume()-5, true);
@@ -1164,8 +1168,9 @@ void MainWindow::HideAllControls(bool w, bool s)
         ui->menubar->setVisible(false);
         setContextMenuPolicy(Qt::ActionsContextMenu);
         mouseMoveEvent(new QMouseEvent(QMouseEvent::MouseMove,
-                                       QCursor::pos(),
-                                       Qt::NoButton,Qt::NoButton,Qt::NoModifier));
+                                       QCursor::pos(), QCursor::pos(),
+                                       Qt::NoButton,Qt::NoButton,Qt::NoModifier,
+                                       QPointingDevice::primaryPointingDevice()));
     }
     else
     {
