@@ -29,9 +29,11 @@ jobs:
             qt6-base-private-dev \
             libqt6svg6-dev \
             qt6-tools-dev \
+            qt6-tools-dev-tools \
             qt6-l10n-tools \
             libmpv-dev \
             libx11-dev \
+            libgl-dev \
             pkg-config
 
       - name: Build

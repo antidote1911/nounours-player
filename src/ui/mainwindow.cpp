@@ -510,9 +510,6 @@ MainWindow::MainWindow(QWidget *parent):
                     {
                         ui->action_Play->setEnabled(true);
                         ui->playButton->setEnabled(true);
-#if defined(Q_OS_WIN)
-                        playpause_toolbutton->setEnabled(true);
-#endif
                         ui->playlistButton->setEnabled(true);
                         ui->action_Show_Playlist->setEnabled(true);
                         ui->menuAudio_Tracks->setEnabled(true);
@@ -851,12 +848,6 @@ MainWindow::~MainWindow()
     // see: http://qt-project.org/doc/qt-4.8/objecttrees.html
 
     // but apparently they don't (https://github.com/u8sand/Nounours-Player/issues/47)
-#if defined(Q_OS_WIN)
-    delete prev_toolbutton;
-    delete playpause_toolbutton;
-    delete next_toolbutton;
-    delete thumbnail_toolbar;
-#endif
     delete nounours;
     delete ui;
 }
@@ -866,45 +857,6 @@ void MainWindow::Load(QString file)
     // load the settings here--the constructor has already been called
     // this solves some issues with setting things before the constructor has ended
     menuVisible = ui->menubar->isVisible(); // does the OS use a menubar? (appmenu doesn't)
-#if defined(Q_OS_WIN)
-    // add windows 7+ thubnail toolbar buttons
-    thumbnail_toolbar = new QWinThumbnailToolBar(this);
-    thumbnail_toolbar->setWindow(this->windowHandle());
-
-    prev_toolbutton = new QWinThumbnailToolButton(thumbnail_toolbar);
-    prev_toolbutton->setEnabled(false);
-    prev_toolbutton->setToolTip(tr("Previous"));
-    prev_toolbutton->setIcon(QIcon(":/img/tool-previous.ico"));
-    connect(prev_toolbutton, &QWinThumbnailToolButton::clicked,
-            [=]
-            {
-                ui->playlistWidget->PlayIndex(-1, true);
-            });
-
-    playpause_toolbutton = new QWinThumbnailToolButton(thumbnail_toolbar);
-    playpause_toolbutton->setEnabled(false);
-    playpause_toolbutton->setToolTip(tr("Play"));
-    playpause_toolbutton->setIcon(QIcon(":/img/tool-play.ico"));
-    connect(playpause_toolbutton, &QWinThumbnailToolButton::clicked,
-            [=]
-            {
-                nounours->PlayPause();
-            });
-
-    next_toolbutton = new QWinThumbnailToolButton(thumbnail_toolbar);
-    next_toolbutton->setEnabled(false);
-    next_toolbutton->setToolTip(tr("Next"));
-    next_toolbutton->setIcon(QIcon(":/img/tool-next.ico"));
-    connect(next_toolbutton, &QWinThumbnailToolButton::clicked,
-            [=]
-            {
-                ui->playlistWidget->PlayIndex(1, true);
-            });
-
-    thumbnail_toolbar->addButton(prev_toolbutton);
-    thumbnail_toolbar->addButton(playpause_toolbutton);
-    thumbnail_toolbar->addButton(next_toolbutton);
-#endif
     nounours->LoadSettings();
     mpv->Initialize();
     mpv->LoadFile(file);
@@ -1267,18 +1219,12 @@ void MainWindow::SetNextButtonEnabled(bool enable)
 {
     ui->nextButton->setEnabled(enable);
     ui->actionPlay_Next_File->setEnabled(enable);
-#if defined(Q_OS_WIN)
-    next_toolbutton->setEnabled(enable);
-#endif
 }
 
 void MainWindow::SetPreviousButtonEnabled(bool enable)
 {
     ui->previousButton->setEnabled(enable);
     ui->actionPlay_Previous_File->setEnabled(enable);
-#if defined(Q_OS_WIN)
-    prev_toolbutton->setEnabled(enable);
-#endif
 }
 
 void MainWindow::SetPlayButtonIcon(bool play)
@@ -1287,19 +1233,11 @@ void MainWindow::SetPlayButtonIcon(bool play)
     {
         ui->playButton->setIcon(QIcon(":/img/default_play.svg"));
         ui->action_Play->setText(tr("&Play"));
-#if defined(Q_OS_WIN)
-        playpause_toolbutton->setToolTip(tr("Play"));
-        playpause_toolbutton->setIcon(QIcon(":/img/tool-play.ico"));
-#endif
     }
     else // pause icon
     {
         ui->playButton->setIcon(QIcon(":/img/default_pause.svg"));
         ui->action_Play->setText(tr("&Pause"));
-#if defined(Q_OS_WIN)
-        playpause_toolbutton->setToolTip(tr("Pause"));
-        playpause_toolbutton->setIcon(QIcon(":/img/tool-pause.ico"));
-#endif
     }
 }
 

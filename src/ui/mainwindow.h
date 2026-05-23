@@ -14,11 +14,6 @@
 #include <QAction>
 #include <QRect>
 
-#if defined(Q_OS_WIN)
-#include <QWinThumbnailToolBar>
-#include <QWinThumbnailToolButton>
-#endif
-
 #include "recent.h"
 
 namespace Ui {
@@ -88,12 +83,6 @@ private:
     NounoursEngine      *nounours;
     MpvHandler      *mpv;
 
-#if defined(Q_OS_WIN)
-    QWinThumbnailToolBar    *thumbnail_toolbar;
-    QWinThumbnailToolButton *prev_toolbutton,
-                            *playpause_toolbutton,
-                            *next_toolbutton;
-#endif
     bool            pathChanged,
                     menuVisible,
                     firstItem       = false,
