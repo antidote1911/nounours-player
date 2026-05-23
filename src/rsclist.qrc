@@ -10,6 +10,7 @@
     <file>img/default_open.svg</file>
     <file>img/default_pause.svg</file>
     <file>img/default_play.svg</file>
+    <file>img/default_stop.svg</file>
     <file>img/default_playlist.svg</file>
     <file>img/default_previous.svg</file>
     <file>img/default_reverse.svg</file>
@@ -18,6 +19,7 @@
     <file>img/disabled_next.svg</file>
     <file>img/disabled_pause.svg</file>
     <file>img/disabled_play.svg</file>
+    <file>img/disabled_stop.svg</file>
     <file>img/disabled_playlist.svg</file>
     <file>img/disabled_previous.svg</file>
     <file>img/disabled_reverse.svg</file>

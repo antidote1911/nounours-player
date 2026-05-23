@@ -853,6 +853,46 @@ QSlider::sub-page:horizontal {
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="stopButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>34</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="icon">
+            <iconset resource="../rsclist.qrc">
+             <normaloff>:/img/default_stop.svg</normaloff>
+             <disabledoff>:/img/disabled_stop.svg</disabledoff>
+             <disabledon>:/img/disabled_stop.svg</disabledon>:/img/default_stop.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>34</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="IndexButton" name="nextButton">
            <property name="enabled">
             <bool>false</bool>

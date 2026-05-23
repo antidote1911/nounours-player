@@ -725,6 +725,12 @@ MainWindow::MainWindow(QWidget *parent):
                 nounours->PlayPause();
             });
 
+    connect(ui->stopButton, &QPushButton::clicked,                      // Playback: Stop button
+            [=]
+            {
+                nounours->Command("stop");
+            });
+
     connect(ui->nextButton, &IndexButton::clicked,                      // Playback: Next button
             [=]
             {
@@ -1096,6 +1102,7 @@ void MainWindow::SetPlaybackControls(bool enable)
     SetIndexLabels(enable);
 
     // menubar
+    ui->stopButton->setEnabled(enable);
     ui->action_Stop->setEnabled(enable);
     ui->action_Restart->setEnabled(enable);
     ui->menuS_peed->setEnabled(enable);
