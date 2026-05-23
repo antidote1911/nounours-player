@@ -4,116 +4,162 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="14"/>
         <source>About Nounours Player</source>
-        <translation type="vanished">Giới thiệu về Nounours Player</translation>
+        <translation>Giới thiệu về Nounours Player</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="131"/>
         <source>About</source>
-        <translation type="vanished">Giới thiệu</translation>
+        <translation>Giới thiệu</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; là một chương trình chơi đa phương tiện dựa trên &lt;b&gt;libmpv&lt;/b&gt;, miễn phí và mã nguồn mở, đa nền tảng. Thiết kế đơn giản của nó thể hiện ý tưởng về một môi trường gọn gàng, đơn giản và đầy thú vị để thưởng thức các show truyền hình.&lt;br&gt;&lt;br&gt;Bản quyền © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; là một chương trình chơi đa phương tiện dựa trên &lt;b&gt;libmpv&lt;/b&gt;, miễn phí và mã nguồn mở, đa nền tảng. Thiết kế đơn giản của nó thể hiện ý tưởng về một môi trường gọn gàng, đơn giản và đầy thú vị để thưởng thức các show truyền hình.&lt;br&gt;&lt;br&gt;Bản quyền © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="208"/>
         <source>Credits</source>
-        <translation type="vanished">Công trạng</translation>
+        <translation>Công trạng</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="271"/>
         <source>License</source>
-        <translation type="vanished">Giấy phép</translation>
+        <translation>Giấy phép</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="336"/>
         <source>&amp;Close</source>
-        <translation type="vanished">Đó&amp;ng</translation>
+        <translation>Đó&amp;ng</translation>
     </message>
 </context>
 <context>
     <name>InputDialog</name>
     <message>
+        <location filename="../ui/inputdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">Hộp thoại</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="70"/>
         <source>Please enter a value:</source>
-        <translation type="vanished">Vui lòng nhập một giá trị:</translation>
+        <translation>Vui lòng nhập một giá trị:</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="117"/>
+        <source>&amp;OK</source>
+        <translation type="unfinished">&amp;OK</translation>
+    </message>
+    <message>
+        <location filename="../ui/inputdialog.ui" line="133"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Huỷ</translation>
+        <translation>&amp;Huỷ</translation>
     </message>
 </context>
 <context>
     <name>JumpDialog</name>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">Hộp thoại</translation>
+        <translation>Hộp thoại</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="111"/>
         <source> hr</source>
-        <translation type="vanished"> giờ</translation>
+        <translation> giờ</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="129"/>
+        <location filename="../ui/jumpdialog.ui" line="160"/>
         <source>:</source>
-        <translation type="vanished">:</translation>
+        <translation>:</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="142"/>
         <source> min</source>
-        <translation type="vanished"> phút</translation>
+        <translation> phút</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="173"/>
         <source> sec</source>
-        <translation type="vanished"> giây</translation>
+        <translation> giây</translation>
+    </message>
+    <message>
+        <location filename="../ui/jumpdialog.ui" line="189"/>
+        <source>&amp;OK</source>
+        <translation type="unfinished">&amp;OK</translation>
     </message>
 </context>
 <context>
     <name>KeyDialog</name>
     <message>
+        <location filename="../ui/keydialog.ui" line="14"/>
         <source>Modify Shortcut Key</source>
-        <translation type="vanished">Tuỳ chỉnh phím tắt</translation>
+        <translation>Tuỳ chỉnh phím tắt</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="74"/>
         <source>(optional)</source>
-        <translation type="vanished">(tuỳ chọn)</translation>
+        <translation>(tuỳ chọn)</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="84"/>
         <source>Shortcut:</source>
-        <translation type="vanished">Phím tắt:</translation>
+        <translation>Phím tắt:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="91"/>
         <source>Command:</source>
-        <translation type="vanished">Lệnh:</translation>
+        <translation>Lệnh:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="98"/>
         <source>Label:</source>
-        <translation type="vanished">Nhãn:</translation>
+        <translation>Nhãn:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="122"/>
+        <source>C&amp;lear Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="129"/>
         <source>Chang&amp;e</source>
-        <translation type="vanished">&amp;Thay đổi</translation>
+        <translation>&amp;Thay đổi</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="136"/>
         <source>&amp;Add</source>
-        <translation type="vanished">Thê&amp;m</translation>
+        <translation>Thê&amp;m</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="149"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Huỷ</translation>
+        <translation>&amp;Huỷ</translation>
     </message>
 </context>
 <context>
     <name>LocationDialog</name>
     <message>
+        <location filename="../ui/locationdialog.ui" line="14"/>
         <source>Open Location</source>
-        <translation type="vanished">Mở vị trí</translation>
+        <translation>Mở vị trí</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="84"/>
         <source>Paste copied link</source>
-        <translation type="vanished">Dán đường dẫn đã sao chép</translation>
+        <translation>Dán đường dẫn đã sao chép</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="118"/>
         <source>Type URL or location here</source>
-        <translation type="vanished">Nhập URL hoặc vị trí tại đây</translation>
+        <translation>Nhập URL hoặc vị trí tại đây</translation>
+    </message>
+    <message>
+        <location filename="../ui/locationdialog.ui" line="137"/>
+        <source>&amp;OK</source>
+        <translation type="unfinished">&amp;OK</translation>
     </message>
 </context>
 <context>
@@ -325,6 +371,7 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1375"/>
+        <location filename="../ui/mainwindow.cpp" line="1241"/>
         <source>&amp;Play</source>
         <translation>&amp;Phát</translation>
     </message>
@@ -582,50 +629,61 @@
         <translation>Ẩn tất cả điều k&amp;hiển</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="219"/>
         <source>Playing</source>
-        <translation type="vanished">Đang phát</translation>
+        <translation>Đang phát</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="221"/>
         <source>Paused</source>
-        <translation type="vanished">Tạm dừng</translation>
+        <translation>Tạm dừng</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="365"/>
         <source>Sub</source>
-        <translation type="vanished">Phụ đề</translation>
+        <translation>Phụ đề</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="377"/>
         <source>Audio</source>
-        <translation type="vanished">Âm thanh</translation>
+        <translation>Âm thanh</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="619"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">Tốc độ: %0x</translation>
+        <translation>Tốc độ: %0x</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles visible</source>
-        <translation type="vanished">Hiện phụ đề</translation>
+        <translation>Hiện phụ đề</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles hidden</source>
-        <translation type="vanished">Ẩn phụ đề</translation>
+        <translation>Ẩn phụ đề</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Muted</source>
-        <translation type="vanished">Tắt tiếng</translation>
+        <translation>Tắt tiếng</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Unmuted</source>
-        <translation type="vanished">Mở tiếng</translation>
+        <translation>Mở tiếng</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="787"/>
         <source>Enter the file number you want to play:
 Note: Value must be from %0 - %1</source>
-        <translation type="vanished">Nhập số thứ tự của tập tin bạn muốn phát:
+        <translation>Nhập số thứ tự của tập tin bạn muốn phát:
 Lưu ý: Giá trị phải trong khoảng từ %0 - %1</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="788"/>
         <source>Enter File Number</source>
-        <translation type="vanished">Nhập thứ tự của tập tin</translation>
+        <translation>Nhập thứ tự của tập tin</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -640,12 +698,19 @@ Lưu ý: Giá trị phải trong khoảng từ %0 - %1</translation>
         <translation type="vanished">Tiếp</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1080"/>
         <source>No selection</source>
-        <translation type="vanished">Không chọn</translation>
+        <translation>Không chọn</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1086"/>
+        <source>%0 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="1246"/>
         <source>&amp;Pause</source>
-        <translation type="vanished">Tạm &amp;dừng</translation>
+        <translation>Tạm &amp;dừng</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -655,211 +720,287 @@ Lưu ý: Giá trị phải trong khoảng từ %0 - %1</translation>
 <context>
     <name>MpvHandler</name>
     <message>
+        <location filename="../mpvhandler.cpp" line="96"/>
         <source>File</source>
-        <translation type="vanished">Tập tin</translation>
+        <translation>Tập tin</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="97"/>
         <source>Title</source>
-        <translation type="vanished">Tiêu đề</translation>
+        <translation>Tiêu đề</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="98"/>
         <source>File size</source>
-        <translation type="vanished">Kích thước</translation>
+        <translation>Kích thước</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="99"/>
         <source>Date created</source>
-        <translation type="vanished">Ngày tạo</translation>
+        <translation>Ngày tạo</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="100"/>
         <source>Media length</source>
-        <translation type="vanished">Độ dài</translation>
+        <translation>Độ dài</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="102"/>
+        <source>Video (x%0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="103"/>
         <source>Video Output</source>
-        <translation type="vanished">Đầu ra video</translation>
+        <translation>Đầu ra video</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="104"/>
         <source>Resolution</source>
-        <translation type="vanished">Độ phân giải</translation>
+        <translation>Độ phân giải</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="107"/>
+        <source>FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="108"/>
         <source>A/V Sync</source>
-        <translation type="vanished">Đồng bộ A/V</translation>
+        <translation>Đồng bộ A/V</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
         <source>Bitrate</source>
-        <translation type="vanished">Tốc độ lấy mẫu</translation>
+        <translation>Tốc độ lấy mẫu</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
+        <source>%0 kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="111"/>
         <source>Audio (x%0)</source>
-        <translation type="vanished">Âm thanh (x%0)</translation>
+        <translation>Âm thanh (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="112"/>
         <source>Audio Output</source>
-        <translation type="vanished">Đầu ra âm thanh</translation>
+        <translation>Đầu ra âm thanh</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="113"/>
         <source>Sample Rate</source>
-        <translation type="vanished">Tốc độ lấy mẫu</translation>
+        <translation>Tốc độ lấy mẫu</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="114"/>
         <source>Channels</source>
-        <translation type="vanished">Kênh</translation>
+        <translation>Kênh</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="119"/>
         <source>Chapters</source>
-        <translation type="vanished">Chương</translation>
+        <translation>Chương</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="128"/>
         <source>Metadata</source>
-        <translation type="vanished">Siêu dữ liệu</translation>
+        <translation>Siêu dữ liệu</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="193"/>
         <source>Buffering...</source>
-        <translation type="vanished">Đang lấy đệm...</translation>
+        <translation>Đang lấy đệm...</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="228"/>
         <source>Your network is slow or stuck, please wait a bit</source>
-        <translation type="vanished">Kết nối mạng của bạn bị chậm hoặc treo, vui lòng chờ giây lát</translation>
+        <translation>Kết nối mạng của bạn bị chậm hoặc treo, vui lòng chờ giây lát</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="247"/>
         <source>File couldn&apos;t be opened</source>
-        <translation type="vanished">Không thể mở tập tin</translation>
+        <translation>Không thể mở tập tin</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="333"/>
         <source>File does not exist</source>
-        <translation type="vanished">Tập tin không tồn tại</translation>
+        <translation>Tập tin không tồn tại</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="393"/>
         <source>File no longer exists</source>
-        <translation type="vanished">Tập tin hiện không còn tồn tại</translation>
+        <translation>Tập tin hiện không còn tồn tại</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="552"/>
         <source>Volume: %0%</source>
-        <translation type="vanished">Âm lượng: %0%</translation>
+        <translation>Âm lượng: %0%</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
         <source>Deinterlacing: %0</source>
-        <translation type="vanished">Deinterlacing: %0</translation>
+        <translation>Deinterlacing: %0</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>enabled</source>
-        <translation type="vanished">bật</translation>
+        <translation>bật</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>disabled</source>
-        <translation type="vanished">tắt</translation>
+        <translation>tắt</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>Motion Interpolation: %0</source>
-        <translation type="vanished">Chuyển động nội suy: %0</translation>
+        <translation>Chuyển động nội suy: %0</translation>
     </message>
 </context>
 <context>
     <name>NounoursEngine</name>
     <message>
+        <location filename="../nounourscommands.cpp" line="102"/>
         <source>Open Subtitle File</source>
-        <translation type="vanished">Mở tập tin phụ đề</translation>
+        <translation>Mở tập tin phụ đề</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="103"/>
         <source>Subtitle Files</source>
-        <translation type="vanished">Các tập tin phụ đề</translation>
+        <translation>Các tập tin phụ đề</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="117"/>
         <source>Open Audio File</source>
-        <translation type="vanished">Mở tập tin âm thanh</translation>
+        <translation>Mở tập tin âm thanh</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="118"/>
+        <location filename="../nounourscommands.cpp" line="391"/>
         <source>Audio Files</source>
-        <translation type="vanished">Các tập tin âm thanh</translation>
+        <translation>Các tập tin âm thanh</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="163"/>
         <source>Saved to &quot;%0&quot;, with subs</source>
-        <translation type="vanished">Đã lưu vào &quot;%0&quot;, kèm phụ đề</translation>
+        <translation>Đã lưu vào &quot;%0&quot;, kèm phụ đề</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="165"/>
         <source>Saved to &quot;%0&quot;, without subs</source>
-        <translation type="vanished">Đã lưu vào &quot;%0&quot;, không kèm phụ đề</translation>
+        <translation>Đã lưu vào &quot;%0&quot;, không kèm phụ đề</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="314"/>
         <source>DimDialog not supported on this platform</source>
-        <translation type="vanished">Hộp thoại làm tối không hỗ trợ trên nền tảng này</translation>
+        <translation>Hộp thoại làm tối không hỗ trợ trên nền tảng này</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>Dim Lights</source>
-        <translation type="vanished">Làm tối</translation>
+        <translation>Làm tối</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>In order to dim the lights, the desktop compositor has to be enabled. This can be done through Window Manager Desktop.</source>
-        <translation type="vanished">Để có thể làm tối màn, trình hiệu ứng cửa sổ phải được bật. Điều này có thể thực hiện qua Trình quản lý cửa sổ.</translation>
+        <translation>Để có thể làm tối màn, trình hiệu ứng cửa sổ phải được bật. Điều này có thể thực hiện qua Trình quản lý cửa sổ.</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="355"/>
+        <source>http://nounoursplayer.u8sand.net/help.php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="388"/>
         <source>Open File</source>
-        <translation type="vanished">Mở tập tin</translation>
+        <translation>Mở tập tin</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="389"/>
         <source>Media Files</source>
-        <translation type="vanished">Các tập tin đa phương tiện</translation>
+        <translation>Các tập tin đa phương tiện</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="390"/>
         <source>Video Files</source>
-        <translation type="vanished">Các tập tin phim</translation>
+        <translation>Các tập tin phim</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="392"/>
         <source>All Files</source>
-        <translation type="vanished">Tất cả các loại tập tin</translation>
+        <translation>Tất cả các loại tập tin</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>Fit Window: %0</source>
-        <translation type="vanished">Làm cửa sổ: %0</translation>
+        <translation>Làm cửa sổ: %0</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>To Current Size</source>
-        <translation type="vanished">vừa kích thước hiện tại</translation>
+        <translation>vừa kích thước hiện tại</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="572"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">Tốc độ: %0x</translation>
+        <translation>Tốc độ: %0x</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="587"/>
         <source>Press ESC or double-click to leave full screen</source>
-        <translation type="vanished">Bấm ESC hoặc nhấp đôi để rời toàn màn hình</translation>
+        <translation>Bấm ESC hoặc nhấp đôi để rời toàn màn hình</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="607"/>
         <source>Press %0 to show all controls again</source>
-        <translation type="vanished">Bấm %0 để hiện lại tất cả các điều khiển</translation>
+        <translation>Bấm %0 để hiện lại tất cả các điều khiển</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="640"/>
         <source>usage: nounours &lt;command&gt; [...]</source>
-        <translation type="vanished">sử dụng: nounours &lt;lệnh&gt; [...]</translation>
+        <translation>sử dụng: nounours &lt;lệnh&gt; [...]</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="641"/>
         <source>commands:</source>
-        <translation type="vanished">các lệnh:</translation>
+        <translation>các lệnh:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="662"/>
         <source>usage: %0 %1</source>
-        <translation type="vanished">sử dụng: %0 %1</translation>
+        <translation>sử dụng: %0 %1</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="663"/>
         <source>description:</source>
-        <translation type="vanished">miêu tả:</translation>
+        <translation>miêu tả:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="667"/>
         <source>advanced:</source>
-        <translation type="vanished">nâng cao:</translation>
+        <translation>nâng cao:</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="115"/>
         <source>invalid command &apos;%0&apos;</source>
-        <translation type="vanished">sai câu lệnh &apos;%0&apos;</translation>
+        <translation>sai câu lệnh &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="120"/>
         <source>invalid parameter &apos;%0&apos;</source>
-        <translation type="vanished">sai tham số &apos;%0&apos;</translation>
+        <translation>sai tham số &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="125"/>
         <source>&apos;%0&apos; requires parameters</source>
-        <translation type="vanished">&apos;%0&apos; yêu cầu tham số</translation>
+        <translation>&apos;%0&apos; yêu cầu tham số</translation>
     </message>
     <message>
         <source>Increase sub size</source>
@@ -1262,364 +1403,471 @@ Lưu ý: Giá trị phải trong khoảng từ %0 - %1</translation>
 <context>
     <name>PreferencesDialog</name>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="vanished">Tùy chỉnh</translation>
+        <translation>Tùy chỉnh</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="249"/>
         <source>Player</source>
-        <translation type="vanished">Trình phát lại</translation>
+        <translation>Trình phát lại</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="269"/>
         <source>On Top</source>
-        <translation type="vanished">Trên đầu</translation>
+        <translation>Trên đầu</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="275"/>
         <source>A&amp;lways</source>
-        <translation type="vanished">&amp;Luôn luôn</translation>
+        <translation>&amp;Luôn luôn</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="282"/>
         <source>&amp;When Playing</source>
-        <translation type="vanished">&amp;Khi đang phát</translation>
+        <translation>&amp;Khi đang phát</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="289"/>
         <source>&amp;Never</source>
-        <translation type="vanished">Không &amp;bao giờ</translation>
+        <translation>Không &amp;bao giờ</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="299"/>
         <source>Tray Icon</source>
-        <translation type="vanished">Biểu tượng khay</translation>
+        <translation>Biểu tượng khay</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="308"/>
         <source>&amp;Hide Popup</source>
-        <translation type="vanished">Ẩ&amp;n thông báo</translation>
+        <translation>Ẩ&amp;n thông báo</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="318"/>
         <source>Language</source>
-        <translation type="vanished">Ngôn ngữ</translation>
+        <translation>Ngôn ngữ</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="341"/>
         <source>Mouse Gesture</source>
-        <translation type="vanished">Chuyển động trỏ chuột</translation>
+        <translation>Chuyển động trỏ chuột</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="379"/>
         <source>Change Volume</source>
-        <translation type="vanished">Thay đổi âm lượng</translation>
+        <translation>Thay đổi âm lượng</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="405"/>
         <source>Seek Position</source>
-        <translation type="vanished">Chuyển điểm phát</translation>
+        <translation>Chuyển điểm phát</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="426"/>
         <source>&amp;Use Mouse &amp;&amp; Touch Gestures</source>
-        <translation type="vanished">&amp;Sử dụng chuyển động trỏ chuột và cử chỉ chạm</translation>
+        <translation>&amp;Sử dụng chuyển động trỏ chuột và cử chỉ chạm</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="433"/>
+        <source>&amp;Left Click to Toggle Play/Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="456"/>
         <source>History</source>
-        <translation type="vanished">Lịch sử</translation>
+        <translation>Lịch sử</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="464"/>
         <source>Remember &amp;recently opened files up to</source>
-        <translation type="vanished">&amp;Ghi nhớ số tập tin vừa được mở tối đa</translation>
+        <translation>&amp;Ghi nhớ số tập tin vừa được mở tối đa</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="483"/>
         <source>Remember playback &amp;position</source>
-        <translation type="vanished">Ghi &amp;nhớ điểm đã phát</translation>
+        <translation>Ghi &amp;nhớ điểm đã phát</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="496"/>
         <source>Key Bindings</source>
-        <translation type="vanished">Gán phím</translation>
+        <translation>Gán phím</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="519"/>
         <source>Prefix a command with &apos;mpv&apos; to make it run as an input command.</source>
-        <translation type="vanished">Thêm tiền tố &apos;mpv&apos; vào câu lệnh để nó chạy như một lệnh đầu vào.</translation>
+        <translation>Thêm tiền tố &apos;mpv&apos; vào câu lệnh để nó chạy như một lệnh đầu vào.</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="587"/>
         <source>Key</source>
-        <translation type="vanished">Phím</translation>
+        <translation>Phím</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="592"/>
         <source>Command</source>
-        <translation type="vanished">Câu lệnh</translation>
+        <translation>Câu lệnh</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="597"/>
         <source>Label</source>
-        <translation type="vanished">Nhãn</translation>
+        <translation>Nhãn</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="679"/>
         <source>Rese&amp;t All</source>
-        <translation type="vanished">Đặt &amp;lại tất cả</translation>
+        <translation>Đặt &amp;lại tất cả</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="689"/>
         <source>Video</source>
-        <translation type="vanished">Video</translation>
+        <translation>Video</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="709"/>
         <source>&amp;Auto-Fit Window:</source>
-        <translation type="vanished">&amp;Tự động làm khít cửa sổ:</translation>
+        <translation>&amp;Tự động làm khít cửa sổ:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="720"/>
         <source>50%</source>
-        <translation type="vanished">50%</translation>
+        <translation>50%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="725"/>
         <source>75%</source>
-        <translation type="vanished">75%</translation>
+        <translation>75%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="730"/>
         <source>100%</source>
-        <translation type="vanished">100%</translation>
+        <translation>100%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="735"/>
         <source>200%</source>
-        <translation type="vanished">200%</translation>
+        <translation>200%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="758"/>
         <source>Screenshot</source>
-        <translation type="vanished">Ảnh chụp</translation>
+        <translation>Ảnh chụp</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="764"/>
         <source>File Name Template:</source>
-        <translation type="vanished">Tên tập tin theo mẫu:</translation>
+        <translation>Tên tập tin theo mẫu:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="775"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="780"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="785"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="793"/>
         <source>Chang&amp;e...</source>
-        <translation type="vanished">Tha&amp;y đổi...</translation>
+        <translation>Tha&amp;y đổi...</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="800"/>
         <source>File Format:</source>
-        <translation type="vanished">Định dạng tập tin:</translation>
+        <translation>Định dạng tập tin:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="810"/>
         <source>screenshot%#04n</source>
-        <translation type="vanished">screenshot%#04n</translation>
+        <translation>screenshot%#04n</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="817"/>
         <source>Default Save Location:</source>
-        <translation type="vanished">Vị trí lưu mặc định:</translation>
+        <translation>Vị trí lưu mặc định:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="866"/>
         <source>Always show the &amp;save window</source>
-        <translation type="vanished">&amp;Luôn hiện cửa sổ lưu ảnh chụp</translation>
+        <translation>&amp;Luôn hiện cửa sổ lưu ảnh chụp</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="890"/>
         <source>Advanced</source>
-        <translation type="vanished">Nâng cao</translation>
+        <translation>Nâng cao</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="896"/>
         <source>Command Line</source>
-        <translation type="vanished">Dòng lệnh</translation>
+        <translation>Dòng lệnh</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="902"/>
         <source>mpv msg-level:</source>
-        <translation type="vanished">Cấp độ thông báo của mpv:</translation>
+        <translation>Cấp độ thông báo của mpv:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="913"/>
         <source>no</source>
-        <translation type="vanished">không</translation>
+        <translation>không</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="918"/>
         <source>fatal</source>
-        <translation type="vanished">nghiêm trọng</translation>
+        <translation>nghiêm trọng</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="923"/>
         <source>error</source>
-        <translation type="vanished">lỗi</translation>
+        <translation>lỗi</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="928"/>
         <source>warn</source>
-        <translation type="vanished">cảnh báo</translation>
+        <translation>cảnh báo</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="933"/>
         <source>info</source>
-        <translation type="vanished">thông tin</translation>
+        <translation>thông tin</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="938"/>
         <source>status</source>
-        <translation type="vanished">trạng thái</translation>
+        <translation>trạng thái</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="943"/>
         <source>v</source>
-        <translation type="vanished">v</translation>
+        <translation>v</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="948"/>
         <source>debug</source>
-        <translation type="vanished">gỡ lỗi</translation>
+        <translation>gỡ lỗi</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="953"/>
         <source>trace</source>
-        <translation type="vanished">truy</translation>
+        <translation>truy</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1016"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1023"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Huỷ</translation>
+        <translation>&amp;Huỷ</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="64"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">Chọn thư mục lưu ảnh chụp</translation>
+        <translation>Chọn thư mục lưu ảnh chụp</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Reset All Key Bindings?</source>
-        <translation type="vanished">Đặt lại tất cả các phím gán?</translation>
+        <translation>Đặt lại tất cả các phím gán?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Are you sure you want to reset all shortcut keys to its original bindings?</source>
-        <translation type="vanished">Bạn chắc chắn muốn đặt lại tất cả các phím gán về mặc định?</translation>
+        <translation>Bạn chắc chắn muốn đặt lại tất cả các phím gán về mặc định?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="261"/>
         <source>Existing keybinding</source>
-        <translation type="vanished">Tồn tại phím gán</translation>
+        <translation>Tồn tại phím gán</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="262"/>
         <source>%0 is already being used. Would you like to change its function?</source>
-        <translation type="vanished">%0 đã được sử dụng. Bạn có muốn thay đổi chức năng của nó?</translation>
+        <translation>%0 đã được sử dụng. Bạn có muốn thay đổi chức năng của nó?</translation>
     </message>
 </context>
 <context>
     <name>ScreenshotDialog</name>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="14"/>
         <source>Take Screenshot</source>
-        <translation type="vanished">Chụp hình</translation>
+        <translation>Chụp hình</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="117"/>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="127"/>
         <source>Save Location</source>
-        <translation type="vanished">Vị trí lưu</translation>
+        <translation>Vị trí lưu</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="134"/>
         <source>File Name Template</source>
-        <translation type="vanished">Tên tập tin mẫu</translation>
+        <translation>Tên tập tin mẫu</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="154"/>
+        <source>jpg</source>
+        <translation type="unfinished">jpg</translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="159"/>
+        <source>png</source>
+        <translation type="unfinished">png</translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="164"/>
+        <source>tga</source>
+        <translation type="unfinished">tga</translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="176"/>
         <source>Sho&amp;w subtitles</source>
-        <translation type="vanished">&amp;Hiện phụ đề</translation>
+        <translation>&amp;Hiện phụ đề</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="183"/>
         <source>Always show this dialog</source>
-        <translation type="vanished">Luôn hiển thị hộp thoại này</translation>
+        <translation>Luôn hiển thị hộp thoại này</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="212"/>
         <source>&amp;Save</source>
-        <translation type="vanished">&amp;Lưu</translation>
+        <translation>&amp;Lưu</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.cpp" line="26"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">Chọn thư mục lưu ảnh chụp</translation>
+        <translation>Chọn thư mục lưu ảnh chụp</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
+        <location filename="../ui/updatedialog.ui" line="14"/>
         <source>Check for Updates</source>
-        <translation type="vanished">Kiểm tra cập nhật</translation>
+        <translation>Kiểm tra cập nhật</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checking for updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Đang kiểm tra các cập nhật...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Đang kiểm tra các cập nhật...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="156"/>
         <source>About 0 second(s) remaining</source>
-        <translation type="vanished">Còn lại khoảng 0 giây</translation>
+        <translation>Còn lại khoảng 0 giây</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="204"/>
         <source>&amp;Update</source>
-        <translation type="vanished">&amp;Cập nhật</translation>
+        <translation>&amp;Cập nhật</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="223"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Huỷ</translation>
+        <translation>&amp;Huỷ</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="22"/>
         <source>&amp;CLOSE</source>
-        <translation type="vanished">ĐÓ&amp;NG</translation>
+        <translation>ĐÓ&amp;NG</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="32"/>
         <source>Download Complete</source>
-        <translation type="vanished">Hoàn thành tải về</translation>
+        <translation>Hoàn thành tải về</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="67"/>
         <source>About %0 second(s) remaining</source>
-        <translation type="vanished">Còn lại khoảng %0 giây</translation>
+        <translation>Còn lại khoảng %0 giây</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="69"/>
         <source>Calculating...</source>
-        <translation type="vanished">Đang tính...</translation>
+        <translation>Đang tính...</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="129"/>
         <source>You have the latest version!</source>
-        <translation type="vanished">Bạn đang có phiên bản mới nhất!</translation>
+        <translation>Bạn đang có phiên bản mới nhất!</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="133"/>
         <source>Update Available!
 Version: %0</source>
-        <translation type="vanished">Bản cập nhật khả dụng!
+        <translation>Bản cập nhật khả dụng!
 Phiên bản: %0</translation>
     </message>
 </context>
 <context>
     <name>UpdateManager</name>
     <message>
+        <location filename="../updatemanager.cpp" line="40"/>
         <source>Checking for updates...</source>
-        <translation type="vanished">Đang kiểm tra các cập nhật...</translation>
+        <translation>Đang kiểm tra các cập nhật...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="86"/>
         <source>Downloading update...</source>
-        <translation type="vanished">Đang tải các cập nhật...</translation>
+        <translation>Đang tải các cập nhật...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="93"/>
         <source>fopen error
 </source>
-        <translation type="vanished">mở file lỗi (fopen)</translation>
+        <translation>mở file lỗi (fopen)</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="113"/>
         <source>write error</source>
-        <translation type="vanished">ghi file lỗi</translation>
+        <translation>ghi file lỗi</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="134"/>
         <source>Download complete</source>
-        <translation type="vanished">Hoàn thành tải về</translation>
+        <translation>Hoàn thành tải về</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="140"/>
         <source>Redirected...</source>
-        <translation type="vanished">Đã chuyển hướng...</translation>
+        <translation>Đã chuyển hướng...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="152"/>
         <source>Extracting...</source>
-        <translation type="vanished">Đang xả nén...</translation>
+        <translation>Đang xả nén...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="181"/>
         <source>Creating updater script...</source>
-        <translation type="vanished">Đang tạo kịch bản cập nhật...</translation>
+        <translation>Đang tạo kịch bản cập nhật...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="185"/>
         <source>Could not open file for writing...</source>
-        <translation type="vanished">Không thể mở tập tin để ghi...</translation>
+        <translation>Không thể mở tập tin để ghi...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="201"/>
         <source>Updating...</source>
-        <translation type="vanished">Đang cập nhật...</translation>
+        <translation>Đang cập nhật...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="209"/>
         <source>Done. Restarting...</source>
-        <translation type="vanished">Hoàn thành. Đang khởi chạy lại...</translation>
+        <translation>Hoàn thành. Đang khởi chạy lại...</translation>
     </message>
 </context>
 </TS>

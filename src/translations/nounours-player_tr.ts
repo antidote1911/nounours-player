@@ -4,128 +4,162 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="14"/>
         <source>About Nounours Player</source>
-        <translation type="vanished">Nounours Player Hakkında</translation>
+        <translation>Nounours Player Hakkında</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="131"/>
         <source>About</source>
-        <translation type="vanished">Hakkında</translation>
+        <translation>Hakkında</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="336"/>
         <source>&amp;Close</source>
-        <translation type="vanished">&amp;Kapat</translation>
+        <translation>&amp;Kapat</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="208"/>
         <source>Credits</source>
-        <translation type="vanished">Destekleyenler</translation>
+        <translation>Destekleyenler</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="271"/>
         <source>License</source>
-        <translation type="vanished">Lisans</translation>
+        <translation>Lisans</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2015 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2016 ?} {8s?} {8s?} {008098;?} {8s?}</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2015 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2016 ?} {8s?} {8s?} {008098;?} {8s?}</translation>
     </message>
 </context>
 <context>
     <name>InputDialog</name>
     <message>
+        <location filename="../ui/inputdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">Diyalog</translation>
+        <translation>Diyalog</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="70"/>
         <source>Please enter a value:</source>
-        <translation type="vanished">Lütfen bir değer giriniz:</translation>
+        <translation>Lütfen bir değer giriniz:</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="117"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;Tamam</translation>
+        <translation>&amp;Tamam</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="133"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;İptal</translation>
+        <translation>&amp;İptal</translation>
     </message>
 </context>
 <context>
     <name>JumpDialog</name>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">Diyalog</translation>
+        <translation>Diyalog</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="111"/>
         <source> hr</source>
-        <translation type="vanished"> sa</translation>
+        <translation> sa</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="129"/>
+        <location filename="../ui/jumpdialog.ui" line="160"/>
         <source>:</source>
-        <translation type="vanished">:</translation>
+        <translation>:</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="142"/>
         <source> min</source>
-        <translation type="vanished"> dk</translation>
+        <translation> dk</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="173"/>
         <source> sec</source>
-        <translation type="vanished"> sn</translation>
+        <translation> sn</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="189"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;Tamam</translation>
+        <translation>&amp;Tamam</translation>
     </message>
 </context>
 <context>
     <name>KeyDialog</name>
     <message>
+        <location filename="../ui/keydialog.ui" line="14"/>
         <source>Modify Shortcut Key</source>
-        <translation type="vanished">Kısayol tuşlarını Ayarla</translation>
+        <translation>Kısayol tuşlarını Ayarla</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="74"/>
         <source>(optional)</source>
-        <translation type="vanished">(seçmeli)</translation>
+        <translation>(seçmeli)</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="84"/>
         <source>Shortcut:</source>
-        <translation type="vanished">Kısayol:</translation>
+        <translation>Kısayol:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="91"/>
         <source>Command:</source>
-        <translation type="vanished">Komut:</translation>
+        <translation>Komut:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="98"/>
         <source>Label:</source>
-        <translation type="vanished">Etiket:</translation>
+        <translation>Etiket:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="122"/>
+        <source>C&amp;lear Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="129"/>
         <source>Chang&amp;e</source>
-        <translation type="vanished">&amp;Değiştir</translation>
+        <translation>&amp;Değiştir</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="136"/>
         <source>&amp;Add</source>
-        <translation type="vanished">&amp;Ekle</translation>
+        <translation>&amp;Ekle</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="149"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;İptal</translation>
+        <translation>&amp;İptal</translation>
     </message>
 </context>
 <context>
     <name>LocationDialog</name>
     <message>
+        <location filename="../ui/locationdialog.ui" line="14"/>
         <source>Open Location</source>
-        <translation type="vanished">Bilgisayardan aç</translation>
+        <translation>Bilgisayardan aç</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="84"/>
         <source>Paste copied link</source>
-        <translation type="vanished">Kopyalanan linki yapıştır</translation>
+        <translation>Kopyalanan linki yapıştır</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="118"/>
         <source>Type URL or location here</source>
-        <translation type="vanished">URL veya yeri yaz</translation>
+        <translation>URL veya yeri yaz</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="137"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;Tamam</translation>
+        <translation>&amp;Tamam</translation>
     </message>
 </context>
 <context>
@@ -312,6 +346,7 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1375"/>
+        <location filename="../ui/mainwindow.cpp" line="1241"/>
         <source>&amp;Play</source>
         <translation>&amp;Oynat</translation>
     </message>
@@ -471,42 +506,56 @@
         <translation>&amp;Sıfırla</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="219"/>
         <source>Playing</source>
-        <translation type="vanished">Oynama</translation>
+        <translation>Oynama</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="221"/>
         <source>Paused</source>
-        <translation type="vanished">Beklertildi</translation>
+        <translation>Beklertildi</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="365"/>
         <source>Sub</source>
-        <translation type="vanished">Altyazı</translation>
+        <translation>Altyazı</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="377"/>
         <source>Audio</source>
-        <translation type="vanished">Ses</translation>
+        <translation>Ses</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1086"/>
+        <source>%0 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="1246"/>
         <source>&amp;Pause</source>
-        <translation type="vanished">&amp;Bekle</translation>
+        <translation>&amp;Bekle</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="619"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">Hız: %0x</translation>
+        <translation>Hız: %0x</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="787"/>
         <source>Enter the file number you want to play:
 Note: Value must be from %0 - %1</source>
-        <translation type="vanished">Oynatmak istediğiniz dosya numarasını girin:
+        <translation>Oynatmak istediğiniz dosya numarasını girin:
 Not: Değer %0 -.%1 arasında olmalıdır</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="788"/>
         <source>Enter File Number</source>
-        <translation type="vanished">Dosya Numarası Girin</translation>
+        <translation>Dosya Numarası Girin</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1080"/>
         <source>No selection</source>
-        <translation type="vanished">Seçim Yok</translation>
+        <translation>Seçim Yok</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1300"/>
@@ -633,20 +682,24 @@ Not: Değer %0 -.%1 arasında olmalıdır</translation>
         <translation>&amp;Çözücü</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles visible</source>
-        <translation type="vanished">Altyazı görünmez</translation>
+        <translation>Altyazı görünmez</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles hidden</source>
-        <translation type="vanished">Altyazı gizli</translation>
+        <translation>Altyazı gizli</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Muted</source>
-        <translation type="vanished">Sessiz</translation>
+        <translation>Sessiz</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Unmuted</source>
-        <translation type="vanished">Ses Açık</translation>
+        <translation>Ses Açık</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="389"/>
@@ -667,163 +720,217 @@ Not: Değer %0 -.%1 arasında olmalıdır</translation>
 <context>
     <name>MpvHandler</name>
     <message>
+        <location filename="../mpvhandler.cpp" line="98"/>
         <source>File size</source>
-        <translation type="vanished">Dosya boyutu</translation>
+        <translation>Dosya boyutu</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="99"/>
         <source>Date created</source>
-        <translation type="vanished">Tarih oluşturuldu</translation>
+        <translation>Tarih oluşturuldu</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="100"/>
         <source>Media length</source>
-        <translation type="vanished">Ortam uzunluğu</translation>
+        <translation>Ortam uzunluğu</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
         <source>Bitrate</source>
-        <translation type="vanished">Bitrate</translation>
+        <translation>Bitrate</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="114"/>
         <source>Channels</source>
-        <translation type="vanished">Kanallar</translation>
+        <translation>Kanallar</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="333"/>
         <source>File does not exist</source>
-        <translation type="vanished">Dosya bulunmuyor</translation>
+        <translation>Dosya bulunmuyor</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="393"/>
         <source>File no longer exists</source>
-        <translation type="vanished">Dosya artık mevcut değil</translation>
+        <translation>Dosya artık mevcut değil</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="96"/>
         <source>File</source>
-        <translation type="vanished">Dosya</translation>
+        <translation>Dosya</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="97"/>
         <source>Title</source>
-        <translation type="vanished">Başlık</translation>
+        <translation>Başlık</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="102"/>
         <source>Video (x%0)</source>
-        <translation type="vanished">Video (x%0)</translation>
+        <translation>Video (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="103"/>
         <source>Video Output</source>
-        <translation type="vanished">Video Çıkışı</translation>
+        <translation>Video Çıkışı</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="104"/>
         <source>Resolution</source>
-        <translation type="vanished">Çözünürlük</translation>
+        <translation>Çözünürlük</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="107"/>
         <source>FPS</source>
-        <translation type="vanished">FPS</translation>
+        <translation>FPS</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="108"/>
         <source>A/V Sync</source>
-        <translation type="vanished">A/V Syn</translation>
+        <translation>A/V Syn</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
         <source>%0 kbps</source>
-        <translation type="vanished">%0 kbps</translation>
+        <translation>%0 kbps</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="111"/>
         <source>Audio (x%0)</source>
-        <translation type="vanished">Audio (x%0)</translation>
+        <translation>Audio (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="112"/>
         <source>Audio Output</source>
-        <translation type="vanished">Ses Çıkışı</translation>
+        <translation>Ses Çıkışı</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="113"/>
         <source>Sample Rate</source>
-        <translation type="vanished">Aynı oran</translation>
+        <translation>Aynı oran</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="119"/>
         <source>Chapters</source>
-        <translation type="vanished">Bölümler</translation>
+        <translation>Bölümler</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="128"/>
         <source>Metadata</source>
-        <translation type="vanished">Meta veri</translation>
+        <translation>Meta veri</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="193"/>
         <source>Buffering...</source>
-        <translation type="vanished">Tamponlama ...</translation>
+        <translation>Tamponlama ...</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="228"/>
         <source>Your network is slow or stuck, please wait a bit</source>
-        <translation type="vanished">Ağınız yavaş ya da sıkışmış, lütfen biraz bekleyin</translation>
+        <translation>Ağınız yavaş ya da sıkışmış, lütfen biraz bekleyin</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="247"/>
         <source>File couldn&apos;t be opened</source>
-        <translation type="vanished">Dosya açılamadı</translation>
+        <translation>Dosya açılamadı</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="552"/>
         <source>Volume: %0%</source>
-        <translation type="vanished">Ses: %0%</translation>
+        <translation>Ses: %0%</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
         <source>Deinterlacing: %0</source>
-        <translation type="vanished">Çözülüyor: %0</translation>
+        <translation>Çözülüyor: %0</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>enabled</source>
-        <translation type="vanished">aktif</translation>
+        <translation>aktif</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>disabled</source>
-        <translation type="vanished">pasif</translation>
+        <translation>pasif</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>Motion Interpolation: %0</source>
-        <translation type="vanished">Hareket İnterpolasyonu:%0</translation>
+        <translation>Hareket İnterpolasyonu:%0</translation>
     </message>
 </context>
 <context>
     <name>NounoursEngine</name>
     <message>
+        <location filename="../nounourscommands.cpp" line="102"/>
         <source>Open Subtitle File</source>
-        <translation type="vanished">Altyazı Dosyası Aç</translation>
+        <translation>Altyazı Dosyası Aç</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="103"/>
         <source>Subtitle Files</source>
-        <translation type="vanished">Altyazı Dosyası</translation>
+        <translation>Altyazı Dosyası</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="117"/>
         <source>Open Audio File</source>
-        <translation type="vanished">Ses Dosyası Aç</translation>
+        <translation>Ses Dosyası Aç</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="163"/>
+        <source>Saved to &quot;%0&quot;, with subs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="165"/>
+        <source>Saved to &quot;%0&quot;, without subs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="355"/>
         <source>http://nounoursplayer.u8sand.net/help.php</source>
-        <translation type="vanished">http://nounoursplayer.u8sand.net/help.php</translation>
+        <translation>http://nounoursplayer.u8sand.net/help.php</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="388"/>
         <source>Open File</source>
-        <translation type="vanished">Dosya Aç</translation>
+        <translation>Dosya Aç</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="389"/>
         <source>Media Files</source>
-        <translation type="vanished">Medya Dosyası</translation>
+        <translation>Medya Dosyası</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="390"/>
         <source>Video Files</source>
-        <translation type="vanished">Video Dosyası</translation>
+        <translation>Video Dosyası</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="118"/>
+        <location filename="../nounourscommands.cpp" line="391"/>
         <source>Audio Files</source>
-        <translation type="vanished">Ses Dosyası</translation>
+        <translation>Ses Dosyası</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>Dim Lights</source>
-        <translation type="vanished">Loş Işık</translation>
+        <translation>Loş Işık</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>In order to dim the lights, the desktop compositor has to be enabled. This can be done through Window Manager Desktop.</source>
-        <translation type="vanished">Işıkları karartmak için masaüstü kompositor etkinleştirilmelidir. Bu, Window Manager Desktop üzerinden yapılabilir.</translation>
+        <translation>Işıkları karartmak için masaüstü kompositor etkinleştirilmelidir. Bu, Window Manager Desktop üzerinden yapılabilir.</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>Fit Window: %0</source>
-        <translation type="vanished">Pencereye Sığdır: %0</translation>
+        <translation>Pencereye Sığdır: %0</translation>
     </message>
     <message>
         <source>Increase sub size</source>
@@ -986,48 +1093,74 @@ Not: Değer %0 -.%1 arasında olmalıdır</translation>
         <translation type="vanished">Seçilen dosyayı çalma listesinde çal</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="314"/>
         <source>DimDialog not supported on this platform</source>
-        <translation type="vanished">DimDialog bu platformda desteklenmiyor</translation>
+        <translation>DimDialog bu platformda desteklenmiyor</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="392"/>
         <source>All Files</source>
-        <translation type="vanished">Tüm Dosyalar</translation>
+        <translation>Tüm Dosyalar</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
+        <source>To Current Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="572"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">Hız: %0x</translation>
+        <translation>Hız: %0x</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="587"/>
         <source>Press ESC or double-click to leave full screen</source>
-        <translation type="vanished">ESC&apos;ye basın veya tam ekran bırakmak için çift tıklayın</translation>
+        <translation>ESC&apos;ye basın veya tam ekran bırakmak için çift tıklayın</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="607"/>
+        <source>Press %0 to show all controls again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="640"/>
         <source>usage: nounours &lt;command&gt; [...]</source>
-        <translation type="vanished">kullanımı: nounours &lt;komut&gt; [...]</translation>
+        <translation>kullanımı: nounours &lt;komut&gt; [...]</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="641"/>
         <source>commands:</source>
-        <translation type="vanished">komut:</translation>
+        <translation>komut:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="662"/>
         <source>usage: %0 %1</source>
-        <translation type="vanished">kullanımı: %0 %1</translation>
+        <translation>kullanımı: %0 %1</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="663"/>
         <source>description:</source>
-        <translation type="vanished">tanım:</translation>
+        <translation>tanım:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="667"/>
         <source>advanced:</source>
-        <translation type="vanished">gelişmiş:</translation>
+        <translation>gelişmiş:</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="115"/>
         <source>invalid command &apos;%0&apos;</source>
-        <translation type="vanished">geçersiz komut &apos;%0&apos;</translation>
+        <translation>geçersiz komut &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="120"/>
         <source>invalid parameter &apos;%0&apos;</source>
-        <translation type="vanished">gwçwrsiz parametre &apos;%0&apos;</translation>
+        <translation>gwçwrsiz parametre &apos;%0&apos;</translation>
+    </message>
+    <message>
+        <location filename="../nounoursengine.cpp" line="125"/>
+        <source>&apos;%0&apos; requires parameters</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>take a screenshot (with subtitles if specified)</source>
@@ -1149,369 +1282,472 @@ Not: Değer %0 -.%1 arasında olmalıdır</translation>
 <context>
     <name>PreferencesDialog</name>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="vanished">Seçenekler</translation>
+        <translation>Seçenekler</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="249"/>
         <source>Player</source>
-        <translation type="vanished">Oynatıcı</translation>
+        <translation>Oynatıcı</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="269"/>
         <source>On Top</source>
-        <translation type="vanished">Üstte</translation>
+        <translation>Üstte</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="282"/>
         <source>&amp;When Playing</source>
-        <translation type="vanished">&amp;Oynatılıyorken</translation>
+        <translation>&amp;Oynatılıyorken</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="289"/>
         <source>&amp;Never</source>
-        <translation type="vanished">&amp;Asla</translation>
+        <translation>&amp;Asla</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="299"/>
         <source>Tray Icon</source>
-        <translation type="vanished">Tepsi ikonu</translation>
+        <translation>Tepsi ikonu</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="308"/>
         <source>&amp;Hide Popup</source>
-        <translation type="vanished">Açılır Pencereyi &amp;Gizle</translation>
+        <translation>Açılır Pencereyi &amp;Gizle</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="433"/>
+        <source>&amp;Left Click to Toggle Play/Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="689"/>
         <source>Video</source>
-        <translation type="vanished">Video</translation>
+        <translation>Video</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="709"/>
         <source>&amp;Auto-Fit Window:</source>
-        <translation type="vanished">Otomatik Sığdırma Penceresi:</translation>
+        <translation>Otomatik Sığdırma Penceresi:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="720"/>
         <source>50%</source>
-        <translation type="vanished">50%</translation>
+        <translation>50%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="725"/>
         <source>75%</source>
-        <translation type="vanished">75%</translation>
+        <translation>75%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="730"/>
         <source>100%</source>
-        <translation type="vanished">100%</translation>
+        <translation>100%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="735"/>
         <source>200%</source>
-        <translation type="vanished">200%</translation>
+        <translation>200%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="758"/>
         <source>Screenshot</source>
-        <translation type="vanished">Ekran Kaydı</translation>
+        <translation>Ekran Kaydı</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="793"/>
         <source>Chang&amp;e...</source>
-        <translation type="vanished">D&amp;eğiştir...</translation>
+        <translation>D&amp;eğiştir...</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="800"/>
         <source>File Format:</source>
-        <translation type="vanished">Dosya Formatı:</translation>
+        <translation>Dosya Formatı:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="775"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="318"/>
         <source>Language</source>
-        <translation type="vanished">Dil</translation>
+        <translation>Dil</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="379"/>
         <source>Change Volume</source>
-        <translation type="vanished">Sesi Ayarla</translation>
+        <translation>Sesi Ayarla</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="405"/>
         <source>Seek Position</source>
-        <translation type="vanished">Ara Pozisyon</translation>
+        <translation>Ara Pozisyon</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="426"/>
         <source>&amp;Use Mouse &amp;&amp; Touch Gestures</source>
-        <translation type="vanished">Fare ve Dokunma Hareketlerini K&amp;ullan</translation>
+        <translation>Fare ve Dokunma Hareketlerini K&amp;ullan</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="456"/>
         <source>History</source>
-        <translation type="vanished">Geçmiş</translation>
+        <translation>Geçmiş</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="464"/>
         <source>Remember &amp;recently opened files up to</source>
-        <translation type="vanished">En son açılan dosyaları hatırla</translation>
+        <translation>En son açılan dosyaları hatırla</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="483"/>
         <source>Remember playback &amp;position</source>
-        <translation type="vanished">Oynatmayı ve konumu hatırla</translation>
+        <translation>Oynatmayı ve konumu hatırla</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="519"/>
         <source>Prefix a command with &apos;mpv&apos; to make it run as an input command.</source>
-        <translation type="vanished">Bir giriş komutu olarak çalışmasını sağlamak için mpv ile bir komut öneki.</translation>
+        <translation>Bir giriş komutu olarak çalışmasını sağlamak için mpv ile bir komut öneki.</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="679"/>
         <source>Rese&amp;t All</source>
-        <translation type="vanished">&amp;Tümünü Sıfırla</translation>
+        <translation>&amp;Tümünü Sıfırla</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="780"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="785"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="764"/>
         <source>File Name Template:</source>
-        <translation type="vanished">Dosya Adı Şablonu:</translation>
+        <translation>Dosya Adı Şablonu:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="817"/>
         <source>Default Save Location:</source>
-        <translation type="vanished">Varsayılan Kayıt Yeri:</translation>
+        <translation>Varsayılan Kayıt Yeri:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="810"/>
         <source>screenshot%#04n</source>
-        <translation type="vanished">ekranresmi%#04n</translation>
+        <translation>ekranresmi%#04n</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="64"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">Ekran görüntüsü dizinini seçin</translation>
+        <translation>Ekran görüntüsü dizinini seçin</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="341"/>
         <source>Mouse Gesture</source>
-        <translation type="vanished">Fare Hareketi</translation>
+        <translation>Fare Hareketi</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="587"/>
         <source>Key</source>
-        <translation type="vanished">Anahtar</translation>
+        <translation>Anahtar</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="592"/>
         <source>Command</source>
-        <translation type="vanished">Komut</translation>
+        <translation>Komut</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="597"/>
         <source>Label</source>
-        <translation type="vanished">Etiket</translation>
+        <translation>Etiket</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="261"/>
         <source>Existing keybinding</source>
-        <translation type="vanished">Mevcut tuş bağlama</translation>
+        <translation>Mevcut tuş bağlama</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="262"/>
         <source>%0 is already being used. Would you like to change its function?</source>
-        <translation type="vanished">%0 zaten kullanılıyor. İşlevini değiştirmek ister misiniz?</translation>
+        <translation>%0 zaten kullanılıyor. İşlevini değiştirmek ister misiniz?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="275"/>
         <source>A&amp;lways</source>
-        <translation type="vanished">&amp;Her zaman</translation>
+        <translation>&amp;Her zaman</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="866"/>
         <source>Always show the &amp;save window</source>
-        <translation type="vanished">Her zaman &amp;kaydet penceresini göster</translation>
+        <translation>Her zaman &amp;kaydet penceresini göster</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="890"/>
         <source>Advanced</source>
-        <translation type="vanished">Gelişmiş</translation>
+        <translation>Gelişmiş</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="896"/>
         <source>Command Line</source>
-        <translation type="vanished">Komut Satırı</translation>
+        <translation>Komut Satırı</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="902"/>
         <source>mpv msg-level:</source>
-        <translation type="vanished">mpv msj düzeyi:</translation>
+        <translation>mpv msj düzeyi:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="913"/>
         <source>no</source>
-        <translation type="vanished">yok</translation>
+        <translation>yok</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="918"/>
         <source>fatal</source>
-        <translation type="vanished">ölümcül</translation>
+        <translation>ölümcül</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="923"/>
         <source>error</source>
-        <translation type="vanished">hata</translation>
+        <translation>hata</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="928"/>
         <source>warn</source>
-        <translation type="vanished">uyarı</translation>
+        <translation>uyarı</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="933"/>
         <source>info</source>
-        <translation type="vanished">bilgi</translation>
+        <translation>bilgi</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="938"/>
         <source>status</source>
-        <translation type="vanished">durum</translation>
+        <translation>durum</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="943"/>
+        <source>v</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="948"/>
+        <source>debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="953"/>
         <source>trace</source>
-        <translation type="vanished">iz</translation>
+        <translation>iz</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1016"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;Tamam</translation>
+        <translation>&amp;Tamam</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1023"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;İptal</translation>
+        <translation>&amp;İptal</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="496"/>
         <source>Key Bindings</source>
-        <translation type="vanished">Anahtar Bağlamaları</translation>
+        <translation>Anahtar Bağlamaları</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Reset All Key Bindings?</source>
-        <translation type="vanished">Tüm Anahtar Bağlantıları Sıfırlansın mı?</translation>
+        <translation>Tüm Anahtar Bağlantıları Sıfırlansın mı?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Are you sure you want to reset all shortcut keys to its original bindings?</source>
-        <translation type="vanished">Tüm kısayol tuşlarını orijinal bağlarına sıfırlamak istediğinizden emin misiniz?</translation>
+        <translation>Tüm kısayol tuşlarını orijinal bağlarına sıfırlamak istediğinizden emin misiniz?</translation>
     </message>
 </context>
 <context>
     <name>ScreenshotDialog</name>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="14"/>
         <source>Take Screenshot</source>
-        <translation type="vanished">Ekran Resmi Al</translation>
+        <translation>Ekran Resmi Al</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="117"/>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="127"/>
         <source>Save Location</source>
-        <translation type="vanished">Konumu kaydet</translation>
+        <translation>Konumu kaydet</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="134"/>
         <source>File Name Template</source>
-        <translation type="vanished">Dosya Adı Şablonu</translation>
+        <translation>Dosya Adı Şablonu</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="154"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="159"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="164"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="176"/>
         <source>Sho&amp;w subtitles</source>
-        <translation type="vanished">&amp;Altyazıları Göster</translation>
+        <translation>&amp;Altyazıları Göster</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="183"/>
         <source>Always show this dialog</source>
-        <translation type="vanished">Her zaman bu iletişim kutusunu göster</translation>
+        <translation>Her zaman bu iletişim kutusunu göster</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="212"/>
         <source>&amp;Save</source>
-        <translation type="vanished">&amp;Kaydet</translation>
+        <translation>&amp;Kaydet</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.cpp" line="26"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">Ekran görüntüsü dizinini seçin</translation>
+        <translation>Ekran görüntüsü dizinini seçin</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
+        <location filename="../ui/updatedialog.ui" line="14"/>
         <source>Check for Updates</source>
-        <translation type="vanished">Güncellemeleri Kontrol Et</translation>
+        <translation>Güncellemeleri Kontrol Et</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checking for updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Güncellemeler kontrol ediliyor...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Güncellemeler kontrol ediliyor...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="156"/>
         <source>About 0 second(s) remaining</source>
-        <translation type="vanished">Yaklaşık 0 saniye kaldı</translation>
+        <translation>Yaklaşık 0 saniye kaldı</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="204"/>
         <source>&amp;Update</source>
-        <translation type="vanished">&amp;Güncelle</translation>
+        <translation>&amp;Güncelle</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="223"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;İptal</translation>
+        <translation>&amp;İptal</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="22"/>
         <source>&amp;CLOSE</source>
-        <translation type="vanished">&amp;KAPAT</translation>
+        <translation>&amp;KAPAT</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="129"/>
         <source>You have the latest version!</source>
-        <translation type="vanished">En son sürüme sahipsiniz!</translation>
+        <translation>En son sürüme sahipsiniz!</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="133"/>
         <source>Update Available!
 Version: %0</source>
-        <translation type="vanished">Yeni sürüm var!
+        <translation>Yeni sürüm var!
 Sürüm: %0</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="32"/>
         <source>Download Complete</source>
-        <translation type="vanished">İndirme tamamlandı</translation>
+        <translation>İndirme tamamlandı</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="67"/>
         <source>About %0 second(s) remaining</source>
-        <translation type="vanished">Yaklaşık %0 saniye kaldı</translation>
+        <translation>Yaklaşık %0 saniye kaldı</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="69"/>
         <source>Calculating...</source>
-        <translation type="vanished">Hesaplanıyor...</translation>
+        <translation>Hesaplanıyor...</translation>
     </message>
 </context>
 <context>
     <name>UpdateManager</name>
     <message>
+        <location filename="../updatemanager.cpp" line="93"/>
         <source>fopen error
 </source>
-        <translation type="vanished">fopen hatası
+        <translation>fopen hatası
 </translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="185"/>
         <source>Could not open file for writing...</source>
-        <translation type="vanished">Dosya yazmak için açılamadı ...</translation>
+        <translation>Dosya yazmak için açılamadı ...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="201"/>
         <source>Updating...</source>
-        <translation type="vanished">Güncelleniyor...</translation>
+        <translation>Güncelleniyor...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="40"/>
         <source>Checking for updates...</source>
-        <translation type="vanished">Güncellemeler kontrol ediliyor...</translation>
+        <translation>Güncellemeler kontrol ediliyor...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="86"/>
         <source>Downloading update...</source>
-        <translation type="vanished">Güncelleme indiriliyor...</translation>
+        <translation>Güncelleme indiriliyor...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="113"/>
         <source>write error</source>
-        <translation type="vanished">yazma hatası</translation>
+        <translation>yazma hatası</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="134"/>
         <source>Download complete</source>
-        <translation type="vanished">İndirme tamamlandı</translation>
+        <translation>İndirme tamamlandı</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="140"/>
         <source>Redirected...</source>
-        <translation type="vanished">Yönlendirildi ...</translation>
+        <translation>Yönlendirildi ...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="152"/>
         <source>Extracting...</source>
-        <translation type="vanished">Ayıklanıyor...</translation>
+        <translation>Ayıklanıyor...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="181"/>
         <source>Creating updater script...</source>
-        <translation type="vanished">Güncelleyici komut dosyası oluşturuluyor ...</translation>
+        <translation>Güncelleyici komut dosyası oluşturuluyor ...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="209"/>
         <source>Done. Restarting...</source>
-        <translation type="vanished">Bitti. Yeniden başlatılıyor...</translation>
+        <translation>Bitti. Yeniden başlatılıyor...</translation>
     </message>
 </context>
 </TS>

@@ -4,112 +4,162 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="14"/>
         <source>About Nounours Player</source>
-        <translation type="vanished">Over Nounours Player</translation>
+        <translation>Over Nounours Player</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="131"/>
         <source>About</source>
-        <translation type="vanished">Over</translation>
+        <translation>Over</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="336"/>
         <source>&amp;Close</source>
-        <translation type="vanished">Sluiten</translation>
+        <translation>Sluiten</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="208"/>
         <source>Credits</source>
-        <translation type="vanished">Auteurs</translation>
+        <translation>Auteurs</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="271"/>
         <source>License</source>
-        <translation type="vanished">Licentie</translation>
+        <translation>Licentie</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is een gratis en open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; gebaseerde multimedia speler. Zijn eenvoudige ontwerp weerspiegelt het idee voor een overzichtelijke, eenvoudige en aangename omgeving voor het bekijken van tv-shows.&lt;br&gt;&lt;br&gt;Copyright © 2015 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2016 ?} {8s?} {8s?} {008098;?} {8s?}</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is een gratis en open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; gebaseerde multimedia speler. Zijn eenvoudige ontwerp weerspiegelt het idee voor een overzichtelijke, eenvoudige en aangename omgeving voor het bekijken van tv-shows.&lt;br&gt;&lt;br&gt;Copyright © 2015 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2016 ?} {8s?} {8s?} {008098;?} {8s?}</translation>
     </message>
 </context>
 <context>
     <name>InputDialog</name>
     <message>
+        <location filename="../ui/inputdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">Dialoog</translation>
+        <translation>Dialoog</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="70"/>
         <source>Please enter a value:</source>
-        <translation type="vanished">Voer een waarde in:</translation>
+        <translation>Voer een waarde in:</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="117"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="133"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Annuleren</translation>
+        <translation>&amp;Annuleren</translation>
     </message>
 </context>
 <context>
     <name>JumpDialog</name>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">Dialoog</translation>
+        <translation>Dialoog</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="111"/>
         <source> hr</source>
-        <translation type="vanished"> uur</translation>
+        <translation> uur</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="129"/>
+        <location filename="../ui/jumpdialog.ui" line="160"/>
         <source>:</source>
-        <translation type="vanished">:</translation>
+        <translation>:</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="142"/>
         <source> min</source>
-        <translation type="vanished"> min</translation>
+        <translation> min</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="173"/>
+        <source> sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/jumpdialog.ui" line="189"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
 </context>
 <context>
     <name>KeyDialog</name>
     <message>
+        <location filename="../ui/keydialog.ui" line="14"/>
         <source>Modify Shortcut Key</source>
-        <translation type="vanished">Verander sneltoetsknop</translation>
+        <translation>Verander sneltoetsknop</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="74"/>
         <source>(optional)</source>
-        <translation type="vanished">(optioneel)</translation>
+        <translation>(optioneel)</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="84"/>
         <source>Shortcut:</source>
-        <translation type="vanished">Snelkoppeling:</translation>
+        <translation>Snelkoppeling:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="91"/>
         <source>Command:</source>
-        <translation type="vanished">Commando:</translation>
+        <translation>Commando:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="98"/>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="122"/>
+        <source>C&amp;lear Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="129"/>
         <source>Chang&amp;e</source>
-        <translation type="vanished">Verand&amp;er</translation>
+        <translation>Verand&amp;er</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="136"/>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="149"/>
         <source>&amp;Cancel</source>
-        <translation type="obsolete">&amp;Annuleren</translation>
+        <translation type="unfinished">&amp;Annuleren</translation>
     </message>
 </context>
 <context>
     <name>LocationDialog</name>
     <message>
+        <location filename="../ui/locationdialog.ui" line="14"/>
         <source>Open Location</source>
-        <translation type="vanished">Open Locatie</translation>
+        <translation>Open Locatie</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="84"/>
         <source>Paste copied link</source>
-        <translation type="vanished">Plak gekopieerde link</translation>
+        <translation>Plak gekopieerde link</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="118"/>
         <source>Type URL or location here</source>
-        <translation type="vanished">Typ URL of locatie hier</translation>
+        <translation>Typ URL of locatie hier</translation>
+    </message>
+    <message>
+        <location filename="../ui/locationdialog.ui" line="137"/>
+        <source>&amp;OK</source>
+        <translation type="unfinished">&amp;OK</translation>
     </message>
 </context>
 <context>
@@ -306,6 +356,7 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1375"/>
+        <location filename="../ui/mainwindow.cpp" line="1241"/>
         <source>&amp;Play</source>
         <translation></translation>
     </message>
@@ -487,42 +538,61 @@
         <translation type="vanished">Volgende</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="219"/>
         <source>Playing</source>
-        <translation type="vanished">Speelt af</translation>
+        <translation>Speelt af</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="221"/>
         <source>Paused</source>
-        <translation type="vanished">Gepauzeerd</translation>
+        <translation>Gepauzeerd</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="365"/>
         <source>Sub</source>
-        <translation type="vanished">Ondertiteling</translation>
+        <translation>Ondertiteling</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="377"/>
         <source>Audio</source>
-        <translation type="vanished">Geluid</translation>
+        <translation>Geluid</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="619"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">Snelheid: %0x</translation>
+        <translation>Snelheid: %0x</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
+        <source>Unmuted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="787"/>
         <source>Enter the file number you want to play:
 Note: Value must be from %0 - %1</source>
-        <translation type="vanished">Voer het bestandsnummer dat u wilt afspelen in:
+        <translation>Voer het bestandsnummer dat u wilt afspelen in:
 Opmerking: Waarde moet tussen %0 en %1 zijn</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="788"/>
         <source>Enter File Number</source>
-        <translation type="vanished">Voer Bestandsnummer in</translation>
+        <translation>Voer Bestandsnummer in</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1080"/>
         <source>No selection</source>
-        <translation type="vanished">Geen selectie</translation>
+        <translation>Geen selectie</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1086"/>
+        <source>%0 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="1246"/>
         <source>&amp;Pause</source>
-        <translation type="vanished">&amp;Pauze</translation>
+        <translation>&amp;Pauze</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -622,16 +692,19 @@ Opmerking: Waarde moet tussen %0 en %1 zijn</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles visible</source>
-        <translation type="vanished">Ondertiteling zichtbaar</translation>
+        <translation>Ondertiteling zichtbaar</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles hidden</source>
-        <translation type="vanished">Ondertiteling onzichtbaar</translation>
+        <translation>Ondertiteling onzichtbaar</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Muted</source>
-        <translation type="vanished">Gedempt</translation>
+        <translation>Gedempt</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="389"/>
@@ -647,167 +720,282 @@ Opmerking: Waarde moet tussen %0 en %1 zijn</translation>
 <context>
     <name>MpvHandler</name>
     <message>
+        <location filename="../mpvhandler.cpp" line="98"/>
         <source>File size</source>
-        <translation type="vanished">Bestandsgrootte</translation>
+        <translation>Bestandsgrootte</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="99"/>
         <source>Date created</source>
-        <translation type="vanished">Datum gemaakt</translation>
+        <translation>Datum gemaakt</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="100"/>
         <source>Media length</source>
-        <translation type="vanished">Medialengte</translation>
+        <translation>Medialengte</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="114"/>
         <source>Channels</source>
-        <translation type="vanished">Kanalen</translation>
+        <translation>Kanalen</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="333"/>
         <source>File does not exist</source>
-        <translation type="vanished">Bestand bestaat niet</translation>
+        <translation>Bestand bestaat niet</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="393"/>
         <source>File no longer exists</source>
-        <translation type="vanished">Bestand bestaat niet meer</translation>
+        <translation>Bestand bestaat niet meer</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="96"/>
         <source>File</source>
-        <translation type="vanished">Bestand</translation>
+        <translation>Bestand</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="97"/>
         <source>Title</source>
-        <translation type="vanished">Titel</translation>
+        <translation>Titel</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="102"/>
+        <source>Video (x%0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="103"/>
+        <source>Video Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="104"/>
         <source>Resolution</source>
-        <translation type="vanished">Resolutie</translation>
+        <translation>Resolutie</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="107"/>
+        <source>FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="108"/>
+        <source>A/V Sync</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
+        <source>Bitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
+        <source>%0 kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="111"/>
+        <source>Audio (x%0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="112"/>
+        <source>Audio Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="113"/>
+        <source>Sample Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="119"/>
         <source>Chapters</source>
-        <translation type="vanished">Hoofdstukken</translation>
+        <translation>Hoofdstukken</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="128"/>
+        <source>Metadata</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="193"/>
         <source>Buffering...</source>
-        <translation type="vanished">Bufferen...</translation>
+        <translation>Bufferen...</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="228"/>
         <source>Your network is slow or stuck, please wait a bit</source>
-        <translation type="vanished">Je netwerk is sloom, wacht even</translation>
+        <translation>Je netwerk is sloom, wacht even</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="247"/>
         <source>File couldn&apos;t be opened</source>
-        <translation type="vanished">Bestand kan niet geopend worden</translation>
+        <translation>Bestand kan niet geopend worden</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="552"/>
+        <source>Volume: %0%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>enabled</source>
-        <translation type="vanished">aan</translation>
+        <translation>aan</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>disabled</source>
-        <translation type="vanished">uit</translation>
+        <translation>uit</translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <source>Deinterlacing: %0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="688"/>
+        <source>Motion Interpolation: %0</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>NounoursEngine</name>
     <message>
+        <location filename="../nounourscommands.cpp" line="102"/>
         <source>Open Subtitle File</source>
-        <translation type="vanished">Open ondertitelingsbestand</translation>
+        <translation>Open ondertitelingsbestand</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="103"/>
         <source>Subtitle Files</source>
-        <translation type="vanished">Ondertitelingsbestanden</translation>
+        <translation>Ondertitelingsbestanden</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="117"/>
         <source>Open Audio File</source>
-        <translation type="vanished">Open Audio Bestand</translation>
+        <translation>Open Audio Bestand</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="163"/>
         <source>Saved to &quot;%0&quot;, with subs</source>
-        <translation type="vanished">Opgeslagen naar &quot;%0&quot; met ondertiteling</translation>
+        <translation>Opgeslagen naar &quot;%0&quot; met ondertiteling</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="165"/>
         <source>Saved to &quot;%0&quot;, without subs</source>
-        <translation type="vanished">Opgeslagen naar &quot;%0&quot; zonder ondertiteling</translation>
+        <translation>Opgeslagen naar &quot;%0&quot; zonder ondertiteling</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="314"/>
         <source>DimDialog not supported on this platform</source>
-        <translation type="vanished">DimDialog wordt niet ondersteund op dit platform</translation>
+        <translation>DimDialog wordt niet ondersteund op dit platform</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>Dim Lights</source>
-        <translation type="vanished">Dim het licht</translation>
+        <translation>Dim het licht</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>In order to dim the lights, the desktop compositor has to be enabled. This can be done through Window Manager Desktop.</source>
-        <translation type="vanished">Voor het dimmen van de lichten moet een desktop compositor aanstaan. Dit kan door middel van het Window Manager Desktop.</translation>
+        <translation>Voor het dimmen van de lichten moet een desktop compositor aanstaan. Dit kan door middel van het Window Manager Desktop.</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="355"/>
+        <source>http://nounoursplayer.u8sand.net/help.php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="388"/>
         <source>Open File</source>
-        <translation type="vanished">Open Bestand</translation>
+        <translation>Open Bestand</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="389"/>
         <source>Media Files</source>
-        <translation type="vanished">Mediabestanden</translation>
+        <translation>Mediabestanden</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="390"/>
         <source>Video Files</source>
-        <translation type="vanished">Videobestanden</translation>
+        <translation>Videobestanden</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="587"/>
         <source>Press ESC or double-click to leave full screen</source>
-        <translation type="vanished">Druk op ESC of dubbelklik om volledig scherm te verlaten</translation>
+        <translation>Druk op ESC of dubbelklik om volledig scherm te verlaten</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="607"/>
         <source>Press %0 to show all controls again</source>
-        <translation type="vanished">Druk op %0 om de besturingen opnieuw weer te geven</translation>
+        <translation>Druk op %0 om de besturingen opnieuw weer te geven</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="118"/>
+        <location filename="../nounourscommands.cpp" line="391"/>
         <source>Audio Files</source>
-        <translation type="vanished">Audiobestanden</translation>
+        <translation>Audiobestanden</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="392"/>
         <source>All Files</source>
-        <translation type="vanished">Alle Bestanden</translation>
+        <translation>Alle Bestanden</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>Fit Window: %0</source>
-        <translation type="vanished">Vult Venster: %0</translation>
+        <translation>Vult Venster: %0</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>To Current Size</source>
-        <translation type="vanished">Naar Huidige Grootte</translation>
+        <translation>Naar Huidige Grootte</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="640"/>
         <source>usage: nounours &lt;command&gt; [...]</source>
-        <translation type="vanished">gebruik: nounours &lt;commando&gt; [...]</translation>
+        <translation>gebruik: nounours &lt;commando&gt; [...]</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="641"/>
         <source>commands:</source>
-        <translation type="vanished">commando&apos;s:</translation>
+        <translation>commando&apos;s:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="662"/>
         <source>usage: %0 %1</source>
-        <translation type="vanished">gebruik: %0 %1</translation>
+        <translation>gebruik: %0 %1</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="663"/>
         <source>description:</source>
-        <translation type="vanished">beschrijving:</translation>
+        <translation>beschrijving:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="667"/>
         <source>advanced:</source>
-        <translation type="vanished">geavanceerd:</translation>
+        <translation>geavanceerd:</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="115"/>
         <source>invalid command &apos;%0&apos;</source>
-        <translation type="vanished">onjuist commando &apos;%0&apos;</translation>
+        <translation>onjuist commando &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="120"/>
         <source>invalid parameter &apos;%0&apos;</source>
-        <translation type="vanished">onjuiste parameter &apos;%0&apos;</translation>
+        <translation>onjuiste parameter &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="125"/>
         <source>&apos;%0&apos; requires parameters</source>
-        <translation type="vanished">&apos;%0&apos; vereist parameters</translation>
+        <translation>&apos;%0&apos; vereist parameters</translation>
     </message>
     <message>
         <source>Increase sub size</source>
@@ -1102,8 +1290,9 @@ Opmerking: Waarde moet tussen %0 en %1 zijn</translation>
         <translation type="vanished">Sluit nounours-player</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="572"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">Snelheid: %0x</translation>
+        <translation>Snelheid: %0x</translation>
     </message>
     <message>
         <source>mutes the audio</source>
@@ -1177,258 +1366,470 @@ Opmerking: Waarde moet tussen %0 en %1 zijn</translation>
 <context>
     <name>PreferencesDialog</name>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="vanished">Voorkeuren</translation>
+        <translation>Voorkeuren</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="249"/>
         <source>Player</source>
-        <translation type="vanished">Speler</translation>
+        <translation>Speler</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="269"/>
         <source>On Top</source>
-        <translation type="vanished">Boven andere vensters</translation>
+        <translation>Boven andere vensters</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="282"/>
         <source>&amp;When Playing</source>
-        <translation type="vanished">Nooit &amp;Tijdens Afspelen</translation>
+        <translation>Nooit &amp;Tijdens Afspelen</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="289"/>
         <source>&amp;Never</source>
-        <translation type="vanished">&amp;Nooit</translation>
+        <translation>&amp;Nooit</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="299"/>
         <source>Tray Icon</source>
-        <translation type="vanished">Balk Icoon</translation>
+        <translation>Balk Icoon</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="308"/>
         <source>&amp;Hide Popup</source>
-        <translation type="vanished">&amp;Verberg Melding</translation>
+        <translation>&amp;Verberg Melding</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="318"/>
         <source>Language</source>
-        <translation type="vanished">Taal</translation>
+        <translation>Taal</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="341"/>
         <source>Mouse Gesture</source>
-        <translation type="vanished">Muisgebaar</translation>
+        <translation>Muisgebaar</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="426"/>
+        <source>&amp;Use Mouse &amp;&amp; Touch Gestures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="433"/>
+        <source>&amp;Left Click to Toggle Play/Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="496"/>
+        <source>Key Bindings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="519"/>
+        <source>Prefix a command with &apos;mpv&apos; to make it run as an input command.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="587"/>
         <source>Key</source>
-        <translation type="vanished">Toets</translation>
+        <translation>Toets</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="592"/>
         <source>Command</source>
-        <translation type="vanished">Commando</translation>
+        <translation>Commando</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="597"/>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="679"/>
+        <source>Rese&amp;t All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="689"/>
+        <source>Video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="709"/>
         <source>&amp;Auto-Fit Window:</source>
-        <translation type="vanished">&amp;Vul Venster Automatisch:</translation>
+        <translation>&amp;Vul Venster Automatisch:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="720"/>
+        <source>50%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="725"/>
+        <source>75%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="730"/>
+        <source>100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="735"/>
+        <source>200%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="758"/>
         <source>Screenshot</source>
-        <translation type="vanished">Schermafbeelding</translation>
+        <translation>Schermafbeelding</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="764"/>
         <source>File Name Template:</source>
-        <translation type="vanished">Bestandsnaam Template:</translation>
+        <translation>Bestandsnaam Template:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="379"/>
         <source>Change Volume</source>
-        <translation type="vanished">Verander Volume</translation>
+        <translation>Verander Volume</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="405"/>
         <source>Seek Position</source>
-        <translation type="vanished">Zoek Positie</translation>
+        <translation>Zoek Positie</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="456"/>
         <source>History</source>
-        <translation type="vanished">Geschiedenis</translation>
+        <translation>Geschiedenis</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="464"/>
         <source>Remember &amp;recently opened files up to</source>
-        <translation type="vanished">Onthoud &amp;recent geopende bestanden tot</translation>
+        <translation>Onthoud &amp;recent geopende bestanden tot</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="483"/>
         <source>Remember playback &amp;position</source>
-        <translation type="vanished">Onthoud afspeel &amp;positie</translation>
+        <translation>Onthoud afspeel &amp;positie</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="775"/>
+        <source>jpg</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="780"/>
+        <source>png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="785"/>
+        <source>tga</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="793"/>
         <source>Chang&amp;e...</source>
-        <translation type="vanished">Verand&amp;er</translation>
+        <translation>Verand&amp;er</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="800"/>
         <source>File Format:</source>
-        <translation type="vanished">Bestandsformaat:</translation>
+        <translation>Bestandsformaat:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="810"/>
         <source>screenshot%#04n</source>
-        <translation type="vanished">schermafdruk%#04n</translation>
+        <translation>schermafdruk%#04n</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="817"/>
         <source>Default Save Location:</source>
-        <translation type="vanished">Standaard Opslaglocatie:</translation>
+        <translation>Standaard Opslaglocatie:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="64"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">Kies map voor schermafdrukken</translation>
+        <translation>Kies map voor schermafdrukken</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
+        <source>Reset All Key Bindings?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
+        <source>Are you sure you want to reset all shortcut keys to its original bindings?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.cpp" line="261"/>
         <source>Existing keybinding</source>
-        <translation type="vanished">Bestaande sneltoets</translation>
+        <translation>Bestaande sneltoets</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="262"/>
         <source>%0 is already being used. Would you like to change its function?</source>
-        <translation type="vanished">%0 is al in gebruik. Wilt u een andere functie toewijzen?</translation>
+        <translation>%0 is al in gebruik. Wilt u een andere functie toewijzen?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="275"/>
         <source>A&amp;lways</source>
-        <translation type="vanished">A&amp;ltijd</translation>
+        <translation>A&amp;ltijd</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="866"/>
+        <source>Always show the &amp;save window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="890"/>
         <source>Advanced</source>
-        <translation type="vanished">Geavanceerd</translation>
+        <translation>Geavanceerd</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="896"/>
+        <source>Command Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="902"/>
+        <source>mpv msg-level:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="913"/>
         <source>no</source>
-        <translation type="vanished">geen</translation>
+        <translation>geen</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="918"/>
         <source>fatal</source>
-        <translation type="vanished">fataal</translation>
+        <translation>fataal</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="923"/>
         <source>error</source>
-        <translation type="vanished">fout</translation>
+        <translation>fout</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="928"/>
         <source>warn</source>
-        <translation type="vanished">waarschuwing</translation>
+        <translation>waarschuwing</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="933"/>
+        <source>info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="938"/>
+        <source>status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="943"/>
+        <source>v</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="948"/>
+        <source>debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="953"/>
         <source>trace</source>
-        <translation type="vanished">traceer</translation>
+        <translation>traceer</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1016"/>
+        <source>&amp;OK</source>
+        <translation type="unfinished">&amp;OK</translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="1023"/>
         <source>&amp;Cancel</source>
-        <translation type="obsolete">&amp;Annuleren</translation>
+        <translation type="unfinished">&amp;Annuleren</translation>
     </message>
 </context>
 <context>
     <name>ScreenshotDialog</name>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="14"/>
         <source>Take Screenshot</source>
-        <translation type="vanished">Maak Schermafdruk</translation>
+        <translation>Maak Schermafdruk</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="117"/>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="127"/>
         <source>Save Location</source>
-        <translation type="vanished">Opslaglocatie</translation>
+        <translation>Opslaglocatie</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="134"/>
         <source>File Name Template</source>
-        <translation type="vanished">Bestandsnaam-template</translation>
+        <translation>Bestandsnaam-template</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="154"/>
+        <source>jpg</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="159"/>
+        <source>png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="164"/>
+        <source>tga</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="176"/>
         <source>Sho&amp;w subtitles</source>
-        <translation type="vanished">&amp;Weergeef ondertiteling</translation>
+        <translation>&amp;Weergeef ondertiteling</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="183"/>
         <source>Always show this dialog</source>
-        <translation type="vanished">Altijd dit venster tonen</translation>
+        <translation>Altijd dit venster tonen</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="212"/>
         <source>&amp;Save</source>
-        <translation type="vanished">&amp;Sla op</translation>
+        <translation>&amp;Sla op</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.cpp" line="26"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">Kies map voor schermafdrukken</translation>
+        <translation>Kies map voor schermafdrukken</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
+        <location filename="../ui/updatedialog.ui" line="14"/>
         <source>Check for Updates</source>
-        <translation type="vanished">Controleren voor Updates</translation>
+        <translation>Controleren voor Updates</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checking for updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controleren voor updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Controleren voor updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="156"/>
         <source>About 0 second(s) remaining</source>
-        <translation type="vanished">Ongeveer 0 second(en) resterend</translation>
+        <translation>Ongeveer 0 second(en) resterend</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="204"/>
+        <source>&amp;Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.ui" line="223"/>
         <source>&amp;Cancel</source>
-        <translation type="obsolete">&amp;Annuleren</translation>
+        <translation type="unfinished">&amp;Annuleren</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="22"/>
         <source>&amp;CLOSE</source>
-        <translation type="vanished">&amp;SLUITEN</translation>
+        <translation>&amp;SLUITEN</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="32"/>
         <source>Download Complete</source>
-        <translation type="vanished">Download Voltooid</translation>
+        <translation>Download Voltooid</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="67"/>
         <source>About %0 second(s) remaining</source>
-        <translation type="vanished">Ongeveer %0 second(en) resterend</translation>
+        <translation>Ongeveer %0 second(en) resterend</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="69"/>
         <source>Calculating...</source>
-        <translation type="vanished">Berekenen...</translation>
+        <translation>Berekenen...</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="129"/>
         <source>You have the latest version!</source>
-        <translation type="vanished">U heeft de meest recente versie!</translation>
+        <translation>U heeft de meest recente versie!</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="133"/>
         <source>Update Available!
 Version: %0</source>
-        <translation type="vanished">Update beschikbaar! Versie %0</translation>
+        <translation>Update beschikbaar! Versie %0</translation>
     </message>
 </context>
 <context>
     <name>UpdateManager</name>
     <message>
+        <location filename="../updatemanager.cpp" line="40"/>
         <source>Checking for updates...</source>
-        <translation type="vanished">Controleren voor updates...</translation>
+        <translation>Controleren voor updates...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="86"/>
         <source>Downloading update...</source>
-        <translation type="vanished">Update downloaden...</translation>
+        <translation>Update downloaden...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="93"/>
+        <source>fopen error
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="113"/>
         <source>write error</source>
-        <translation type="vanished">schrijffout</translation>
+        <translation>schrijffout</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="134"/>
         <source>Download complete</source>
-        <translation type="vanished">Download voltooid</translation>
+        <translation>Download voltooid</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="140"/>
         <source>Redirected...</source>
-        <translation type="vanished">Omgeschakeld...</translation>
+        <translation>Omgeschakeld...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="152"/>
         <source>Extracting...</source>
-        <translation type="vanished">Uitpakken...</translation>
+        <translation>Uitpakken...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="181"/>
         <source>Creating updater script...</source>
-        <translation type="vanished">Updaterscript maken...</translation>
+        <translation>Updaterscript maken...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="185"/>
         <source>Could not open file for writing...</source>
-        <translation type="vanished">Kan bestand niet openen om te bewerken...</translation>
+        <translation>Kan bestand niet openen om te bewerken...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="201"/>
         <source>Updating...</source>
-        <translation type="vanished">Updaten...</translation>
+        <translation>Updaten...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="209"/>
         <source>Done. Restarting...</source>
-        <translation type="vanished">Klaar. Herstarten...</translation>
+        <translation>Klaar. Herstarten...</translation>
     </message>
 </context>
 </TS>

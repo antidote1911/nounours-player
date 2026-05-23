@@ -4,84 +4,162 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="14"/>
         <source>About Nounours Player</source>
-        <translation type="obsolete">O Nounours Playeru</translation>
+        <translation type="unfinished">O Nounours Playeru</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="131"/>
         <source>About</source>
-        <translation type="obsolete">O programu</translation>
+        <translation type="unfinished">O programu</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="194"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.ui" line="208"/>
         <source>Credits</source>
-        <translation type="obsolete">Zasluge</translation>
+        <translation type="unfinished">Zasluge</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="271"/>
         <source>License</source>
-        <translation type="obsolete">Licenca</translation>
+        <translation type="unfinished">Licenca</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.ui" line="336"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>InputDialog</name>
     <message>
+        <location filename="../ui/inputdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="obsolete">Dijalog</translation>
+        <translation type="unfinished">Dijalog</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="70"/>
         <source>Please enter a value:</source>
-        <translation type="obsolete">Upišite vrijednost:</translation>
+        <translation type="unfinished">Upišite vrijednost:</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="117"/>
         <source>&amp;OK</source>
-        <translation type="obsolete">&amp;U REDU</translation>
+        <translation type="unfinished">&amp;U REDU</translation>
+    </message>
+    <message>
+        <location filename="../ui/inputdialog.ui" line="133"/>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>JumpDialog</name>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="obsolete">Dijalog</translation>
+        <translation type="unfinished">Dijalog</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="111"/>
         <source> hr</source>
-        <translation type="obsolete"> s</translation>
+        <translation type="unfinished"> s</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="129"/>
+        <location filename="../ui/jumpdialog.ui" line="160"/>
         <source>:</source>
-        <translation type="vanished">:</translation>
+        <translation>:</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="142"/>
         <source> min</source>
-        <translation type="obsolete"> min</translation>
+        <translation type="unfinished"> min</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="173"/>
         <source> sec</source>
-        <translation type="obsolete"> sek</translation>
+        <translation type="unfinished"> sek</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="189"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;U REDU</translation>
+        <translation>&amp;U REDU</translation>
     </message>
 </context>
 <context>
     <name>KeyDialog</name>
     <message>
+        <location filename="../ui/keydialog.ui" line="14"/>
         <source>Modify Shortcut Key</source>
-        <translation type="obsolete">Prilagodba prečaca tipkovnice</translation>
+        <translation type="unfinished">Prilagodba prečaca tipkovnice</translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="74"/>
+        <source>(optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="84"/>
+        <source>Shortcut:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="91"/>
+        <source>Command:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="98"/>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="122"/>
+        <source>C&amp;lear Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="129"/>
+        <source>Chang&amp;e</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="136"/>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="149"/>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>LocationDialog</name>
     <message>
+        <location filename="../ui/locationdialog.ui" line="14"/>
         <source>Open Location</source>
-        <translation type="obsolete">Otvori lokaciju</translation>
+        <translation type="unfinished">Otvori lokaciju</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="84"/>
+        <source>Paste copied link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/locationdialog.ui" line="118"/>
         <source>Type URL or location here</source>
-        <translation type="obsolete">Ovdje upišite URL ili lokaciju</translation>
+        <translation type="unfinished">Ovdje upišite URL ili lokaciju</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="137"/>
         <source>&amp;OK</source>
-        <translation type="obsolete">&amp;U REDU</translation>
+        <translation type="unfinished">&amp;U REDU</translation>
     </message>
 </context>
 <context>
@@ -268,6 +346,7 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1375"/>
+        <location filename="../ui/mainwindow.cpp" line="1241"/>
         <source>&amp;Play</source>
         <translation type="unfinished">&amp;Reproduciraj</translation>
     </message>
@@ -432,42 +511,76 @@
         <translation type="unfinished">&amp;Vrati zadano</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="219"/>
         <source>Playing</source>
-        <translation type="obsolete">Reprodukcija</translation>
+        <translation type="unfinished">Reprodukcija</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="221"/>
         <source>Paused</source>
-        <translation type="obsolete">Pauzirano</translation>
+        <translation type="unfinished">Pauzirano</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="365"/>
         <source>Sub</source>
-        <translation type="obsolete">Podnaslov</translation>
+        <translation type="unfinished">Podnaslov</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="377"/>
         <source>Audio</source>
-        <translation type="obsolete">Zvuk</translation>
+        <translation type="unfinished">Zvuk</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
+        <source>Subtitles visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
+        <source>Subtitles hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
+        <source>Muted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
+        <source>Unmuted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="1086"/>
+        <source>%0 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="1246"/>
         <source>&amp;Pause</source>
-        <translation type="obsolete">&amp;Pauza</translation>
+        <translation type="unfinished">&amp;Pauza</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="619"/>
         <source>Speed: %0x</source>
-        <translation type="obsolete">Brzina: %0x</translation>
+        <translation type="unfinished">Brzina: %0x</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="787"/>
         <source>Enter the file number you want to play:
 Note: Value must be from %0 - %1</source>
-        <translation type="obsolete">Upišite broj datoteke koju želite reproducirati:
+        <translation type="unfinished">Upišite broj datoteke koju želite reproducirati:
 Napomena: vrijednost mora biti %0 - %1</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="788"/>
         <source>Enter File Number</source>
-        <translation type="obsolete">Upišite broj datoteke</translation>
+        <translation type="unfinished">Upišite broj datoteke</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1080"/>
         <source>No selection</source>
-        <translation type="obsolete">Nema odabira</translation>
+        <translation type="unfinished">Nema odabira</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1300"/>
@@ -591,59 +704,252 @@ Napomena: vrijednost mora biti %0 - %1</translation>
 <context>
     <name>MpvHandler</name>
     <message>
+        <location filename="../mpvhandler.cpp" line="96"/>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="97"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="98"/>
         <source>File size</source>
-        <translation type="obsolete">Veličina datoteke</translation>
+        <translation type="unfinished">Veličina datoteke</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="99"/>
         <source>Date created</source>
-        <translation type="obsolete">Datum stvaranja</translation>
+        <translation type="unfinished">Datum stvaranja</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="100"/>
         <source>Media length</source>
-        <translation type="obsolete">Trajanje medija</translation>
+        <translation type="unfinished">Trajanje medija</translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="102"/>
+        <source>Video (x%0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="103"/>
+        <source>Video Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="104"/>
+        <source>Resolution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="107"/>
+        <source>FPS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="108"/>
+        <source>A/V Sync</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
+        <source>Bitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
+        <source>%0 kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="111"/>
+        <source>Audio (x%0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="112"/>
+        <source>Audio Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="113"/>
+        <source>Sample Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="114"/>
+        <source>Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="119"/>
+        <source>Chapters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="128"/>
+        <source>Metadata</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="193"/>
+        <source>Buffering...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="228"/>
+        <source>Your network is slow or stuck, please wait a bit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="247"/>
+        <source>File couldn&apos;t be opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="333"/>
+        <source>File does not exist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="393"/>
+        <source>File no longer exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="552"/>
+        <source>Volume: %0%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <source>Deinterlacing: %0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
+        <source>enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
+        <source>disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="688"/>
+        <source>Motion Interpolation: %0</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>NounoursEngine</name>
     <message>
+        <location filename="../nounourscommands.cpp" line="102"/>
         <source>Open Subtitle File</source>
-        <translation type="obsolete">Otvori datoteku podnaslova</translation>
+        <translation type="unfinished">Otvori datoteku podnaslova</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="103"/>
         <source>Subtitle Files</source>
-        <translation type="obsolete">Datoteka podnaslova</translation>
+        <translation type="unfinished">Datoteka podnaslova</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="117"/>
+        <source>Open Audio File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="314"/>
+        <source>DimDialog not supported on this platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="355"/>
         <source>http://nounoursplayer.u8sand.net/help.php</source>
-        <translation type="obsolete">http://nounoursplayer.u8sand.net/help.php</translation>
+        <translation type="unfinished">http://nounoursplayer.u8sand.net/help.php</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="388"/>
         <source>Open File</source>
-        <translation type="obsolete">Otvori datoteku</translation>
+        <translation type="unfinished">Otvori datoteku</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="389"/>
         <source>Media Files</source>
-        <translation type="obsolete">Medijska datoteka</translation>
+        <translation type="unfinished">Medijska datoteka</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="390"/>
         <source>Video Files</source>
-        <translation type="obsolete">Video datoteka</translation>
+        <translation type="unfinished">Video datoteka</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="587"/>
+        <source>Press ESC or double-click to leave full screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="607"/>
+        <source>Press %0 to show all controls again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="640"/>
+        <source>usage: nounours &lt;command&gt; [...]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="641"/>
+        <source>commands:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="662"/>
+        <source>usage: %0 %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="663"/>
+        <source>description:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="667"/>
+        <source>advanced:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="118"/>
+        <location filename="../nounourscommands.cpp" line="391"/>
         <source>Audio Files</source>
-        <translation type="obsolete">Zvučna datoteka</translation>
+        <translation type="unfinished">Zvučna datoteka</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>Dim Lights</source>
-        <translation type="obsolete">Zatamni osvjetljenje</translation>
+        <translation type="unfinished">Zatamni osvjetljenje</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>In order to dim the lights, the desktop compositor has to be enabled. This can be done through Window Manager Desktop.</source>
-        <translation type="obsolete">Za zatamnjenje osvjetljenja, kompozitor radne površine mora biti omogućen. Možete ga omogućiti u Upravitelju radne površine.</translation>
+        <translation type="unfinished">Za zatamnjenje osvjetljenja, kompozitor radne površine mora biti omogućen. Možete ga omogućiti u Upravitelju radne površine.</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="392"/>
+        <source>All Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>Fit Window: %0</source>
-        <translation type="obsolete">Prilagodi prozor: %0</translation>
+        <translation type="unfinished">Prilagodi prozor: %0</translation>
     </message>
     <message>
         <source>Increase sub size</source>
@@ -786,16 +1092,39 @@ Napomena: vrijednost mora biti %0 - %1</translation>
         <translation type="obsolete">Ukloni odabranu datoteku s popisa izvođanja</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="163"/>
         <source>Saved to &quot;%0&quot;, with subs</source>
-        <translation type="obsolete">Spremljano u &quot;%0&quot;, s podnaslovima</translation>
+        <translation type="unfinished">Spremljano u &quot;%0&quot;, s podnaslovima</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="165"/>
         <source>Saved to &quot;%0&quot;, without subs</source>
-        <translation type="obsolete">Spremljeno u &quot;%0&quot;, bez podnaslova</translation>
+        <translation type="unfinished">Spremljeno u &quot;%0&quot;, bez podnaslova</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
+        <source>To Current Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounourscommands.cpp" line="572"/>
         <source>Speed: %0x</source>
-        <translation type="obsolete">Brzina: %0x</translation>
+        <translation type="unfinished">Brzina: %0x</translation>
+    </message>
+    <message>
+        <location filename="../nounoursengine.cpp" line="115"/>
+        <source>invalid command &apos;%0&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounoursengine.cpp" line="120"/>
+        <source>invalid parameter &apos;%0&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../nounoursengine.cpp" line="125"/>
+        <source>&apos;%0&apos; requires parameters</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -865,221 +1194,472 @@ Napomena: vrijednost mora biti %0 - %1</translation>
 <context>
     <name>PreferencesDialog</name>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="obsolete">Osobitosti</translation>
+        <translation type="unfinished">Osobitosti</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="249"/>
         <source>Player</source>
-        <translation type="obsolete">Reproduktor</translation>
+        <translation type="unfinished">Reproduktor</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="269"/>
         <source>On Top</source>
-        <translation type="obsolete">Na vrhu</translation>
+        <translation type="unfinished">Na vrhu</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="275"/>
+        <source>A&amp;lways</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="282"/>
         <source>&amp;When Playing</source>
-        <translation type="obsolete">&amp;Tijekom reprodukcije</translation>
+        <translation type="unfinished">&amp;Tijekom reprodukcije</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="289"/>
         <source>&amp;Never</source>
-        <translation type="obsolete">&amp;Nikada</translation>
+        <translation type="unfinished">&amp;Nikada</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="299"/>
         <source>Tray Icon</source>
-        <translation type="obsolete">Ikona trake sustava</translation>
+        <translation type="unfinished">Ikona trake sustava</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="308"/>
         <source>&amp;Hide Popup</source>
-        <translation type="obsolete">&amp;Sakrij skočne prozore</translation>
+        <translation type="unfinished">&amp;Sakrij skočne prozore</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="318"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="379"/>
+        <source>Change Volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="405"/>
+        <source>Seek Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="426"/>
+        <source>&amp;Use Mouse &amp;&amp; Touch Gestures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="433"/>
+        <source>&amp;Left Click to Toggle Play/Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="456"/>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="464"/>
+        <source>Remember &amp;recently opened files up to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="483"/>
+        <source>Remember playback &amp;position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="496"/>
+        <source>Key Bindings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="519"/>
+        <source>Prefix a command with &apos;mpv&apos; to make it run as an input command.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="679"/>
+        <source>Rese&amp;t All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="689"/>
         <source>Video</source>
-        <translation type="vanished">Video</translation>
+        <translation>Video</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="709"/>
         <source>&amp;Auto-Fit Window:</source>
-        <translation type="obsolete">&amp;Automatska prilagodba prozora:</translation>
+        <translation type="unfinished">&amp;Automatska prilagodba prozora:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="720"/>
         <source>50%</source>
-        <translation type="vanished">50%</translation>
+        <translation>50%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="725"/>
         <source>75%</source>
-        <translation type="vanished">75%</translation>
+        <translation>75%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="730"/>
         <source>100%</source>
-        <translation type="vanished">100%</translation>
+        <translation>100%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="735"/>
         <source>200%</source>
-        <translation type="vanished">200%</translation>
+        <translation>200%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="758"/>
         <source>Screenshot</source>
-        <translation type="obsolete">Snimka zaslona</translation>
+        <translation type="unfinished">Snimka zaslona</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="793"/>
+        <source>Chang&amp;e...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="800"/>
         <source>File Format:</source>
-        <translation type="obsolete">Format datoteke:</translation>
+        <translation type="unfinished">Format datoteke:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="866"/>
+        <source>Always show the &amp;save window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="890"/>
+        <source>Advanced</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="896"/>
+        <source>Command Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="902"/>
+        <source>mpv msg-level:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="913"/>
+        <source>no</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="918"/>
+        <source>fatal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="923"/>
+        <source>error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="928"/>
+        <source>warn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="933"/>
+        <source>info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="938"/>
+        <source>status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="943"/>
+        <source>v</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="948"/>
+        <source>debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="953"/>
+        <source>trace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="1023"/>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="775"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="780"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="785"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="764"/>
         <source>File Name Template:</source>
-        <translation type="obsolete">Predložak naziva datoteke:</translation>
+        <translation type="unfinished">Predložak naziva datoteke:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="817"/>
         <source>Default Save Location:</source>
-        <translation type="obsolete">Uobičajena lokacija spremanja:</translation>
+        <translation type="unfinished">Uobičajena lokacija spremanja:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="810"/>
         <source>screenshot%#04n</source>
-        <translation type="obsolete">snimak zaslona%#04n</translation>
+        <translation type="unfinished">snimak zaslona%#04n</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="64"/>
         <source>Choose screenshot directory</source>
-        <translation type="obsolete">Odaberi direktorij snimaka zaslona</translation>
+        <translation type="unfinished">Odaberi direktorij snimaka zaslona</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="341"/>
         <source>Mouse Gesture</source>
-        <translation type="obsolete">Geste miša</translation>
+        <translation type="unfinished">Geste miša</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="587"/>
         <source>Key</source>
-        <translation type="obsolete">Tipka</translation>
+        <translation type="unfinished">Tipka</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="592"/>
         <source>Command</source>
-        <translation type="obsolete">Naredba</translation>
+        <translation type="unfinished">Naredba</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="597"/>
         <source>Label</source>
-        <translation type="obsolete">Oznaka</translation>
+        <translation type="unfinished">Oznaka</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
+        <source>Reset All Key Bindings?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
+        <source>Are you sure you want to reset all shortcut keys to its original bindings?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.cpp" line="261"/>
         <source>Existing keybinding</source>
-        <translation type="obsolete">Postojeći prečaci tipkovnice</translation>
+        <translation type="unfinished">Postojeći prečaci tipkovnice</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="262"/>
         <source>%0 is already being used. Would you like to change its function?</source>
-        <translation type="obsolete">%0 se već koristi. Želite li promijeniti njegovu funkciju?</translation>
+        <translation type="unfinished">%0 se već koristi. Želite li promijeniti njegovu funkciju?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1016"/>
         <source>&amp;OK</source>
-        <translation type="obsolete">&amp;U REDU</translation>
+        <translation type="unfinished">&amp;U REDU</translation>
     </message>
 </context>
 <context>
     <name>ScreenshotDialog</name>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="14"/>
         <source>Take Screenshot</source>
-        <translation type="obsolete">Snimka zaslona</translation>
+        <translation type="unfinished">Snimka zaslona</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="117"/>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="127"/>
         <source>Save Location</source>
-        <translation type="obsolete">Lokacija spremanja</translation>
+        <translation type="unfinished">Lokacija spremanja</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="134"/>
         <source>File Name Template</source>
-        <translation type="obsolete">Predložak naziva datoteke</translation>
+        <translation type="unfinished">Predložak naziva datoteke</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="154"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="159"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="164"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="176"/>
         <source>Sho&amp;w subtitles</source>
-        <translation type="obsolete">Pri&amp;kaži podnaslov</translation>
+        <translation type="unfinished">Pri&amp;kaži podnaslov</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="183"/>
         <source>Always show this dialog</source>
-        <translation type="obsolete">Uvijek prikaži ovaj dijalog</translation>
+        <translation type="unfinished">Uvijek prikaži ovaj dijalog</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="212"/>
+        <source>&amp;Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.cpp" line="26"/>
         <source>Choose screenshot directory</source>
-        <translation type="obsolete">Odaberite direktorij snimki zaslona</translation>
+        <translation type="unfinished">Odaberite direktorij snimki zaslona</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
+        <location filename="../ui/updatedialog.ui" line="14"/>
         <source>Check for Updates</source>
-        <translation type="obsolete">Provjeravanje nadopuna</translation>
+        <translation type="unfinished">Provjeravanje nadopuna</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checking for updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Provjeravanje nadopuna...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Provjeravanje nadopuna...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="156"/>
         <source>About 0 second(s) remaining</source>
-        <translation type="obsolete">Oko 0 sekundi preostalo</translation>
+        <translation type="unfinished">Oko 0 sekundi preostalo</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="204"/>
+        <source>&amp;Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.ui" line="223"/>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="22"/>
         <source>&amp;CLOSE</source>
-        <translation type="obsolete">&amp;ZATVORI</translation>
+        <translation type="unfinished">&amp;ZATVORI</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="129"/>
         <source>You have the latest version!</source>
-        <translation type="obsolete">Imate najnoviju inačicu!</translation>
+        <translation type="unfinished">Imate najnoviju inačicu!</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="133"/>
         <source>Update Available!
 Version: %0</source>
-        <translation type="obsolete">Dostupna nadopuna!
+        <translation type="unfinished">Dostupna nadopuna!
 Inačica: %0</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="32"/>
         <source>Download Complete</source>
-        <translation type="obsolete">Preuzimanje završeno</translation>
+        <translation type="unfinished">Preuzimanje završeno</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="67"/>
         <source>About %0 second(s) remaining</source>
-        <translation type="obsolete">Oko %0 sekunda(i) preostalo</translation>
+        <translation type="unfinished">Oko %0 sekunda(i) preostalo</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="69"/>
         <source>Calculating...</source>
-        <translation type="obsolete">Izračunavanje...</translation>
+        <translation type="unfinished">Izračunavanje...</translation>
     </message>
 </context>
 <context>
     <name>UpdateManager</name>
     <message>
+        <location filename="../updatemanager.cpp" line="40"/>
+        <source>Checking for updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="86"/>
+        <source>Downloading update...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="93"/>
         <source>fopen error
 </source>
-        <translation type="obsolete">greška otvaranja
+        <translation type="unfinished">greška otvaranja
 </translation>
     </message>
     <message>
-        <source>Could not open file for writing...</source>
-        <translation type="obsolete">Nemoguće otvaranje datoteke zapisivanja...</translation>
+        <location filename="../updatemanager.cpp" line="113"/>
+        <source>write error</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="134"/>
+        <source>Download complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="140"/>
+        <source>Redirected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="152"/>
+        <source>Extracting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="181"/>
+        <source>Creating updater script...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="185"/>
+        <source>Could not open file for writing...</source>
+        <translation type="unfinished">Nemoguće otvaranje datoteke zapisivanja...</translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="201"/>
         <source>Updating...</source>
-        <translation type="obsolete">Nadopunavanje...</translation>
+        <translation type="unfinished">Nadopunavanje...</translation>
+    </message>
+    <message>
+        <location filename="../updatemanager.cpp" line="209"/>
+        <source>Done. Restarting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

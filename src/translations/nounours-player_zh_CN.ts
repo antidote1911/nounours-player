@@ -4,128 +4,162 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="14"/>
         <source>About Nounours Player</source>
-        <translation type="vanished">关于 Nounours Player</translation>
+        <translation>关于 Nounours Player</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="131"/>
         <source>About</source>
-        <translation type="vanished">关于</translation>
+        <translation>关于</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="336"/>
         <source>&amp;Close</source>
-        <translation type="vanished">关闭</translation>
+        <translation>关闭</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="208"/>
         <source>Credits</source>
-        <translation type="vanished">贡献名单</translation>
+        <translation>贡献名单</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="271"/>
         <source>License</source>
-        <translation type="vanished">许可证</translation>
+        <translation>许可证</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt;是一个自由开源跨平台的基于 &lt;b&gt;libmpv&lt;/b&gt;的多媒体播放器。简单的设计致力于为观看视频提供一个整洁，简单，愉快的环境。&lt;br&gt;&lt;br&gt;Copyright © 2015 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2016 ?} {8s?} {8s?} {008098;?} {8s?}</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt;是一个自由开源跨平台的基于 &lt;b&gt;libmpv&lt;/b&gt;的多媒体播放器。简单的设计致力于为观看视频提供一个整洁，简单，愉快的环境。&lt;br&gt;&lt;br&gt;Copyright © 2015 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2016 ?} {8s?} {8s?} {008098;?} {8s?}</translation>
     </message>
 </context>
 <context>
     <name>InputDialog</name>
     <message>
+        <location filename="../ui/inputdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">对话框</translation>
+        <translation>对话框</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="70"/>
         <source>Please enter a value:</source>
-        <translation type="vanished">请输入一个值:</translation>
+        <translation>请输入一个值:</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="117"/>
         <source>&amp;OK</source>
-        <translation type="vanished">确定(&amp;O)</translation>
+        <translation>确定(&amp;O)</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="133"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
     <name>JumpDialog</name>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">对话框</translation>
+        <translation>对话框</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="111"/>
         <source> hr</source>
-        <translation type="vanished">时</translation>
+        <translation>时</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="129"/>
+        <location filename="../ui/jumpdialog.ui" line="160"/>
         <source>:</source>
-        <translation type="vanished">:</translation>
+        <translation>:</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="142"/>
         <source> min</source>
-        <translation type="vanished">分</translation>
+        <translation>分</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="173"/>
         <source> sec</source>
-        <translation type="vanished">秒</translation>
+        <translation>秒</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="189"/>
         <source>&amp;OK</source>
-        <translation type="vanished">确定(&amp;O)</translation>
+        <translation>确定(&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>KeyDialog</name>
     <message>
+        <location filename="../ui/keydialog.ui" line="14"/>
         <source>Modify Shortcut Key</source>
-        <translation type="vanished">修改快捷键</translation>
+        <translation>修改快捷键</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="74"/>
         <source>(optional)</source>
-        <translation type="vanished">(可选)</translation>
+        <translation>(可选)</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="84"/>
         <source>Shortcut:</source>
-        <translation type="vanished">快捷键</translation>
+        <translation>快捷键</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="91"/>
         <source>Command:</source>
-        <translation type="vanished">命令</translation>
+        <translation>命令</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="98"/>
         <source>Label:</source>
-        <translation type="vanished">标签</translation>
+        <translation>标签</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="122"/>
+        <source>C&amp;lear Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="129"/>
         <source>Chang&amp;e</source>
-        <translation type="vanished">更改</translation>
+        <translation>更改</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="136"/>
         <source>&amp;Add</source>
-        <translation type="vanished">添加</translation>
+        <translation>添加</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="149"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
     <name>LocationDialog</name>
     <message>
+        <location filename="../ui/locationdialog.ui" line="14"/>
         <source>Open Location</source>
-        <translation type="vanished">打开位置</translation>
+        <translation>打开位置</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="84"/>
         <source>Paste copied link</source>
-        <translation type="vanished">粘贴已复制的链接</translation>
+        <translation>粘贴已复制的链接</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="118"/>
         <source>Type URL or location here</source>
-        <translation type="vanished">请输入URL</translation>
+        <translation>请输入URL</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="137"/>
         <source>&amp;OK</source>
-        <translation type="vanished">确定(&amp;O)</translation>
+        <translation>确定(&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -410,6 +444,7 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1375"/>
+        <location filename="../ui/mainwindow.cpp" line="1241"/>
         <source>&amp;Play</source>
         <translation>播放(&amp;P)</translation>
     </message>
@@ -574,58 +609,76 @@
         <translation>重置(&amp;R)</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="219"/>
         <source>Playing</source>
-        <translation type="vanished">播放</translation>
+        <translation>播放</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="221"/>
         <source>Paused</source>
-        <translation type="vanished">暂停</translation>
+        <translation>暂停</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="365"/>
         <source>Sub</source>
-        <translation type="vanished">字幕</translation>
+        <translation>字幕</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="377"/>
         <source>Audio</source>
-        <translation type="vanished">音频</translation>
+        <translation>音频</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles visible</source>
-        <translation type="vanished">显示字幕</translation>
+        <translation>显示字幕</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles hidden</source>
-        <translation type="vanished">隐藏字幕</translation>
+        <translation>隐藏字幕</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Muted</source>
-        <translation type="vanished">静音</translation>
+        <translation>静音</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Unmuted</source>
-        <translation type="vanished">解除静音</translation>
+        <translation>解除静音</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1086"/>
+        <source>%0 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="1246"/>
         <source>&amp;Pause</source>
-        <translation type="vanished">暂停(&amp;P)</translation>
+        <translation>暂停(&amp;P)</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="787"/>
         <source>Enter the file number you want to play:
 Note: Value must be from %0 - %1</source>
-        <translation type="vanished">输入你想要播放的文件编号:
+        <translation>输入你想要播放的文件编号:
 注意: 编号必须在以下范围%0 - %1</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="788"/>
         <source>Enter File Number</source>
-        <translation type="vanished">输入文件编号</translation>
+        <translation>输入文件编号</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1080"/>
         <source>No selection</source>
-        <translation type="vanished">无选择</translation>
+        <translation>无选择</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="619"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">速度: %0x</translation>
+        <translation>速度: %0x</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1686"/>
@@ -667,155 +720,207 @@ Note: Value must be from %0 - %1</source>
 <context>
     <name>MpvHandler</name>
     <message>
+        <location filename="../mpvhandler.cpp" line="96"/>
         <source>File</source>
-        <translation type="vanished">文件</translation>
+        <translation>文件</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="97"/>
         <source>Title</source>
-        <translation type="vanished">标题</translation>
+        <translation>标题</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="98"/>
         <source>File size</source>
-        <translation type="vanished">文件大小</translation>
+        <translation>文件大小</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="99"/>
         <source>Date created</source>
-        <translation type="vanished">创建时间</translation>
+        <translation>创建时间</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="100"/>
         <source>Media length</source>
-        <translation type="vanished">媒体时长</translation>
+        <translation>媒体时长</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="102"/>
         <source>Video (x%0)</source>
-        <translation type="vanished">视频 (x%0)</translation>
+        <translation>视频 (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="103"/>
         <source>Video Output</source>
-        <translation type="vanished">视频输出</translation>
+        <translation>视频输出</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="104"/>
         <source>Resolution</source>
-        <translation type="vanished">分辨率</translation>
+        <translation>分辨率</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="107"/>
         <source>FPS</source>
-        <translation type="vanished">FPS</translation>
+        <translation>FPS</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="108"/>
+        <source>A/V Sync</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
+        <source>%0 kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="111"/>
         <source>Audio (x%0)</source>
-        <translation type="vanished">音频 (x%0)</translation>
+        <translation>音频 (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="112"/>
         <source>Audio Output</source>
-        <translation type="vanished">音频输出</translation>
+        <translation>音频输出</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="113"/>
         <source>Sample Rate</source>
-        <translation type="vanished">采样率</translation>
+        <translation>采样率</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="119"/>
         <source>Chapters</source>
-        <translation type="vanished">章节</translation>
+        <translation>章节</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="128"/>
         <source>Metadata</source>
-        <translation type="vanished">元数据</translation>
+        <translation>元数据</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="193"/>
         <source>Buffering...</source>
-        <translation type="vanished">正在缓冲</translation>
+        <translation>正在缓冲</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="228"/>
         <source>Your network is slow or stuck, please wait a bit</source>
-        <translation type="vanished">你的网络速度较慢，请稍后片刻</translation>
+        <translation>你的网络速度较慢，请稍后片刻</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="247"/>
         <source>File couldn&apos;t be opened</source>
-        <translation type="vanished">文件无法打开</translation>
+        <translation>文件无法打开</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
         <source>Deinterlacing: %0</source>
-        <translation type="vanished">反交错：%0</translation>
+        <translation>反交错：%0</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>enabled</source>
-        <translation type="vanished">开启</translation>
+        <translation>开启</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>disabled</source>
-        <translation type="vanished">关闭</translation>
+        <translation>关闭</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>Motion Interpolation: %0</source>
-        <translation type="vanished">运动插值：%0</translation>
+        <translation>运动插值：%0</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
         <source>Bitrate</source>
-        <translation type="vanished">比特率</translation>
+        <translation>比特率</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="114"/>
         <source>Channels</source>
-        <translation type="vanished">频道</translation>
+        <translation>频道</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="333"/>
         <source>File does not exist</source>
-        <translation type="vanished">文件不存在</translation>
+        <translation>文件不存在</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="393"/>
         <source>File no longer exists</source>
-        <translation type="vanished">文件已不存在</translation>
+        <translation>文件已不存在</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="552"/>
         <source>Volume: %0%</source>
-        <translation type="vanished">音量: %0%</translation>
+        <translation>音量: %0%</translation>
     </message>
 </context>
 <context>
     <name>NounoursEngine</name>
     <message>
+        <location filename="../nounourscommands.cpp" line="388"/>
         <source>Open File</source>
-        <translation type="vanished">打开文件</translation>
+        <translation>打开文件</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="389"/>
         <source>Media Files</source>
-        <translation type="vanished">媒体文件</translation>
+        <translation>媒体文件</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="390"/>
         <source>Video Files</source>
-        <translation type="vanished">视频文件</translation>
+        <translation>视频文件</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="118"/>
+        <location filename="../nounourscommands.cpp" line="391"/>
         <source>Audio Files</source>
-        <translation type="vanished">音频文件</translation>
+        <translation>音频文件</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>Fit Window: %0</source>
-        <translation type="vanished">适应窗口: %0</translation>
+        <translation>适应窗口: %0</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="102"/>
         <source>Open Subtitle File</source>
-        <translation type="vanished">打开字幕文件</translation>
+        <translation>打开字幕文件</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="103"/>
         <source>Subtitle Files</source>
-        <translation type="vanished">字幕文件</translation>
+        <translation>字幕文件</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="117"/>
         <source>Open Audio File</source>
-        <translation type="vanished">打开音频文件</translation>
+        <translation>打开音频文件</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="355"/>
         <source>http://nounoursplayer.u8sand.net/help.php</source>
-        <translation type="vanished">http://nounoursplayer.u8sand.net/help.php</translation>
+        <translation>http://nounoursplayer.u8sand.net/help.php</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>Dim Lights</source>
-        <translation type="vanished">昏暗灯光</translation>
+        <translation>昏暗灯光</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>In order to dim the lights, the desktop compositor has to be enabled. This can be done through Window Manager Desktop.</source>
-        <translation type="vanished">为了开启黯淡桌面功能,桌面混成需要开启，可以通过窗口管理进行设置。</translation>
+        <translation>为了开启黯淡桌面功能,桌面混成需要开启，可以通过窗口管理进行设置。</translation>
     </message>
     <message>
         <source>Increase sub size</source>
@@ -986,68 +1091,84 @@ Note: Value must be from %0 - %1</source>
         <translation type="vanished">把选中文件移出播放列表</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="163"/>
         <source>Saved to &quot;%0&quot;, with subs</source>
-        <translation type="vanished">保存到 &quot;%0&quot;, 附带字幕</translation>
+        <translation>保存到 &quot;%0&quot;, 附带字幕</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="165"/>
         <source>Saved to &quot;%0&quot;, without subs</source>
-        <translation type="vanished">保存到 &quot;%0&quot;, 不附带字幕</translation>
+        <translation>保存到 &quot;%0&quot;, 不附带字幕</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="314"/>
         <source>DimDialog not supported on this platform</source>
-        <translation type="vanished">此平台不支持昏暗灯光</translation>
+        <translation>此平台不支持昏暗灯光</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="392"/>
         <source>All Files</source>
-        <translation type="vanished">所有文件</translation>
+        <translation>所有文件</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>To Current Size</source>
-        <translation type="vanished">到目前大小</translation>
+        <translation>到目前大小</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="572"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">速度: %0x</translation>
+        <translation>速度: %0x</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="587"/>
         <source>Press ESC or double-click to leave full screen</source>
-        <translation type="vanished">按下 ESC 或 双击 以离开全屏</translation>
+        <translation>按下 ESC 或 双击 以离开全屏</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="607"/>
         <source>Press %0 to show all controls again</source>
-        <translation type="vanished">按下 %0 以显示所有控制项</translation>
+        <translation>按下 %0 以显示所有控制项</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="640"/>
         <source>usage: nounours &lt;command&gt; [...]</source>
-        <translation type="vanished">用法: nounours &lt;command&gt; [...]</translation>
+        <translation>用法: nounours &lt;command&gt; [...]</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="641"/>
         <source>commands:</source>
-        <translation type="vanished">命令:</translation>
+        <translation>命令:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="662"/>
         <source>usage: %0 %1</source>
-        <translation type="vanished">用法: %0 %1</translation>
+        <translation>用法: %0 %1</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="663"/>
         <source>description:</source>
-        <translation type="vanished">描述</translation>
+        <translation>描述</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="667"/>
         <source>advanced:</source>
-        <translation type="vanished">高级:</translation>
+        <translation>高级:</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="115"/>
         <source>invalid command &apos;%0&apos;</source>
-        <translation type="vanished">无效命令 &apos;%0&apos;</translation>
+        <translation>无效命令 &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="120"/>
         <source>invalid parameter &apos;%0&apos;</source>
-        <translation type="vanished">无效参数:&apos;%0&apos;</translation>
+        <translation>无效参数:&apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="125"/>
         <source>&apos;%0&apos; requires parameters</source>
-        <translation type="vanished">&apos;%0&apos; 需要参数</translation>
+        <translation>&apos;%0&apos; 需要参数</translation>
     </message>
     <message>
         <source>executes mpv command</source>
@@ -1281,340 +1402,471 @@ Note: Value must be from %0 - %1</source>
 <context>
     <name>PreferencesDialog</name>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="vanished">首选项</translation>
+        <translation>首选项</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="249"/>
         <source>Player</source>
-        <translation type="vanished">播放器</translation>
+        <translation>播放器</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="269"/>
         <source>On Top</source>
-        <translation type="vanished">窗口置顶</translation>
+        <translation>窗口置顶</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="282"/>
         <source>&amp;When Playing</source>
-        <translation type="vanished">&amp;播放时置顶</translation>
+        <translation>&amp;播放时置顶</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="289"/>
         <source>&amp;Never</source>
-        <translation type="vanished">&amp;从不置顶</translation>
+        <translation>&amp;从不置顶</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="299"/>
         <source>Tray Icon</source>
-        <translation type="vanished">托盘图标</translation>
+        <translation>托盘图标</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="308"/>
         <source>&amp;Hide Popup</source>
-        <translation type="vanished">&amp;隐藏弹出</translation>
+        <translation>&amp;隐藏弹出</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="433"/>
+        <source>&amp;Left Click to Toggle Play/Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="496"/>
         <source>Key Bindings</source>
-        <translation type="vanished">快捷键</translation>
+        <translation>快捷键</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="689"/>
         <source>Video</source>
-        <translation type="vanished">视频</translation>
+        <translation>视频</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="709"/>
         <source>&amp;Auto-Fit Window:</source>
-        <translation type="vanished">&amp;自动适应窗口:</translation>
+        <translation>&amp;自动适应窗口:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="720"/>
         <source>50%</source>
-        <translation type="vanished">50%</translation>
+        <translation>50%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="725"/>
         <source>75%</source>
-        <translation type="vanished">75%</translation>
+        <translation>75%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="730"/>
         <source>100%</source>
-        <translation type="vanished">100%</translation>
+        <translation>100%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="735"/>
         <source>200%</source>
-        <translation type="vanished">200%</translation>
+        <translation>200%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="758"/>
         <source>Screenshot</source>
-        <translation type="vanished">截图</translation>
+        <translation>截图</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="793"/>
         <source>Chang&amp;e...</source>
-        <translation type="vanished">更改</translation>
+        <translation>更改</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="800"/>
         <source>File Format:</source>
-        <translation type="vanished">图片格式:</translation>
+        <translation>图片格式:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="775"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="318"/>
         <source>Language</source>
-        <translation type="vanished">语言</translation>
+        <translation>语言</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="379"/>
         <source>Change Volume</source>
-        <translation type="vanished">改变音量</translation>
+        <translation>改变音量</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="405"/>
         <source>Seek Position</source>
-        <translation type="vanished">改变播放位置</translation>
+        <translation>改变播放位置</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="426"/>
         <source>&amp;Use Mouse &amp;&amp; Touch Gestures</source>
-        <translation type="vanished">启用鼠标手势支持</translation>
+        <translation>启用鼠标手势支持</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="456"/>
         <source>History</source>
-        <translation type="vanished">历史</translation>
+        <translation>历史</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="464"/>
         <source>Remember &amp;recently opened files up to</source>
-        <translation type="vanished">记住最近播放的文件个数</translation>
+        <translation>记住最近播放的文件个数</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="483"/>
         <source>Remember playback &amp;position</source>
-        <translation type="vanished">记住播放位置</translation>
+        <translation>记住播放位置</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="519"/>
         <source>Prefix a command with &apos;mpv&apos; to make it run as an input command.</source>
-        <translation type="vanished">在一个命令前面加上&apos;mpv&apos;以让它作为一个输入命令运行</translation>
+        <translation>在一个命令前面加上&apos;mpv&apos;以让它作为一个输入命令运行</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="679"/>
         <source>Rese&amp;t All</source>
-        <translation type="vanished">重置所有快捷键</translation>
+        <translation>重置所有快捷键</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="780"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="785"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="764"/>
         <source>File Name Template:</source>
-        <translation type="vanished">文件名模板：</translation>
+        <translation>文件名模板：</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="817"/>
         <source>Default Save Location:</source>
-        <translation type="vanished">默认保存目录:</translation>
+        <translation>默认保存目录:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="810"/>
         <source>screenshot%#04n</source>
-        <translation type="vanished">screenshot%#04n</translation>
+        <translation>screenshot%#04n</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="64"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">选择截图目录</translation>
+        <translation>选择截图目录</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="341"/>
         <source>Mouse Gesture</source>
-        <translation type="vanished">鼠标手势</translation>
+        <translation>鼠标手势</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="587"/>
         <source>Key</source>
-        <translation type="vanished">快捷键</translation>
+        <translation>快捷键</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="592"/>
         <source>Command</source>
-        <translation type="vanished">命令</translation>
+        <translation>命令</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="597"/>
         <source>Label</source>
-        <translation type="vanished">标签</translation>
+        <translation>标签</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Reset All Key Bindings?</source>
-        <translation type="vanished">重置所有快捷键？</translation>
+        <translation>重置所有快捷键？</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Are you sure you want to reset all shortcut keys to its original bindings?</source>
-        <translation type="vanished">确定要将所有快捷键恢复到初始设置吗？</translation>
+        <translation>确定要将所有快捷键恢复到初始设置吗？</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="261"/>
         <source>Existing keybinding</source>
-        <translation type="vanished">现有快捷键</translation>
+        <translation>现有快捷键</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="262"/>
         <source>%0 is already being used. Would you like to change its function?</source>
-        <translation type="vanished">%0正在使用，是否更改其函数？</translation>
+        <translation>%0正在使用，是否更改其函数？</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="275"/>
         <source>A&amp;lways</source>
-        <translation type="vanished">总是置顶</translation>
+        <translation>总是置顶</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="866"/>
         <source>Always show the &amp;save window</source>
-        <translation type="vanished">总是显示保存对话框</translation>
+        <translation>总是显示保存对话框</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="890"/>
         <source>Advanced</source>
-        <translation type="vanished">高级</translation>
+        <translation>高级</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="896"/>
         <source>Command Line</source>
-        <translation type="vanished">命令行</translation>
+        <translation>命令行</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="902"/>
         <source>mpv msg-level:</source>
-        <translation type="vanished">mpv日志等级:</translation>
+        <translation>mpv日志等级:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="913"/>
+        <source>no</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="918"/>
+        <source>fatal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="923"/>
+        <source>error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="928"/>
+        <source>warn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="933"/>
+        <source>info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="938"/>
+        <source>status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="943"/>
+        <source>v</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="948"/>
+        <source>debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="953"/>
+        <source>trace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="1016"/>
         <source>&amp;OK</source>
-        <translation type="vanished">确定</translation>
+        <translation>确定</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1023"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">取消</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
     <name>ScreenshotDialog</name>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="14"/>
         <source>Take Screenshot</source>
-        <translation type="vanished">截图</translation>
+        <translation>截图</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="117"/>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="127"/>
         <source>Save Location</source>
-        <translation type="vanished">保存目录</translation>
+        <translation>保存目录</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="134"/>
         <source>File Name Template</source>
-        <translation type="vanished">文件名模板</translation>
+        <translation>文件名模板</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="154"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="159"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="164"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="176"/>
         <source>Sho&amp;w subtitles</source>
-        <translation type="vanished">显示字幕(&amp;W)</translation>
+        <translation>显示字幕(&amp;W)</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="183"/>
         <source>Always show this dialog</source>
-        <translation type="vanished">总是显示此对话框</translation>
+        <translation>总是显示此对话框</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="212"/>
         <source>&amp;Save</source>
-        <translation type="vanished">保存</translation>
+        <translation>保存</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.cpp" line="26"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">选择截图目录</translation>
+        <translation>选择截图目录</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
+        <location filename="../ui/updatedialog.ui" line="14"/>
         <source>Check for Updates</source>
-        <translation type="vanished">检查更新</translation>
+        <translation>检查更新</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checking for updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;正在检查更新...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;正在检查更新...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="156"/>
         <source>About 0 second(s) remaining</source>
-        <translation type="vanished">剩余大约 0 秒</translation>
+        <translation>剩余大约 0 秒</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="204"/>
         <source>&amp;Update</source>
-        <translation type="vanished">更新</translation>
+        <translation>更新</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="223"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="22"/>
         <source>&amp;CLOSE</source>
-        <translation type="vanished">&amp;关闭(&amp;C)</translation>
+        <translation>&amp;关闭(&amp;C)</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="129"/>
         <source>You have the latest version!</source>
-        <translation type="vanished">已经是最新版本!</translation>
+        <translation>已经是最新版本!</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="133"/>
         <source>Update Available!
 Version: %0</source>
-        <translation type="vanished">有可用更新!
+        <translation>有可用更新!
 版本: %0</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="67"/>
         <source>About %0 second(s) remaining</source>
-        <translation type="vanished">剩余大约 %0 秒</translation>
+        <translation>剩余大约 %0 秒</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="32"/>
         <source>Download Complete</source>
-        <translation type="vanished">下载完成</translation>
+        <translation>下载完成</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="69"/>
         <source>Calculating...</source>
-        <translation type="vanished">计算中...</translation>
+        <translation>计算中...</translation>
     </message>
 </context>
 <context>
     <name>UpdateManager</name>
     <message>
+        <location filename="../updatemanager.cpp" line="93"/>
         <source>fopen error
 </source>
-        <translation type="vanished">打开文件失败</translation>
+        <translation>打开文件失败</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="152"/>
         <source>Extracting...</source>
-        <translation type="vanished">正在解压</translation>
+        <translation>正在解压</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="185"/>
         <source>Could not open file for writing...</source>
-        <translation type="vanished">无法打开文件以写入</translation>
+        <translation>无法打开文件以写入</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="201"/>
         <source>Updating...</source>
-        <translation type="vanished">正在更新...</translation>
+        <translation>正在更新...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="40"/>
         <source>Checking for updates...</source>
-        <translation type="vanished">正在检查更新...</translation>
+        <translation>正在检查更新...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="86"/>
         <source>Downloading update...</source>
-        <translation type="vanished">正在下载更新...</translation>
+        <translation>正在下载更新...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="113"/>
         <source>write error</source>
-        <translation type="vanished">写入错误</translation>
+        <translation>写入错误</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="134"/>
         <source>Download complete</source>
-        <translation type="vanished">下载完成</translation>
+        <translation>下载完成</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="140"/>
         <source>Redirected...</source>
-        <translation type="vanished">重定向...</translation>
+        <translation>重定向...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="181"/>
         <source>Creating updater script...</source>
-        <translation type="vanished">正在创建更新脚本...</translation>
+        <translation>正在创建更新脚本...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="209"/>
         <source>Done. Restarting...</source>
-        <translation type="vanished">完成,正在重新启动...</translation>
+        <translation>完成,正在重新启动...</translation>
     </message>
 </context>
 </TS>

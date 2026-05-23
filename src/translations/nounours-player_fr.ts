@@ -4,104 +4,162 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="14"/>
         <source>About Nounours Player</source>
-        <translation type="vanished">À propos de Nounours Player</translation>
+        <translation>À propos de Nounours Player</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="131"/>
         <source>About</source>
-        <translation type="vanished">À propos</translation>
+        <translation>À propos</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; est un logiciel libre et open-source, multiplate-forme, basé sur le lecteur multimédia &lt;b&gt;libmpv&lt;/b&gt;. Son design reflète un environnement simple, épuré et agréable pour visionner vos séries.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; est un logiciel libre et open-source, multiplate-forme, basé sur le lecteur multimédia &lt;b&gt;libmpv&lt;/b&gt;. Son design reflète un environnement simple, épuré et agréable pour visionner vos séries.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="336"/>
         <source>&amp;Close</source>
-        <translation type="vanished">&amp;Fermer</translation>
+        <translation>&amp;Fermer</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="208"/>
         <source>Credits</source>
-        <translation type="vanished">Remerciements</translation>
+        <translation>Remerciements</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="271"/>
         <source>License</source>
-        <translation type="vanished">License</translation>
+        <translation>License</translation>
     </message>
 </context>
 <context>
     <name>InputDialog</name>
     <message>
+        <location filename="../ui/inputdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>Sauter au temps</translation>
+    </message>
+    <message>
+        <location filename="../ui/inputdialog.ui" line="70"/>
         <source>Please enter a value:</source>
-        <translation type="vanished">Entrer une valeur :</translation>
+        <translation>Entrer une valeur :</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="117"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="133"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Annuler</translation>
+        <translation>&amp;Annuler</translation>
     </message>
 </context>
 <context>
     <name>JumpDialog</name>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">Sauter au temps</translation>
+        <translation>Sauter au temps</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="111"/>
         <source> hr</source>
-        <translation type="vanished"> h</translation>
+        <translation> h</translation>
+    </message>
+    <message>
+        <location filename="../ui/jumpdialog.ui" line="129"/>
+        <location filename="../ui/jumpdialog.ui" line="160"/>
+        <source>:</source>
+        <translation>:</translation>
+    </message>
+    <message>
+        <location filename="../ui/jumpdialog.ui" line="142"/>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
+        <location filename="../ui/jumpdialog.ui" line="173"/>
+        <source> sec</source>
+        <translation> sec</translation>
+    </message>
+    <message>
+        <location filename="../ui/jumpdialog.ui" line="189"/>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
 </context>
 <context>
     <name>KeyDialog</name>
     <message>
+        <location filename="../ui/keydialog.ui" line="14"/>
         <source>Modify Shortcut Key</source>
-        <translation type="vanished">Modifier les raccourcis clavier</translation>
+        <translation>Modifier les raccourcis clavier</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="74"/>
         <source>(optional)</source>
-        <translation type="vanished">(optionnel)</translation>
+        <translation>(optionnel)</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="84"/>
         <source>Shortcut:</source>
-        <translation type="vanished">Raccourci :</translation>
+        <translation>Raccourci :</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="91"/>
         <source>Command:</source>
-        <translation type="vanished">Commande :</translation>
+        <translation>Commande :</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="98"/>
         <source>Label:</source>
-        <translation type="vanished">Étiquette :</translation>
+        <translation>Étiquette :</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="122"/>
+        <source>C&amp;lear Shortcut</source>
+        <translation>&amp;Effacer le raccourci</translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="129"/>
         <source>Chang&amp;e</source>
-        <translation type="vanished">&amp;Changer</translation>
+        <translation>&amp;Changer</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="136"/>
         <source>&amp;Add</source>
-        <translation type="vanished">A&amp;jouter</translation>
+        <translation>A&amp;jouter</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="149"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Annuler</translation>
+        <translation>&amp;Annuler</translation>
     </message>
 </context>
 <context>
     <name>LocationDialog</name>
     <message>
+        <location filename="../ui/locationdialog.ui" line="14"/>
         <source>Open Location</source>
-        <translation type="vanished">Ouvrir un emplacement</translation>
+        <translation>Ouvrir un emplacement</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="84"/>
         <source>Paste copied link</source>
-        <translation type="vanished">Coller le lien copié</translation>
+        <translation>Coller le lien copié</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="118"/>
         <source>Type URL or location here</source>
-        <translation type="vanished">Taper l&apos;URL ou l&apos;emplacement ici</translation>
+        <translation>Taper l&apos;URL ou l&apos;emplacement ici</translation>
+    </message>
+    <message>
+        <location filename="../ui/locationdialog.ui" line="137"/>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
 </context>
 <context>
@@ -308,6 +366,7 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1375"/>
+        <location filename="../ui/mainwindow.cpp" line="1241"/>
         <source>&amp;Play</source>
         <translation>&amp;Lecture</translation>
     </message>
@@ -477,34 +536,41 @@
         <translation>Mettre à jour le support de &amp;streaming</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="219"/>
         <source>Playing</source>
-        <translation type="vanished">Lecture en cours</translation>
+        <translation>Lecture en cours</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="221"/>
         <source>Paused</source>
-        <translation type="vanished">En pause</translation>
+        <translation>En pause</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="365"/>
         <source>Sub</source>
-        <translation type="vanished">Sous-titre</translation>
+        <translation>Sous-titre</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="377"/>
         <source>Audio</source>
-        <translation type="vanished">Audio</translation>
+        <translation>Audio</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="619"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">Vitesse : %0x</translation>
+        <translation>Vitesse : %0x</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="787"/>
         <source>Enter the file number you want to play:
 Note: Value must be from %0 - %1</source>
-        <translation type="vanished">Entrer le numéro du fichier que vous voulez lire :
+        <translation>Entrer le numéro du fichier que vous voulez lire :
 Information : la valeur doit être comprise entre %0 et %1</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="788"/>
         <source>Enter File Number</source>
-        <translation type="vanished">Entrer le numéro de fichier</translation>
+        <translation>Entrer le numéro de fichier</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -519,16 +585,19 @@ Information : la valeur doit être comprise entre %0 et %1</translation>
         <translation type="vanished">Suivant</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1080"/>
         <source>No selection</source>
-        <translation type="vanished">Aucune sélection</translation>
+        <translation>Aucune sélection</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1086"/>
         <source>%0 / %1</source>
-        <translation type="vanished">%0 / %1</translation>
+        <translation>%0 / %1</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1246"/>
         <source>&amp;Pause</source>
-        <translation type="vanished">&amp;Pause</translation>
+        <translation>&amp;Pause</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -628,242 +697,310 @@ Information : la valeur doit être comprise entre %0 et %1</translation>
         <translation>&amp;Désentrelacer</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles visible</source>
-        <translation type="vanished">Sous-titres visibles</translation>
+        <translation>Sous-titres visibles</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles hidden</source>
-        <translation type="vanished">Sous-titres masqués</translation>
+        <translation>Sous-titres masqués</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Muted</source>
-        <translation type="vanished">Son désactivé</translation>
+        <translation>Son désactivé</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Unmuted</source>
-        <translation type="vanished">Son activé</translation>
+        <translation>Son activé</translation>
     </message>
 </context>
 <context>
     <name>MpvHandler</name>
     <message>
+        <location filename="../mpvhandler.cpp" line="98"/>
         <source>File size</source>
-        <translation type="vanished">Taille du fichier </translation>
+        <translation>Taille du fichier </translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="99"/>
         <source>Date created</source>
-        <translation type="vanished">Date de création </translation>
+        <translation>Date de création </translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="100"/>
         <source>Media length</source>
-        <translation type="vanished">Taille du média </translation>
+        <translation>Taille du média </translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
         <source>Bitrate</source>
-        <translation type="vanished">Débit </translation>
+        <translation>Débit </translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="114"/>
         <source>Channels</source>
-        <translation type="vanished">Canaux </translation>
+        <translation>Canaux </translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="193"/>
         <source>Buffering...</source>
-        <translation type="vanished">Mise en cache...</translation>
+        <translation>Mise en cache...</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="228"/>
         <source>Your network is slow or stuck, please wait a bit</source>
-        <translation type="vanished">Votre réseau est lent ou bloqué, veuillez patienter</translation>
+        <translation>Votre réseau est lent ou bloqué, veuillez patienter</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="247"/>
         <source>File couldn&apos;t be opened</source>
-        <translation type="vanished">Le fichier ne peut être ouvert</translation>
+        <translation>Le fichier ne peut être ouvert</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="333"/>
         <source>File does not exist</source>
-        <translation type="vanished">Le fichier n&apos;existe pas</translation>
+        <translation>Le fichier n&apos;existe pas</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="393"/>
         <source>File no longer exists</source>
-        <translation type="vanished">Le fichier n&apos;existe plus</translation>
+        <translation>Le fichier n&apos;existe plus</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="552"/>
         <source>Volume: %0%</source>
-        <translation type="vanished">Volume : %0 %</translation>
+        <translation>Volume : %0 %</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="96"/>
         <source>File</source>
-        <translation type="vanished">Fichier</translation>
+        <translation>Fichier</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="97"/>
         <source>Title</source>
-        <translation type="vanished">Titre</translation>
+        <translation>Titre</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="102"/>
         <source>Video (x%0)</source>
-        <translation type="vanished">Vidéo (x%0)</translation>
+        <translation>Vidéo (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="103"/>
         <source>Video Output</source>
-        <translation type="vanished">Sortie vidéo</translation>
+        <translation>Sortie vidéo</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="104"/>
         <source>Resolution</source>
-        <translation type="vanished">Résolution</translation>
+        <translation>Résolution</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="107"/>
         <source>FPS</source>
-        <translation type="vanished">IPS</translation>
+        <translation>IPS</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="108"/>
         <source>A/V Sync</source>
-        <translation type="vanished">Synchronisation audio/vidéo</translation>
+        <translation>Synchronisation audio/vidéo</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
+        <source>%0 kbps</source>
+        <translation>%0 kbps</translation>
+    </message>
+    <message>
+        <location filename="../mpvhandler.cpp" line="111"/>
         <source>Audio (x%0)</source>
-        <translation type="vanished">Audio (x%0)</translation>
+        <translation>Audio (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="112"/>
         <source>Audio Output</source>
-        <translation type="vanished">Sortie audio</translation>
+        <translation>Sortie audio</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="113"/>
         <source>Sample Rate</source>
-        <translation type="vanished">Taux d&apos;échantillonage</translation>
+        <translation>Taux d&apos;échantillonage</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="119"/>
         <source>Chapters</source>
-        <translation type="vanished">Chapitres</translation>
+        <translation>Chapitres</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="128"/>
         <source>Metadata</source>
-        <translation type="vanished">Métadonnées</translation>
+        <translation>Métadonnées</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
         <source>Deinterlacing: %0</source>
-        <translation type="vanished">Désentrelacement : %0</translation>
+        <translation>Désentrelacement : %0</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>enabled</source>
-        <translation type="vanished">activé</translation>
+        <translation>activé</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>disabled</source>
-        <translation type="vanished">désactivé</translation>
+        <translation>désactivé</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>Motion Interpolation: %0</source>
-        <translation type="vanished">Interpolation du mouvement : %0</translation>
+        <translation>Interpolation du mouvement : %0</translation>
     </message>
 </context>
 <context>
     <name>NounoursEngine</name>
     <message>
+        <location filename="../nounourscommands.cpp" line="102"/>
         <source>Open Subtitle File</source>
-        <translation type="vanished">Ouvrir un fichier de sous-titres</translation>
+        <translation>Ouvrir un fichier de sous-titres</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="103"/>
         <source>Subtitle Files</source>
-        <translation type="vanished">Fichiers de sous-titres</translation>
+        <translation>Fichiers de sous-titres</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="117"/>
         <source>Open Audio File</source>
-        <translation type="vanished">Ouvrir un fichier audio</translation>
+        <translation>Ouvrir un fichier audio</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="163"/>
         <source>Saved to &quot;%0&quot;, with subs</source>
-        <translation type="vanished">Enregistré à &quot;%0&quot;, avec sous-titres</translation>
+        <translation>Enregistré à &quot;%0&quot;, avec sous-titres</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="165"/>
         <source>Saved to &quot;%0&quot;, without subs</source>
-        <translation type="vanished">Enregistré à &quot;%0&quot;, sans sous-titres</translation>
+        <translation>Enregistré à &quot;%0&quot;, sans sous-titres</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="314"/>
         <source>DimDialog not supported on this platform</source>
-        <translation type="vanished">DimDialog non supportée sur cette plateforme</translation>
+        <translation>DimDialog non supportée sur cette plateforme</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>Dim Lights</source>
-        <translation type="vanished">Diminuer la luminosité</translation>
+        <translation>Diminuer la luminosité</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>In order to dim the lights, the desktop compositor has to be enabled. This can be done through Window Manager Desktop.</source>
-        <translation type="vanished">Pour diminuer la luminosité, le compositeur de bureau doit être activé. Ceci peut être effectué à travers le Gestionnaire de fenêtres.</translation>
+        <translation>Pour diminuer la luminosité, le compositeur de bureau doit être activé. Ceci peut être effectué à travers le Gestionnaire de fenêtres.</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="355"/>
         <source>http://nounoursplayer.u8sand.net/help.php</source>
-        <translation type="vanished">http://nounoursplayer.u8sand.net/help.php</translation>
+        <translation>http://nounoursplayer.u8sand.net/help.php</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="388"/>
         <source>Open File</source>
-        <translation type="vanished">Ouvrir un fichier</translation>
+        <translation>Ouvrir un fichier</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="389"/>
         <source>Media Files</source>
-        <translation type="vanished">Fichiers multimédia</translation>
+        <translation>Fichiers multimédia</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="390"/>
         <source>Video Files</source>
-        <translation type="vanished">Fichiers vidéo</translation>
+        <translation>Fichiers vidéo</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="118"/>
+        <location filename="../nounourscommands.cpp" line="391"/>
         <source>Audio Files</source>
-        <translation type="vanished">Fichiers audio</translation>
+        <translation>Fichiers audio</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="392"/>
         <source>All Files</source>
-        <translation type="vanished">Tous les fichiers</translation>
+        <translation>Tous les fichiers</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>Fit Window: %0</source>
-        <translation type="vanished">Ajustement de la fenêtre : %0</translation>
+        <translation>Ajustement de la fenêtre : %0</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>To Current Size</source>
-        <translation type="vanished">À la taille actuelle</translation>
+        <translation>À la taille actuelle</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="572"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">Vitesse : %0x</translation>
+        <translation>Vitesse : %0x</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="587"/>
         <source>Press ESC or double-click to leave full screen</source>
-        <translation type="vanished">Appuyez sur Echap ou double-cliquez pour quitter le plein écran</translation>
+        <translation>Appuyez sur Echap ou double-cliquez pour quitter le plein écran</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="607"/>
         <source>Press %0 to show all controls again</source>
-        <translation type="vanished">Appuyez sur %0 pour revoir les contrôles</translation>
+        <translation>Appuyez sur %0 pour revoir les contrôles</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="640"/>
         <source>usage: nounours &lt;command&gt; [...]</source>
-        <translation type="vanished">utilisation : nounours &lt;command&gt; [...]</translation>
+        <translation>utilisation : nounours &lt;command&gt; [...]</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="641"/>
         <source>commands:</source>
-        <translation type="vanished">Commandes :</translation>
+        <translation>Commandes :</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="662"/>
         <source>usage: %0 %1</source>
-        <translation type="vanished">utilisation : %0 %1</translation>
+        <translation>utilisation : %0 %1</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="663"/>
         <source>description:</source>
-        <translation type="vanished">description :</translation>
+        <translation>description :</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="667"/>
         <source>advanced:</source>
-        <translation type="vanished">avancé :</translation>
+        <translation>avancé :</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="115"/>
         <source>invalid command &apos;%0&apos;</source>
-        <translation type="vanished">commande invalide &apos;%0&apos;</translation>
+        <translation>commande invalide &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="120"/>
         <source>invalid parameter &apos;%0&apos;</source>
-        <translation type="vanished">paramètre invalide &apos;%0&apos;</translation>
+        <translation>paramètre invalide &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="125"/>
         <source>&apos;%0&apos; requires parameters</source>
-        <translation type="vanished">&apos;%0&apos; requiert des paramètres</translation>
+        <translation>&apos;%0&apos; requiert des paramètres</translation>
     </message>
     <message>
         <source>Increase sub size</source>
@@ -1224,12 +1361,12 @@ Information : la valeur doit être comprise entre %0 et %1</translation>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="288"/>
         <source>Delete from disk?</source>
-        <translation>Supprimer du disque ?</translation>
+        <translation>Supprimer du disque&#xa0;?</translation>
     </message>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="289"/>
         <source>Are you sure you want to permanently delete &quot;%0&quot;?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer définitivement « %0 » ?</translation>
+        <translation>Êtes-vous sûr de vouloir supprimer définitivement «&#xa0;%0&#xa0;»&#xa0;?</translation>
     </message>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="303"/>
@@ -1260,354 +1397,477 @@ Information : la valeur doit être comprise entre %0 et %1</translation>
     <message>
         <location filename="../widgets/playlistwidget.cpp" line="385"/>
         <source>Playlist saved. Open it now?</source>
-        <translation>Playlist enregistrée. L’ouvrir maintenant ?</translation>
+        <translation>Playlist enregistrée. L’ouvrir maintenant&#xa0;?</translation>
     </message>
 </context>
 <context>
     <name>PreferencesDialog</name>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="vanished">Préférences</translation>
+        <translation>Préférences</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="249"/>
         <source>Player</source>
-        <translation type="vanished">Lecteur</translation>
+        <translation>Lecteur</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="269"/>
         <source>On Top</source>
-        <translation type="vanished">Au dessus</translation>
+        <translation>Au dessus</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="275"/>
         <source>A&amp;lways</source>
-        <translation type="vanished">&amp;Toujours</translation>
+        <translation>&amp;Toujours</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="282"/>
         <source>&amp;When Playing</source>
-        <translation type="vanished">&amp;En cours de lecture</translation>
+        <translation>&amp;En cours de lecture</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="289"/>
         <source>&amp;Never</source>
-        <translation type="vanished">&amp;Jamais</translation>
+        <translation>&amp;Jamais</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="299"/>
         <source>Tray Icon</source>
-        <translation type="vanished">Icone de la barre des tâches</translation>
+        <translation>Icone de la barre des tâches</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="308"/>
         <source>&amp;Hide Popup</source>
-        <translation type="vanished">&amp;Masquer le popup</translation>
+        <translation>&amp;Masquer le popup</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="341"/>
         <source>Mouse Gesture</source>
-        <translation type="vanished">Gestuelle de la souris</translation>
+        <translation>Gestuelle de la souris</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="496"/>
         <source>Key Bindings</source>
-        <translation type="vanished">Raccourcis clavier</translation>
+        <translation>Raccourcis clavier</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="587"/>
         <source>Key</source>
-        <translation type="vanished">Touche</translation>
+        <translation>Touche</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="592"/>
         <source>Command</source>
-        <translation type="vanished">Commande</translation>
+        <translation>Commande</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="597"/>
         <source>Label</source>
-        <translation type="vanished">Étiquette</translation>
+        <translation>Étiquette</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="318"/>
         <source>Language</source>
-        <translation type="vanished">Langue</translation>
+        <translation>Langue</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="689"/>
         <source>Video</source>
-        <translation type="vanished">Vidéo</translation>
+        <translation>Vidéo</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="709"/>
         <source>&amp;Auto-Fit Window:</source>
-        <translation type="vanished">&amp;Ajustement automatique de la fenêtre :</translation>
+        <translation>&amp;Ajustement automatique de la fenêtre :</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="720"/>
         <source>50%</source>
-        <translation type="vanished">50 %</translation>
+        <translation>50 %</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="725"/>
         <source>75%</source>
-        <translation type="vanished">75 %</translation>
+        <translation>75 %</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="730"/>
         <source>100%</source>
-        <translation type="vanished">100 %</translation>
+        <translation>100 %</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="735"/>
         <source>200%</source>
-        <translation type="vanished">200 %</translation>
+        <translation>200 %</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="758"/>
         <source>Screenshot</source>
-        <translation type="vanished">Capture d&apos;écran</translation>
+        <translation>Capture d&apos;écran</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="764"/>
         <source>File Name Template:</source>
-        <translation type="vanished">Motif du nom des fichiers :</translation>
+        <translation>Motif du nom des fichiers :</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="379"/>
         <source>Change Volume</source>
-        <translation type="vanished">Modifier le volume</translation>
+        <translation>Modifier le volume</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="405"/>
         <source>Seek Position</source>
-        <translation type="vanished">Modifier la position</translation>
+        <translation>Modifier la position</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="426"/>
         <source>&amp;Use Mouse &amp;&amp; Touch Gestures</source>
-        <translation type="vanished">&amp;Utilier la souris et les mouvements tactiles</translation>
+        <translation>&amp;Utilier la souris et les mouvements tactiles</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="433"/>
+        <source>&amp;Left Click to Toggle Play/Pause</source>
+        <translation>&amp;Clic gauche pour basculer Lecture/Pause</translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="456"/>
         <source>History</source>
-        <translation type="vanished">Historique</translation>
+        <translation>Historique</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="464"/>
         <source>Remember &amp;recently opened files up to</source>
-        <translation type="vanished">Se souvenir des fichiers &amp;récement ouverts jusqu&apos;à</translation>
+        <translation>Se souvenir des fichiers &amp;récement ouverts jusqu&apos;à</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="483"/>
         <source>Remember playback &amp;position</source>
-        <translation type="vanished">Se souvenir de la &amp;position de lecture</translation>
+        <translation>Se souvenir de la &amp;position de lecture</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="519"/>
         <source>Prefix a command with &apos;mpv&apos; to make it run as an input command.</source>
-        <translation type="vanished">Préfixez une commande par &apos;mpv&apos; pour la considérer comme une commande d&apos;entrée. </translation>
+        <translation>Préfixez une commande par &apos;mpv&apos; pour la considérer comme une commande d&apos;entrée. </translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="679"/>
         <source>Rese&amp;t All</source>
-        <translation type="vanished">&amp;Tout effacer</translation>
+        <translation>&amp;Tout effacer</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="775"/>
+        <source>jpg</source>
+        <translation>jpg</translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="780"/>
+        <source>png</source>
+        <translation>png</translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="785"/>
+        <source>tga</source>
+        <translation>tga</translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="793"/>
         <source>Chang&amp;e...</source>
-        <translation type="vanished">&amp;Modifier...</translation>
+        <translation>&amp;Modifier...</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="800"/>
         <source>File Format:</source>
-        <translation type="vanished">Format de fichier :</translation>
+        <translation>Format de fichier :</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="810"/>
         <source>screenshot%#04n</source>
-        <translation type="vanished">screenshot%#04n</translation>
+        <translation>screenshot%#04n</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="817"/>
         <source>Default Save Location:</source>
-        <translation type="vanished">Emplacement d&apos;enregistrement par défaut :</translation>
+        <translation>Emplacement d&apos;enregistrement par défaut :</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="866"/>
         <source>Always show the &amp;save window</source>
-        <translation type="vanished">Toujours voir la fenêtre de &amp;sauvegarde</translation>
+        <translation>Toujours voir la fenêtre de &amp;sauvegarde</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="890"/>
         <source>Advanced</source>
-        <translation type="vanished">Avancé</translation>
+        <translation>Avancé</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="896"/>
         <source>Command Line</source>
-        <translation type="vanished">Ligne de commande</translation>
+        <translation>Ligne de commande</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="902"/>
         <source>mpv msg-level:</source>
-        <translation type="vanished">niveau de message mpv :</translation>
+        <translation>niveau de message mpv :</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="913"/>
         <source>no</source>
-        <translation type="vanished">aucun</translation>
+        <translation>aucun</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="918"/>
         <source>fatal</source>
-        <translation type="vanished">fatal</translation>
+        <translation>fatal</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="923"/>
         <source>error</source>
-        <translation type="vanished">erreur</translation>
+        <translation>erreur</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="928"/>
         <source>warn</source>
-        <translation type="vanished">alerte</translation>
+        <translation>alerte</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="933"/>
         <source>info</source>
-        <translation type="vanished">info</translation>
+        <translation>info</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="938"/>
         <source>status</source>
-        <translation type="vanished">status</translation>
+        <translation>status</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="943"/>
         <source>v</source>
-        <translation type="vanished">v</translation>
+        <translation>v</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="948"/>
         <source>debug</source>
-        <translation type="vanished">debug</translation>
+        <translation>debug</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="953"/>
         <source>trace</source>
-        <translation type="vanished">trace</translation>
+        <translation>trace</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1016"/>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="1023"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Annuler</translation>
+        <translation>&amp;Annuler</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="64"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">Choisir le dossier de capture d&apos;écran</translation>
+        <translation>Choisir le dossier de capture d&apos;écran</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Reset All Key Bindings?</source>
-        <translation type="vanished">Réinitialiser tous les raccourcis clavier ?</translation>
+        <translation>Réinitialiser tous les raccourcis clavier ?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Are you sure you want to reset all shortcut keys to its original bindings?</source>
-        <translation type="vanished">Êtes-vous sûr de vouloir réinitialiser tous les raccourcis claviers ?</translation>
+        <translation>Êtes-vous sûr de vouloir réinitialiser tous les raccourcis claviers ?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="261"/>
         <source>Existing keybinding</source>
-        <translation type="vanished">Raccourci déjà existant</translation>
+        <translation>Raccourci déjà existant</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="262"/>
         <source>%0 is already being used. Would you like to change its function?</source>
-        <translation type="vanished">%0 est déjà utilisé. Voulez-vous changer sa fonction ?</translation>
+        <translation>%0 est déjà utilisé. Voulez-vous changer sa fonction ?</translation>
     </message>
 </context>
 <context>
     <name>ScreenshotDialog</name>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="14"/>
         <source>Take Screenshot</source>
-        <translation type="vanished">Capture d&apos;écran</translation>
+        <translation>Capture d&apos;écran</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="117"/>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="127"/>
         <source>Save Location</source>
-        <translation type="vanished">Emplacement d&apos;enregistrement</translation>
+        <translation>Emplacement d&apos;enregistrement</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="134"/>
         <source>File Name Template</source>
-        <translation type="vanished">Motif de nom de fichier</translation>
+        <translation>Motif de nom de fichier</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="154"/>
+        <source>jpg</source>
+        <translation>jpg</translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="159"/>
+        <source>png</source>
+        <translation>png</translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="164"/>
+        <source>tga</source>
+        <translation>tga</translation>
+    </message>
+    <message>
+        <location filename="../ui/screenshotdialog.ui" line="176"/>
         <source>Sho&amp;w subtitles</source>
-        <translation type="vanished">Avec &amp;sous-titres</translation>
+        <translation>Avec &amp;sous-titres</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="183"/>
         <source>Always show this dialog</source>
-        <translation type="vanished">Toujours afficher cette boite</translation>
+        <translation>Toujours afficher cette boite</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="212"/>
         <source>&amp;Save</source>
-        <translation type="vanished">&amp;Enregistrer</translation>
+        <translation>&amp;Enregistrer</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.cpp" line="26"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">Sélectionner un dossier de capture d&apos;écran</translation>
+        <translation>Sélectionner un dossier de capture d&apos;écran</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
+        <location filename="../ui/updatedialog.ui" line="14"/>
         <source>Check for Updates</source>
-        <translation type="vanished">Vérifier la présence de mises à jour</translation>
+        <translation>Vérifier la présence de mises à jour</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checking for updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vérification de la présence de mises à jour...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vérification de la présence de mises à jour...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="156"/>
         <source>About 0 second(s) remaining</source>
-        <translation type="vanished">Environ 0 seconde(s) restante(s)</translation>
+        <translation>Environ 0 seconde(s) restante(s)</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="204"/>
         <source>&amp;Update</source>
-        <translation type="vanished">&amp;Mettre à jour</translation>
+        <translation>&amp;Mettre à jour</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="223"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Annuler</translation>
+        <translation>&amp;Annuler</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="22"/>
         <source>&amp;CLOSE</source>
-        <translation type="vanished">&amp;FERMER</translation>
+        <translation>&amp;FERMER</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="32"/>
         <source>Download Complete</source>
-        <translation type="vanished">Téléchargement terminé</translation>
+        <translation>Téléchargement terminé</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="67"/>
         <source>About %0 second(s) remaining</source>
-        <translation type="vanished">Environ %0 seconde(s) restante(s)</translation>
+        <translation>Environ %0 seconde(s) restante(s)</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="69"/>
         <source>Calculating...</source>
-        <translation type="vanished">Calcul en cours...</translation>
+        <translation>Calcul en cours...</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="129"/>
         <source>You have the latest version!</source>
-        <translation type="vanished">Vous avez déjà la dernière version !</translation>
+        <translation>Vous avez déjà la dernière version !</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="133"/>
         <source>Update Available!
 Version: %0</source>
-        <translation type="vanished">Mise à jour disponible !
+        <translation>Mise à jour disponible !
 Version : %0</translation>
     </message>
 </context>
 <context>
     <name>UpdateManager</name>
     <message>
+        <location filename="../updatemanager.cpp" line="40"/>
         <source>Checking for updates...</source>
-        <translation type="vanished">Vérification de la présence de mises à jour...</translation>
+        <translation>Vérification de la présence de mises à jour...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="86"/>
         <source>Downloading update...</source>
-        <translation type="vanished">Téléchargement des mises à jour...</translation>
+        <translation>Téléchargement des mises à jour...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="93"/>
         <source>fopen error
 </source>
-        <translation type="vanished">erreur de &apos;fopen&apos;</translation>
+        <translation>erreur de &apos;fopen&apos;</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="113"/>
         <source>write error</source>
-        <translation type="vanished">erreur de &apos;write&apos;</translation>
+        <translation>erreur de &apos;write&apos;</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="134"/>
         <source>Download complete</source>
-        <translation type="vanished">Téléchargement terminé</translation>
+        <translation>Téléchargement terminé</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="140"/>
         <source>Redirected...</source>
-        <translation type="vanished">Redirection...</translation>
+        <translation>Redirection...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="152"/>
         <source>Extracting...</source>
-        <translation type="vanished">Extraction...</translation>
+        <translation>Extraction...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="181"/>
         <source>Creating updater script...</source>
-        <translation type="vanished">Création d&apos;un script de mise à jour...</translation>
+        <translation>Création d&apos;un script de mise à jour...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="185"/>
         <source>Could not open file for writing...</source>
-        <translation type="vanished">Impossible d&apos;ouvrir le fichier pour écriture...</translation>
+        <translation>Impossible d&apos;ouvrir le fichier pour écriture...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="201"/>
         <source>Updating...</source>
-        <translation type="vanished">Mise à jour...</translation>
+        <translation>Mise à jour...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="209"/>
         <source>Done. Restarting...</source>
-        <translation type="vanished">Terminé. Redémarrage...</translation>
+        <translation>Terminé. Redémarrage...</translation>
     </message>
 </context>
 </TS>

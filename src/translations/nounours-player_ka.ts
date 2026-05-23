@@ -4,128 +4,162 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="14"/>
         <source>About Nounours Player</source>
-        <translation type="vanished">Nounours Player-ის შესახებ</translation>
+        <translation>Nounours Player-ის შესახებ</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="131"/>
         <source>About</source>
-        <translation type="vanished">შესახებ</translation>
+        <translation>შესახებ</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="208"/>
         <source>Credits</source>
-        <translation type="vanished">მადლობები</translation>
+        <translation>მადლობები</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="271"/>
         <source>License</source>
-        <translation type="vanished">ლიცენზია</translation>
+        <translation>ლიცენზია</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="336"/>
         <source>&amp;Close</source>
-        <translation type="vanished">&amp;დახურვა</translation>
+        <translation>&amp;დახურვა</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="194"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; is a free and open source, cross-platform, &lt;b&gt;libmpv&lt;/b&gt; based multimedia player. Its simple design reflects the idea for an uncluttered, simple, and enjoyable environment for watching tv shows.&lt;br&gt;&lt;br&gt;Copyright © 2016 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; არის უფასო და გახსნილი წყაროს მქონე, მრავალპლატოფრმული, &lt;b&gt;libmpv-ზე&lt;/b&gt; დაფუძნებული მულტიმედია დამკვრელი. მისი მარტივი დიზანში ჩაფიქრებულია გადაუტვირთავი, უბრალო, და სასიამოვნო გარემოს ქონა ტელესერიალების საყურებლად.&lt;br&gt;&lt;br&gt;საავტორო უფლებები © 2015 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2016 ?} {8s?} {8s?} {008098;?} {8s?}</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;b&gt;Nounours Player&lt;/b&gt; არის უფასო და გახსნილი წყაროს მქონე, მრავალპლატოფრმული, &lt;b&gt;libmpv-ზე&lt;/b&gt; დაფუძნებული მულტიმედია დამკვრელი. მისი მარტივი დიზანში ჩაფიქრებულია გადაუტვირთავი, უბრალო, და სასიამოვნო გარემოს ქონა ტელესერიალების საყურებლად.&lt;br&gt;&lt;br&gt;საავტორო უფლებები © 2015 godly-devotion, u8sand&lt;br&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/u8sand/Nounours-Player&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#008098;&quot;&gt;https://github.com/u8sand/Nounours-Player&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2016 ?} {8s?} {8s?} {008098;?} {8s?}</translation>
     </message>
 </context>
 <context>
     <name>InputDialog</name>
     <message>
+        <location filename="../ui/inputdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">დიალოგი</translation>
+        <translation>დიალოგი</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="70"/>
         <source>Please enter a value:</source>
-        <translation type="vanished">გთხოვთ შეიყვანეთ მნიშვნელობა:</translation>
+        <translation>გთხოვთ შეიყვანეთ მნიშვნელობა:</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="117"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;კარგი</translation>
+        <translation>&amp;კარგი</translation>
     </message>
     <message>
+        <location filename="../ui/inputdialog.ui" line="133"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;გაუქმება</translation>
+        <translation>&amp;გაუქმება</translation>
     </message>
 </context>
 <context>
     <name>JumpDialog</name>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">დიალოგი</translation>
+        <translation>დიალოგი</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="111"/>
         <source> hr</source>
-        <translation type="vanished">სთ</translation>
+        <translation>სთ</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="129"/>
+        <location filename="../ui/jumpdialog.ui" line="160"/>
         <source>:</source>
-        <translation type="vanished">:</translation>
+        <translation>:</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="142"/>
         <source> min</source>
-        <translation type="vanished">წთ</translation>
+        <translation>წთ</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="173"/>
         <source> sec</source>
-        <translation type="vanished">წმ</translation>
+        <translation>წმ</translation>
     </message>
     <message>
+        <location filename="../ui/jumpdialog.ui" line="189"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;კარგი</translation>
+        <translation>&amp;კარგი</translation>
     </message>
 </context>
 <context>
     <name>KeyDialog</name>
     <message>
+        <location filename="../ui/keydialog.ui" line="14"/>
         <source>Modify Shortcut Key</source>
-        <translation type="vanished">მალსახმობი კლავიშის შეცვლა</translation>
+        <translation>მალსახმობი კლავიშის შეცვლა</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="74"/>
         <source>(optional)</source>
-        <translation type="vanished">(არასავალდებულო)</translation>
+        <translation>(არასავალდებულო)</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="84"/>
         <source>Shortcut:</source>
-        <translation type="vanished">მალსახმობი:</translation>
+        <translation>მალსახმობი:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="91"/>
         <source>Command:</source>
-        <translation type="vanished">ბრძანება:</translation>
+        <translation>ბრძანება:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="98"/>
         <source>Label:</source>
-        <translation type="vanished">სათაური:</translation>
+        <translation>სათაური:</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="122"/>
+        <source>C&amp;lear Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/keydialog.ui" line="129"/>
         <source>Chang&amp;e</source>
-        <translation type="vanished">შეც&amp;ვლა</translation>
+        <translation>შეც&amp;ვლა</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="136"/>
         <source>&amp;Add</source>
-        <translation type="vanished">&amp;დამატება</translation>
+        <translation>&amp;დამატება</translation>
     </message>
     <message>
+        <location filename="../ui/keydialog.ui" line="149"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;გაუქმება</translation>
+        <translation>&amp;გაუქმება</translation>
     </message>
 </context>
 <context>
     <name>LocationDialog</name>
     <message>
+        <location filename="../ui/locationdialog.ui" line="14"/>
         <source>Open Location</source>
-        <translation type="vanished">მდებარეობის გახსნა</translation>
+        <translation>მდებარეობის გახსნა</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="84"/>
         <source>Paste copied link</source>
-        <translation type="vanished">დაკოპირებული ბმულის ჩასმა</translation>
+        <translation>დაკოპირებული ბმულის ჩასმა</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="118"/>
         <source>Type URL or location here</source>
-        <translation type="vanished">აკრიფეთ URL ან მდებარეობა აქ</translation>
+        <translation>აკრიფეთ URL ან მდებარეობა აქ</translation>
     </message>
     <message>
+        <location filename="../ui/locationdialog.ui" line="137"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;კარგი</translation>
+        <translation>&amp;კარგი</translation>
     </message>
 </context>
 <context>
@@ -327,6 +361,7 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1375"/>
+        <location filename="../ui/mainwindow.cpp" line="1241"/>
         <source>&amp;Play</source>
         <translation>&amp;დაკვრა</translation>
     </message>
@@ -584,50 +619,61 @@
         <translation>სამართავი ღილაკების &amp;დამალვა</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="219"/>
         <source>Playing</source>
-        <translation type="vanished">იკვრება</translation>
+        <translation>იკვრება</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="221"/>
         <source>Paused</source>
-        <translation type="vanished">შეჩერებულია</translation>
+        <translation>შეჩერებულია</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="365"/>
         <source>Sub</source>
-        <translation type="vanished">სუბ</translation>
+        <translation>სუბ</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="377"/>
         <source>Audio</source>
-        <translation type="vanished">აუდიო</translation>
+        <translation>აუდიო</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="619"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">სიჩქარე: %0x</translation>
+        <translation>სიჩქარე: %0x</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles visible</source>
-        <translation type="vanished">სუბტიტრები ხილულია</translation>
+        <translation>სუბტიტრები ხილულია</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="666"/>
         <source>Subtitles hidden</source>
-        <translation type="vanished">სუბტიტრები დამალულია</translation>
+        <translation>სუბტიტრები დამალულია</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Muted</source>
-        <translation type="vanished">დადუმებულია</translation>
+        <translation>დადუმებულია</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="676"/>
         <source>Unmuted</source>
-        <translation type="vanished">დაუდუმებელია</translation>
+        <translation>დაუდუმებელია</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="787"/>
         <source>Enter the file number you want to play:
 Note: Value must be from %0 - %1</source>
-        <translation type="vanished">შეიყვანეთ ფაილის ნომერი, რომლის დაკვრაც გსურთ:
+        <translation>შეიყვანეთ ფაილის ნომერი, რომლის დაკვრაც გსურთ:
 შენიშვნა: მნიშვნელობა უნდა იყოს %0 - %1</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="788"/>
         <source>Enter File Number</source>
-        <translation type="vanished">შეიყვანეთ ფაილის ნომერი</translation>
+        <translation>შეიყვანეთ ფაილის ნომერი</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -642,12 +688,19 @@ Note: Value must be from %0 - %1</source>
         <translation type="vanished">შემდეგი</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1080"/>
         <source>No selection</source>
-        <translation type="vanished">არჩეული არაფერია</translation>
+        <translation>არჩეული არაფერია</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.cpp" line="1086"/>
+        <source>%0 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="1246"/>
         <source>&amp;Pause</source>
-        <translation type="vanished">&amp;შეჩერება</translation>
+        <translation>&amp;შეჩერება</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -667,227 +720,287 @@ Note: Value must be from %0 - %1</source>
 <context>
     <name>MpvHandler</name>
     <message>
+        <location filename="../mpvhandler.cpp" line="96"/>
         <source>File</source>
-        <translation type="vanished">ფაილი</translation>
+        <translation>ფაილი</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="97"/>
         <source>Title</source>
-        <translation type="vanished">სათაური</translation>
+        <translation>სათაური</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="98"/>
         <source>File size</source>
-        <translation type="vanished">ფაილის ზომა</translation>
+        <translation>ფაილის ზომა</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="99"/>
         <source>Date created</source>
-        <translation type="vanished">შექმნის თარიღი</translation>
+        <translation>შექმნის თარიღი</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="100"/>
         <source>Media length</source>
-        <translation type="vanished">მედიის ხანგრძლივობა</translation>
+        <translation>მედიის ხანგრძლივობა</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="102"/>
         <source>Video (x%0)</source>
-        <translation type="vanished">ვიდეო (x%0)</translation>
+        <translation>ვიდეო (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="103"/>
         <source>Video Output</source>
-        <translation type="vanished">ვიდეო გამომტანი</translation>
+        <translation>ვიდეო გამომტანი</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="104"/>
         <source>Resolution</source>
-        <translation type="vanished">რეზოლუცია</translation>
+        <translation>რეზოლუცია</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="107"/>
         <source>FPS</source>
-        <translation type="vanished">FPS</translation>
+        <translation>FPS</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="108"/>
         <source>A/V Sync</source>
-        <translation type="vanished">ა/ვ სინქრონიზაცია</translation>
+        <translation>ა/ვ სინქრონიზაცია</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
         <source>Bitrate</source>
-        <translation type="vanished">ბიტების შეფარდება</translation>
+        <translation>ბიტების შეფარდება</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="109"/>
+        <location filename="../mpvhandler.cpp" line="115"/>
         <source>%0 kbps</source>
-        <translation type="vanished">%0 კბწმ</translation>
+        <translation>%0 კბწმ</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="111"/>
         <source>Audio (x%0)</source>
-        <translation type="vanished">აუდიო (x%0)</translation>
+        <translation>აუდიო (x%0)</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="112"/>
         <source>Audio Output</source>
-        <translation type="vanished">აუდიო გამომტანი</translation>
+        <translation>აუდიო გამომტანი</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="113"/>
         <source>Sample Rate</source>
-        <translation type="vanished">ნიმუშის შეფარდება</translation>
+        <translation>ნიმუშის შეფარდება</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="114"/>
         <source>Channels</source>
-        <translation type="vanished">არხები</translation>
+        <translation>არხები</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="119"/>
         <source>Chapters</source>
-        <translation type="vanished">თავები</translation>
+        <translation>თავები</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="128"/>
         <source>Metadata</source>
-        <translation type="vanished">მეტამონაცემები</translation>
+        <translation>მეტამონაცემები</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="193"/>
         <source>Buffering...</source>
-        <translation type="vanished">ბუფერიზაცია...</translation>
+        <translation>ბუფერიზაცია...</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="228"/>
         <source>Your network is slow or stuck, please wait a bit</source>
-        <translation type="vanished">თქვენი ქსელი ნელია ან გაიჭედა, გთხოვთ მოიცადოთ</translation>
+        <translation>თქვენი ქსელი ნელია ან გაიჭედა, გთხოვთ მოიცადოთ</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="247"/>
         <source>File couldn&apos;t be opened</source>
-        <translation type="vanished">გაილის გახსნა ვერ მოხერხდა</translation>
+        <translation>გაილის გახსნა ვერ მოხერხდა</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="333"/>
         <source>File does not exist</source>
-        <translation type="vanished">ფაილი არ არსებობს</translation>
+        <translation>ფაილი არ არსებობს</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="393"/>
         <source>File no longer exists</source>
-        <translation type="vanished">ფაილი აღარ არსებობს</translation>
+        <translation>ფაილი აღარ არსებობს</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="552"/>
         <source>Volume: %0%</source>
-        <translation type="vanished">ხმა: %0%</translation>
+        <translation>ხმა: %0%</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
         <source>Deinterlacing: %0</source>
-        <translation type="vanished">დეინტერლეისი: %0</translation>
+        <translation>დეინტერლეისი: %0</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>enabled</source>
-        <translation type="vanished">ჩართული</translation>
+        <translation>ჩართული</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="670"/>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>disabled</source>
-        <translation type="vanished">გამორთული</translation>
+        <translation>გამორთული</translation>
     </message>
     <message>
+        <location filename="../mpvhandler.cpp" line="688"/>
         <source>Motion Interpolation: %0</source>
-        <translation type="vanished">მოძრაობის ინტერპოლაცია: %0</translation>
+        <translation>მოძრაობის ინტერპოლაცია: %0</translation>
     </message>
 </context>
 <context>
     <name>NounoursEngine</name>
     <message>
+        <location filename="../nounourscommands.cpp" line="102"/>
         <source>Open Subtitle File</source>
-        <translation type="vanished">სუბტიტრების ფაილის გახსნა</translation>
+        <translation>სუბტიტრების ფაილის გახსნა</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="103"/>
         <source>Subtitle Files</source>
-        <translation type="vanished">სუბტიტრების ფაილები</translation>
+        <translation>სუბტიტრების ფაილები</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="117"/>
         <source>Open Audio File</source>
-        <translation type="vanished">აუდიო ფაილის გახსნა</translation>
+        <translation>აუდიო ფაილის გახსნა</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="118"/>
+        <location filename="../nounourscommands.cpp" line="391"/>
         <source>Audio Files</source>
-        <translation type="vanished">აუდიო ფაილები</translation>
+        <translation>აუდიო ფაილები</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="163"/>
         <source>Saved to &quot;%0&quot;, with subs</source>
-        <translation type="vanished">შეინახა &quot;%0&quot;-ში სუბტიტრებით</translation>
+        <translation>შეინახა &quot;%0&quot;-ში სუბტიტრებით</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="165"/>
         <source>Saved to &quot;%0&quot;, without subs</source>
-        <translation type="vanished">შეინახა &quot;%0&quot;-ში სუბტიტრების გარეშე</translation>
+        <translation>შეინახა &quot;%0&quot;-ში სუბტიტრების გარეშე</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="314"/>
         <source>DimDialog not supported on this platform</source>
-        <translation type="vanished">ამ პლატფორმაზე DimDialog მხარდაჭერილი არაა</translation>
+        <translation>ამ პლატფორმაზე DimDialog მხარდაჭერილი არაა</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>Dim Lights</source>
-        <translation type="vanished">შუქების ჩაქრობა</translation>
+        <translation>შუქების ჩაქრობა</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="327"/>
         <source>In order to dim the lights, the desktop compositor has to be enabled. This can be done through Window Manager Desktop.</source>
-        <translation type="vanished">შუქბის ჩასაქრობად სამუშაო მაგიდის ასოთმწყობი ჩართული უნდა იყოს. ამის გაკეთება შესაძლებელია ფანჯრების მმართველიდან.</translation>
+        <translation>შუქბის ჩასაქრობად სამუშაო მაგიდის ასოთმწყობი ჩართული უნდა იყოს. ამის გაკეთება შესაძლებელია ფანჯრების მმართველიდან.</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="355"/>
         <source>http://nounoursplayer.u8sand.net/help.php</source>
-        <translation type="vanished">http://nounoursplayer.u8sand.net/help.php</translation>
+        <translation>http://nounoursplayer.u8sand.net/help.php</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="388"/>
         <source>Open File</source>
-        <translation type="vanished">ფაილის გახსა</translation>
+        <translation>ფაილის გახსა</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="389"/>
         <source>Media Files</source>
-        <translation type="vanished">მედია ფაილები</translation>
+        <translation>მედია ფაილები</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="390"/>
         <source>Video Files</source>
-        <translation type="vanished">ვიდეო ფაილები</translation>
+        <translation>ვიდეო ფაილები</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="392"/>
         <source>All Files</source>
-        <translation type="vanished">ყველა ფაილი</translation>
+        <translation>ყველა ფაილი</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>Fit Window: %0</source>
-        <translation type="vanished">ფანჯარაზე მორგება: %0</translation>
+        <translation>ფანჯარაზე მორგება: %0</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="513"/>
         <source>To Current Size</source>
-        <translation type="vanished">მიმდინარე ზომაზე</translation>
+        <translation>მიმდინარე ზომაზე</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="572"/>
         <source>Speed: %0x</source>
-        <translation type="vanished">სიჩქარე: %0x</translation>
+        <translation>სიჩქარე: %0x</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="587"/>
         <source>Press ESC or double-click to leave full screen</source>
-        <translation type="vanished">სრული ეკრანიდან გამოსასვლელად დააჭირეთ ESC-ს ან ორჯერ დააწკაპეთ</translation>
+        <translation>სრული ეკრანიდან გამოსასვლელად დააჭირეთ ESC-ს ან ორჯერ დააწკაპეთ</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="607"/>
         <source>Press %0 to show all controls again</source>
-        <translation type="vanished">ყველა სამართავი ღილაკის ისევ საჩვენებლად სადააჭირეთ %0-ს</translation>
+        <translation>ყველა სამართავი ღილაკის ისევ საჩვენებლად სადააჭირეთ %0-ს</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="640"/>
         <source>usage: nounours &lt;command&gt; [...]</source>
-        <translation type="vanished">usage: nounours &lt;command&gt; [...]</translation>
+        <translation>usage: nounours &lt;command&gt; [...]</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="641"/>
         <source>commands:</source>
-        <translation type="vanished">ბრძანებები:</translation>
+        <translation>ბრძანებები:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="662"/>
         <source>usage: %0 %1</source>
-        <translation type="vanished">გამოყენება: %0 %1</translation>
+        <translation>გამოყენება: %0 %1</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="663"/>
         <source>description:</source>
-        <translation type="vanished">აღწერა:</translation>
+        <translation>აღწერა:</translation>
     </message>
     <message>
+        <location filename="../nounourscommands.cpp" line="667"/>
         <source>advanced:</source>
-        <translation type="vanished">დამატებითი:</translation>
+        <translation>დამატებითი:</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="115"/>
         <source>invalid command &apos;%0&apos;</source>
-        <translation type="vanished">არასწორი ბრძანება &apos;%0&apos;</translation>
+        <translation>არასწორი ბრძანება &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="120"/>
         <source>invalid parameter &apos;%0&apos;</source>
-        <translation type="vanished">არასწორი პარამეტრი &apos;%0&apos;</translation>
+        <translation>არასწორი პარამეტრი &apos;%0&apos;</translation>
     </message>
     <message>
+        <location filename="../nounoursengine.cpp" line="125"/>
         <source>&apos;%0&apos; requires parameters</source>
-        <translation type="vanished">&apos;%0&apos; მოითხოვს პარამეტრებს</translation>
+        <translation>&apos;%0&apos; მოითხოვს პარამეტრებს</translation>
     </message>
     <message>
         <source>Increase sub size</source>
@@ -1289,377 +1402,472 @@ Note: Value must be from %0 - %1</source>
 <context>
     <name>PreferencesDialog</name>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="14"/>
         <source>Preferences</source>
-        <translation type="vanished">პარამეტრები</translation>
+        <translation>პარამეტრები</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="249"/>
         <source>Player</source>
-        <translation type="vanished">დამკვრელი</translation>
+        <translation>დამკვრელი</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="269"/>
         <source>On Top</source>
-        <translation type="vanished">წინა პლანზე</translation>
+        <translation>წინა პლანზე</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="275"/>
         <source>A&amp;lways</source>
-        <translation type="vanished">ყო&amp;ველთვის</translation>
+        <translation>ყო&amp;ველთვის</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="282"/>
         <source>&amp;When Playing</source>
-        <translation type="vanished">&amp;დაკვრისას</translation>
+        <translation>&amp;დაკვრისას</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="289"/>
         <source>&amp;Never</source>
-        <translation type="vanished">&amp;არასდროს</translation>
+        <translation>&amp;არასდროს</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="299"/>
         <source>Tray Icon</source>
-        <translation type="vanished">ხატულა ტრეიში</translation>
+        <translation>ხატულა ტრეიში</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="308"/>
         <source>&amp;Hide Popup</source>
-        <translation type="vanished">ამომხტარი ფანჯრის &amp;დამალვა</translation>
+        <translation>ამომხტარი ფანჯრის &amp;დამალვა</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="318"/>
         <source>Language</source>
-        <translation type="vanished">ენა</translation>
+        <translation>ენა</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="341"/>
         <source>Mouse Gesture</source>
-        <translation type="vanished">თაგვით ჟესტიკულაცია</translation>
+        <translation>თაგვით ჟესტიკულაცია</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="379"/>
         <source>Change Volume</source>
-        <translation type="vanished">ხმის ჩეცვლა</translation>
+        <translation>ხმის ჩეცვლა</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="405"/>
         <source>Seek Position</source>
-        <translation type="vanished">პოზიციის შეცვლა</translation>
+        <translation>პოზიციის შეცვლა</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="426"/>
         <source>&amp;Use Mouse &amp;&amp; Touch Gestures</source>
-        <translation type="vanished">თაგვის &amp;&amp; შეხების &amp;ჟესტები</translation>
+        <translation>თაგვის &amp;&amp; შეხების &amp;ჟესტები</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="433"/>
+        <source>&amp;Left Click to Toggle Play/Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/preferencesdialog.ui" line="456"/>
         <source>History</source>
-        <translation type="vanished">ისტორია</translation>
+        <translation>ისტორია</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="464"/>
         <source>Remember &amp;recently opened files up to</source>
-        <translation type="vanished">დამახსოვრებული &amp;ბოლოს გახსნილი ფაილების რაოდენობა</translation>
+        <translation>დამახსოვრებული &amp;ბოლოს გახსნილი ფაილების რაოდენობა</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="483"/>
         <source>Remember playback &amp;position</source>
-        <translation type="vanished">დაკვრს &amp;პოზიციის დამახსოვრება</translation>
+        <translation>დაკვრს &amp;პოზიციის დამახსოვრება</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="496"/>
         <source>Key Bindings</source>
-        <translation type="vanished">კლავიშების კომბინაცია</translation>
+        <translation>კლავიშების კომბინაცია</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="519"/>
         <source>Prefix a command with &apos;mpv&apos; to make it run as an input command.</source>
-        <translation type="vanished">შესვლის ბრძანების მსგავსად გასაშვებად გამოიყენეთ &apos;mpv&apos; პრეფიქსი.</translation>
+        <translation>შესვლის ბრძანების მსგავსად გასაშვებად გამოიყენეთ &apos;mpv&apos; პრეფიქსი.</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="587"/>
         <source>Key</source>
-        <translation type="vanished">კლავიში</translation>
+        <translation>კლავიში</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="592"/>
         <source>Command</source>
-        <translation type="vanished">ბრძანება</translation>
+        <translation>ბრძანება</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="597"/>
         <source>Label</source>
-        <translation type="vanished">ირალიყი</translation>
+        <translation>ირალიყი</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="679"/>
         <source>Rese&amp;t All</source>
-        <translation type="vanished">ყველას ჩამო&amp;ყრა</translation>
+        <translation>ყველას ჩამო&amp;ყრა</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="689"/>
         <source>Video</source>
-        <translation type="vanished">ვიდეო</translation>
+        <translation>ვიდეო</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="709"/>
         <source>&amp;Auto-Fit Window:</source>
-        <translation type="vanished">&amp;ავტო-მორგება ფანჯარაზე:</translation>
+        <translation>&amp;ავტო-მორგება ფანჯარაზე:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="720"/>
         <source>50%</source>
-        <translation type="vanished">50%</translation>
+        <translation>50%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="725"/>
         <source>75%</source>
-        <translation type="vanished">75%</translation>
+        <translation>75%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="730"/>
         <source>100%</source>
-        <translation type="vanished">100%</translation>
+        <translation>100%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="735"/>
         <source>200%</source>
-        <translation type="vanished">200%</translation>
+        <translation>200%</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="758"/>
         <source>Screenshot</source>
-        <translation type="vanished">ეკრანის ასლი</translation>
+        <translation>ეკრანის ასლი</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="764"/>
         <source>File Name Template:</source>
-        <translation type="vanished">ფაილის სახელის შაბლონი:</translation>
+        <translation>ფაილის სახელის შაბლონი:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="775"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="780"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="785"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="793"/>
         <source>Chang&amp;e...</source>
-        <translation type="vanished">შეცვ&amp;ლა...</translation>
+        <translation>შეცვ&amp;ლა...</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="800"/>
         <source>File Format:</source>
-        <translation type="vanished">ფაილის ფორმატი:</translation>
+        <translation>ფაილის ფორმატი:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="810"/>
         <source>screenshot%#04n</source>
-        <translation type="vanished">screenshot%#04n</translation>
+        <translation>screenshot%#04n</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="817"/>
         <source>Default Save Location:</source>
-        <translation type="vanished">ნაგულისხმევი შესანახი მდებარეობა:</translation>
+        <translation>ნაგულისხმევი შესანახი მდებარეობა:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="866"/>
         <source>Always show the &amp;save window</source>
-        <translation type="vanished">&amp;შენახვის ფანჯრის ყოველთვის ჩვენება</translation>
+        <translation>&amp;შენახვის ფანჯრის ყოველთვის ჩვენება</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="890"/>
         <source>Advanced</source>
-        <translation type="vanished">დამატებითი</translation>
+        <translation>დამატებითი</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="896"/>
         <source>Command Line</source>
-        <translation type="vanished">ბრძანების ზოლი</translation>
+        <translation>ბრძანების ზოლი</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="902"/>
         <source>mpv msg-level:</source>
-        <translation type="vanished">mpv msg-level:</translation>
+        <translation>mpv msg-level:</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="913"/>
         <source>no</source>
-        <translation type="vanished">no</translation>
+        <translation>no</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="918"/>
         <source>fatal</source>
-        <translation type="vanished">fatal</translation>
+        <translation>fatal</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="923"/>
         <source>error</source>
-        <translation type="vanished">error</translation>
+        <translation>error</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="928"/>
         <source>warn</source>
-        <translation type="vanished">warn</translation>
+        <translation>warn</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="933"/>
         <source>info</source>
-        <translation type="vanished">info</translation>
+        <translation>info</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="938"/>
         <source>status</source>
-        <translation type="vanished">status</translation>
+        <translation>status</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="943"/>
         <source>v</source>
-        <translation type="vanished">v</translation>
+        <translation>v</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="948"/>
         <source>debug</source>
-        <translation type="vanished">debug</translation>
+        <translation>debug</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="953"/>
         <source>trace</source>
-        <translation type="vanished">trace</translation>
+        <translation>trace</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1016"/>
         <source>&amp;OK</source>
-        <translation type="vanished">&amp;კარგი</translation>
+        <translation>&amp;კარგი</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.ui" line="1023"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;გაუქმება</translation>
+        <translation>&amp;გაუქმება</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="64"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">აირჩიეთ ეკრანის ასლის დირექტორია</translation>
+        <translation>აირჩიეთ ეკრანის ასლის დირექტორია</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Reset All Key Bindings?</source>
-        <translation type="vanished">ჩამოიყაროს ყველა კომბინაცია?</translation>
+        <translation>ჩამოიყაროს ყველა კომბინაცია?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="91"/>
         <source>Are you sure you want to reset all shortcut keys to its original bindings?</source>
-        <translation type="vanished">დარწმუნებული ხართ, რომ ყველა მალსახმობი კლავიშის ნაგულისხმევ კომბინაციაზე ჩამოყრა გსურთ?</translation>
+        <translation>დარწმუნებული ხართ, რომ ყველა მალსახმობი კლავიშის ნაგულისხმევ კომბინაციაზე ჩამოყრა გსურთ?</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="261"/>
         <source>Existing keybinding</source>
-        <translation type="vanished">არსებული კომბინაცია</translation>
+        <translation>არსებული კომბინაცია</translation>
     </message>
     <message>
+        <location filename="../ui/preferencesdialog.cpp" line="262"/>
         <source>%0 is already being used. Would you like to change its function?</source>
-        <translation type="vanished">%0 უკვე გამოიყენება. გსურთ მისი ფუნქციის შეცვლა?</translation>
+        <translation>%0 უკვე გამოიყენება. გსურთ მისი ფუნქციის შეცვლა?</translation>
     </message>
 </context>
 <context>
     <name>ScreenshotDialog</name>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="14"/>
         <source>Take Screenshot</source>
-        <translation type="vanished">ეკრანის ასლის გადაღება</translation>
+        <translation>ეკრანის ასლის გადაღება</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="117"/>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="127"/>
         <source>Save Location</source>
-        <translation type="vanished">შესანახი მდებარეობა</translation>
+        <translation>შესანახი მდებარეობა</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="134"/>
         <source>File Name Template</source>
-        <translation type="vanished">ფაილის სახელის შაბლონი</translation>
+        <translation>ფაილის სახელის შაბლონი</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="154"/>
         <source>jpg</source>
-        <translation type="vanished">jpg</translation>
+        <translation>jpg</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="159"/>
         <source>png</source>
-        <translation type="vanished">png</translation>
+        <translation>png</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="164"/>
         <source>tga</source>
-        <translation type="vanished">tga</translation>
+        <translation>tga</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="176"/>
         <source>Sho&amp;w subtitles</source>
-        <translation type="vanished">სუბტიტრების ჩვე&amp;ნება</translation>
+        <translation>სუბტიტრების ჩვე&amp;ნება</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="183"/>
         <source>Always show this dialog</source>
-        <translation type="vanished">ყოველთვის გამოჩნდეს ეს დიალოგი</translation>
+        <translation>ყოველთვის გამოჩნდეს ეს დიალოგი</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.ui" line="212"/>
         <source>&amp;Save</source>
-        <translation type="vanished">&amp;შენახვა</translation>
+        <translation>&amp;შენახვა</translation>
     </message>
     <message>
+        <location filename="../ui/screenshotdialog.cpp" line="26"/>
         <source>Choose screenshot directory</source>
-        <translation type="vanished">აირჩიეთ ეკრანის ასლის დირექტორია</translation>
+        <translation>აირჩიეთ ეკრანის ასლის დირექტორია</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
+        <location filename="../ui/updatedialog.ui" line="14"/>
         <source>Check for Updates</source>
-        <translation type="vanished">განახლებების შემოწმება</translation>
+        <translation>განახლებების შემოწმება</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="133"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checking for updates...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;განახლებები მოწმდება...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;განახლებები მოწმდება...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="156"/>
         <source>About 0 second(s) remaining</source>
-        <translation type="vanished">დარჩენილია დაახლოებით 0 წამ(ებ)ი</translation>
+        <translation>დარჩენილია დაახლოებით 0 წამ(ებ)ი</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="204"/>
         <source>&amp;Update</source>
-        <translation type="vanished">&amp;განახლება</translation>
+        <translation>&amp;განახლება</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.ui" line="223"/>
         <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;გაუქმება</translation>
+        <translation>&amp;გაუქმება</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="22"/>
         <source>&amp;CLOSE</source>
-        <translation type="vanished">&amp;დახურვა</translation>
+        <translation>&amp;დახურვა</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="32"/>
         <source>Download Complete</source>
-        <translation type="vanished">ჩამოტვირთვა დასრულებულია</translation>
+        <translation>ჩამოტვირთვა დასრულებულია</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="67"/>
         <source>About %0 second(s) remaining</source>
-        <translation type="vanished">დარჩენილია დაახლოებით %0 წამ(ებ)ი</translation>
+        <translation>დარჩენილია დაახლოებით %0 წამ(ებ)ი</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="69"/>
         <source>Calculating...</source>
-        <translation type="vanished">გამოთვლა...</translation>
+        <translation>გამოთვლა...</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="129"/>
         <source>You have the latest version!</source>
-        <translation type="vanished">თქვენ უკანასკნელი ვერსია გაქვთ!</translation>
+        <translation>თქვენ უკანასკნელი ვერსია გაქვთ!</translation>
     </message>
     <message>
+        <location filename="../ui/updatedialog.cpp" line="133"/>
         <source>Update Available!
 Version: %0</source>
-        <translation type="vanished">განახლება ხელმისაწვდომია!
+        <translation>განახლება ხელმისაწვდომია!
 ვერსია:%0</translation>
     </message>
 </context>
 <context>
     <name>UpdateManager</name>
     <message>
+        <location filename="../updatemanager.cpp" line="40"/>
         <source>Checking for updates...</source>
-        <translation type="vanished">განახლებების შემოწმება...</translation>
+        <translation>განახლებების შემოწმება...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="86"/>
         <source>Downloading update...</source>
-        <translation type="vanished">განახლების ჩამოტვირთვა...</translation>
+        <translation>განახლების ჩამოტვირთვა...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="93"/>
         <source>fopen error
 </source>
-        <translation type="vanished">fopen error
+        <translation>fopen error
 </translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="113"/>
         <source>write error</source>
-        <translation type="vanished">write error</translation>
+        <translation>write error</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="134"/>
         <source>Download complete</source>
-        <translation type="vanished">ჩამოტვირთვა დასრულდა</translation>
+        <translation>ჩამოტვირთვა დასრულდა</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="140"/>
         <source>Redirected...</source>
-        <translation type="vanished">გადამისამართებული...</translation>
+        <translation>გადამისამართებული...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="152"/>
         <source>Extracting...</source>
-        <translation type="vanished">ამოღება...</translation>
+        <translation>ამოღება...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="181"/>
         <source>Creating updater script...</source>
-        <translation type="vanished">გამნახლებელის სკრიპტის შექმნა...</translation>
+        <translation>გამნახლებელის სკრიპტის შექმნა...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="185"/>
         <source>Could not open file for writing...</source>
-        <translation type="vanished">ჩასაწერი ფაილი ვერ გაიხსნა...</translation>
+        <translation>ჩასაწერი ფაილი ვერ გაიხსნა...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="201"/>
         <source>Updating...</source>
-        <translation type="vanished">ნახლდება...</translation>
+        <translation>ნახლდება...</translation>
     </message>
     <message>
+        <location filename="../updatemanager.cpp" line="209"/>
         <source>Done. Restarting...</source>
-        <translation type="vanished">დასრულდა. გადატვირთვა...</translation>
+        <translation>დასრულდა. გადატვირთვა...</translation>
     </message>
 </context>
 </TS>
