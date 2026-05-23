@@ -7,7 +7,6 @@
 #include <QDir>
 #include <QUrl>
 #include <QGuiApplication>
-#include <qpa/qplatformnativeinterface.h>
 
 #include <X11/Xlib.h>
 
@@ -15,9 +14,8 @@ namespace Util {
 
 static Display *x11Display()
 {
-    if (auto *native = QGuiApplication::platformNativeInterface())
-        return static_cast<Display *>(native->nativeResourceForIntegration("display"));
-    return nullptr;
+    static Display *dpy = XOpenDisplay(nullptr);
+    return dpy;
 }
 
 QString VersionFileUrl()
