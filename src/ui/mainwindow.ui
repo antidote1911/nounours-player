@@ -1122,17 +1122,6 @@ QSlider::handle:horizontal {
      <addaction name="actionForce_16_9"/>
      <addaction name="actionForce_2_35_1"/>
     </widget>
-    <widget class="QMenu" name="menuSubtitle_Track">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="title">
-      <string>Subtitle &amp;Track</string>
-     </property>
-     <addaction name="action_Add_Subtitle_File"/>
-     <addaction name="separator"/>
-     <addaction name="action_none"/>
-    </widget>
     <widget class="QMenu" name="menuFont_Si_ze">
      <property name="enabled">
       <bool>false</bool>
@@ -1161,7 +1150,6 @@ QSlider::handle:horizontal {
     <addaction name="menuAspect_Ratio"/>
     <addaction name="separator"/>
     <addaction name="actionShow_Subtitles"/>
-    <addaction name="menuSubtitle_Track"/>
     <addaction name="menuFont_Si_ze"/>
     <addaction name="separator"/>
     <addaction name="action_Motion_Interpolation"/>
@@ -1185,17 +1173,6 @@ QSlider::handle:horizontal {
      <addaction name="separator"/>
      <addaction name="action_Playlist"/>
      <addaction name="action_This_File"/>
-    </widget>
-    <widget class="QMenu" name="menuAudio_Tracks">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="title">
-      <string>Audio &amp;Tracks</string>
-     </property>
-     <addaction name="action_Add_Audio_File"/>
-     <addaction name="separator"/>
-     <addaction name="action_none_3"/>
     </widget>
     <widget class="QMenu" name="menuS_peed">
      <property name="enabled">
@@ -1226,7 +1203,6 @@ QSlider::handle:horizontal {
     <addaction name="menuR_epeat"/>
     <addaction name="actionStop_after_Current"/>
     <addaction name="separator"/>
-    <addaction name="menuAudio_Tracks"/>
     <addaction name="menu_Volume"/>
    </widget>
    <widget class="QMenu" name="menu_Navigate">
@@ -1275,9 +1251,33 @@ QSlider::handle:horizontal {
     <addaction name="actionAbout_Qt"/>
     <addaction name="actionAbout_Nounours_Player"/>
    </widget>
+   <widget class="QMenu" name="menuSubtitle_Track">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Subtitle &amp;Track</string>
+    </property>
+    <addaction name="action_Add_Subtitle_File"/>
+    <addaction name="separator"/>
+    <addaction name="action_none"/>
+   </widget>
+   <widget class="QMenu" name="menuAudio_Tracks">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Audio &amp;Tracks</string>
+    </property>
+    <addaction name="action_Add_Audio_File"/>
+    <addaction name="separator"/>
+    <addaction name="action_none_3"/>
+   </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_View"/>
    <addaction name="menu_Playback"/>
+   <addaction name="menuSubtitle_Track"/>
+   <addaction name="menuAudio_Tracks"/>
    <addaction name="menu_Navigate"/>
    <addaction name="menu_Settings"/>
    <addaction name="menu_Help"/>
