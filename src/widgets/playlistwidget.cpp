@@ -4,10 +4,12 @@
 #include "mpvhandler.h"
 
 #include <QFile>
+#include <QFileDialog>
 #include <QListWidgetItem>
 #include <QMenu>
 #include <QFont>
 #include <QMessageBox>
+#include <QTextStream>
 
 #include <algorithm>
 #include <random>
@@ -340,6 +342,43 @@ void PlaylistWidget::contextMenuEvent(QContextMenuEvent *event)
                 });
         menu->exec(viewport()->mapToGlobal(event->pos()));
         delete menu;
+    }
+}
+
+void PlaylistWidget::SavePlaylist()
+{
+    if(playlist.isEmpty())
+        return;
+
+    QString basePath = nounours->mpv->getPath();
+    QString suggested = QDir(basePath).dirName() + ".m3u";
+
+    QString filePath = QFileDialog::getSaveFileName(
+        this, tr("Save Playlist"),
+        QDir::homePath() + "/" + suggested,
+        tr("M3U Playlist (*.m3u *.m3u8)")
+    );
+
+    if(filePath.isEmpty())
+        return;
+
+    QFile f(filePath);
+    if(!f.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
+
+    QTextStream out(&f);
+    out << "#EXTM3U\n";
+    for(const QString &item : playlist)
+        out << basePath << item << "\n";
+    f.close();
+
+    if(QMessageBox::question(
+            this,
+            tr("Playlist saved"),
+            tr("Playlist saved. Open it now?"),
+            QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
+    {
+        nounours->mpv->LoadFile(filePath);
     }
 }
 

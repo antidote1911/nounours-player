@@ -5,6 +5,9 @@
 #include <QContextMenuEvent>
 #include <QDropEvent>
 #include <QAction>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QTextStream>
 
 class NounoursEngine;
 
@@ -30,6 +33,7 @@ public slots:
     void Search(const QString&);
     void ShowAll(bool);
     void Shuffle();
+    void SavePlaylist();
 
 protected slots:
     void BoldText(const QString &f, bool state);

@@ -6,6 +6,7 @@
 #include <QFileInfo>
 #include <QFileInfoList>
 #include <QDateTime>
+#include <QTextStream>
 
 #include "nounoursengine.h"
 #include "overlayhandler.h"
@@ -336,6 +337,27 @@ QString MpvHandler::LoadPlaylist(QString f)
         {
             setPath(QDir::toNativeSeparators(fi.absoluteFilePath()+"/")); // set new path
             return PopulatePlaylist();
+        }
+        else if(fi.suffix().toLower() == "m3u" || fi.suffix().toLower() == "m3u8") // M3U playlist
+        {
+            QFile m3uFile(f);
+            if(!m3uFile.open(QIODevice::ReadOnly | QIODevice::Text))
+                return QString();
+            QStringList m3uPlaylist;
+            QTextStream in(&m3uFile);
+            while(!in.atEnd())
+            {
+                QString line = in.readLine().trimmed();
+                if(line.isEmpty() || line.startsWith('#'))
+                    continue;
+                if(QFileInfo::exists(line))
+                    m3uPlaylist.append(line);
+            }
+            if(m3uPlaylist.isEmpty())
+                return QString();
+            setPath("");
+            setPlaylist(m3uPlaylist);
+            return m3uPlaylist.first();
         }
         else if(fi.isFile()) // if file
         {

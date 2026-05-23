@@ -816,6 +816,12 @@ MainWindow::MainWindow(QWidget *parent):
                 ui->playlistWidget->RefreshPlaylist();
             });
 
+    connect(ui->savePlaylistButton, &QPushButton::clicked,              // Playlist: Save playlist button
+            [=]
+            {
+                ui->playlistWidget->SavePlaylist();
+            });
+
     connect(ui->inputLineEdit, &CustomLineEdit::submitted,
             [=](QString s)
             {

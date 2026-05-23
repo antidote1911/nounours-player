@@ -451,6 +451,45 @@ QPushButton:flat:pressed {
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="savePlaylistButton">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
+             <property name="toolTip">
+              <string>Save Playlist</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	padding: 2px;
+	margin: 1px;
+}
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+QPushButton:flat:pressed {
+	background: #383838;
+	border-radius: 2px;
+}</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../rsclist.qrc">
+               <normaloff>:/img/download.svg</normaloff>:/img/download.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>12</width>
+               <height>12</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
