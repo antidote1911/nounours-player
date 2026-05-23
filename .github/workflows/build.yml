@@ -23,7 +23,8 @@ jobs:
         run: |
           sudo apt-get update -q
           sudo apt-get install -y \
-            qt5-qmake \
+            cmake \
+            ninja-build \
             qtbase5-dev \
             libqt5svg5-dev \
             libqt5x11extras5-dev \
@@ -32,23 +33,22 @@ jobs:
             pkg-config
 
       - name: Build
-        working-directory: src
         run: |
-          qmake "Nounours-Player.pro" CONFIG+=release
-          make -j$(nproc)
+          cmake -B build -S src -DCMAKE_BUILD_TYPE=Release -G Ninja
+          cmake --build build -j$(nproc)
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: nounours-player-linux-x86_64
-          path: src/build/nounours-player
+          path: build/nounours-player
           if-no-files-found: error
 
       - name: Attach to release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
-          files: src/build/nounours-player
+          files: build/nounours-player
 
   # ─────────────────────────────────────────────
   # Windows x64  (MSYS2 / MinGW-w64)
@@ -71,8 +71,9 @@ jobs:
       - name: Install dependencies
         run: |
           pacman -S --noconfirm --needed \
-            make \
             mingw-w64-x86_64-toolchain \
+            mingw-w64-x86_64-cmake \
+            mingw-w64-x86_64-ninja \
             mingw-w64-x86_64-pkg-config \
             mingw-w64-x86_64-angleproject \
             mingw-w64-x86_64-qt5-base \
@@ -83,21 +84,16 @@ jobs:
             mingw-w64-x86_64-libzip
 
       - name: Build
-        working-directory: src
         run: |
-          /mingw64/bin/qmake-qt5.exe "Nounours-Player.pro" CONFIG+=release
-          make -j$(nproc)
+          cmake -B build -S src -DCMAKE_BUILD_TYPE=Release -G Ninja
+          cmake --build build -j$(nproc)
 
       - name: Deploy — collect DLLs
         run: |
           mkdir -p deploy
-          cp src/build/nounours-player.exe deploy/
-
-          # Qt DLLs (windeployqt gère svg, network, etc.)
+          cp build/nounours-player.exe deploy/
           windeployqt-qt5 --release --no-translations deploy/nounours-player.exe
-
-          # DLLs runtime MinGW (mpv, libzip, gcc, stdc++, winpthread…)
-          ldd src/build/nounours-player.exe \
+          ldd build/nounours-player.exe \
             | grep '/mingw64/bin' \
             | awk '{ print $3 }' \
             | xargs -I{} cp -n {} deploy/

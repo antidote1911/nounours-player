@@ -1,0 +1,170 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(nounours-player
+    VERSION 2.0.4
+    LANGUAGES CXX
+)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/ui)
+
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Network Svg Widgets LinguistTools)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(MPV REQUIRED IMPORTED_TARGET mpv)
+
+set(SOURCES
+    main.cpp
+    gesturehandler.cpp
+    mpvhandler.cpp
+    nounourscommands.cpp
+    nounoursengine.cpp
+    overlay.cpp
+    overlayhandler.cpp
+    settings.cpp
+    updatemanager.cpp
+    util.cpp
+    versions/2_0_3.cpp
+    ui/aboutdialog.cpp
+    ui/inputdialog.cpp
+    ui/jumpdialog.cpp
+    ui/keydialog.cpp
+    ui/locationdialog.cpp
+    ui/mainwindow.cpp
+    ui/preferencesdialog.cpp
+    ui/screenshotdialog.cpp
+    ui/updatedialog.cpp
+    widgets/customlabel.cpp
+    widgets/customlineedit.cpp
+    widgets/customslider.cpp
+    widgets/customsplitter.cpp
+    widgets/dimdialog.cpp
+    widgets/indexbutton.cpp
+    widgets/openbutton.cpp
+    widgets/playlistwidget.cpp
+    widgets/seekbar.cpp
+)
+
+set(RESOURCES rsclist.qrc)
+
+set(TS_FILES
+    translations/nounours-player_de.ts
+    translations/nounours-player_es.ts
+    translations/nounours-player_fr.ts
+    translations/nounours-player_hr.ts
+    translations/nounours-player_it.ts
+    translations/nounours-player_ka.ts
+    translations/nounours-player_ko.ts
+    translations/nounours-player_nl.ts
+    translations/nounours-player_pt_BR.ts
+    translations/nounours-player_ru.ts
+    translations/nounours-player_tr.ts
+    translations/nounours-player_vi.ts
+    translations/nounours-player_zh_CN.ts
+)
+
+# ── Platform-specific ────────────────────────────────────────────────────────
+if(WIN32)
+    find_package(Qt5 REQUIRED COMPONENTS WinExtras)
+    pkg_check_modules(LIBZIP REQUIRED IMPORTED_TARGET libzip)
+    list(APPEND SOURCES platform/win.cpp)
+    list(APPEND RESOURCES win_rsclist.qrc)
+    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+        list(APPEND SOURCES platform/win64.cpp)
+    else()
+        list(APPEND SOURCES platform/win32.cpp)
+    endif()
+    configure_file(nounours-player.rc.in "${CMAKE_CURRENT_BINARY_DIR}/nounours-player.rc")
+    list(APPEND SOURCES "${CMAKE_CURRENT_BINARY_DIR}/nounours-player.rc")
+elseif(APPLE)
+    list(APPEND SOURCES platform/osx.cpp)
+elseif(UNIX)
+    find_package(Qt5 REQUIRED COMPONENTS X11Extras)
+    pkg_check_modules(X11 REQUIRED IMPORTED_TARGET x11)
+    list(APPEND SOURCES platform/linux.cpp)
+endif()
+
+# ── Translations (.ts → .qm) ─────────────────────────────────────────────────
+qt5_add_translation(QM_FILES ${TS_FILES})
+add_custom_target(translations ALL DEPENDS ${QM_FILES})
+
+# ── Executable ───────────────────────────────────────────────────────────────
+if(WIN32)
+    add_executable(nounours-player WIN32 ${SOURCES} ${RESOURCES})
+elseif(APPLE)
+    add_executable(nounours-player MACOSX_BUNDLE ${SOURCES} ${RESOURCES})
+    set_source_files_properties(img/logo.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+    set_target_properties(nounours-player PROPERTIES MACOSX_BUNDLE_ICON_FILE logo.icns)
+else()
+    add_executable(nounours-player ${SOURCES} ${RESOURCES})
+endif()
+
+add_dependencies(nounours-player translations)
+
+# ── Include paths ────────────────────────────────────────────────────────────
+target_include_directories(nounours-player PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+
+# ── Link libraries ───────────────────────────────────────────────────────────
+target_link_libraries(nounours-player PRIVATE
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Network
+    Qt5::Svg
+    Qt5::Widgets
+    PkgConfig::MPV
+)
+
+if(WIN32)
+    target_link_libraries(nounours-player PRIVATE Qt5::WinExtras PkgConfig::LIBZIP)
+    target_compile_definitions(nounours-player PRIVATE WINVER=0x0501 _WIN32_WINNT=0x0501)
+    target_compile_options(nounours-player PRIVATE -pthread)
+    target_link_options(nounours-player PRIVATE -pthread)
+elseif(UNIX AND NOT APPLE)
+    target_link_libraries(nounours-player PRIVATE Qt5::X11Extras PkgConfig::X11)
+endif()
+
+# ── Build-time defines ───────────────────────────────────────────────────────
+set(SETTINGS_FILE "nounoursplayer" CACHE STRING "Settings file name")
+set(NOUNOURS_LANG_PATH "" CACHE STRING "Runtime path for .qm translation files (empty = use installed path)")
+
+target_compile_definitions(nounours-player PRIVATE
+    NOUNOURS_PLAYER_VERSION="${PROJECT_VERSION}"
+    SETTINGS_FILE="${SETTINGS_FILE}"
+    NOUNOURS_PLAYER_LANG_PATH="${NOUNOURS_LANG_PATH}"
+)
+
+# ── Install ──────────────────────────────────────────────────────────────────
+include(GNUInstallDirs)
+
+install(TARGETS nounours-player
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    BUNDLE  DESTINATION .
+)
+
+install(FILES ${QM_FILES}
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/nounours-player/translations
+)
+
+if(UNIX AND NOT APPLE)
+    install(FILES ../etc/logo/nounours-player.svg
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/pixmaps
+    )
+    install(FILES ../etc/logo/nounours-player.svg
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps
+    )
+    install(FILES ../etc/nounours-player.desktop
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/applications
+    )
+    install(FILES ../LICENSE
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/licenses/nounours-player
+    )
+endif()

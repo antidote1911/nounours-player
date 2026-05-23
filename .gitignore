@@ -1,14 +1,19 @@
 build/
 build[0-9]*/
-*.pro.*
-Makefile
 *.kdev4
-*.qm
 *.out
 .tags*
-.qmake.stash
 target/
 node_modules/
 .env
 dist/
 __pycache__/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+_deps/
+*.qm
