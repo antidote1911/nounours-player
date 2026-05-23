@@ -283,6 +283,13 @@ void PlaylistWidget::RemoveFromPlaylist(QListWidgetItem *item)
 
 void PlaylistWidget::DeleteFromDisk(QListWidgetItem *item)
 {
+    if(QMessageBox::question(
+            parentWidget(),
+            tr("Delete from disk?"),
+            tr("Are you sure you want to permanently delete \"%0\"?").arg(item->text()),
+            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
+        return;
+
     playlist.removeOne(item->text());
     QString r = item->text().left(item->text().lastIndexOf('.')+1); // get file root (no extension)
     // check and remove all subtitle_files with the same root as the video
