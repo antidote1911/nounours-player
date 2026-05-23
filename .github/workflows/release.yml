@@ -7,14 +7,17 @@ on:
 
 jobs:
   # ─────────────────────────────────────────────
-  # Linux x86_64
+  # Linux x86_64 — AppImage
   # ─────────────────────────────────────────────
   linux:
-    name: Linux x86_64
+    name: Linux AppImage x86_64
     runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Get version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -31,22 +34,45 @@ jobs:
             libmpv-dev \
             libx11-dev \
             libgl-dev \
-            pkg-config
+            pkg-config \
+            patchelf \
+            libfuse2
 
       - name: Build
         run: |
           cmake -B build -S src -DCMAKE_BUILD_TYPE=Release -G Ninja
           cmake --build build -j$(nproc)
 
+      - name: Install to AppDir
+        run: cmake --install build --prefix "$(pwd)/AppDir/usr"
+
+      - name: Download linuxdeploy tools
+        run: |
+          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+          chmod +x linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
+
+      - name: Create AppImage
+        env:
+          QMAKE: qmake6
+          APPIMAGE_EXTRACT_AND_RUN: "1"
+        run: |
+          ./linuxdeploy-x86_64.AppImage \
+            --appdir AppDir \
+            --plugin qt \
+            --output appimage
+          find . -maxdepth 1 -name "*.AppImage" ! -name "linuxdeploy*" \
+            -exec mv {} "nounoursplayer-${{ env.VERSION }}-linux-x86_64.AppImage" \;
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: nounours-player-linux-x86_64
-          path: build/nounours-player
+          name: linux-appimage
+          path: "nounoursplayer-${{ env.VERSION }}-linux-x86_64.AppImage"
           if-no-files-found: error
 
   # ─────────────────────────────────────────────
-  # Windows x64  (MSYS2 / MinGW-w64)
+  # Windows x64 — portable zip + setup.exe
   # ─────────────────────────────────────────────
   windows:
     name: Windows x64
@@ -63,6 +89,9 @@ jobs:
           msystem: MINGW64
           update: true
 
+      - name: Get version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: |
           pacman -S --noconfirm --needed \
@@ -75,7 +104,8 @@ jobs:
             mingw-w64-x86_64-qt6-svg \
             mingw-w64-x86_64-qt6-tools \
             mingw-w64-x86_64-mpv \
-            mingw-w64-x86_64-libzip
+            mingw-w64-x86_64-libzip \
+            mingw-w64-x86_64-nsis
 
       - name: Build
         run: |
@@ -92,15 +122,36 @@ jobs:
             | awk '{ print $3 }' \
             | xargs -I{} cp -n {} deploy/
 
-      - name: Package
+      - name: Package portable zip
         shell: pwsh
-        run: Compress-Archive -Path deploy\* -DestinationPath nounours-player-windows-x64.zip
+        run: |
+          Compress-Archive -Path deploy\* -DestinationPath "nounoursplayer-${{ env.VERSION }}-win-portable.zip"
 
-      - name: Upload artifact
+      - name: Build setup installer
+        run: |
+          DEPLOY_WIN=$(cygpath -w "$(pwd)/deploy")
+          ICO_WIN=$(cygpath -w "$(pwd)/src/img/logo.ico")
+          OUT_WIN=$(cygpath -w "$(pwd)")
+          NSI_WIN=$(cygpath -w "$(pwd)/packaging/windows/installer.nsi")
+          makensis \
+            -DVERSION="$VERSION" \
+            -DDEPLOY_DIR="$DEPLOY_WIN" \
+            -DICO_PATH="$ICO_WIN" \
+            -DOUT_DIR="$OUT_WIN" \
+            "$NSI_WIN"
+
+      - name: Upload portable artifact
         uses: actions/upload-artifact@v4
         with:
-          name: nounours-player-windows-x64
-          path: nounours-player-windows-x64.zip
+          name: windows-portable
+          path: "nounoursplayer-${{ env.VERSION }}-win-portable.zip"
+          if-no-files-found: error
+
+      - name: Upload setup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-setup
+          path: "nounoursplayer-${{ env.VERSION }}-win-setup.exe"
           if-no-files-found: error
 
   # ─────────────────────────────────────────────
@@ -114,22 +165,32 @@ jobs:
       contents: write
 
     steps:
+      - name: Get version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
+
       - name: Download Linux artifact
         uses: actions/download-artifact@v4
         with:
-          name: nounours-player-linux-x86_64
+          name: linux-appimage
           path: artifacts/
 
-      - name: Download Windows artifact
+      - name: Download Windows portable artifact
         uses: actions/download-artifact@v4
         with:
-          name: nounours-player-windows-x64
+          name: windows-portable
+          path: artifacts/
+
+      - name: Download Windows setup artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: windows-setup
           path: artifacts/
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            artifacts/nounours-player
-            artifacts/nounours-player-windows-x64.zip
+            artifacts/nounoursplayer-${{ env.VERSION }}-linux-x86_64.AppImage
+            artifacts/nounoursplayer-${{ env.VERSION }}-win-portable.zip
+            artifacts/nounoursplayer-${{ env.VERSION }}-win-setup.exe
           generate_release_notes: true
