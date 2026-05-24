@@ -39,7 +39,6 @@ MainWindow::MainWindow(QWidget *parent):
 
     logoLabel = new QLabel(ui->mpvFrame);
     logoLabel->setAlignment(Qt::AlignCenter);
-    logoLabel->setPixmap(QPixmap(":/img/logo.svg").scaled(128, 128, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     logoLabel->show();
 
     // command action mappings (action (right) performs command (left))
@@ -1025,6 +1024,10 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
         else if(event->type() == QEvent::Resize)
         {
             logoLabel->setGeometry(ui->mpvFrame->rect());
+            int maxW = qMin(ui->mpvFrame->width()  - 60, 420);
+            int maxH = qMin(ui->mpvFrame->height() - 40, maxW * 710 / 512);
+            logoLabel->setPixmap(QPixmap(":/img/logo_memorial.svg")
+                                 .scaled(maxW, maxH, Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
     }
     else if(event->type() == 6) // QEvent::KeyPress = 6  (but using QEvent::KeyPress causes compile errors, not sure why)
