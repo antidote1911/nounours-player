@@ -4,8 +4,10 @@
 
 A free and open-source, cross-platform media player built on [libmpv](https://mpv.io/) and Qt6.
 
-[![Build](https://github.com/Antidote1911/Nounours-Player/actions/workflows/build.yml/badge.svg)](https://github.com/Antidote1911/Nounours-Player/actions/workflows/build.yml)
+[![CI](https://github.com/Antidote1911/Nounours-Player/actions/workflows/ci.yml/badge.svg)](https://github.com/Antidote1911/Nounours-Player/actions/workflows/ci.yml)
 [![License: GPL v2](https://img.shields.io/badge/License-GPLv2-blue.svg)](LICENSE)
+
+![Screenshot](screenshot.png)
 
 ## Features
 
