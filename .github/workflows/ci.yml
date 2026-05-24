@@ -1,22 +1,25 @@
-name: Release Nounours-Player
+name: CI / Release
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches: [master]
+    tags: ['v*']
+  pull_request:
+    branches: [master]
 
 jobs:
   # ─────────────────────────────────────────────
-  # Linux x86_64 — AppImage
+  # Linux x86_64
   # ─────────────────────────────────────────────
   linux:
-    name: Linux AppImage x86_64
+    name: Linux x86_64
     runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Get version
+        if: startsWith(github.ref, 'refs/tags/v')
         run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
 
       - name: Install dependencies
@@ -44,15 +47,18 @@ jobs:
           cmake --build build -j$(nproc)
 
       - name: Install to AppDir
+        if: startsWith(github.ref, 'refs/tags/v')
         run: cmake --install build --prefix "$(pwd)/AppDir/usr"
 
       - name: Download linuxdeploy tools
+        if: startsWith(github.ref, 'refs/tags/v')
         run: |
           wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
           wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
           chmod +x linuxdeploy-x86_64.AppImage linuxdeploy-plugin-qt-x86_64.AppImage
 
       - name: Create AppImage
+        if: startsWith(github.ref, 'refs/tags/v')
         env:
           QMAKE: qmake6
           APPIMAGE_EXTRACT_AND_RUN: "1"
@@ -65,6 +71,7 @@ jobs:
             -exec mv {} "nounoursplayer-${{ env.VERSION }}-linux-x86_64.AppImage" \;
 
       - name: Upload artifact
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@v4
         with:
           name: linux-appimage
@@ -72,7 +79,7 @@ jobs:
           if-no-files-found: error
 
   # ─────────────────────────────────────────────
-  # Windows x64 — portable zip + setup.exe
+  # Windows x64  (MSYS2 / MinGW-w64)
   # ─────────────────────────────────────────────
   windows:
     name: Windows x64
@@ -90,6 +97,7 @@ jobs:
           update: true
 
       - name: Get version
+        if: startsWith(github.ref, 'refs/tags/v')
         run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
 
       - name: Install dependencies
@@ -112,6 +120,7 @@ jobs:
           cmake --build build -j$(nproc)
 
       - name: Deploy — collect DLLs
+        if: startsWith(github.ref, 'refs/tags/v')
         run: |
           mkdir -p deploy
           cp build/nounours-player.exe deploy/
@@ -122,11 +131,13 @@ jobs:
             | xargs -I{} cp -n {} deploy/
 
       - name: Package portable zip
+        if: startsWith(github.ref, 'refs/tags/v')
         shell: pwsh
         run: |
           Compress-Archive -Path deploy\* -DestinationPath "nounoursplayer-${{ env.VERSION }}-win-portable.zip"
 
       - name: Build setup installer
+        if: startsWith(github.ref, 'refs/tags/v')
         shell: pwsh
         run: |
           $src = (Get-Location).Path
@@ -138,6 +149,7 @@ jobs:
             "packaging\windows\installer.iss"
 
       - name: Upload portable artifact
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@v4
         with:
           name: windows-portable
@@ -145,6 +157,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload setup artifact
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@v4
         with:
           name: windows-setup
@@ -152,10 +165,11 @@ jobs:
           if-no-files-found: error
 
   # ─────────────────────────────────────────────
-  # Créer la release et attacher les binaires
+  # Créer la release (tag v* seulement, après succès des deux builds)
   # ─────────────────────────────────────────────
   release:
     name: Create Release
+    if: startsWith(github.ref, 'refs/tags/v')
     needs: [linux, windows]
     runs-on: ubuntu-latest
     permissions:
