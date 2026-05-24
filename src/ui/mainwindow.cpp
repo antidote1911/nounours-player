@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent):
     ui->menubar->removeAction(ui->menuSubtitle_Track->menuAction());
     ui->menubar->removeAction(ui->menuAudio_Tracks->menuAction());
     ui->menubar->removeAction(ui->menu_Help->menuAction());
-    QToolButton *helpBtn = new QToolButton(ui->menubar);
+    helpBtn = new QToolButton(ui->menubar);
     helpBtn->setText(ui->menu_Help->title());
     helpBtn->setMenu(ui->menu_Help);
     helpBtn->setPopupMode(QToolButton::InstantPopup);
@@ -171,6 +171,7 @@ MainWindow::MainWindow(QWidget *parent):
                         index = ui->indexLabel->text();
 
                 ui->retranslateUi(this);
+                helpBtn->setText(ui->menu_Help->title());
 
                 // reload strings we kept
                 setWindowTitle(title);

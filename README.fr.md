@@ -29,8 +29,7 @@ Un lecteur multimédia libre et open-source, multiplateforme, basé sur [libmpv]
 ## Compilation
 
 ```bash
-cmake -B build -S src -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j$(nproc)
+cmake -B build -S src -DCMAKE_BUILD_TYPE=Release && cmake --build build -j$(nproc)
 ```
 
 ### Dépendances Linux (Ubuntu 24.04)

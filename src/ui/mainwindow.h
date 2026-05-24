@@ -14,6 +14,7 @@
 #include <QAction>
 #include <QRect>
 #include <QLabel>
+#include <QToolButton>
 
 #include "recent.h"
 
@@ -92,6 +93,7 @@ private:
                     userStopped     = false;
     QTimer          *autohide       = nullptr;
     QLabel          *logoLabel      = nullptr;
+    QToolButton     *helpBtn        = nullptr;
 
     // variables
     QList<Recent> recent;
