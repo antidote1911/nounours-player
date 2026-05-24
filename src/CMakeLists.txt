@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(nounours-player
-    VERSION 2.0.6
+    VERSION 2.0.7
     LANGUAGES CXX
 )
 
