@@ -80,22 +80,18 @@ void PlaylistWidget::Populate()
     else
         item = file;
 
-    if(showAll == true)
+    shuffled = false;
+    clear();
+    for(int i = 0; i < playlist.size(); ++i)
     {
-        clear();
-        addItems(playlist);
+        if(showAll || playlist[i].endsWith(suffix))
+        {
+            QListWidgetItem *it = new QListWidgetItem(playlist[i]);
+            it->setData(Qt::UserRole, i + 1);
+            addItem(it);
+        }
     }
-    else
-    {
-        // filter by suffix
-        QStringList newPlaylist;
-        for(auto i = playlist.begin(); i != playlist.end(); ++i)
-            if(i->endsWith(suffix))
-                newPlaylist.append(*i);
-        // load
-        clear();
-        addItems(newPlaylist);
-    }
+    BoldText(file, true);
     SelectItem(item);
 }
 
@@ -236,6 +232,7 @@ void PlaylistWidget::Shuffle()
     if(this->count() == 0)
         return;
 
+    shuffled = true;
     QListWidgetItem *current = currentItem();
     QString item;
     if(current != nullptr)
@@ -243,17 +240,21 @@ void PlaylistWidget::Shuffle()
     else
         item = file;
 
-    QStringList newPlaylist;
-    for(int i = 0; i < count(); ++i)
-        newPlaylist.append(this->item(i)->text());
+    // Take all items, preserving UserRole numbers
+    QList<QListWidgetItem*> items;
+    while(count() > 0)
+        items.append(takeItem(0));
 
-    std::shuffle(newPlaylist.begin(), newPlaylist.end(), std::mt19937{std::random_device{}()});
-    // make current playing item the first
-    auto iter = std::find(newPlaylist.begin(), newPlaylist.end(), file);
-    std::swap(*iter, *newPlaylist.begin());
-    // load
-    clear();
-    addItems(newPlaylist);
+    std::shuffle(items.begin(), items.end(), std::mt19937{std::random_device{}()});
+
+    // Make currently playing file first
+    auto iter = std::find_if(items.begin(), items.end(),
+                             [this](QListWidgetItem *it){ return it->text() == file; });
+    if(iter != items.end())
+        std::swap(*iter, *items.begin());
+
+    for(auto *it : items)
+        addItem(it);
 
     BoldText(file, true);
     SelectItem(item);
@@ -275,10 +276,19 @@ void PlaylistWidget::SelectItem(const QString &item)
     scrollToItem(currentItem());
 }
 
+void PlaylistWidget::Renumber()
+{
+    if(shuffled)
+        return;
+    for(int i = 0; i < count(); ++i)
+        item(i)->setData(Qt::UserRole, i + 1);
+}
+
 void PlaylistWidget::RemoveFromPlaylist(QListWidgetItem *item)
 {
     playlist.removeOne(item->text());
     delete item;
+    Renumber();
     emit currentRowChanged(currentRow());
 }
 
@@ -324,6 +334,7 @@ void PlaylistWidget::DeleteFromDisk(QListWidgetItem *item)
     QFile f(nounours->mpv->getPath()+item->text());
     f.remove();
     delete item;
+    Renumber();
     emit currentRowChanged(currentRow());
 }
 

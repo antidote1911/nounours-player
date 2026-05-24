@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
+#include <QTimer>
 
 #include <mpv/client.h>
 
@@ -187,7 +188,8 @@ private:
                 screenshotDir,
                 suffix,
                 vo,
-                msgLevel;
+                msgLevel,
+                cachedHdrFormat;
     double      speed = 1;
     int         time = 0,
                 lastTime = 0,
@@ -196,6 +198,7 @@ private:
                 vid,
                 aid,
                 sid;
+    QTimer     *bufferTimer = nullptr;
     bool        init = false,
                 playlistVisible = false,
                 subtitleVisibility = true,

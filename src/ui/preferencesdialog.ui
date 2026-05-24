@@ -753,6 +753,64 @@ QPushButton:pressed {
         </layout>
        </item>
        <item>
+        <widget class="QGroupBox" name="groupBox_vo">
+         <property name="title">
+          <string>Video Output</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_vo">
+          <item>
+           <widget class="QLabel" name="label_vo">
+            <property name="text">
+             <string>Video output driver (vo):</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="voComboBox">
+            <item>
+             <property name="text">
+              <string>gpu-next</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>gpu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>x11</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>vdpau</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>vaapi</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_vo">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
           <string>Screenshot</string>

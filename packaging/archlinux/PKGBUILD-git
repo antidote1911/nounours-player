@@ -1,6 +1,6 @@
 # Maintainer: antidote1911 <eugenadaken836@outlook.com>
 pkgname=nounours-player-git
-pkgver=r0.0000000
+pkgver=1
 pkgrel=1
 pkgdesc="A simple libmpv-based multimedia player (git version)"
 arch=('x86_64')

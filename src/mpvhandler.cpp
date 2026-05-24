@@ -7,6 +7,11 @@
 #include <QFileInfoList>
 #include <QDateTime>
 #include <QTextStream>
+extern "C" {
+#include <libavformat/avformat.h>
+#include <libavcodec/avcodec.h>
+#include <libavutil/dovi_meta.h>
+}
 
 #include "nounoursengine.h"
 #include "overlayhandler.h"
@@ -34,6 +39,10 @@ MpvHandler::MpvHandler(int64_t wid, QObject *parent):
     mpv_set_option_string(mpv, "ytdl", "yes"); // youtube-dl support
     mpv_set_option_string(mpv, "sub-auto", "fuzzy"); // Automatic subfile detection
     mpv_set_option_string(mpv, "audio-client-name", "nounours-player"); // show correct icon in e.g. pavucontrol
+
+    bufferTimer = new QTimer(this);
+    bufferTimer->setSingleShot(true);
+    connect(bufferTimer, &QTimer::timeout, this, [this]{ ShowText(tr("Buffering..."), 0); });
 
     // get updates when these properties change
     mpv_observe_property(mpv, 0, "playback-time", MPV_FORMAT_DOUBLE);
@@ -86,9 +95,14 @@ QString MpvHandler::getMediaInfo()
     mpv_get_property(mpv, "estimated-vf-fps", MPV_FORMAT_DOUBLE, &fps);
     mpv_get_property(mpv, "video-bitrate", MPV_FORMAT_DOUBLE, &vbitrate);
     mpv_get_property(mpv, "audio-bitrate", MPV_FORMAT_DOUBLE, &abitrate);
-    QString current_vo = mpv_get_property_string(mpv, "current-vo"),
-            current_ao = mpv_get_property_string(mpv, "current-ao"),
-            hwdec_active = mpv_get_property_string(mpv, "hwdec-active");
+    QString current_vo    = mpv_get_property_string(mpv, "current-vo"),
+            current_ao    = mpv_get_property_string(mpv, "current-ao"),
+            hwdec_active  = mpv_get_property_string(mpv, "hwdec-active"),
+            transfer      = mpv_get_property_string(mpv, "video-params/gamma"),
+            primaries     = mpv_get_property_string(mpv, "video-params/primaries"),
+            pixfmt        = mpv_get_property_string(mpv, "video-params/pixelformat");
+
+    QString hdrFormat = cachedHdrFormat;
 
     int vtracks = 0,
         atracks = 0;
@@ -104,7 +118,6 @@ QString MpvHandler::getMediaInfo()
     const QString outer = "%0: %1\n", inner = "    %0: %1\n";
 
     QString out = outer.arg(tr("File"), fi.fileName()) +
-            inner.arg(tr("Title"), fileInfo.media_title) +
             inner.arg(tr("File size"), Util::HumanSize(fi.size())) +
             inner.arg(tr("Date created"), fi.birthTime().toString()) +
             inner.arg(tr("Media length"), Util::FormatTime(fileInfo.length, fileInfo.length)) + '\n';
@@ -114,32 +127,20 @@ QString MpvHandler::getMediaInfo()
             inner.arg(tr("Resolution"), QString("%0 x %1 (%2)").arg(QString::number(fileInfo.video_params.width),
                                                                     QString::number(fileInfo.video_params.height),
                                                                     Util::Ratio(fileInfo.video_params.width, fileInfo.video_params.height))) +
+            inner.arg(tr("HDR"), hdrFormat) +
+            inner.arg(tr("Color"), QString("%0  |  %1").arg(pixfmt, primaries)) +
             inner.arg(tr("FPS"), QString::number(fps)) +
             inner.arg(tr("A/V Sync"), QString::number(avsync)) +
-            inner.arg(tr("Bitrate"), tr("%0 kbps").arg(vbitrate/1000)) + '\n';
+            inner.arg(tr("Bitrate"), tr("%0 Mbps").arg(QString::number(vbitrate/1000000.0, 'f', 2))) + '\n';
     if(fileInfo.audio_params.codec != QString())
         out += outer.arg(tr("Audio (x%0)").arg(QString::number(atracks)), fileInfo.audio_params.codec) +
             inner.arg(tr("Audio Output"), current_ao) +
             inner.arg(tr("Sample Rate"), QString::number(fileInfo.audio_params.samplerate)) +
             inner.arg(tr("Channels"), QString::number(fileInfo.audio_params.channels)) +
-            inner.arg(tr("Bitrate"), tr("%0 kbps").arg(abitrate)) + '\n';
+            inner.arg(tr("Bitrate"), tr("%0 Mbps").arg(QString::number(abitrate/1000000.0, 'f', 2))) + '\n';
 
     if(fileInfo.chapters.length() > 0)
-    {
-        out += outer.arg(tr("Chapters"), QString());
-        int n = 1;
-        for(auto &chapter : fileInfo.chapters)
-            out += inner.arg(QString::number(n++), chapter.title);
-        out += '\n';
-    }
-
-    if(fileInfo.metadata.size() > 0)
-    {
-        out += outer.arg(tr("Metadata"), QString());
-        for(auto data = fileInfo.metadata.begin(); data != fileInfo.metadata.end(); ++data)
-            out += inner.arg(data.key(), *data);
-        out += '\n';
-    }
+        out += outer.arg(tr("Chapters"), QString::number(fileInfo.chapters.length())) + '\n';
 
     return out;
 }
@@ -200,9 +201,12 @@ bool MpvHandler::event(QEvent *event)
                     if(prop->format == MPV_FORMAT_FLAG)
                     {
                         if((bool)*(unsigned*)prop->data && playState == Mpv::Playing)
-                            ShowText(tr("Buffering..."), 0);
+                            bufferTimer->start(3000);
                         else
+                        {
+                            bufferTimer->stop();
                             ShowText(QString(), 0);
+                        }
                     }
                 }
                 else if(QString(prop->name) == "idle-active")
@@ -737,6 +741,97 @@ void MpvHandler::LoadFileInfo()
     LoadVideoParams();
     LoadAudioParams();
     LoadMetadata();
+
+    // Detect HDR format via libavformat (reads container side_data directly)
+    cachedHdrFormat = QString();
+    {
+        AVFormatContext *fmt = nullptr;
+        QByteArray filePath = (path + file).toUtf8();
+        if(avformat_open_input(&fmt, filePath.constData(), nullptr, nullptr) == 0)
+        {
+            for(unsigned i = 0; i < fmt->nb_streams; ++i)
+            {
+                AVStream *st = fmt->streams[i];
+                if(st->codecpar->codec_type != AVMEDIA_TYPE_VIDEO) continue;
+
+                bool hasDV = false, hasHDR10plus = false;
+                int dvProfile = -1;
+                int colorTrc = st->codecpar->color_trc;
+
+                // Stream-level side data (works for MP4/MOV)
+                for(int s = 0; s < st->codecpar->nb_coded_side_data; ++s)
+                {
+                    const AVPacketSideData &sd = st->codecpar->coded_side_data[s];
+                    if(sd.type == AV_PKT_DATA_DOVI_CONF)
+                    {
+                        hasDV = true;
+                        const AVDOVIDecoderConfigurationRecord *dovi =
+                            (const AVDOVIDecoderConfigurationRecord *)sd.data;
+                        dvProfile = dovi->dv_profile;
+                    }
+                    if(sd.type == AV_PKT_DATA_DYNAMIC_HDR10_PLUS)
+                        hasHDR10plus = true;
+                }
+
+                // Packet-level detection for HDR10+ (per-frame dynamic metadata)
+                if(!hasDV && !hasHDR10plus && colorTrc == AVCOL_TRC_SMPTE2084)
+                {
+                    av_seek_frame(fmt, (int)i, 0, AVSEEK_FLAG_BACKWARD);
+
+                    AVPacket *pkt = av_packet_alloc();
+                    int videoPackets = 0;
+                    while(!hasHDR10plus && videoPackets < 5 && av_read_frame(fmt, pkt) >= 0)
+                    {
+                        if(pkt->stream_index == (int)i)
+                        {
+                            for(int p = 0; p < pkt->side_data_elems; ++p)
+                                if(pkt->side_data[p].type == AV_PKT_DATA_DYNAMIC_HDR10_PLUS)
+                                    hasHDR10plus = true;
+
+                            // Fallback: scan raw bytes for SMPTE ST 2094-40 T35 signature
+                            // country=0xB5, provider=0x003C, code=0x0001
+                            if(!hasHDR10plus && pkt->data && pkt->size > 5)
+                            {
+                                const uint8_t *d = pkt->data;
+                                const uint8_t *end = d + pkt->size - 5;
+                                while(d < end)
+                                {
+                                    if(d[0]==0xB5 && d[1]==0x00 && d[2]==0x3C &&
+                                       d[3]==0x00 && d[4]==0x01)
+                                    {
+                                        hasHDR10plus = true;
+                                        break;
+                                    }
+                                    ++d;
+                                }
+                            }
+                            ++videoPackets;
+                        }
+                        av_packet_unref(pkt);
+                    }
+                    av_packet_free(&pkt);
+                }
+
+                if(hasDV)
+                    cachedHdrFormat = dvProfile >= 0
+                        ? tr("Dolby Vision (Profile %0)").arg(dvProfile)
+                        : tr("Dolby Vision");
+                else if(hasHDR10plus)
+                    cachedHdrFormat = tr("HDR10+");
+                else if(colorTrc == AVCOL_TRC_SMPTE2084)
+                    cachedHdrFormat = tr("HDR10 (PQ)");
+                else if(colorTrc == AVCOL_TRC_ARIB_STD_B67)
+                    cachedHdrFormat = tr("HLG");
+                else if(colorTrc == AVCOL_TRC_BT709 || colorTrc == AVCOL_TRC_GAMMA22
+                        || colorTrc == AVCOL_TRC_BT2020_10 || colorTrc == AVCOL_TRC_UNSPECIFIED)
+                    cachedHdrFormat = tr("SDR");
+                else
+                    cachedHdrFormat = QString("TRC %0").arg(colorTrc);
+                break; // first video stream only
+            }
+            avformat_close_input(&fmt);
+        }
+    }
 
     emit fileInfoChanged(fileInfo);
 }

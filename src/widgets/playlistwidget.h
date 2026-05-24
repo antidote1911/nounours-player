@@ -22,7 +22,9 @@ public:
     {
         QStyleOptionViewItem opt = option;
         initStyleOption(&opt, index);
-        opt.text = QString::number(index.row() + 1) + ".  " + opt.text;
+        int num = index.data(Qt::UserRole).toInt();
+        if(num == 0) num = index.row() + 1;
+        opt.text = QString::number(num) + ".  " + opt.text;
         QStyle *style = opt.widget ? opt.widget->style() : QApplication::style();
         style->drawControl(QStyle::CE_ItemViewItem, &opt, painter, opt.widget);
     }
@@ -57,6 +59,9 @@ protected slots:
     void RemoveFromPlaylist(QListWidgetItem *item);
     void DeleteFromDisk(QListWidgetItem *item);
 
+private:
+    void Renumber();
+
 protected:
     void contextMenuEvent(QContextMenuEvent *event);
     void dropEvent(QDropEvent *event);
@@ -68,7 +73,8 @@ private:
     QString file, suffix;
     bool newPlaylist,
          refresh,
-         showAll;
+         showAll,
+         shuffled = false;
 };
 
 #endif // PLAYLISTWIDGET_H

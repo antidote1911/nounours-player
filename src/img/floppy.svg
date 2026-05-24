@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <!-- Floppy body with label cutout and shutter slot -->
+  <path fill="#F5F5F5" fill-rule="evenodd"
+    d="M6,4 H43 L54,15 V56 H6 Z
+       M11,7 H41 V25 H11 Z
+       M18,43 H42 V53 H18 Z"/>
+  <!-- Write-protect tab (stripe inside label area) -->
+  <rect fill="#F5F5F5" x="37" y="7" width="4" height="18"/>
+</svg>

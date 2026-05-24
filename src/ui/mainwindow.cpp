@@ -5,6 +5,7 @@
 #include <QtMath>
 #include <QLibraryInfo>
 #include <QMimeData>
+#include <QToolButton>
 #include <QPointingDevice>
 
 #include "nounoursengine.h"
@@ -40,6 +41,17 @@ MainWindow::MainWindow(QWidget *parent):
     logoLabel = new QLabel(ui->mpvFrame);
     logoLabel->setAlignment(Qt::AlignCenter);
     logoLabel->show();
+    ui->menubar->removeAction(ui->menuSubtitle_Track->menuAction());
+    ui->menubar->removeAction(ui->menuAudio_Tracks->menuAction());
+    ui->menubar->removeAction(ui->menu_Help->menuAction());
+    QToolButton *helpBtn = new QToolButton(ui->menubar);
+    helpBtn->setText(ui->menu_Help->title());
+    helpBtn->setMenu(ui->menu_Help);
+    helpBtn->setPopupMode(QToolButton::InstantPopup);
+    helpBtn->setLayoutDirection(Qt::RightToLeft);
+    helpBtn->setStyleSheet("QToolButton { background: transparent; color: #cccccc; padding: 4px 8px; border: none; }"
+                           "QToolButton:hover, QToolButton:pressed { background: #3a3a3a; color: white; }");
+    ui->menubar->setCornerWidget(helpBtn, Qt::TopRightCorner);
 
     // command action mappings (action (right) performs command (left))
     commandActionMap = {
@@ -509,7 +521,6 @@ MainWindow::MainWindow(QWidget *parent):
                 switch(playState)
                 {
                 case Mpv::Loaded:
-                    nounours->mpv->ShowText("Loading...", 0);
                     break;
 
                 case Mpv::Started:
@@ -853,6 +864,15 @@ MainWindow::MainWindow(QWidget *parent):
                 ui->playlistWidget->SavePlaylist();
             });
 
+    connect(ui->shufflePlaylistButton, &QPushButton::toggled,
+            [=](bool checked)
+            {
+                if(checked)
+                    ui->playlistWidget->Shuffle();
+                else
+                    ui->playlistWidget->Populate();
+            });
+
     connect(ui->inputLineEdit, &CustomLineEdit::submitted,
             [=](QString s)
             {
@@ -1149,8 +1169,13 @@ void MainWindow::SetPlaybackControls(bool enable)
     ui->actionMedia_Info->setEnabled(enable);
     ui->actionShow_in_Folder->setEnabled(enable && nounours->mpv->getPath() != QString());
     ui->action_Full_Screen->setEnabled(enable);
-    ui->menuSubtitle_Track->menuAction()->setEnabled(enable);
-    ui->menuAudio_Tracks->menuAction()->setEnabled(enable);
+    if(enable) {
+        ui->menubar->addAction(ui->menuSubtitle_Track->menuAction());
+        ui->menubar->addAction(ui->menuAudio_Tracks->menuAction());
+    } else {
+        ui->menubar->removeAction(ui->menuSubtitle_Track->menuAction());
+        ui->menubar->removeAction(ui->menuAudio_Tracks->menuAction());
+    }
     if(!enable)
     {
         ui->action_Hide_Album_Art->setEnabled(false);

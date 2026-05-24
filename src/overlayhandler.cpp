@@ -10,14 +10,15 @@
 #include <QFileInfo>
 #include <QPainter>
 #include <QPainterPath>
+#include <QPainterPathStroker>
 #include <QPen>
 #include <QBrush>
 #include <QTimer>
 #include <QFontMetrics>
 #include <QThread>
 
-#define OVERLAY_INFO 62
-#define OVERLAY_STATUS 63
+#define OVERLAY_INFO    62
+#define OVERLAY_STATUS  63
 #define OVERLAY_REFRESH_RATE 1000
 
 OverlayHandler::OverlayHandler(QObject *parent):
@@ -49,22 +50,20 @@ void OverlayHandler::showStatusText(const QString &text, int duration)
 
 void OverlayHandler::showInfoText(bool show)
 {
-    if(show) // show media info
+    if(show)
     {
         if(refresh_timer == nullptr)
         {
             refresh_timer = new QTimer(this);
             refresh_timer->setSingleShot(true);
-            connect(refresh_timer, &QTimer::timeout, // on timeout
-                    [=] { showInfoText(); });
+            connect(refresh_timer, &QTimer::timeout, [=] { showInfoText(); });
         }
         refresh_timer->start(OVERLAY_REFRESH_RATE);
         showText(nounours->mpv->getMediaInfo(),
-                 QFont(Util::MonospaceFont(),
-                       14, QFont::Bold), QColor(0xFFFF00),
+                 QFont(Util::MonospaceFont(), 14, QFont::Bold), QColor(0xFFFF00),
                  QPoint(20, 20), 0, OVERLAY_INFO);
     }
-    else // hide media info
+    else
     {
         delete refresh_timer;
         refresh_timer = nullptr;
@@ -72,7 +71,7 @@ void OverlayHandler::showInfoText(bool show)
     }
 }
 
-void OverlayHandler::showText(const QString &text, QFont font, QColor color, QPoint pos, int duration, int id)
+void OverlayHandler::showText(const QString &text, QFont font, QColor color, QPoint pos, int duration, int id, int maxWidth)
 {
     overlay_mutex.lock();
     // increase next overlay_id
@@ -94,8 +93,10 @@ void OverlayHandler::showText(const QString &text, QFont font, QColor color, QPo
         h = fm.height()*lines.length();
     for(auto line : lines)
         w = std::max(fm.horizontalAdvance(line), w);
-    float xF = float(nounours->window->ui->mpvFrame->width()-2*pos.x()) / (fm_correction*w);
-    float yF = float(nounours->window->ui->mpvFrame->height()-2*pos.y()) / h;
+    int availW = maxWidth > 0 ? maxWidth : nounours->window->ui->mpvFrame->width() - 2*pos.x();
+    int availH = nounours->window->ui->mpvFrame->height() - 2*pos.y();
+    float xF = float(availW) / (fm_correction*w);
+    float yF = float(availH) / h;
     font.setPointSizeF(std::min(font.pointSizeF()*std::min(xF, yF), font.pointSizeF()));
 
     fm = QFontMetrics(font);
@@ -110,14 +111,22 @@ void OverlayHandler::showText(const QString &text, QFont font, QColor color, QPo
         p += QPoint(0, h);
     }
 
-    QImage *canvas = new QImage(w, p.y(), QImage::Format_ARGB32); // make the canvas the right size
+    QImage *canvas = new QImage(w, p.y(), QImage::Format_ARGB32);
     canvas->fill(QColor(0,0,0,0)); // fill it with nothing
 
     QPainter painter(canvas); // prepare to paint
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.setCompositionMode(QPainter::CompositionMode_Overlay);
+    painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
     painter.setFont(font);
-    painter.setPen(QColor(0, 0, 0));
+    // halo all around the text
+    QPainterPathStroker stroker;
+    stroker.setWidth(5.0);
+    stroker.setCapStyle(Qt::RoundCap);
+    stroker.setJoinStyle(Qt::RoundJoin);
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(QColor(0, 0, 0, 210));
+    painter.drawPath(stroker.createStroke(path));
+    // text pass
     painter.setBrush(color);
     painter.drawPath(path);
 

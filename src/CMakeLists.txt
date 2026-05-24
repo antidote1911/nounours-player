@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(nounours-player
-    VERSION 2.0.7
+    VERSION 2.0.8
     LANGUAGES CXX
 )
 
@@ -16,6 +16,7 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/ui)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Network Svg Widgets LinguistTools)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
+pkg_check_modules(AVFORMAT REQUIRED libavformat libavcodec libavutil)
 
 set(SOURCES
     main.cpp
@@ -120,7 +121,9 @@ target_link_libraries(nounours-player PRIVATE
     Qt6::Svg
     Qt6::Widgets
     ${MPV_LINK_LIBRARIES}
+    ${AVFORMAT_LINK_LIBRARIES}
 )
+target_include_directories(nounours-player PRIVATE ${AVFORMAT_INCLUDE_DIRS})
 
 if(WIN32)
     target_link_libraries(nounours-player PRIVATE ${LIBZIP_LINK_LIBRARIES})

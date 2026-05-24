@@ -48,6 +48,12 @@ PreferencesDialog::PreferencesDialog(NounoursEngine *nounours, QWidget *parent) 
     ui->templateLineEdit->setText(nounours->mpv->getScreenshotTemplate());
     ui->msgLvlComboBox->setCurrentText(nounours->mpv->getMsgLevel());
 
+    // Video output: show current vo; if not in list, add it so nothing is lost
+    QString currentVo = nounours->mpv->getVo();
+    if(!currentVo.isEmpty() && ui->voComboBox->findText(currentVo) == -1)
+        ui->voComboBox->addItem(currentVo);
+    ui->voComboBox->setCurrentText(currentVo.isEmpty() ? "gpu-next" : currentVo);
+
     // add shortcuts
     saved = nounours->input;
     PopulateShortcuts();
@@ -162,6 +168,7 @@ PreferencesDialog::~PreferencesDialog()
         nounours->mpv->ScreenshotDirectory(screenshotDir);
         nounours->mpv->ScreenshotTemplate(ui->templateLineEdit->text());
         nounours->mpv->MsgLevel(ui->msgLvlComboBox->currentText());
+        nounours->mpv->Vo(ui->voComboBox->currentText());
         nounours->window->MapShortcuts();
     }
     else
