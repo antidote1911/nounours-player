@@ -192,6 +192,7 @@ void PreferencesDialog::PopulateLangs()
     flist = root.entryInfoList({"*.qm"}, QDir::Files);
     // add the languages to the combo box
     ui->langComboBox->addItem("auto");
+    ui->langComboBox->addItem("en");
     for(auto &i : flist)
     {
         QString lang = i.fileName().mid(i.fileName().indexOf("_") + 1); // nounours-player_....

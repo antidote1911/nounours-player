@@ -16,7 +16,8 @@ build() {
           -B build \
           -G Ninja \
           -DCMAKE_BUILD_TYPE=Release \
-          -DCMAKE_INSTALL_PREFIX=/usr
+          -DCMAKE_INSTALL_PREFIX=/usr \
+          -DNOUNOURS_LANG_PATH=/usr/share/nounours-player/translations
     cmake --build build
 }
 
