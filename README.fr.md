@@ -1,39 +1,37 @@
 # Nounours Player
 
-[Lire en français](README.fr.md)
-
-A free and open-source, cross-platform media player built on [libmpv](https://mpv.io/) and Qt6.
+Un lecteur multimédia libre et open-source, multiplateforme, basé sur [libmpv](https://mpv.io/) et Qt6.
 
 [![Build](https://github.com/Antidote1911/Nounours-Player/actions/workflows/build.yml/badge.svg)](https://github.com/Antidote1911/Nounours-Player/actions/workflows/build.yml)
 [![License: GPL v2](https://img.shields.io/badge/License-GPLv2-blue.svg)](LICENSE)
 
-## Features
+## Fonctionnalités
 
-- Plays virtually any audio/video format via libmpv/FFmpeg
-- Playlist management with shuffle and repeat modes
-- Gesture support (drag to seek, drag to adjust volume)
-- Dim Lights mode (X11)
-- Always-on-top window
-- Screenshot capture
-- Subtitle and audio track selection
-- Configurable keyboard shortcuts
-- Update checker
-- 13 languages: German, Spanish, French, Croatian, Italian, Georgian, Korean, Dutch, Brazilian Portuguese, Russian, Turkish, Vietnamese, Chinese (Simplified)
+- Lecture de pratiquement tous les formats audio/vidéo via libmpv/FFmpeg
+- Gestion de playlists avec modes aléatoire et répétition
+- Support des gestes (glisser pour avancer/reculer, glisser pour régler le volume)
+- Mode Lumières tamisées (X11)
+- Fenêtre toujours au premier plan
+- Capture d'écran
+- Sélection des pistes de sous-titres et audio
+- Raccourcis clavier configurables
+- Vérificateur de mises à jour
+- 13 langues : allemand, espagnol, français, croate, italien, géorgien, coréen, néerlandais, portugais brésilien, russe, turc, vietnamien, chinois (simplifié)
 
-## Requirements
+## Prérequis
 
 - Qt 6.4+
 - libmpv
 - X11 (Linux)
 
-## Build
+## Compilation
 
 ```bash
 cmake -B build -S src -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 ```
 
-### Linux dependencies (Ubuntu 24.04)
+### Dépendances Linux (Ubuntu 24.04)
 
 ```bash
 sudo apt-get install cmake ninja-build \
@@ -51,14 +49,14 @@ pacman -S --needed mingw-w64-x86_64-toolchain mingw-w64-x86_64-cmake \
     mingw-w64-x86_64-mpv mingw-w64-x86_64-libzip
 ```
 
-## Install (Linux)
+## Installation (Linux)
 
 ```bash
 cmake --install build
 ```
 
-Installs to `/usr/local` by default. Use `-DCMAKE_INSTALL_PREFIX=/usr` for system-wide install.
+Installe dans `/usr/local` par défaut. Utilisez `-DCMAKE_INSTALL_PREFIX=/usr` pour une installation système.
 
-## License
+## Licence
 
 [GPL v2](LICENSE)
