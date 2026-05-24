@@ -21,6 +21,7 @@ PlaylistWidget::PlaylistWidget(QWidget *parent) :
     showAll(true)
 {
     setAttribute(Qt::WA_NoMousePropagation);
+    setItemDelegate(new NumberedDelegate(this));
 }
 
 void PlaylistWidget::AttachEngine(NounoursEngine *nounours)

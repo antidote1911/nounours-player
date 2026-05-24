@@ -699,7 +699,7 @@ void NounoursEngine::NounoursMsgLevel(QStringList &args)
 void NounoursEngine::About(QString what)
 {
     if(what == QString())
-        AboutDialog::about(NOUNOURS_PLAYER_VERSION, window);
+        AboutDialog::about(NOUNOURS_PLAYER_VERSION, mpv->getMpvVersion(), window);
     else if(what == "qt")
         qApp->aboutQt();
     else

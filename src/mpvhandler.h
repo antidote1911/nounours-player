@@ -45,6 +45,7 @@ public:
     int getOsdHeight()                      { return osdHeight; }
 
     QString getMediaInfo();
+    QString getMpvVersion();
 
 protected:
     virtual bool event(QEvent*);

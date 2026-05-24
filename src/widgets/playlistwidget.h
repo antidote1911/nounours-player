@@ -8,8 +8,25 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QStyledItemDelegate>
+#include <QPainter>
+#include <QApplication>
 
 class NounoursEngine;
+
+class NumberedDelegate : public QStyledItemDelegate
+{
+public:
+    using QStyledItemDelegate::QStyledItemDelegate;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
+    {
+        QStyleOptionViewItem opt = option;
+        initStyleOption(&opt, index);
+        opt.text = QString::number(index.row() + 1) + ".  " + opt.text;
+        QStyle *style = opt.widget ? opt.widget->style() : QApplication::style();
+        style->drawControl(QStyle::CE_ItemViewItem, &opt, painter, opt.widget);
+    }
+};
 
 class PlaylistWidget : public QListWidget
 {

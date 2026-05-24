@@ -37,6 +37,11 @@ MainWindow::MainWindow(QWidget *parent):
     ui->mpvFrame->setMouseTracking(true);
     autohide = new QTimer(this);
 
+    logoLabel = new QLabel(ui->mpvFrame);
+    logoLabel->setAlignment(Qt::AlignCenter);
+    logoLabel->setPixmap(QPixmap(":/img/logo.svg").scaled(128, 128, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    logoLabel->show();
+
     // command action mappings (action (right) performs command (left))
     commandActionMap = {
         {"mpv add chapter +1", ui->action_Next_Chapter},
@@ -105,7 +110,10 @@ MainWindow::MainWindow(QWidget *parent):
     {
         const QString cmd = action.key();
         connect(*action, &QAction::triggered,
-                [=] { nounours->Command(cmd); });
+                [=] {
+                    if(cmd == "stop") userStopped = true;
+                    nounours->Command(cmd);
+                });
     }
 
     // setup signals & slots
@@ -525,8 +533,15 @@ MainWindow::MainWindow(QWidget *parent):
                     break;
 
                 case Mpv::Paused:
+                    SetPlayButtonIcon(true);
+                    if(onTop == "playing")
+                        Util::SetAlwaysOnTop(winId(), false);
+                    break;
+
                 case Mpv::Stopped:
                     SetPlayButtonIcon(true);
+                    logoLabel->setVisible(true);
+                    nounours->overlay->showStatusText(QString(), 0);
                     if(onTop == "playing")
                         Util::SetAlwaysOnTop(winId(), false);
                     break;
@@ -554,6 +569,15 @@ MainWindow::MainWindow(QWidget *parent):
                                 if(ui->mpvFrame->styleSheet() != QString()) // remove filler album art
                                     ui->mpvFrame->setStyleSheet("");
                             }
+                        }
+                        else if(userStopped)
+                        {
+                            userStopped = false;
+                            setWindowTitle("Nounours Player");
+                            SetPlaybackControls(false);
+                            ui->seekBar->setTracking(0);
+                            if(ui->mpvFrame->styleSheet() != QString())
+                                ui->mpvFrame->setStyleSheet("");
                         }
                         else
                             ui->playlistWidget->PlayIndex(1, true);
@@ -689,6 +713,7 @@ MainWindow::MainWindow(QWidget *parent):
                 mpv->Seek(mpv->Relative(((double)i/ui->seekBar->maximum())*mpv->getFileInfo().length), true);
             });
 
+
     connect(ui->openButton, &OpenButton::LeftClick,                     // Playback: Open button (left click)
             [=]
             {
@@ -728,6 +753,7 @@ MainWindow::MainWindow(QWidget *parent):
     connect(ui->stopButton, &QPushButton::clicked,                      // Playback: Stop button
             [=]
             {
+                userStopped = true;
                 nounours->Command("stop");
             });
 
@@ -989,10 +1015,17 @@ void MainWindow::leaveEvent(QEvent *event)
 
 bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 {
-    if(obj == ui->mpvFrame && isFullScreenMode() && event->type() == QEvent::MouseMove)
+    if(obj == ui->mpvFrame)
     {
-        QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
-        mouseMoveEvent(mouseEvent);
+        if(isFullScreenMode() && event->type() == QEvent::MouseMove)
+        {
+            QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+            mouseMoveEvent(mouseEvent);
+        }
+        else if(event->type() == QEvent::Resize)
+        {
+            logoLabel->setGeometry(ui->mpvFrame->rect());
+        }
     }
     else if(event->type() == 6) // QEvent::KeyPress = 6  (but using QEvent::KeyPress causes compile errors, not sure why)
     {
@@ -1041,6 +1074,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 {
     if(ui->actionMedia_Info->isChecked())
         nounours->overlay->showInfoText();
+    logoLabel->setGeometry(ui->mpvFrame->rect());
     QMainWindow::resizeEvent(event);
 }
 
@@ -1095,6 +1129,8 @@ void MainWindow::SetIndexLabels(bool enable)
 
 void MainWindow::SetPlaybackControls(bool enable)
 {
+    logoLabel->setVisible(!enable);
+
     // playback controls
     ui->seekBar->setEnabled(enable);
     ui->rewindButton->setEnabled(enable);
@@ -1110,10 +1146,11 @@ void MainWindow::SetPlaybackControls(bool enable)
     ui->actionMedia_Info->setEnabled(enable);
     ui->actionShow_in_Folder->setEnabled(enable && nounours->mpv->getPath() != QString());
     ui->action_Full_Screen->setEnabled(enable);
+    ui->menuSubtitle_Track->menuAction()->setEnabled(enable);
+    ui->menuAudio_Tracks->menuAction()->setEnabled(enable);
     if(!enable)
     {
         ui->action_Hide_Album_Art->setEnabled(false);
-        ui->menuSubtitle_Track->setEnabled(false);
         ui->menuFont_Si_ze->setEnabled(false);
     }
 }

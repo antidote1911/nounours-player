@@ -13,6 +13,7 @@
 #include <QHash>
 #include <QAction>
 #include <QRect>
+#include <QLabel>
 
 #include "recent.h"
 
@@ -87,8 +88,10 @@ private:
                     menuVisible,
                     firstItem       = false,
                     init            = false,
-                    playlistState   = false;
+                    playlistState   = false,
+                    userStopped     = false;
     QTimer          *autohide       = nullptr;
+    QLabel          *logoLabel      = nullptr;
 
     // variables
     QList<Recent> recent;

@@ -39,6 +39,9 @@ QMenuBar::item {
 QMenuBar::item:selected {
 	background: #383838;
 }
+QMenuBar::item:disabled {
+	color: #555555;
+}
 
 QMenu {
 	background: #1A1A1A;

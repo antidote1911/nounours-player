@@ -66,6 +66,16 @@ void MpvHandler::Initialize()
         throw "Could not initialize mpv";
 }
 
+QString MpvHandler::getMpvVersion()
+{
+    char *ver = mpv_get_property_string(mpv, "mpv-version");
+    if(!ver)
+        return QString("mpv (unknown)");
+    QString result(ver);
+    mpv_free(ver);
+    return result;
+}
+
 QString MpvHandler::getMediaInfo()
 {
     QFileInfo fi(path+file);
@@ -417,8 +427,8 @@ void MpvHandler::Pause()
 
 void MpvHandler::Stop()
 {
-    Restart();
-    Pause();
+    const char *args[] = {"stop", NULL};
+    AsyncCommand(args);
 }
 
 void MpvHandler::PlayPause(QString fileIfStopped)

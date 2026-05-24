@@ -4,6 +4,8 @@
 #include <QMouseEvent>
 #include <QPaintEvent>
 #include <QList>
+#include <QTimer>
+#include <QPoint>
 
 #include "customslider.h"
 
@@ -20,13 +22,19 @@ public slots:
 protected:
     QString formatTrackingTime(int _time);
 
+    void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
+    void mouseReleaseEvent(QMouseEvent* event);
+    void leaveEvent(QEvent* event);
     void paintEvent(QPaintEvent *event);
 
 private:
     QList<int> ticks;
     bool tickReady;
     int totalTime;
+    QTimer      *tooltipTimer;
+    QPoint      tooltipPos;
+    int         tooltipTime;
 };
 
 #endif // SEEKBAR_H
