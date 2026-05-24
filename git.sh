@@ -376,10 +376,11 @@ do_release() {
 
   # Version depuis src/CMakeLists.txt (ligne : project(... VERSION x.y.z ...))
   local cmake_version=""
-  if [[ -f "src/CMakeLists.txt" ]]; then
-    cmake_version=$(grep -oP 'VERSION\s+\K[0-9]+\.[0-9]+\.[0-9]+' src/CMakeLists.txt | head -1)
-  elif [[ -f "CMakeLists.txt" ]]; then
+  if [[ -f "CMakeLists.txt" ]]; then
     cmake_version=$(grep -oP 'VERSION\s+\K[0-9]+\.[0-9]+\.[0-9]+' CMakeLists.txt | head -1)
+  fi
+  if [[ -z "$cmake_version" && -f "src/CMakeLists.txt" ]]; then
+    cmake_version=$(grep -oP 'VERSION\s+\K[0-9]+\.[0-9]+\.[0-9]+' src/CMakeLists.txt | head -1)
   fi
   local suggested_tag="v${cmake_version}"
 
