@@ -1241,6 +1241,7 @@ QSlider::handle:horizontal {
     <addaction name="action_Deinterlace"/>
     <addaction name="separator"/>
     <addaction name="actionMedia_Info"/>
+    <addaction name="actionMediaInfoFull"/>
    </widget>
    <widget class="QMenu" name="menu_Playback">
     <property name="title">
@@ -1450,6 +1451,14 @@ QSlider::handle:horizontal {
    </property>
    <property name="text">
     <string>Show Playback &amp;Info</string>
+   </property>
+  </action>
+  <action name="actionMediaInfoFull">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>MediaInfo...</string>
    </property>
   </action>
   <action name="action_Play">

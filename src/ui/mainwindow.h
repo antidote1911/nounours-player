@@ -91,9 +91,10 @@ private:
                     init            = false,
                     playlistState   = false,
                     userStopped     = false;
-    QTimer          *autohide       = nullptr;
-    QLabel          *logoLabel      = nullptr;
-    QToolButton     *helpBtn        = nullptr;
+    QTimer          *autohide              = nullptr;
+    QLabel          *logoLabel             = nullptr;
+    QToolButton     *helpBtn              = nullptr;
+    QAction         *actionVideoEqualizer = nullptr;
 
     // variables
     QList<Recent> recent;

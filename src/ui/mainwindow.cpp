@@ -16,6 +16,8 @@
 #include "widgets/dimdialog.h"
 #include "inputdialog.h"
 #include "screenshotdialog.h"
+#include "videoequalizer.h"
+#include "../mediainfohelper.h"
 
 MainWindow::MainWindow(QWidget *parent):
     QMainWindow(parent),
@@ -85,6 +87,7 @@ MainWindow::MainWindow(QWidget *parent):
         {"hide_all_controls", ui->actionHide_All_Controls},
         {"jump", ui->action_Jump_to_Time},
         {"media_info", ui->actionMedia_Info},
+        {"mediainfo_full", ui->actionMediaInfoFull},
         {"new", ui->action_New_Player},
         {"open", ui->action_Open_File},
         {"open_clipboard", ui->actionOpen_Path_from_Clipboard},
@@ -302,8 +305,7 @@ MainWindow::MainWindow(QWidget *parent):
                         setWindowTitle("Nounours Player");
                     else if(fileInfo.media_title == "-")
                         setWindowTitle("Nounours Player: stdin"); // todo: disable playlist?
-                    else
-                        setWindowTitle(fileInfo.media_title);
+                    // normal case: title already set with HDR info in trackListChanged
 
                     QString f = mpv->getFile(), file = mpv->getPath()+f;
                     if(f != QString() && maxRecent > 0)
@@ -359,11 +361,65 @@ MainWindow::MainWindow(QWidget *parent):
                     ui->menuSubtitle_Track->addAction(ui->action_Add_Subtitle_File);
                     ui->menuAudio_Tracks->clear();
                     ui->menuAudio_Tracks->addAction(ui->action_Add_Audio_File);
+                    auto wordIn = [](const QString &s, const QString &w) -> bool {
+                        if(w.isEmpty()) return true;
+                        for(const QString &t : s.split(' ', Qt::SkipEmptyParts))
+                            if(t.compare(w, Qt::CaseInsensitive) == 0) return true;
+                        return false;
+                    };
+                    auto langIn = [](const QString &s, const QString &code) -> bool {
+                        if(code.isEmpty()) return true;
+                        QLocale ref(code);
+                        QStringList cands = {code.toLower()};
+                        if(ref.language() != QLocale::C) {
+                            cands += QLocale::languageToString(ref.language()).toLower().split(' ', Qt::SkipEmptyParts);
+                            QString nat = ref.nativeLanguageName();
+                            cands += nat.toLower().split(' ', Qt::SkipEmptyParts);
+                            QString ascii;
+                            for(const QChar &c : nat.normalized(QString::NormalizationForm_D))
+                                if(c.category() != QChar::Mark_NonSpacing) ascii += c;
+                            cands += ascii.toLower().split(' ', Qt::SkipEmptyParts);
+                            cands.removeDuplicates();
+                        }
+                        for(const QString &t : s.split(' ', Qt::SkipEmptyParts))
+                            if(cands.contains(t.toLower())) return true;
+                        return false;
+                    };
+                    const MediaInfoHelper *miHelper = mpv->getMediaInfoHelper();
+
+                    // update window title with HDR tag
+                    {
+                        const QString &mediaTitle = mpv->getFileInfo().media_title;
+                        if(mediaTitle != "" && mediaTitle != "-") {
+                            QString title = QFileInfo(mpv->getFile()).completeBaseName();
+                            QStringList tags;
+                            if(miHelper && miHelper->isValid()) {
+                                auto vi = miHelper->videoTrack();
+                                if(!vi.codec.isEmpty())     tags << vi.codec;
+                                if(!vi.hdrFormat.isEmpty()) tags << vi.hdrFormat;
+                            }
+                            if(!tags.isEmpty()) title += " [" + tags.join(" | ") + "]";
+                            setWindowTitle(title);
+                        }
+                    }
+
+                    int audioIdx = 0;
                     for(auto &track : trackList)
                     {
                         if(track.type == "sub")
                         {
-                            action = ui->menuSubtitle_Track->addAction(QString("%0: %1 (%2)").arg(QString::number(track.id), track.title, track.lang + (track.external ? "*" : "")).replace("&", "&&"));
+                            QString subCodec = track.codec;
+                            if(subCodec == "hdmv_pgs_subtitle") subCodec = "PGS";
+                            else if(subCodec == "subrip")        subCodec = "SRT";
+                            QString subLabel = QString("%0:").arg(track.id);
+                            if(!track.title.isEmpty()) subLabel += " " + track.title;
+                            if(!langIn(subLabel, track.lang))
+                                subLabel += " " + track.lang + (track.external ? "*" : "");
+                            else if(track.external)
+                                subLabel += " *";
+                            if(!wordIn(subLabel, subCodec)) subLabel += " " + subCodec;
+                            if(track.forced && !wordIn(subLabel, "forced")) subLabel += " (forced)";
+                            action = ui->menuSubtitle_Track->addAction(subLabel.simplified().replace("&", "&&"));
                             connect(action, &QAction::triggered,
                                     [=]
                                     {
@@ -387,7 +443,22 @@ MainWindow::MainWindow(QWidget *parent):
                         }
                         else if(track.type == "audio")
                         {
-                            action = ui->menuAudio_Tracks->addAction(QString("%0: %1 (%2)").arg(QString::number(track.id), track.title, track.lang).replace("&", "&&"));
+                            {
+                                auto info = (miHelper && miHelper->isValid())
+                                    ? miHelper->audioTrack(audioIdx)
+                                    : MediaInfoHelper::fromMpvFallback(track.demux_channels, track.codec);
+                                audioIdx++;
+                                QString audioLabel = QString("%0:").arg(track.id);
+                                if(!langIn(audioLabel, track.lang)) audioLabel += " " + track.lang;
+                                if(!wordIn(audioLabel, info.codecName) && !wordIn(track.title, info.codecName)
+                                        && !info.hint.contains(info.codecName, Qt::CaseInsensitive))
+                                    audioLabel += " " + info.codecName;
+                                if(!track.title.isEmpty()) audioLabel += " " + track.title;
+                                if(!info.hint.isEmpty() && !audioLabel.contains(info.hint, Qt::CaseInsensitive))
+                                    audioLabel += " " + info.hint;
+                                if(!wordIn(audioLabel, info.channels)) audioLabel += " " + info.channels;
+                                action = ui->menuAudio_Tracks->addAction(audioLabel.simplified().replace("&", "&&"));
+                            }
                             connect(action, &QAction::triggered,
                                     [=]
                                     {
@@ -881,6 +952,16 @@ MainWindow::MainWindow(QWidget *parent):
                 ui->inputLineEdit->setText("");
             });
 
+    // Video Equalizer action
+    actionVideoEqualizer = new QAction(tr("Video &Equalizer"), this);
+    actionVideoEqualizer->setEnabled(false);
+    ui->menu_View->insertAction(ui->actionMedia_Info, actionVideoEqualizer);
+    ui->menu_View->insertSeparator(ui->actionMedia_Info);
+    connect(actionVideoEqualizer, &QAction::triggered, [=] {
+        VideoEqualizerDialog dlg(mpv, this);
+        dlg.exec();
+    });
+
     // add multimedia shortcuts
     ui->action_Play->setShortcuts({ui->action_Play->shortcut(), QKeySequence(Qt::Key_MediaPlay)});
     ui->action_Stop->setShortcuts({ui->action_Stop->shortcut(), QKeySequence(Qt::Key_MediaStop)});
@@ -1168,6 +1249,8 @@ void MainWindow::SetPlaybackControls(bool enable)
     ui->menuS_peed->setEnabled(enable);
     ui->action_Jump_to_Time->setEnabled(enable);
     ui->actionMedia_Info->setEnabled(enable);
+    ui->actionMediaInfoFull->setEnabled(enable);
+    actionVideoEqualizer->setEnabled(enable);
     ui->actionShow_in_Folder->setEnabled(enable && nounours->mpv->getPath() != QString());
     ui->action_Full_Screen->setEnabled(enable);
     if(enable) {

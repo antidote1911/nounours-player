@@ -13,6 +13,7 @@
 #include "ui/mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ui/aboutdialog.h"
+#include "ui/mediainfodialog.h"
 #include "ui/locationdialog.h"
 #include "ui/jumpdialog.h"
 #include "ui/preferencesdialog.h"
@@ -177,6 +178,22 @@ void NounoursEngine::NounoursMediaInfo(QStringList &args)
 void NounoursEngine::MediaInfo(bool show)
 {
     overlay->showInfoText(show);
+}
+
+void NounoursEngine::NounoursMediaInfoFull(QStringList &args)
+{
+    if(args.empty())
+        MediaInfoFull();
+    else
+        InvalidParameter(args.join(' '));
+}
+
+void NounoursEngine::MediaInfoFull()
+{
+    QString info = mpv->getMediaInfoFull();
+    if(info.isEmpty())
+        return;
+    MediaInfoDialog::show(info, window);
 }
 
 

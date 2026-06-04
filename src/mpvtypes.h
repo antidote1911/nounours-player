@@ -39,9 +39,11 @@ namespace Mpv
         QString lang;
         unsigned albumart : 1,
                  _default : 1,
-                 external : 1;
+                 external : 1,
+                 forced   : 1;
         QString external_filename;
         QString codec;
+        QString demux_channels;
 
         bool operator==(const Track &t) const
         {

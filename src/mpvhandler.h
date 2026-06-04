@@ -5,10 +5,13 @@
 #include <QString>
 #include <QStringList>
 #include <QTimer>
+#include <memory>
 
 #include <mpv/client.h>
 
 #include "mpvtypes.h"
+
+class MediaInfoHelper;
 
 #define MPV_REPLY_COMMAND 1
 #define MPV_REPLY_PROPERTY 2
@@ -44,9 +47,16 @@ public:
 
     int getOsdWidth()                       { return osdWidth; }
     int getOsdHeight()                      { return osdHeight; }
+    int getBrightness()                     { return brightness; }
+    int getContrast()                       { return contrast; }
+    int getSaturation()                     { return saturation; }
+    int getGamma()                          { return gamma_; }
+    int getHue()                            { return hue; }
 
     QString getMediaInfo();
+    QString getMediaInfoFull();
     QString getMpvVersion();
+    const MediaInfoHelper *getMediaInfoHelper() const { return miHelper.get(); }
 
 protected:
     virtual bool event(QEvent*);
@@ -84,6 +94,12 @@ public slots:
     void Vid(int);
     void Aid(int);
     void Sid(int);
+
+    void Brightness(int);
+    void Contrast(int);
+    void Saturation(int);
+    void Gamma(int);
+    void Hue(int);
 
     void Screenshot(bool withSubs = false);
 
@@ -188,8 +204,7 @@ private:
                 screenshotDir,
                 suffix,
                 vo,
-                msgLevel,
-                cachedHdrFormat;
+                msgLevel;
     double      speed = 1;
     int         time = 0,
                 lastTime = 0,
@@ -197,7 +212,13 @@ private:
                 index = 0,
                 vid,
                 aid,
-                sid;
+                sid,
+                brightness = 0,
+                contrast = 0,
+                saturation = 0,
+                gamma_ = 0,
+                hue = 0;
+    std::unique_ptr<MediaInfoHelper> miHelper;
     QTimer     *bufferTimer = nullptr;
     bool        init = false,
                 playlistVisible = false,

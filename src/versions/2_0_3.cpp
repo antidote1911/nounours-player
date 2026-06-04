@@ -102,6 +102,12 @@ void NounoursEngine::Load2_0_3()
     window->MapShortcuts();
 
     QJsonObject mpv_json = root["mpv"].toObject();
+    // store equalizer values — applied in SetProperties() after mpv init
+    mpv->brightness = QJsonValueRef2(mpv_json["brightness"]).toInt(0);
+    mpv->contrast   = QJsonValueRef2(mpv_json["contrast"]).toInt(0);
+    mpv->saturation = QJsonValueRef2(mpv_json["saturation"]).toInt(0);
+    mpv->gamma_     = QJsonValueRef2(mpv_json["gamma"]).toInt(0);
+    mpv->hue        = QJsonValueRef2(mpv_json["hue"]).toInt(0);
     mpv->Volume(QJsonValueRef2(mpv_json["volume"]).toInt(100));
     mpv_json.remove("volume");
     mpv->Speed(QJsonValueRef2(mpv_json["speed"]).toDouble(1.0));
@@ -179,6 +185,11 @@ void NounoursEngine::SaveSettings()
     root["input"] = input_json;
 
     QJsonObject mpv_json = root["mpv"].toObject();
+    mpv_json["brightness"] = mpv->brightness;
+    mpv_json["contrast"]   = mpv->contrast;
+    mpv_json["saturation"] = mpv->saturation;
+    mpv_json["gamma"]      = mpv->gamma_;
+    mpv_json["hue"]        = mpv->hue;
     mpv_json["volume"] = mpv->volume;
     mpv_json["speed"] = mpv->speed;
     mpv_json["vo"] = mpv->vo;

@@ -213,6 +213,15 @@ private:
           }
          }
         },
+        {"mediainfo_full",
+         {&NounoursEngine::NounoursMediaInfoFull,
+          {
+           QString(),
+           tr("show full MediaInfo details"),
+           QString()
+          }
+         }
+        },
         {"stop",
          {&NounoursEngine::NounoursStop,
           {
@@ -441,6 +450,7 @@ private:
     void NounoursAddAudio(QStringList&);
     void NounoursScreenshot(QStringList&);
     void NounoursMediaInfo(QStringList&);
+    void NounoursMediaInfoFull(QStringList&);
     void NounoursStop(QStringList&);
     void NounoursPlaylist(QStringList&);
     void NounoursJump(QStringList&);
@@ -471,6 +481,7 @@ public:
     void OpenLocation();
     void Screenshot(bool subs);
     void MediaInfo(bool show);
+    void MediaInfoFull();
     void PlayPause();
     void Jump();
     void FitWindow(int percent = 0, bool msg = true);

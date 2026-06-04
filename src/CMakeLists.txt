@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(nounours-player
-    VERSION 2.1.0
+    VERSION 2.2.0
     LANGUAGES CXX
 )
 
@@ -16,11 +16,12 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/ui)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Network Svg Widgets LinguistTools)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
-pkg_check_modules(AVFORMAT REQUIRED libavformat libavcodec libavutil)
+pkg_check_modules(MEDIAINFO REQUIRED libmediainfo)
 
 set(SOURCES
     main.cpp
     gesturehandler.cpp
+    mediainfohelper.cpp
     mpvhandler.cpp
     nounourscommands.cpp
     nounoursengine.cpp
@@ -37,6 +38,8 @@ set(SOURCES
     ui/locationdialog.cpp
     ui/mainwindow.cpp
     ui/preferencesdialog.cpp
+    ui/videoequalizer.cpp
+    ui/mediainfodialog.cpp
     ui/screenshotdialog.cpp
     ui/updatedialog.cpp
     widgets/customlabel.cpp
@@ -121,9 +124,12 @@ target_link_libraries(nounours-player PRIVATE
     Qt6::Svg
     Qt6::Widgets
     ${MPV_LINK_LIBRARIES}
-    ${AVFORMAT_LINK_LIBRARIES}
+    ${MEDIAINFO_LINK_LIBRARIES}
 )
-target_include_directories(nounours-player PRIVATE ${AVFORMAT_INCLUDE_DIRS})
+target_include_directories(nounours-player PRIVATE
+    ${MEDIAINFO_INCLUDE_DIRS}
+)
+target_compile_options(nounours-player PRIVATE ${MEDIAINFO_CFLAGS_OTHER})
 
 if(WIN32)
     target_link_libraries(nounours-player PRIVATE ${LIBZIP_LINK_LIBRARIES})

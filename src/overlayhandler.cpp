@@ -60,7 +60,7 @@ void OverlayHandler::showInfoText(bool show)
         }
         refresh_timer->start(OVERLAY_REFRESH_RATE);
         showText(nounours->mpv->getMediaInfo(),
-                 QFont(Util::MonospaceFont(), 14, QFont::Bold), QColor(0xFFFF00),
+                 QFont(Util::MonospaceFont(), 11, QFont::Bold), QColor(0xFFFF00),
                  QPoint(20, 20), 0, OVERLAY_INFO);
     }
     else
@@ -95,9 +95,13 @@ void OverlayHandler::showText(const QString &text, QFont font, QColor color, QPo
         w = std::max(fm.horizontalAdvance(line), w);
     int availW = maxWidth > 0 ? maxWidth : nounours->window->ui->mpvFrame->width() - 2*pos.x();
     int availH = nounours->window->ui->mpvFrame->height() - 2*pos.y();
-    float xF = float(availW) / (fm_correction*w);
-    float yF = float(availH) / h;
-    font.setPointSizeF(std::min(font.pointSizeF()*std::min(xF, yF), font.pointSizeF()));
+    if(id == OVERLAY_INFO) {
+        font.setPointSizeF(nounours->window->ui->mpvFrame->height() / 45.0);
+    } else {
+        float xF = float(availW) / (fm_correction*w);
+        float yF = float(availH) / h;
+        font.setPointSizeF(std::min(font.pointSizeF()*std::min(xF, yF), font.pointSizeF()));
+    }
 
     fm = QFontMetrics(font);
     h = fm.height();
