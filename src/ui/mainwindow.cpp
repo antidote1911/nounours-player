@@ -7,6 +7,10 @@
 #include <QMimeData>
 #include <QToolButton>
 #include <QPointingDevice>
+#include <QWidgetAction>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QCursor>
 
 #include "nounoursengine.h"
 #include "mpvhandler.h"
@@ -448,16 +452,53 @@ MainWindow::MainWindow(QWidget *parent):
                                     ? miHelper->audioTrack(audioIdx)
                                     : MediaInfoHelper::fromMpvFallback(track.demux_channels, track.codec);
                                 audioIdx++;
-                                QString audioLabel = QString("%0:").arg(track.id);
-                                if(!langIn(audioLabel, track.lang)) audioLabel += " " + track.lang;
-                                if(!wordIn(audioLabel, info.codecName) && !wordIn(track.title, info.codecName)
-                                        && !info.hint.contains(info.codecName, Qt::CaseInsensitive))
-                                    audioLabel += " " + info.codecName;
-                                if(!track.title.isEmpty()) audioLabel += " " + track.title;
-                                if(!info.hint.isEmpty() && !audioLabel.contains(info.hint, Qt::CaseInsensitive))
-                                    audioLabel += " " + info.hint;
-                                if(!wordIn(audioLabel, info.channels)) audioLabel += " " + info.channels;
-                                action = ui->menuAudio_Tracks->addAction(audioLabel.simplified().replace("&", "&&"));
+                                auto parts = MediaInfoHelper::formatAudioLabelParts(track.id, track.lang, track.title, info);
+                                if(parts.sub.isEmpty()) {
+                                    action = ui->menuAudio_Tracks->addAction(parts.main.replace("&", "&&"));
+                                } else {
+                                    auto *wa = new QWidgetAction(ui->menuAudio_Tracks);
+                                    wa->setCheckable(true);
+                                    auto *w = new QWidget;
+                                    auto *vl = new QVBoxLayout(w);
+                                    vl->setContentsMargins(20, 3, 8, 3);
+                                    vl->setSpacing(1);
+                                    auto *top = new QLabel(parts.main.toHtmlEscaped());
+                                    vl->addWidget(top);
+                                    auto *bot = new QLabel(parts.sub.toHtmlEscaped());
+                                    {
+                                        QFont f = bot->font();
+                                        f.setPointSizeF(f.pointSizeF() * 0.85);
+                                        bot->setFont(f);
+                                        QString gray = qApp->palette().color(QPalette::Disabled, QPalette::WindowText).name();
+                                        bot->setStyleSheet(QString("color: %1;").arg(gray));
+                                    }
+                                    vl->addWidget(bot);
+                                    wa->setDefaultWidget(w);
+                                    ui->menuAudio_Tracks->addAction(wa);
+                                    action = wa;
+                                    // Event filter: QMenu::hovered doesn't fire for QWidgetAction,
+                                    // so track Enter/Leave on the widget and its children directly.
+                                    struct Hover : QObject {
+                                        QWidget *c; QLabel *top, *bot; QString gray;
+                                        Hover(QWidget *c, QLabel *t, QLabel *b)
+                                            : QObject(c), c(c), top(t), bot(b)
+                                            , gray(qApp->palette().color(QPalette::Disabled, QPalette::WindowText).name())
+                                        { c->installEventFilter(this); t->installEventFilter(this); b->installEventFilter(this); }
+                                        void apply(bool on) {
+                                            c->setStyleSheet(on ? "QWidget{background:palette(highlight);}" : "");
+                                            top->setStyleSheet(on ? "color:palette(highlighted-text);" : "");
+                                            bot->setStyleSheet(on ? "color:palette(highlighted-text);" : QString("color:%1;").arg(gray));
+                                        }
+                                        bool eventFilter(QObject *, QEvent *e) override {
+                                            if(e->type() == QEvent::Enter) apply(true);
+                                            else if(e->type() == QEvent::Leave &&
+                                                    !c->rect().contains(c->mapFromGlobal(QCursor::pos()))) apply(false);
+                                            return false;
+                                        }
+                                    };
+                                    new Hover(w, top, bot);
+                                }
+                                ui->menuAudio_Tracks->addSeparator();
                             }
                             connect(action, &QAction::triggered,
                                     [=]

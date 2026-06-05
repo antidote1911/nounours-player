@@ -5,6 +5,7 @@
 #endif
 #include <MediaInfo/MediaInfo.h>
 #include <QStringList>
+#include <QRegularExpression>
 
 MediaInfoHelper::MediaInfoHelper(const QString &filePath)
 {
@@ -63,6 +64,64 @@ AudioTrackInfo MediaInfoHelper::fromMpvFallback(const QString &demuxChannels, co
     }
     info.channels = ch;
     return info;
+}
+
+MediaInfoHelper::AudioLabelParts MediaInfoHelper::formatAudioLabelParts(int id, const QString &lang, const QString &title, const AudioTrackInfo &info)
+{
+    // Strip codec/channel info embedded after "@" (e.g. "VFF @ AC3 5.1" → "VFF")
+    QString cleanTitle = title;
+    {
+        int at = cleanTitle.indexOf('@');
+        if(at != -1) cleanTitle = cleanTitle.left(at).trimmed();
+    }
+
+    // Remove words that duplicate detected codec or channels (normalize: strip non-alnum, lowercase)
+    auto normWord = [](const QString &s) {
+        return s.toLower().remove(QRegularExpression("[^a-z0-9]"));
+    };
+    {
+        QStringList words = cleanTitle.split(' ', Qt::SkipEmptyParts);
+        QString normCodec    = normWord(info.codecName);
+        QString normChannels = normWord(info.channels);
+        words.removeIf([&](const QString &w) {
+            QString n = normWord(w);
+            return (!normCodec.isEmpty()    && n == normCodec)
+                || (!normChannels.isEmpty() && n == normChannels);
+        });
+        cleanTitle = words.join(' ');
+    }
+
+    // Version tags that already encode language — canonical uppercase, suppress raw lang code
+    static const QStringList versionTags = {"VF","VFF","VFQ","VFI","VFB","VO","VOST","VOSTFR"};
+    auto wordIn = [](const QString &s, const QString &w) -> bool {
+        if(w.isEmpty()) return true;
+        for(const QString &t : s.split(' ', Qt::SkipEmptyParts))
+            if(t.compare(w, Qt::CaseInsensitive) == 0) return true;
+        return false;
+    };
+    bool hasVTag = false;
+    QString vTagFound;
+    for(const QString &t : versionTags)
+        if(wordIn(cleanTitle, t)) { hasVTag = true; vTagFound = t; break; }
+
+    // main: technical/detected info only — sub: the track name remainder
+    QString main = QString::number(id) + ":";
+    QString sub;
+    if(hasVTag) {
+        main += " " + vTagFound;
+    } else {
+        if(!lang.isEmpty()) main += " " + lang.toUpper();
+    }
+    sub = title.trimmed();
+
+    if(!wordIn(main, info.codecName) && !info.hint.contains(info.codecName, Qt::CaseInsensitive))
+        main += " " + info.codecName;
+    if(!info.hint.isEmpty() && !main.contains(info.hint, Qt::CaseInsensitive))
+        main += " " + info.hint;
+    if(!wordIn(main, info.channels))
+        main += " " + info.channels;
+
+    return { main.simplified(), sub };
 }
 
 QString MediaInfoHelper::fullReport() const

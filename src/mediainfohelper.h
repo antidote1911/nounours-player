@@ -28,7 +28,13 @@ public:
     VideoTrackInfo videoTrack(int index = 0) const;
     QString fullReport() const;
 
+    struct AudioLabelParts {
+        QString main;  // detected info: "1: VFF E-AC-3 5.1"
+        QString sub;   // track name remainder (shown grayed), may be empty
+    };
+
     static AudioTrackInfo fromMpvFallback(const QString &demuxChannels, const QString &codec);
+    static AudioLabelParts formatAudioLabelParts(int id, const QString &lang, const QString &title, const AudioTrackInfo &info);
 
 private:
     MediaInfoLib::MediaInfo *mi = nullptr;
