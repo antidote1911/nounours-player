@@ -7,10 +7,6 @@
 #include <QMimeData>
 #include <QToolButton>
 #include <QPointingDevice>
-#include <QWidgetAction>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QCursor>
 
 #include "nounoursengine.h"
 #include "mpvhandler.h"
@@ -286,7 +282,6 @@ MainWindow::MainWindow(QWidget *parent):
                 {
                     ui->actionSh_uffle->setEnabled(true);
                     ui->actionStop_after_Current->setEnabled(true);
-                    ShowPlaylist(true);
                 }
                 else
                 {
@@ -365,30 +360,6 @@ MainWindow::MainWindow(QWidget *parent):
                     ui->menuSubtitle_Track->addAction(ui->action_Add_Subtitle_File);
                     ui->menuAudio_Tracks->clear();
                     ui->menuAudio_Tracks->addAction(ui->action_Add_Audio_File);
-                    auto wordIn = [](const QString &s, const QString &w) -> bool {
-                        if(w.isEmpty()) return true;
-                        for(const QString &t : s.split(' ', Qt::SkipEmptyParts))
-                            if(t.compare(w, Qt::CaseInsensitive) == 0) return true;
-                        return false;
-                    };
-                    auto langIn = [](const QString &s, const QString &code) -> bool {
-                        if(code.isEmpty()) return true;
-                        QLocale ref(code);
-                        QStringList cands = {code.toLower()};
-                        if(ref.language() != QLocale::C) {
-                            cands += QLocale::languageToString(ref.language()).toLower().split(' ', Qt::SkipEmptyParts);
-                            QString nat = ref.nativeLanguageName();
-                            cands += nat.toLower().split(' ', Qt::SkipEmptyParts);
-                            QString ascii;
-                            for(const QChar &c : nat.normalized(QString::NormalizationForm_D))
-                                if(c.category() != QChar::Mark_NonSpacing) ascii += c;
-                            cands += ascii.toLower().split(' ', Qt::SkipEmptyParts);
-                            cands.removeDuplicates();
-                        }
-                        for(const QString &t : s.split(' ', Qt::SkipEmptyParts))
-                            if(cands.contains(t.toLower())) return true;
-                        return false;
-                    };
                     const MediaInfoHelper *miHelper = mpv->getMediaInfoHelper();
 
                     // update window title with HDR tag
@@ -416,13 +387,11 @@ MainWindow::MainWindow(QWidget *parent):
                             if(subCodec == "hdmv_pgs_subtitle") subCodec = "PGS";
                             else if(subCodec == "subrip")        subCodec = "SRT";
                             QString subLabel = QString("%0:").arg(track.id);
-                            if(!track.title.isEmpty()) subLabel += " " + track.title;
-                            if(!langIn(subLabel, track.lang))
-                                subLabel += " " + track.lang + (track.external ? "*" : "");
-                            else if(track.external)
-                                subLabel += " *";
-                            if(!wordIn(subLabel, subCodec)) subLabel += " " + subCodec;
-                            if(track.forced && !wordIn(subLabel, "forced")) subLabel += " (forced)";
+                            if(!track.lang.isEmpty()) subLabel += " " + track.lang.toUpper();
+                            if(!subCodec.isEmpty())   subLabel += " " + subCodec;
+                            if(track.forced)          subLabel += " (forced)";
+                            if(track.external)        subLabel += " *";
+                            if(!track.title.isEmpty()) subLabel += " (" + track.title + ")";
                             action = ui->menuSubtitle_Track->addAction(subLabel.simplified().replace("&", "&&"));
                             connect(action, &QAction::triggered,
                                     [=]
@@ -453,52 +422,10 @@ MainWindow::MainWindow(QWidget *parent):
                                     : MediaInfoHelper::fromMpvFallback(track.demux_channels, track.codec);
                                 audioIdx++;
                                 auto parts = MediaInfoHelper::formatAudioLabelParts(track.id, track.lang, track.title, info);
-                                if(parts.sub.isEmpty()) {
-                                    action = ui->menuAudio_Tracks->addAction(parts.main.replace("&", "&&"));
-                                } else {
-                                    auto *wa = new QWidgetAction(ui->menuAudio_Tracks);
-                                    wa->setCheckable(true);
-                                    auto *w = new QWidget;
-                                    auto *vl = new QVBoxLayout(w);
-                                    vl->setContentsMargins(20, 3, 8, 3);
-                                    vl->setSpacing(1);
-                                    auto *top = new QLabel(parts.main.toHtmlEscaped());
-                                    vl->addWidget(top);
-                                    auto *bot = new QLabel(parts.sub.toHtmlEscaped());
-                                    {
-                                        QFont f = bot->font();
-                                        f.setPointSizeF(f.pointSizeF() * 0.85);
-                                        bot->setFont(f);
-                                        QString gray = qApp->palette().color(QPalette::Disabled, QPalette::WindowText).name();
-                                        bot->setStyleSheet(QString("color: %1;").arg(gray));
-                                    }
-                                    vl->addWidget(bot);
-                                    wa->setDefaultWidget(w);
-                                    ui->menuAudio_Tracks->addAction(wa);
-                                    action = wa;
-                                    // Event filter: QMenu::hovered doesn't fire for QWidgetAction,
-                                    // so track Enter/Leave on the widget and its children directly.
-                                    struct Hover : QObject {
-                                        QWidget *c; QLabel *top, *bot; QString gray;
-                                        Hover(QWidget *c, QLabel *t, QLabel *b)
-                                            : QObject(c), c(c), top(t), bot(b)
-                                            , gray(qApp->palette().color(QPalette::Disabled, QPalette::WindowText).name())
-                                        { c->installEventFilter(this); t->installEventFilter(this); b->installEventFilter(this); }
-                                        void apply(bool on) {
-                                            c->setStyleSheet(on ? "QWidget{background:palette(highlight);}" : "");
-                                            top->setStyleSheet(on ? "color:palette(highlighted-text);" : "");
-                                            bot->setStyleSheet(on ? "color:palette(highlighted-text);" : QString("color:%1;").arg(gray));
-                                        }
-                                        bool eventFilter(QObject *, QEvent *e) override {
-                                            if(e->type() == QEvent::Enter) apply(true);
-                                            else if(e->type() == QEvent::Leave &&
-                                                    !c->rect().contains(c->mapFromGlobal(QCursor::pos()))) apply(false);
-                                            return false;
-                                        }
-                                    };
-                                    new Hover(w, top, bot);
-                                }
-                                ui->menuAudio_Tracks->addSeparator();
+                                QString label = parts.sub.isEmpty()
+                                    ? parts.main
+                                    : parts.main + " (" + parts.sub + ")";
+                                action = ui->menuAudio_Tracks->addAction(label.replace("&", "&&"));
                             }
                             connect(action, &QAction::triggered,
                                     [=]
