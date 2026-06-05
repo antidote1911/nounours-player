@@ -297,6 +297,8 @@ MainWindow::MainWindow(QWidget *parent):
                     ui->menuR_epeat->setEnabled(true);
                 else
                     ui->menuR_epeat->setEnabled(false);
+
+                ui->playlistButton->setText(list.length() > 1 ? QString::number(list.length()) : QString());
             });
 
     connect(mpv, &MpvHandler::fileInfoChanged,
