@@ -7,6 +7,7 @@
 #include <QMimeData>
 #include <QToolButton>
 #include <QPointingDevice>
+#include <QPainter>
 
 #include "nounoursengine.h"
 #include "mpvhandler.h"
@@ -18,6 +19,28 @@
 #include "screenshotdialog.h"
 #include "videoequalizer.h"
 #include "../mediainfohelper.h"
+
+// Generate a round icon with the playlist count painted inside (same circle style as the SVG).
+static QIcon playlistCountIcon(int count, const QSize &iconSize)
+{
+    const qreal dpr = qApp->devicePixelRatio();
+    QPixmap px(iconSize * dpr);
+    px.setDevicePixelRatio(dpr);
+    px.fill(Qt::transparent);
+    QPainter p(&px);
+    p.setRenderHint(QPainter::Antialiasing);
+    p.setBrush(QColor(0xF5, 0xF5, 0xF5)); // whitesmoke — same as the SVG circle
+    p.setPen(Qt::NoPen);
+    p.drawEllipse(QRectF(QPointF(0, 0), QSizeF(iconSize)));
+    p.setPen(Qt::black);
+    QFont f;
+    f.setBold(true);
+    f.setPixelSize(qRound(iconSize.height() * (count < 100 ? 0.44 : 0.34)));
+    p.setFont(f);
+    p.drawText(QRectF(QPointF(0, 0), QSizeF(iconSize)), Qt::AlignCenter,
+               count < 100 ? QString::number(count) : "99+");
+    return QIcon(px);
+}
 
 MainWindow::MainWindow(QWidget *parent):
     QMainWindow(parent),
@@ -298,7 +321,10 @@ MainWindow::MainWindow(QWidget *parent):
                 else
                     ui->menuR_epeat->setEnabled(false);
 
-                ui->playlistButton->setText(list.length() > 1 ? QString::number(list.length()) : QString());
+                if(list.length() > 1)
+                    ui->playlistButton->setIcon(playlistCountIcon(list.length(), ui->playlistButton->iconSize()));
+                else
+                    ui->playlistButton->setIcon(QIcon(":/img/default_playlist.svg"));
                 setMinimumWidth(ui->playbackLayoutWidget->sizeHint().width());
             });
 
