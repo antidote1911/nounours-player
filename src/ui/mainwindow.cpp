@@ -282,6 +282,10 @@ MainWindow::MainWindow(QWidget *parent):
                 {
                     ui->actionSh_uffle->setEnabled(true);
                     ui->actionStop_after_Current->setEnabled(true);
+                    if(showPlaylistOnLoad) {
+                        ShowPlaylist(true);
+                        showPlaylistOnLoad = false;
+                    }
                 }
                 else
                 {

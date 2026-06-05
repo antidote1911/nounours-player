@@ -87,10 +87,11 @@ private:
 
     bool            pathChanged,
                     menuVisible,
-                    firstItem       = false,
-                    init            = false,
-                    playlistState   = false,
-                    userStopped     = false;
+                    firstItem           = false,
+                    init                = false,
+                    playlistState       = false,
+                    userStopped         = false,
+                    showPlaylistOnLoad  = false;
     QTimer          *autohide              = nullptr;
     QLabel          *logoLabel             = nullptr;
     QToolButton     *helpBtn              = nullptr;

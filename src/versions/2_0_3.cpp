@@ -59,8 +59,7 @@ void NounoursEngine::Load2_0_3()
     window->setHidePopup(QJsonValueRef2(root["hidePopup"]).toBool(false));
     window->setRemaining(QJsonValueRef2(root["remaining"]).toBool(true));
     window->ui->splitter->setNormalPosition(QJsonValueRef2(root["splitter"]).toInt(window->ui->splitter->max()*1.0/8));
-    if(QJsonValueRef2(root["playlistVisible"]).toBool(false))
-        window->ShowPlaylist(true);
+    window->showPlaylistOnLoad = QJsonValueRef2(root["playlistVisible"]).toBool(false);
     window->setDebug(QJsonValueRef2(root["debug"]).toBool(false));
     //window->ui->hideFilesButton->setChecked(!QJsonValueRef2(root["showAll"]).toBool(true));
     root["showAll"] = true;
