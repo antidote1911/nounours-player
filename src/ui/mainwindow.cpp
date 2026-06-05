@@ -299,6 +299,7 @@ MainWindow::MainWindow(QWidget *parent):
                     ui->menuR_epeat->setEnabled(false);
 
                 ui->playlistButton->setText(list.length() > 1 ? QString::number(list.length()) : QString());
+                setMinimumWidth(ui->playbackLayoutWidget->sizeHint().width());
             });
 
     connect(mpv, &MpvHandler::fileInfoChanged,
@@ -971,7 +972,6 @@ void MainWindow::Load(QString file)
     // this solves some issues with setting things before the constructor has ended
     menuVisible = ui->menubar->isVisible(); // does the OS use a menubar? (appmenu doesn't)
     nounours->LoadSettings();
-    setMinimumWidth(ui->playbackLayoutWidget->minimumSizeHint().width());
     mpv->Initialize();
     mpv->LoadFile(file);
 }
