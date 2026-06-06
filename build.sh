@@ -10,10 +10,16 @@ ROOT="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="$ROOT/build"
 CORES=$(nproc 2>/dev/null || echo 2)
 
+QT_STATIC=/home/antidote/qt6-static
+
 echo -e "\n${BOLD}── Configuration CMake ──────────────────────────────────────${RESET}"
 info "Source : $ROOT/src"
 info "Build  : $BUILD_DIR"
-cmake -S "$ROOT/src" -B "$BUILD_DIR" \
+info "Qt     : $QT_STATIC (statique)"
+"$QT_STATIC/bin/qt-cmake" -S "$ROOT/src" -B "$BUILD_DIR" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_PREFIX_PATH="$QT_STATIC" \
+    -DCMAKE_DISABLE_FIND_PACKAGE_Qt6Qml=ON \
     -DNOUNOURS_LANG_PATH="$BUILD_DIR" \
     || { error "Configuration échouée."; exit 1; }
 success "Configuration OK."
