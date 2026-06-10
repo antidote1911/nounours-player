@@ -767,7 +767,12 @@ void MpvHandler::MsgLevel(QString level)
 void MpvHandler::Hwdec(QString h)
 {
     setHwdec(h);
-    SetOption("hwdec", hwdec);
+
+    // mpv's plain "auto" can pick a hwaccel backend (e.g. vaapi) that fails
+    // to interop with the embedded video output for some codecs (e.g. VP8 on
+    // AMD/RADV), leaving audio playing with no video. Try Vulkan first, then
+    // fall back to mpv's safe auto-selection, then software decoding.
+    SetOption("hwdec", hwdec == "auto" ? "vulkan,auto-safe,no" : hwdec);
 }
 
 void MpvHandler::Framedrop(QString f)
