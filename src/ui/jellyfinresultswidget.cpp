@@ -86,7 +86,7 @@ JellyfinResultsWidget::JellyfinResultsWidget(NounoursEngine *nounours, QWidget *
         }
         JellyfinItem item = data.value<JellyfinItem>();
         synopsisEdit->setPlainText(item.overview.isEmpty() ? tr("No synopsis available.") : item.overview);
-        playButton->setEnabled(item.type == "Movie" || item.type == "Episode");
+        playButton->setEnabled(item.type == "Movie" || item.type == "Video" || item.type == "Episode");
     });
 
     connect(playButton, &QPushButton::clicked, this, &JellyfinResultsWidget::DoPlay);
@@ -102,7 +102,10 @@ void JellyfinResultsWidget::SetResults(const QList<JellyfinItem> &items)
 
     for(const auto &item : items)
     {
-        QString label = QString("[%0] %1").arg(item.type == "Movie" ? tr("Movie") : tr("Series"), item.name);
+        QString category = item.libraryName;
+        if(category.isEmpty())
+            category = item.type == "Series" ? tr("Series") : tr("Movie");
+        QString label = QString("[%0] %1").arg(category, item.name);
         if(item.year > 0)
             label += QString(" (%0)").arg(item.year);
 
@@ -146,7 +149,7 @@ void JellyfinResultsWidget::DoPlay()
         return;
 
     JellyfinItem item = data.value<JellyfinItem>();
-    if(item.type != "Movie" && item.type != "Episode")
+    if(item.type != "Movie" && item.type != "Video" && item.type != "Episode")
         return;
 
     if(item.type == "Episode")

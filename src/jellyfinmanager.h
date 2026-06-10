@@ -5,6 +5,7 @@
 #include <QNetworkAccessManager>
 #include <QString>
 #include <QList>
+#include <QHash>
 #include <QUrl>
 #include <QMetaType>
 
@@ -13,6 +14,7 @@ class NounoursEngine;
 struct JellyfinItem
 {
     QString id, name, type, overview, seriesName;
+    QString libraryName; // name of the Jellyfin library (media folder) this item belongs to
     int year = 0;
     int parentIndex = 0; // season number, for episodes
     int index = 0;       // season or episode number
@@ -88,6 +90,7 @@ private:
 
     QString AuthHeader() const;
     void FetchServerName();
+    void SearchAllLibraries(const QString &term, const QHash<QString, QString> &libraries);
 };
 
 #endif // JELLYFINMANAGER_H

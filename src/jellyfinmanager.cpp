@@ -9,6 +9,8 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QSet>
+#include <QSharedPointer>
 
 JellyfinManager::JellyfinManager(QObject *parent):
     QObject(parent),
@@ -124,46 +126,125 @@ void JellyfinManager::Search(const QString &term)
     if(url.endsWith('/'))
         url.chop(1);
 
-    QUrlQuery query;
-    query.addQueryItem("searchTerm", term);
-    query.addQueryItem("IncludeItemTypes", "Movie,Series");
-    query.addQueryItem("Recursive", "true");
-    query.addQueryItem("Fields", "Overview,ProductionYear");
-    query.addQueryItem("Limit", "50");
+    // first list the user's libraries (media folders) so each result can be
+    // tagged with the library it belongs to (Movies, Series, Animes, ...)
+    QUrl viewsUrl(url + "/Users/" + userId + "/Views");
+    QNetworkRequest viewsRequest(viewsUrl);
+    viewsRequest.setRawHeader("X-Emby-Token", accessToken.toUtf8());
 
-    QUrl requestUrl(url + "/Users/" + userId + "/Items");
-    requestUrl.setQuery(query);
-
-    QNetworkRequest request(requestUrl);
-    request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
-
-    QNetworkReply *reply = manager->get(request);
-    connect(reply, &QNetworkReply::finished, this, [=]
+    QNetworkReply *viewsReply = manager->get(viewsRequest);
+    connect(viewsReply, &QNetworkReply::finished, this, [=]
     {
-        if(reply->error() != QNetworkReply::NoError)
+        QHash<QString, QString> libraries;
+        if(viewsReply->error() == QNetworkReply::NoError)
         {
-            emit connectionFailedSignal(reply->errorString());
-            reply->deleteLater();
-            return;
-        }
+            static const QSet<QString> excludedTypes = {"music", "musicvideos", "books", "photos", "livetv", "playlists", "boxsets"};
 
-        QJsonObject response = QJsonDocument::fromJson(reply->readAll()).object();
-        QList<JellyfinItem> items;
-        for(auto entry : response["Items"].toArray())
-        {
-            QJsonObject obj = entry.toObject();
-            JellyfinItem item;
-            item.id = obj["Id"].toString();
-            item.name = obj["Name"].toString();
-            item.type = obj["Type"].toString();
-            item.overview = obj["Overview"].toString();
-            item.year = obj["ProductionYear"].toInt();
-            items.append(item);
+            QJsonObject response = QJsonDocument::fromJson(viewsReply->readAll()).object();
+            for(auto entry : response["Items"].toArray())
+            {
+                QJsonObject obj = entry.toObject();
+                if(excludedTypes.contains(obj["CollectionType"].toString()))
+                    continue;
+
+                libraries[obj["Id"].toString()] = obj["Name"].toString();
+            }
         }
+        viewsReply->deleteLater();
+
+        SearchAllLibraries(term, libraries);
+    });
+}
+
+void JellyfinManager::SearchAllLibraries(const QString &term, const QHash<QString, QString> &libraries)
+{
+    QString url = serverUrl;
+    if(url.endsWith('/'))
+        url.chop(1);
+
+    auto buildRequest = [=](const QString &parentId, bool withFields)
+    {
+        QUrlQuery query;
+        query.addQueryItem("searchTerm", term);
+        // "Video" covers items from "Home Videos" libraries (e.g. "Full Bluray"),
+        // which Jellyfin does not classify as "Movie"
+        query.addQueryItem("IncludeItemTypes", "Movie,Series,Video");
+        query.addQueryItem("Recursive", "true");
+        query.addQueryItem("Limit", "50");
+        if(withFields)
+            query.addQueryItem("Fields", "Overview,ProductionYear");
+        if(!parentId.isEmpty())
+            query.addQueryItem("ParentId", parentId);
+
+        QUrl requestUrl(url + "/Users/" + userId + "/Items");
+        requestUrl.setQuery(query);
+
+        QNetworkRequest request(requestUrl);
+        request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
+        return request;
+    };
+
+    auto allItems = QSharedPointer<QList<JellyfinItem>>::create();
+    auto libraryByItem = QSharedPointer<QHash<QString, QString>>::create();
+    auto pending = QSharedPointer<int>::create(1 + libraries.size());
+
+    auto finish = [=]
+    {
+        if(--(*pending) != 0)
+            return;
+
+        QList<JellyfinItem> items = *allItems;
+        for(auto &item : items)
+            item.libraryName = libraryByItem->value(item.id);
 
         emit searchResultsSignal(items);
-        reply->deleteLater();
+    };
+
+    // global, unscoped search: source of truth for which items match,
+    // regardless of whether their library is exposed via /Users/{userId}/Views
+    QNetworkReply *globalReply = manager->get(buildRequest(QString(), true));
+    connect(globalReply, &QNetworkReply::finished, this, [=]
+    {
+        if(globalReply->error() == QNetworkReply::NoError)
+        {
+            QJsonObject response = QJsonDocument::fromJson(globalReply->readAll()).object();
+            for(auto entry : response["Items"].toArray())
+            {
+                QJsonObject obj = entry.toObject();
+                JellyfinItem item;
+                item.id = obj["Id"].toString();
+                item.name = obj["Name"].toString();
+                item.type = obj["Type"].toString();
+                item.overview = obj["Overview"].toString();
+                item.year = obj["ProductionYear"].toInt();
+                allItems->append(item);
+            }
+        }
+        else
+            emit connectionFailedSignal(globalReply->errorString());
+
+        globalReply->deleteLater();
+        finish();
     });
+
+    // per-library searches: best-effort lookup used only to label results
+    // with the name of the library they belong to
+    for(auto it = libraries.constBegin(); it != libraries.constEnd(); ++it)
+    {
+        QString libraryName = it.value();
+        QNetworkReply *reply = manager->get(buildRequest(it.key(), false));
+        connect(reply, &QNetworkReply::finished, this, [=]
+        {
+            if(reply->error() == QNetworkReply::NoError)
+            {
+                QJsonObject response = QJsonDocument::fromJson(reply->readAll()).object();
+                for(auto entry : response["Items"].toArray())
+                    (*libraryByItem)[entry.toObject()["Id"].toString()] = libraryName;
+            }
+            reply->deleteLater();
+            finish();
+        });
+    }
 }
 
 void JellyfinManager::GetSeasons(const QString &seriesId)
