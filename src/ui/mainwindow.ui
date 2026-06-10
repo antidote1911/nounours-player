@@ -1155,9 +1155,9 @@ QSlider::handle:horizontal {
     <addaction name="action_Open_File"/>
     <addaction name="actionOpen_URL"/>
     <addaction name="actionOpen_Path_from_Clipboard"/>
-    <addaction name="menu_Recently_Opened"/>
-    <addaction name="separator"/>
     <addaction name="actionJellyfin_Search"/>
+    <addaction name="separator"/>
+    <addaction name="menu_Recently_Opened"/>
     <addaction name="separator"/>
     <addaction name="actionShow_in_Folder"/>
     <addaction name="separator"/>
