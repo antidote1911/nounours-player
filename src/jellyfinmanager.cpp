@@ -13,16 +13,28 @@
 #include <QSharedPointer>
 #include <QRegularExpression>
 #include <QUuid>
+#include <QHostInfo>
+#include <QSysInfo>
 
 JellyfinManager::JellyfinManager(QObject *parent):
     QObject(parent),
     nounours(static_cast<NounoursEngine*>(parent)),
     manager(new QNetworkAccessManager(this)),
-    playbackProgressTimer(new QTimer(this))
+    playbackProgressTimer(new QTimer(this)),
+    socket(new QWebSocket(QString(), QWebSocketProtocol::VersionLatest, this))
 {
     // periodically report the playback position while a Jellyfin item is playing
     playbackProgressTimer->setInterval(10000);
     connect(playbackProgressTimer, &QTimer::timeout, this, &JellyfinManager::ReportPlaybackProgress);
+
+    // receive remote-control commands (play/pause/seek/volume/messages) pushed
+    // by the Jellyfin server, and keep retrying the connection while logged in
+    connect(socket, &QWebSocket::textMessageReceived, this, &JellyfinManager::HandleSocketMessage);
+    connect(socket, &QWebSocket::disconnected, this, [=]
+    {
+        if(!accessToken.isEmpty())
+            QTimer::singleShot(5000, this, &JellyfinManager::ConnectWebSocket);
+    });
 
     // continue playback into the next season once its episodes have been fetched
     connect(this, &JellyfinManager::episodesResultsSignal, this, [=](QString seasonId, QList<JellyfinItem> items)
@@ -51,8 +63,8 @@ JellyfinManager::~JellyfinManager()
 
 QString JellyfinManager::AuthHeader() const
 {
-    return QString("MediaBrowser Client=\"Nounours Player\", Device=\"NounoursPlayer (%1)\", DeviceId=\"%0\", Version=\"%1\"")
-            .arg(deviceId, NOUNOURS_PLAYER_VERSION);
+    return QString("MediaBrowser Client=\"Nounours Player\", Device=\"%2 %3\", DeviceId=\"%0\", Version=\"%1\"")
+            .arg(deviceId, NOUNOURS_PLAYER_VERSION, QHostInfo::localHostName(), QSysInfo::prettyProductName());
 }
 
 QNetworkRequest JellyfinManager::BuildRequest(const QUrl &url)
@@ -74,6 +86,8 @@ void JellyfinManager::Connect(const QString &url, const QString &user, const QSt
 
 void JellyfinManager::Connect()
 {
+    socket->close();
+
     QString url = serverUrl;
     if(url.endsWith('/'))
         url.chop(1);
@@ -108,6 +122,8 @@ void JellyfinManager::Connect()
         else
         {
             FetchServerName();
+            ReportCapabilities();
+            ConnectWebSocket();
             emit connectedSignal();
         }
 
@@ -624,4 +640,160 @@ void JellyfinManager::UpdatePlaybackState(const QString &url, int playState)
         activePlaybackPaused = paused;
         ReportPlaybackProgress();
     }
+}
+
+void JellyfinManager::ReportCapabilities()
+{
+    QString url = serverUrl;
+    if(url.endsWith('/'))
+        url.chop(1);
+
+    QNetworkRequest request = BuildRequest(QUrl(url + "/Sessions/Capabilities/Full"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
+
+    QJsonObject body;
+    body["PlayableMediaTypes"] = QJsonArray{"Video", "Audio"};
+    body["SupportedCommands"] = QJsonArray{
+        "VolumeUp", "VolumeDown", "SetVolume", "Mute", "Unmute", "ToggleMute", "DisplayMessage"
+    };
+    body["SupportsMediaControl"] = true;
+
+    QNetworkReply *reply = manager->post(request, QJsonDocument(body).toJson());
+    connect(reply, &QNetworkReply::finished, reply, &QNetworkReply::deleteLater);
+}
+
+void JellyfinManager::ConnectWebSocket()
+{
+    if(accessToken.isEmpty())
+        return;
+
+    QUrl url(serverUrl);
+    url.setScheme(url.scheme() == "https" ? "wss" : "ws");
+
+    QString path = url.path();
+    if(path.endsWith('/'))
+        path.chop(1);
+    url.setPath(path + "/socket");
+
+    QUrlQuery query;
+    query.addQueryItem("api_key", accessToken);
+    query.addQueryItem("deviceId", deviceId);
+    url.setQuery(query);
+
+    socket->open(BuildRequest(url));
+}
+
+void JellyfinManager::HandleSocketMessage(const QString &message)
+{
+    QJsonObject json = QJsonDocument::fromJson(message.toUtf8()).object();
+    QString type = json["MessageType"].toString();
+
+    if(type == "ForceKeepAlive")
+        socket->sendTextMessage(QStringLiteral("{\"MessageType\":\"KeepAlive\"}"));
+    else if(type == "GeneralCommand")
+        HandleGeneralCommand(json["Data"].toObject());
+    else if(type == "Playstate")
+        HandlePlaystateCommand(json["Data"].toObject());
+    else if(type == "Play")
+        HandlePlayCommand(json["Data"].toObject());
+}
+
+void JellyfinManager::HandleGeneralCommand(const QJsonObject &data)
+{
+    QString name = data["Name"].toString();
+    QJsonObject args = data["Arguments"].toObject();
+
+    if(name == "DisplayMessage")
+    {
+        QString header = args["Header"].toString();
+        QString text = args["Text"].toString();
+        int timeoutMs = args["TimeoutMs"].toString().toInt();
+
+        // Jellyfin's "Send Message" dialog defaults TimeoutMs to 5000, which
+        // feels too short here, so enforce a longer minimum
+        nounours->mpv->ShowMessage(header.isEmpty() ? text : QString("%0: %1").arg(header, text),
+                                    qMax(timeoutMs, 15000));
+    }
+    else if(name == "SetVolume")
+        nounours->mpv->Volume(args["Volume"].toString().toInt(), true);
+    else if(name == "VolumeUp")
+        nounours->mpv->Volume(qMin(nounours->mpv->getVolume() + 5, 100), true);
+    else if(name == "VolumeDown")
+        nounours->mpv->Volume(qMax(nounours->mpv->getVolume() - 5, 0), true);
+    else if(name == "Mute")
+        nounours->mpv->Mute(true);
+    else if(name == "Unmute")
+        nounours->mpv->Mute(false);
+    else if(name == "ToggleMute")
+        nounours->mpv->Mute(!nounours->mpv->getMute());
+}
+
+void JellyfinManager::HandlePlaystateCommand(const QJsonObject &data)
+{
+    QString command = data["Command"].toString();
+
+    if(command == "PlayPause")
+        nounours->mpv->PlayPause(QString());
+    else if(command == "Pause")
+        nounours->mpv->Pause();
+    else if(command == "Unpause")
+        nounours->mpv->Play();
+    else if(command == "Stop")
+        nounours->mpv->Stop();
+    else if(command == "Seek")
+        nounours->mpv->Seek(int(data["SeekPositionTicks"].toDouble() / 10000000.0), false, true);
+}
+
+void JellyfinManager::HandlePlayCommand(const QJsonObject &data)
+{
+    QStringList ids;
+    for(const auto &id : data["ItemIds"].toArray())
+        ids << id.toString();
+
+    if(ids.isEmpty())
+        return;
+
+    QString url = serverUrl;
+    if(url.endsWith('/'))
+        url.chop(1);
+
+    QUrlQuery query;
+    query.addQueryItem("Ids", ids.join(','));
+    query.addQueryItem("Fields", "ProductionYear");
+
+    QUrl requestUrl(url + "/Users/" + userId + "/Items");
+    requestUrl.setQuery(query);
+
+    QNetworkRequest request = BuildRequest(requestUrl);
+    request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
+
+    QNetworkReply *reply = manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [=]
+    {
+        if(reply->error() == QNetworkReply::NoError)
+        {
+            QJsonObject response = QJsonDocument::fromJson(reply->readAll()).object();
+            QStringList urls, labels;
+            for(auto entry : response["Items"].toArray())
+            {
+                QJsonObject obj = entry.toObject();
+                QString label = obj["Name"].toString();
+                int year = obj["ProductionYear"].toInt();
+                if(year > 0)
+                    label += QString(" (%0)").arg(year);
+
+                urls << GetStreamUrl(obj["Id"].toString());
+                labels << label;
+            }
+
+            if(!urls.isEmpty())
+            {
+                nowPlayingEpisodes.clear();
+                SetNowPlaying(urls.first(), QString("%0: %1").arg(getServerName(), labels.first()));
+                nounours->mpv->LoadUrlPlaylist(urls, labels, 0);
+            }
+        }
+        reply->deleteLater();
+    });
 }

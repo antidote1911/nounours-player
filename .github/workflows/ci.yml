@@ -31,6 +31,7 @@ jobs:
             qt6-base-dev \
             qt6-base-private-dev \
             libqt6svg6-dev \
+            libqt6websockets6-dev \
             qt6-tools-dev \
             qt6-tools-dev-tools \
             qt6-l10n-tools \
@@ -117,6 +118,7 @@ jobs:
             mingw-w64-x86_64-angleproject \
             mingw-w64-x86_64-qt6-base \
             mingw-w64-x86_64-qt6-svg \
+            mingw-w64-x86_64-qt6-websockets \
             mingw-w64-x86_64-qt6-tools \
             mingw-w64-x86_64-mpv \
             mingw-w64-x86_64-libmediainfo \

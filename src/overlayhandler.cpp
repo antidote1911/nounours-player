@@ -19,6 +19,9 @@
 
 #define OVERLAY_INFO    62
 #define OVERLAY_STATUS  63
+// mpv's overlay_add only accepts ids 0-63, so use a free slot below the
+// auto-assigned pool (1-60) rather than 64, which mpv silently rejects
+#define OVERLAY_MESSAGE 61
 #define OVERLAY_REFRESH_RATE 1000
 
 OverlayHandler::OverlayHandler(QObject *parent):
@@ -48,6 +51,45 @@ void OverlayHandler::showStatusText(const QString &text, int duration)
         remove(OVERLAY_STATUS);
 }
 
+void OverlayHandler::showMessage(const QString &text, int duration)
+{
+    // uses its own overlay id so it isn't cleared early by the
+    // buffering/pause status overlay (OVERLAY_STATUS)
+    if(text != QString())
+    {
+        QFont font(Util::MonospaceFont(), 14, QFont::Bold);
+        QPoint pos(20, 20);
+
+        // wrap onto multiple lines instead of letting showText shrink the
+        // font to fit everything on one line
+        const float fm_correction = 1.3;
+        QFontMetrics fm(font);
+        int availW = nounours->window->ui->mpvFrame->width() - 2*pos.x();
+
+        QStringList wrapped;
+        for(const QString &line : text.split('\n'))
+        {
+            QString current;
+            for(const QString &word : line.split(' '))
+            {
+                QString candidate = current.isEmpty() ? word : current + ' ' + word;
+                if(!current.isEmpty() && fm.horizontalAdvance(candidate)*fm_correction > availW)
+                {
+                    wrapped << current;
+                    current = word;
+                }
+                else
+                    current = candidate;
+            }
+            wrapped << current;
+        }
+
+        showText(wrapped.join('\n'), font, QColor(0xFFFFFF), pos, duration, OVERLAY_MESSAGE, 0, true);
+    }
+    else if(duration == 0)
+        remove(OVERLAY_MESSAGE);
+}
+
 void OverlayHandler::showInfoText(bool show)
 {
     if(show)
@@ -71,7 +113,7 @@ void OverlayHandler::showInfoText(bool show)
     }
 }
 
-void OverlayHandler::showText(const QString &text, QFont font, QColor color, QPoint pos, int duration, int id, int maxWidth)
+void OverlayHandler::showText(const QString &text, QFont font, QColor color, QPoint pos, int duration, int id, int maxWidth, bool noShrink)
 {
     overlay_mutex.lock();
     // increase next overlay_id
@@ -97,7 +139,7 @@ void OverlayHandler::showText(const QString &text, QFont font, QColor color, QPo
     int availH = nounours->window->ui->mpvFrame->height() - 2*pos.y();
     if(id == OVERLAY_INFO) {
         font.setPointSizeF(nounours->window->ui->mpvFrame->height() / 45.0);
-    } else {
+    } else if(!noShrink) {
         float xF = float(availW) / (fm_correction*w);
         float yF = float(availH) / h;
         font.setPointSizeF(std::min(font.pointSizeF()*std::min(xF, yF), font.pointSizeF()));

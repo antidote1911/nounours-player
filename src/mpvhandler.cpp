@@ -735,6 +735,11 @@ void MpvHandler::VdLavcThreads(int t)
     SetOption("vd-lavc-threads", QString::number(vdLavcThreads));
 }
 
+void MpvHandler::ShowMessage(QString text, int duration)
+{
+    nounours->overlay->showMessage(text, duration);
+}
+
 void MpvHandler::ShowText(QString text, int duration)
 {
     nounours->overlay->showStatusText(text, duration);

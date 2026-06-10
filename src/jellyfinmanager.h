@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
+#include <QWebSocket>
 #include <QString>
 #include <QList>
 #include <QHash>
@@ -100,6 +101,10 @@ private:
     bool activePlaybackPaused = false;
     QTimer *playbackProgressTimer;
 
+    // Jellyfin remote-control: WebSocket session used to receive
+    // play/pause/stop/seek/volume/message commands sent from the server
+    QWebSocket *socket;
+
     QString AuthHeader() const;
     static QNetworkRequest BuildRequest(const QUrl &url);
     void FetchServerName();
@@ -109,6 +114,13 @@ private:
     void ReportPlaybackStart(const QString &itemId);
     void ReportPlaybackProgress();
     void ReportPlaybackStopped();
+
+    void ReportCapabilities();
+    void ConnectWebSocket();
+    void HandleSocketMessage(const QString &message);
+    void HandleGeneralCommand(const QJsonObject &data);
+    void HandlePlaystateCommand(const QJsonObject &data);
+    void HandlePlayCommand(const QJsonObject &data);
 };
 
 #endif // JELLYFINMANAGER_H

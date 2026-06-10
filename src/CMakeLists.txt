@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(nounours-player
-    VERSION 2.4.1
+    VERSION 2.5.0
     LANGUAGES CXX
 )
 
@@ -13,7 +13,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_CURRENT_SOURCE_DIR}/ui)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Network Svg Widgets LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Network WebSockets Svg Widgets LinguistTools)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
 pkg_check_modules(MEDIAINFO REQUIRED libmediainfo)
@@ -124,6 +124,7 @@ target_link_libraries(nounours-player PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Network
+    Qt6::WebSockets
     Qt6::Svg
     Qt6::Widgets
     ${MPV_LINK_LIBRARIES}

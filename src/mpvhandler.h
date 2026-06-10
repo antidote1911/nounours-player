@@ -117,6 +117,7 @@ public slots:
     void VdLavcThreads(int);
 
     void ShowText(QString text, int duration = 4000);
+    void ShowMessage(QString text, int duration = 15000);
 
     void LoadTracks();
     void LoadChapters();

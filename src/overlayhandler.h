@@ -23,8 +23,9 @@ public:
 
 public slots:
     void showStatusText(const QString &text, int duration = 4000);
+    void showMessage(const QString &text, int duration = 15000);
     void showInfoText(bool show = true);
-    void showText(const QString &text, QFont font, QColor color, QPoint pos, int duration, int id = -1, int maxWidth = 0);
+    void showText(const QString &text, QFont font, QColor color, QPoint pos, int duration, int id = -1, int maxWidth = 0, bool noShrink = false);
 
 protected slots:
     void remove(int id);

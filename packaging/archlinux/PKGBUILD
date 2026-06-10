@@ -1,12 +1,12 @@
 # Maintainer: antidote1911 <eugenadaken836@outlook.com>
 pkgname=nounours-player
-pkgver=2.4.1
+pkgver=2.5.0
 pkgrel=1
 pkgdesc="A simple libmpv-based multimedia player"
 arch=('x86_64')
 url="https://github.com/Antidote1911/Nounours-Player"
 license=('GPL2')
-depends=('qt6-base' 'qt6-svg' 'mpv' 'libmediainfo')
+depends=('qt6-base' 'qt6-svg' 'qt6-websockets' 'mpv' 'libmediainfo')
 makedepends=('cmake' 'ninja' 'qt6-tools')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/Antidote1911/Nounours-Player/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=('SKIP')
