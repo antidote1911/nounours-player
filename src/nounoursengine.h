@@ -464,7 +464,6 @@ private:
     void NounoursOpen(QStringList&);
     void NounoursPlayPause(QStringList&);
     void NounoursFitWindow(QStringList&);
-    void NounoursAspect(QStringList&);
     void NounoursDeinterlace(QStringList&);
     void NounoursInterpolate(QStringList&);
     void NounoursMute(QStringList&);

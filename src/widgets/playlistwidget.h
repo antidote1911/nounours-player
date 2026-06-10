@@ -50,7 +50,6 @@ public slots:
     void RemoveIndex(int index); // remove the selected item
 
     void Search(const QString&);
-    void ShowAll(bool);
     void Shuffle();
     void SavePlaylist();
 

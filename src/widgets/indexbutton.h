@@ -11,8 +11,6 @@ class IndexButton : public QPushButton
 public:
     explicit IndexButton(QWidget *parent = 0);
 
-    int getIndex() const;
-
 public slots:
     void setIndex(int index);
 

@@ -272,11 +272,6 @@ MainWindow::MainWindow(QWidget *parent):
 
             });
 
-    //    connect(this, &MainWindow::hidePopupChanged,
-    //            [=](bool b)
-    //    {
-    //    });
-
     connect(autohide, &QTimer::timeout, // cursor autohide
             [=]
             {
@@ -695,11 +690,6 @@ MainWindow::MainWindow(QWidget *parent):
                           current->time = 0;
                   }
               });
-
-//    connect(mpv, &MpvHandler::fileChanged,
-//            [=](QString f)
-//            {
-//            });
 
     connect(mpv, &MpvHandler::timeChanged,
             [=](int i)

@@ -323,13 +323,6 @@ void MpvHandler::RemoveOverlay(int id)
     AsyncCommand(args);
 }
 
-bool MpvHandler::FileExists(QString f)
-{
-    if(Util::IsValidUrl(f)) // web url
-        return true;
-    return QFile(f).exists();
-}
-
 void MpvHandler::LoadFile(QString f)
 {
     PlayFile(LoadPlaylist(f));
@@ -547,38 +540,6 @@ int MpvHandler::Relative(int pos)
     return ret;
 }
 
-void MpvHandler::FrameStep()
-{
-    const char *args[] = {"frame-step", NULL};
-    AsyncCommand(args);
-}
-
-void MpvHandler::FrameBackStep()
-{
-    const char *args[] = {"frame-back-step", NULL};
-    AsyncCommand(args);
-}
-
-void MpvHandler::Chapter(int c)
-{
-    mpv_set_property_async(mpv, MPV_REPLY_PROPERTY, "chapter", MPV_FORMAT_INT64, &c);
-//    const QByteArray tmp = QString::number(c).toUtf8();
-//    const char *args[] = {"set", "chapter", tmp.constData(), NULL};
-//    AsyncCommand(args);
-}
-
-void MpvHandler::NextChapter()
-{
-    const char *args[] = {"add", "chapter", "1", NULL};
-    AsyncCommand(args);
-}
-
-void MpvHandler::PreviousChapter()
-{
-    const char *args[] = {"add", "chapter", "-1", NULL};
-    AsyncCommand(args);
-}
-
 void MpvHandler::Volume(int level, bool osd)
 {
     if(level > 100) level = 100;
@@ -603,21 +564,6 @@ void MpvHandler::Speed(double d)
     if(playState > 0)
         mpv_set_property_async(mpv, MPV_REPLY_PROPERTY, "speed", MPV_FORMAT_DOUBLE, &d);
     setSpeed(d);
-}
-
-void MpvHandler::Aspect(QString aspect)
-{
-    const QByteArray tmp = aspect.toUtf8();
-    const char *args[] = {"set", "video-aspect", tmp.constData(), NULL};
-    AsyncCommand(args);
-}
-
-
-void MpvHandler::Vid(int vid)
-{
-    const QByteArray tmp = QString::number(vid).toUtf8();
-    const char *args[] = {"set", "vid", tmp.constData(), NULL};
-    AsyncCommand(args);
 }
 
 void MpvHandler::Aid(int aid)
@@ -717,13 +663,6 @@ void MpvHandler::AddAudioTrack(QString f)
 void MpvHandler::ShowSubtitles(bool b)
 {
     const char *args[] = {"set", "sub-visibility", b ? "yes" : "no", NULL};
-    AsyncCommand(args);
-}
-
-void MpvHandler::SubtitleScale(double scale, bool relative)
-{
-    const QByteArray tmp = QString::number(scale).toUtf8();
-    const char *args[] = {relative?"add":"set", "sub-scale", tmp.constData(), NULL};
     AsyncCommand(args);
 }
 
@@ -990,12 +929,6 @@ void MpvHandler::LoadMetadata()
                 fileInfo.metadata[node.u.list->keys[n]] = node.u.list->values[n].u.string;
 }
 
-void MpvHandler::LoadOsdSize()
-{
-    mpv_get_property(mpv, "osd-width", MPV_FORMAT_INT64, &osdWidth);
-    mpv_get_property(mpv, "osd-height", MPV_FORMAT_INT64, &osdHeight);
-}
-
 void MpvHandler::Command(const QStringList &strlist)
 {
     // convert input string into char array
@@ -1011,9 +944,6 @@ void MpvHandler::Command(const QStringList &strlist)
     for(int i = 0; i < len; ++i)
         delete [] data[i];
     delete [] data;
-
-//    const QByteArray tmp = str.toUtf8();
-//    mpv_command_string(mpv, tmp.constData());
 }
 
 void MpvHandler::SetOption(QString key, QString val)

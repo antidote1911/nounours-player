@@ -47,11 +47,6 @@ void NounoursEngine::NounoursSh(QStringList &args)
                 {
                     Print(p->readAll(), QString("%0(%1))").arg(p->program(), QString::number(quintptr(p))));
                 });
-//        connect(p, &QProcess::finished,
-//                [=](int, QProcess::ExitStatus)
-//                {
-//                    delete p;
-//                });
     }
     else
         RequiresParameters("mpv");

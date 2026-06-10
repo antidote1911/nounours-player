@@ -14,5 +14,4 @@ void OpenButton::mousePressEvent(QMouseEvent *event)
     else if(event->button() == Qt::RightButton)
         emit RightClick();
     event->accept();
-    //QPushButton::mousePressEvent(event);
 }

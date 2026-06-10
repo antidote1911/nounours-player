@@ -13,11 +13,6 @@ IndexButton::IndexButton(QWidget *parent) :
 {
 }
 
-int IndexButton::getIndex() const
-{
-    return index;
-}
-
 void IndexButton::setIndex(int _index)
 {
     if(_index != 0)

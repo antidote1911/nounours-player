@@ -43,14 +43,11 @@ public:
     double getSpeed()                       { return speed; }
     int getTime()                           { return time; }
     int getVolume()                         { return volume; }
-    int getVid()                            { return vid; }
     int getAid()                            { return aid; }
     int getSid()                            { return sid; }
     bool getSubtitleVisibility()            { return subtitleVisibility; }
     bool getMute()                          { return mute; }
 
-    int getOsdWidth()                       { return osdWidth; }
-    int getOsdHeight()                      { return osdHeight; }
     int getBrightness()                     { return brightness; }
     int getContrast()                       { return contrast; }
     int getSaturation()                     { return saturation; }
@@ -65,8 +62,6 @@ public:
 
 protected:
     virtual bool event(QEvent*);
-
-    bool FileExists(QString);
 
 public slots:
     void LoadFile(QString);
@@ -87,17 +82,9 @@ public slots:
 
     void Seek(int pos, bool relative = false, bool osd = false);
     int Relative(int pos);
-    void FrameStep();
-    void FrameBackStep();
-
-    void Chapter(int);
-    void NextChapter();
-    void PreviousChapter();
 
     void Volume(int, bool osd = false);
     void Speed(double);
-    void Aspect(QString);
-    void Vid(int);
     void Aid(int);
     void Sid(int);
 
@@ -117,7 +104,6 @@ public slots:
     void AddSubtitleTrack(QString);
     void AddAudioTrack(QString);
     void ShowSubtitles(bool);
-    void SubtitleScale(double scale, bool relative = false);
 
     void Deinterlace(bool);
     void Interpolate(bool);
@@ -137,7 +123,6 @@ public slots:
     void LoadVideoParams();
     void LoadAudioParams();
     void LoadMetadata();
-    void LoadOsdSize();
 
     void Command(const QStringList &strlist);
     void SetOption(QString key, QString val);
@@ -171,8 +156,6 @@ private slots:
     void setSpeed(double d)                 { emit speedChanged(speed = d); }
     void setTime(int i)                     { emit timeChanged(time = i); }
     void setVolume(int i)                   { emit volumeChanged(volume = i); }
-    void setIndex(int i)                    { emit indexChanged(index = i); }
-    void setVid(int i)                      { emit vidChanged(vid = i); }
     void setAid(int i)                      { emit aidChanged(aid = i); }
     void setSid(int i)                      { emit sidChanged(sid = i); }
     void setSubtitleVisibility(bool b)      { emit subtitleVisibilityChanged(subtitleVisibility = b); }
@@ -202,8 +185,6 @@ signals:
     void speedChanged(double);
     void timeChanged(int);
     void volumeChanged(int);
-    void indexChanged(int);
-    void vidChanged(int);
     void aidChanged(int);
     void sidChanged(int);
     void debugChanged(bool);
@@ -235,8 +216,6 @@ private:
     int         time = 0,
                 lastTime = 0,
                 volume = 100,
-                index = 0,
-                vid,
                 aid,
                 sid,
                 brightness = 0,
@@ -252,8 +231,6 @@ private:
                 subtitleVisibility = true,
                 mute = false,
                 eqEnabled = true;
-    int         osdWidth,
-                osdHeight;
 };
 
 #endif // MPVHANDLER_H

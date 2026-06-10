@@ -219,21 +219,6 @@ void PlaylistWidget::Search(const QString &s)
     SelectItem(item);
 }
 
-void PlaylistWidget::ShowAll(bool b)
-{
-    QListWidgetItem *current = currentItem();
-    QString item;
-    if(current != nullptr)
-        item = ItemFile(current);
-    else
-        item = file;
-
-    showAll = b;
-    Populate();
-
-    BoldText(file, true);
-    SelectItem(item);
-}
 
 void PlaylistWidget::Shuffle()
 {
