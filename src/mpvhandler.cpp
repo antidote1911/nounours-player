@@ -710,11 +710,12 @@ void MpvHandler::Hwdec(QString h)
 {
     setHwdec(h);
 
-    // mpv's plain "auto" can pick a hwaccel backend (e.g. vaapi) that fails
-    // to interop with the embedded video output for some codecs (e.g. VP8 on
-    // AMD/RADV), leaving audio playing with no video. Try Vulkan first, then
-    // fall back to mpv's safe auto-selection, then software decoding.
-    SetOption("hwdec", hwdec == "auto" ? "vulkan,auto-safe,no" : hwdec);
+    // mpv's plain "auto" (and its "auto-safe" fallback) can pick VAAPI, which
+    // fails to interop with the embedded Vulkan video output for some codecs
+    // (e.g. VP8 on AMD/RADV): the failed hwaccel probe leaves the swapchain
+    // broken, producing audio with no video at all. Restrict "auto" to
+    // Vulkan, which cleanly falls back to software decoding per-file instead.
+    SetOption("hwdec", hwdec == "auto" ? "vulkan,no" : hwdec);
 }
 
 void MpvHandler::Framedrop(QString f)
