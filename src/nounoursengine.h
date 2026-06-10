@@ -15,6 +15,7 @@ class Settings;
 class GestureHandler;
 class OverlayHandler;
 class UpdateManager;
+class JellyfinManager;
 class DimDialog;
 
 class NounoursEngine : public QObject
@@ -30,6 +31,7 @@ public:
     GestureHandler *gesture;
     OverlayHandler *overlay;
     UpdateManager  *update;
+    JellyfinManager *jellyfin;
     DimDialog      *dimDialog;
 
     QSystemTrayIcon *sysTrayIcon;

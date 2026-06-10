@@ -5,6 +5,7 @@
 #include "settings.h"
 #include "util.h"
 #include "mpvhandler.h"
+#include "jellyfinmanager.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -12,6 +13,7 @@
 #include <QJsonValue>
 #include <QJsonValueRef>
 #include <QDir>
+#include <QUuid>
 
 #if defined(Q_OS_WIN)
 #include <QDate>
@@ -133,6 +135,17 @@ void NounoursEngine::Load2_0_3()
     for(auto &key : mpv_json.keys())
         if(key != QString() && mpv_json[key].toString() != QString())
             mpv->SetOption(key, mpv_json[key].toString());
+
+    QJsonObject jellyfin_json = root["jellyfin"].toObject();
+    jellyfin->serverUrl = QJsonValueRef2(jellyfin_json["server-url"]).toString("");
+    jellyfin->username  = QJsonValueRef2(jellyfin_json["username"]).toString("");
+    jellyfin->password  = QJsonValueRef2(jellyfin_json["password"]).toString("");
+    jellyfin->deviceId  = QJsonValueRef2(jellyfin_json["device-id"]).toString("");
+    if(jellyfin->deviceId.isEmpty())
+        jellyfin->deviceId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+
+    if(!jellyfin->serverUrl.isEmpty())
+        jellyfin->Connect();
 }
 
 void NounoursEngine::SaveSettings()
@@ -214,6 +227,13 @@ void NounoursEngine::SaveSettings()
     mpv_json["vd-lavc-skiploopfilter"] = mpv->skipLoopFilter;
     mpv_json["vd-lavc-threads"] = mpv->vdLavcThreads;
     root["mpv"] = mpv_json;
+
+    QJsonObject jellyfin_json = root["jellyfin"].toObject();
+    jellyfin_json["server-url"] = jellyfin->serverUrl;
+    jellyfin_json["username"]   = jellyfin->username;
+    jellyfin_json["password"]   = jellyfin->password;
+    jellyfin_json["device-id"]  = jellyfin->deviceId;
+    root["jellyfin"] = jellyfin_json;
 
     settings->setRoot(root);
     settings->Save();

@@ -10,6 +10,7 @@
 #include "gesturehandler.h"
 #include "overlayhandler.h"
 #include "updatemanager.h"
+#include "jellyfinmanager.h"
 #include "widgets/dimdialog.h"
 #include "util.h"
 
@@ -21,6 +22,7 @@ NounoursEngine::NounoursEngine(QObject *parent):
     gesture(new GestureHandler(this)),
     overlay(new OverlayHandler(this)),
     update(new UpdateManager(this)),
+    jellyfin(new JellyfinManager(this)),
     // note: trayIcon does not work in my environment--known qt bug
     // see: https://bugreports.qt-project.org/browse/QTBUG-34364
     sysTrayIcon(new QSystemTrayIcon(window->windowIcon(), this)),
@@ -46,6 +48,11 @@ NounoursEngine::NounoursEngine(QObject *parent):
             {
                 Print(msg, "update");
             });
+    connect(jellyfin, &JellyfinManager::messageSignal,
+            [=](QString msg)
+            {
+                Print(msg, "jellyfin");
+            });
 }
 
 NounoursEngine::~NounoursEngine()
@@ -56,6 +63,7 @@ NounoursEngine::~NounoursEngine()
         delete qtTranslator;
     if(dimDialog != nullptr)
         delete dimDialog;
+    delete jellyfin;
     delete update;
     delete overlay;
     delete gesture;

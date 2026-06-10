@@ -28,9 +28,10 @@ void PlaylistWidget::AttachEngine(NounoursEngine *nounours)
 {
     this->nounours = nounours;
     connect(nounours->mpv, &MpvHandler::playlistChanged,
-            [=](const QStringList &list)
+            [=](const QStringList &list, const QStringList &labelList)
             {
                 playlist = list;
+                labels = labelList;
                 newPlaylist = true;
                 if(refresh)
                 {
@@ -76,7 +77,7 @@ void PlaylistWidget::Populate()
     QListWidgetItem *current = currentItem();
     QString item;
     if(current != nullptr)
-        item = current->text();
+        item = ItemFile(current);
     else
         item = file;
 
@@ -86,8 +87,10 @@ void PlaylistWidget::Populate()
     {
         if(showAll || playlist[i].endsWith(suffix))
         {
-            QListWidgetItem *it = new QListWidgetItem(playlist[i]);
+            QString text = (i < labels.size() && !labels[i].isEmpty()) ? labels[i] : playlist[i];
+            QListWidgetItem *it = new QListWidgetItem(text);
             it->setData(Qt::UserRole, i + 1);
+            it->setData(Qt::UserRole + 1, playlist[i]);
             addItem(it);
         }
     }
@@ -111,10 +114,18 @@ QString PlaylistWidget::CurrentItem()
 
 int PlaylistWidget::CurrentIndex()
 {
-    auto items = findItems(file, Qt::MatchExactly);
-    if(!items.empty())
-        return indexFromItem(items.first()).row();
+    for(int i = 0; i < count(); ++i)
+    {
+        if(ItemFile(item(i)) == file)
+            return i;
+    }
     return 0;
+}
+
+QString PlaylistWidget::ItemFile(QListWidgetItem *item) const
+{
+    QVariant v = item->data(Qt::UserRole + 1);
+    return v.isValid() ? v.toString() : item->text();
 }
 
 void PlaylistWidget::SelectIndex(int index, bool relative)
@@ -138,11 +149,7 @@ void PlaylistWidget::PlayIndex(int index, bool relative)
 {
     int newIndex = 0;
     if(relative)
-    {
-        auto items = findItems(file, Qt::MatchExactly);
-        if(!items.empty())
-            newIndex = indexFromItem(items.first()).row();
-    }
+        newIndex = CurrentIndex();
     newIndex += index;
 
     if(newIndex < 0)
@@ -154,7 +161,7 @@ void PlaylistWidget::PlayIndex(int index, bool relative)
     if(current != nullptr)
     {
         scrollToItem(current);
-        if(!nounours->mpv->PlayFile(current->text()))
+        if(!nounours->mpv->PlayFile(ItemFile(current)))
         {
             PlayIndex(newIndex+1);
             RemoveIndex(newIndex);
@@ -176,15 +183,16 @@ void PlaylistWidget::RemoveIndex(int index)
 
 void PlaylistWidget::BoldText(const QString &f, bool state)
 {
-    auto items = findItems(f, Qt::MatchExactly);
-    if(items.empty())
-        return;
-    auto *item = items.first();
-    if(item)
+    for(int i = 0; i < count(); ++i)
     {
-        QFont font = item->font();
-        font.setBold(state);
-        item->setFont(font);
+        QListWidgetItem *it = item(i);
+        if(ItemFile(it) == f)
+        {
+            QFont font = it->font();
+            font.setBold(state);
+            it->setFont(font);
+            return;
+        }
     }
 }
 
@@ -193,7 +201,7 @@ void PlaylistWidget::Search(const QString &s)
     QListWidgetItem *current = currentItem();
     QString item;
     if(current != nullptr)
-        item = current->text();
+        item = ItemFile(current);
     else
         item = file;
 
@@ -216,7 +224,7 @@ void PlaylistWidget::ShowAll(bool b)
     QListWidgetItem *current = currentItem();
     QString item;
     if(current != nullptr)
-        item = current->text();
+        item = ItemFile(current);
     else
         item = file;
 
@@ -236,7 +244,7 @@ void PlaylistWidget::Shuffle()
     QListWidgetItem *current = currentItem();
     QString item;
     if(current != nullptr)
-        item = current->text();
+        item = ItemFile(current);
     else
         item = file;
 
@@ -249,7 +257,7 @@ void PlaylistWidget::Shuffle()
 
     // Make currently playing file first
     auto iter = std::find_if(items.begin(), items.end(),
-                             [this](QListWidgetItem *it){ return it->text() == file; });
+                             [this](QListWidgetItem *it){ return ItemFile(it) == file; });
     if(iter != items.end())
         std::swap(*iter, *items.begin());
 
@@ -260,16 +268,18 @@ void PlaylistWidget::Shuffle()
     SelectItem(item);
 }
 
-void PlaylistWidget::SelectItem(const QString &item)
+void PlaylistWidget::SelectItem(const QString &f)
 {
-    if(item != QString())
+    if(f != QString())
     {
-        auto items = this->findItems(item, Qt::MatchExactly);
-        if(!items.empty())
+        for(int i = 0; i < count(); ++i)
         {
-            setCurrentItem(items.first());
-            scrollToItem(items.first());
-            return;
+            if(ItemFile(item(i)) == f)
+            {
+                setCurrentItem(item(i));
+                scrollToItem(item(i));
+                return;
+            }
         }
     }
     setCurrentRow(0);
@@ -286,7 +296,7 @@ void PlaylistWidget::Renumber()
 
 void PlaylistWidget::RemoveFromPlaylist(QListWidgetItem *item)
 {
-    playlist.removeOne(item->text());
+    playlist.removeOne(ItemFile(item));
     delete item;
     Renumber();
     emit currentRowChanged(currentRow());
@@ -294,15 +304,17 @@ void PlaylistWidget::RemoveFromPlaylist(QListWidgetItem *item)
 
 void PlaylistWidget::DeleteFromDisk(QListWidgetItem *item)
 {
+    QString itemFile = ItemFile(item);
+
     if(QMessageBox::question(
             parentWidget(),
             tr("Delete from disk?"),
-            tr("Are you sure you want to permanently delete \"%0\"?").arg(item->text()),
+            tr("Are you sure you want to permanently delete \"%0\"?").arg(itemFile),
             QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
         return;
 
-    playlist.removeOne(item->text());
-    QString r = item->text().left(item->text().lastIndexOf('.')+1); // get file root (no extension)
+    playlist.removeOne(itemFile);
+    QString r = itemFile.left(itemFile.lastIndexOf('.')+1); // get file root (no extension)
     // check and remove all subtitle_files with the same root as the video
     for(auto ext : Mpv::subtitle_filetypes)
     {
@@ -331,7 +343,7 @@ void PlaylistWidget::DeleteFromDisk(QListWidgetItem *item)
         }
     }
     // remove the actual file
-    QFile f(nounours->mpv->getPath()+item->text());
+    QFile f(nounours->mpv->getPath()+itemFile);
     f.remove();
     delete item;
     Renumber();

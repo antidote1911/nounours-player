@@ -4,6 +4,7 @@
 #include "nounoursengine.h"
 #include "ui/mainwindow.h"
 #include "mpvhandler.h"
+#include "jellyfinmanager.h"
 #include "ui/keydialog.h"
 
 #include <QFileDialog>
@@ -74,6 +75,11 @@ PreferencesDialog::PreferencesDialog(NounoursEngine *nounours, QWidget *parent) 
     // Decoding threads and H.264 deblocking filter
     ui->threadsSpinBox->setValue(nounours->mpv->getVdLavcThreads());
     ui->deblockComboBox->setCurrentIndex(nounours->mpv->getSkipLoopFilter() == "all" ? 1 : 0);
+
+    // Jellyfin server connection
+    ui->jellyfinUrlEdit->setText(nounours->jellyfin->getServerUrl());
+    ui->jellyfinUserEdit->setText(nounours->jellyfin->getUsername());
+    ui->jellyfinPasswordEdit->setText(nounours->jellyfin->getPassword());
 
     // add shortcuts
     saved = nounours->input;
@@ -172,6 +178,25 @@ PreferencesDialog::PreferencesDialog(NounoursEngine *nounours, QWidget *parent) 
                      ui->infoWidget->item(i, 2)->text()}});
             });
 
+    connect(ui->jellyfinTestButton, &QPushButton::clicked,
+            [=]
+            {
+                ui->jellyfinStatusLabel->setText(tr("Connecting..."));
+                nounours->jellyfin->Connect(ui->jellyfinUrlEdit->text(), ui->jellyfinUserEdit->text(), ui->jellyfinPasswordEdit->text());
+            });
+
+    connect(nounours->jellyfin, &JellyfinManager::connectedSignal, this,
+            [=]
+            {
+                ui->jellyfinStatusLabel->setText(tr("Connection successful."));
+            });
+
+    connect(nounours->jellyfin, &JellyfinManager::connectionFailedSignal, this,
+            [=](QString error)
+            {
+                ui->jellyfinStatusLabel->setText(tr("Connection failed: %0").arg(error));
+            });
+
     connect(ui->recentCheckBox, SIGNAL(toggled(bool)),
             ui->recentSpinBox, SLOT(setEnabled(bool)));
 
@@ -215,6 +240,9 @@ PreferencesDialog::~PreferencesDialog()
                                   ui->hardFramedropCheckBox->isChecked() ? "decoder+vo" : "vo");
         nounours->mpv->VdLavcThreads(ui->threadsSpinBox->value());
         nounours->mpv->SkipLoopFilter(ui->deblockComboBox->currentIndex() == 1 ? "all" : "default");
+        nounours->jellyfin->ServerUrl(ui->jellyfinUrlEdit->text());
+        nounours->jellyfin->Username(ui->jellyfinUserEdit->text());
+        nounours->jellyfin->Password(ui->jellyfinPasswordEdit->text());
         nounours->window->MapShortcuts();
     }
     else

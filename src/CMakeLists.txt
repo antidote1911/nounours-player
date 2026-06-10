@@ -21,6 +21,7 @@ pkg_check_modules(MEDIAINFO REQUIRED libmediainfo)
 set(SOURCES
     main.cpp
     gesturehandler.cpp
+    jellyfinmanager.cpp
     mediainfohelper.cpp
     mpvhandler.cpp
     nounourscommands.cpp
@@ -33,6 +34,8 @@ set(SOURCES
     versions/2_0_3.cpp
     ui/aboutdialog.cpp
     ui/inputdialog.cpp
+    ui/jellyfinresultswidget.cpp
+    ui/jellyfinsearchdialog.cpp
     ui/jumpdialog.cpp
     ui/keydialog.cpp
     ui/locationdialog.cpp

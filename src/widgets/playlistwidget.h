@@ -61,6 +61,7 @@ protected slots:
 
 private:
     void Renumber();
+    QString ItemFile(QListWidgetItem *item) const;
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event);
@@ -69,7 +70,7 @@ protected:
 private:
     NounoursEngine *nounours;
 
-    QStringList playlist;
+    QStringList playlist, labels;
     QString file, suffix;
     bool newPlaylist,
          refresh,

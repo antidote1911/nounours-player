@@ -335,6 +335,14 @@ void MpvHandler::LoadFile(QString f)
     PlayFile(LoadPlaylist(f));
 }
 
+void MpvHandler::LoadUrlPlaylist(const QStringList &urls, const QStringList &labels, int startIndex)
+{
+    setPath("");
+    setPlaylist(urls, labels);
+    if(startIndex >= 0 && startIndex < urls.size())
+        PlayFile(urls[startIndex]);
+}
+
 QString MpvHandler::LoadPlaylist(QString f)
 {
     if(f == QString()) // ignore empty file name

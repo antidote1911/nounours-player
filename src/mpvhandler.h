@@ -72,6 +72,7 @@ public slots:
     void LoadFile(QString);
     QString LoadPlaylist(QString);
     bool PlayFile(QString);
+    void LoadUrlPlaylist(const QStringList &urls, const QStringList &labels, int startIndex);
 
     void AddOverlay(int id, int x, int y, QString file, int offset, int w, int h);
     void RemoveOverlay(int id);
@@ -152,7 +153,8 @@ protected slots:
     void HandleErrorCode(int);
 
 private slots:
-    void setPlaylist(const QStringList& l)  { emit playlistChanged(l); }
+    void setPlaylist(const QStringList& l)  { emit playlistChanged(l, QStringList()); }
+    void setPlaylist(const QStringList& l, const QStringList& labels) { emit playlistChanged(l, labels); }
     void setFileInfo()                      { emit fileInfoChanged(fileInfo); }
     void setPlayState(Mpv::PlayState s)     { emit playStateChanged(playState = s); }
     void setFile(QString s)                 { emit fileChanged(file = s); }
@@ -178,7 +180,7 @@ private slots:
     void setEqEnabled(bool b)               { emit eqEnabledChanged(eqEnabled = b); }
 
 signals:
-    void playlistChanged(const QStringList&);
+    void playlistChanged(const QStringList&, const QStringList&);
     void fileInfoChanged(const Mpv::FileInfo&);
     void trackListChanged(const QList<Mpv::Track>&);
     void chaptersChanged(const QList<Mpv::Chapter>&);

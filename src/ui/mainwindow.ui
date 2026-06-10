@@ -1157,6 +1157,8 @@ QSlider::handle:horizontal {
     <addaction name="actionOpen_Path_from_Clipboard"/>
     <addaction name="menu_Recently_Opened"/>
     <addaction name="separator"/>
+    <addaction name="actionJellyfin_Search"/>
+    <addaction name="separator"/>
     <addaction name="actionShow_in_Folder"/>
     <addaction name="separator"/>
     <addaction name="actionPlay_Next_File"/>
@@ -1530,6 +1532,14 @@ QSlider::handle:horizontal {
    </property>
    <property name="text">
     <string>&amp;Jump to Time...</string>
+   </property>
+  </action>
+  <action name="actionJellyfin_Search">
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Jellyfin</string>
    </property>
   </action>
   <action name="action_Show_Playlist">

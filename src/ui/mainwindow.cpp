@@ -18,6 +18,7 @@
 #include "inputdialog.h"
 #include "screenshotdialog.h"
 #include "videoequalizer.h"
+#include "jellyfinsearchdialog.h"
 #include "../mediainfohelper.h"
 
 // Generate a round icon with the playlist count painted inside (same circle style as the SVG).
@@ -399,7 +400,10 @@ MainWindow::MainWindow(QWidget *parent):
                     {
                         const QString &mediaTitle = mpv->getFileInfo().media_title;
                         if(mediaTitle != "" && mediaTitle != "-") {
-                            QString title = QFileInfo(mpv->getFile()).completeBaseName();
+                            QString jellyfinTitle = nounours->jellyfin->getNowPlayingTitle(mpv->getFile());
+                            QString title = !jellyfinTitle.isEmpty() ?
+                                        jellyfinTitle :
+                                        QFileInfo(mpv->getFile()).completeBaseName();
                             QStringList tags;
                             if(miHelper && miHelper->isValid()) {
                                 auto vi = miHelper->videoTrack();
@@ -642,6 +646,11 @@ MainWindow::MainWindow(QWidget *parent):
                                 ui->playlistWidget->count() > 0) // playlist isn't empty
                             {
                                 ui->playlistWidget->PlayIndex(0); // restart playlist
+                            }
+                            else if(!ui->actionStop_after_Current->isChecked() && // not supposed to stop after current
+                                    nounours->jellyfin->PlayNextSeason()) // continue into the next season, if any
+                            {
+                                // playback continues asynchronously once the next season's episodes are fetched
                             }
                             else // stop
                             {
@@ -961,6 +970,19 @@ MainWindow::MainWindow(QWidget *parent):
     connect(actionVideoEqualizer, &QAction::triggered, [=] {
         VideoEqualizerDialog dlg(mpv, this);
         dlg.exec();
+    });
+
+    connect(ui->actionJellyfin_Search, &QAction::triggered, [=] {
+        JellyfinSearchDialog dlg(nounours, this);
+        dlg.exec();
+    });
+
+    ui->actionJellyfin_Search->setVisible(nounours->jellyfin->isConnected());
+    connect(nounours->jellyfin, &JellyfinManager::connectedSignal, [=] {
+        ui->actionJellyfin_Search->setVisible(true);
+    });
+    connect(nounours->jellyfin, &JellyfinManager::connectionFailedSignal, [=] {
+        ui->actionJellyfin_Search->setVisible(false);
     });
 
     // add multimedia shortcuts
