@@ -633,11 +633,21 @@ static void setEqProp(mpv_handle *mpv, const char *name, int v)
     mpv_command_async(mpv, 0, args);
 }
 
-void MpvHandler::Brightness(int v) { brightness = v; setEqProp(mpv, "brightness", v); }
-void MpvHandler::Contrast(int v)   { contrast   = v; setEqProp(mpv, "contrast",   v); }
-void MpvHandler::Saturation(int v) { saturation = v; setEqProp(mpv, "saturation", v); }
-void MpvHandler::Gamma(int v)      { gamma_     = v; setEqProp(mpv, "gamma",      v); }
-void MpvHandler::Hue(int v)        { hue        = v; setEqProp(mpv, "hue",        v); }
+void MpvHandler::Brightness(int v) { brightness = v; if(eqEnabled) setEqProp(mpv, "brightness", v); }
+void MpvHandler::Contrast(int v)   { contrast   = v; if(eqEnabled) setEqProp(mpv, "contrast",   v); }
+void MpvHandler::Saturation(int v) { saturation = v; if(eqEnabled) setEqProp(mpv, "saturation", v); }
+void MpvHandler::Gamma(int v)      { gamma_     = v; if(eqEnabled) setEqProp(mpv, "gamma",      v); }
+void MpvHandler::Hue(int v)        { hue        = v; if(eqEnabled) setEqProp(mpv, "hue",        v); }
+
+void MpvHandler::EqEnabled(bool b)
+{
+    setEqEnabled(b);
+    setEqProp(mpv, "brightness", b ? brightness : 0);
+    setEqProp(mpv, "contrast",   b ? contrast   : 0);
+    setEqProp(mpv, "saturation", b ? saturation : 0);
+    setEqProp(mpv, "gamma",      b ? gamma_     : 0);
+    setEqProp(mpv, "hue",        b ? hue        : 0);
+}
 
 void MpvHandler::Screenshot(bool withSubs)
 {
@@ -744,6 +754,30 @@ void MpvHandler::MsgLevel(QString level)
     QByteArray tmp = level.toUtf8();
     mpv_request_log_messages(mpv, tmp.constData());
     setMsgLevel(level);
+}
+
+void MpvHandler::Hwdec(QString h)
+{
+    setHwdec(h);
+    SetOption("hwdec", hwdec);
+}
+
+void MpvHandler::Framedrop(QString f)
+{
+    setFramedrop(f);
+    SetOption("framedrop", framedrop);
+}
+
+void MpvHandler::SkipLoopFilter(QString s)
+{
+    setSkipLoopFilter(s);
+    SetOption("vd-lavc-skiploopfilter", skipLoopFilter);
+}
+
+void MpvHandler::VdLavcThreads(int t)
+{
+    setVdLavcThreads(t);
+    SetOption("vd-lavc-threads", QString::number(vdLavcThreads));
 }
 
 void MpvHandler::ShowText(QString text, int duration)

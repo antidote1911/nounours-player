@@ -2,9 +2,13 @@
 #define VIDEOEQUALIZER_H
 
 #include <QDialog>
+#include <QList>
 
+class QWidget;
 class QSlider;
 class QSpinBox;
+class QPushButton;
+class QCheckBox;
 class MpvHandler;
 
 class VideoEqualizerDialog : public QDialog
@@ -18,6 +22,9 @@ private:
 
     QSlider  *brightnessSlider,  *contrastSlider,  *saturationSlider,  *gammaSlider,  *hueSlider;
     QSpinBox *brightnessSpinBox, *contrastSpinBox, *saturationSpinBox, *gammaSpinBox, *hueSpinBox;
+    QCheckBox *enabledCheckBox;
+    QPushButton *resetBtn;
+    QList<QWidget*> eqWidgets;
 
     void addRow(class QFormLayout *form, const QString &label,
                 QSlider *&slider, QSpinBox *&spin, int currentValue,

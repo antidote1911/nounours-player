@@ -29,6 +29,10 @@ protected:
     void ModifyRow(int row, QString first, QString second, QString third);
     void RemoveRow(int row);
     void SelectKey(bool add, QPair<QString, QPair<QString, QString>> init = (QPair<QString, QPair<QString, QString>>()));
+    void PopulateVoList();
+    void UpdateVoDescription(const QString &vo);
+    void PopulateHwdecList();
+    void UpdateHwdecDescription(const QString &hwdec);
 
 private:
     Ui::PreferencesDialog *ui;

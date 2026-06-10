@@ -36,6 +36,10 @@ public:
     QString getScreenshotDir()              { return screenshotDir; }
     QString getVo()                         { return vo; }
     QString getMsgLevel()                   { return msgLevel; }
+    QString getHwdec()                      { return hwdec; }
+    QString getFramedrop()                  { return framedrop; }
+    QString getSkipLoopFilter()             { return skipLoopFilter; }
+    int getVdLavcThreads()                  { return vdLavcThreads; }
     double getSpeed()                       { return speed; }
     int getTime()                           { return time; }
     int getVolume()                         { return volume; }
@@ -52,6 +56,7 @@ public:
     int getSaturation()                     { return saturation; }
     int getGamma()                          { return gamma_; }
     int getHue()                            { return hue; }
+    bool getEqEnabled()                     { return eqEnabled; }
 
     QString getMediaInfo();
     QString getMediaInfoFull();
@@ -100,6 +105,7 @@ public slots:
     void Saturation(int);
     void Gamma(int);
     void Hue(int);
+    void EqEnabled(bool);
 
     void Screenshot(bool withSubs = false);
 
@@ -117,6 +123,11 @@ public slots:
     void Vo(QString);
 
     void MsgLevel(QString level);
+
+    void Hwdec(QString);
+    void Framedrop(QString);
+    void SkipLoopFilter(QString);
+    void VdLavcThreads(int);
 
     void ShowText(QString text, int duration = 4000);
 
@@ -151,6 +162,10 @@ private slots:
     void setScreenshotDir(QString s)        { emit screenshotDirChanged(screenshotDir = s); }
     void setVo(QString s)                   { emit voChanged(vo = s); }
     void setMsgLevel(QString s)             { emit msgLevelChanged(msgLevel = s); }
+    void setHwdec(QString s)                { emit hwdecChanged(hwdec = s); }
+    void setFramedrop(QString s)            { emit framedropChanged(framedrop = s); }
+    void setSkipLoopFilter(QString s)       { emit skipLoopFilterChanged(skipLoopFilter = s); }
+    void setVdLavcThreads(int i)            { emit vdLavcThreadsChanged(vdLavcThreads = i); }
     void setSpeed(double d)                 { emit speedChanged(speed = d); }
     void setTime(int i)                     { emit timeChanged(time = i); }
     void setVolume(int i)                   { emit volumeChanged(volume = i); }
@@ -160,6 +175,7 @@ private slots:
     void setSid(int i)                      { emit sidChanged(sid = i); }
     void setSubtitleVisibility(bool b)      { emit subtitleVisibilityChanged(subtitleVisibility = b); }
     void setMute(bool b)                    { if(mute != b) emit muteChanged(mute = b); }
+    void setEqEnabled(bool b)               { emit eqEnabledChanged(eqEnabled = b); }
 
 signals:
     void playlistChanged(const QStringList&);
@@ -177,6 +193,10 @@ signals:
     void screenshotDirChanged(QString);
     void voChanged(QString);
     void msgLevelChanged(QString);
+    void hwdecChanged(QString);
+    void framedropChanged(QString);
+    void skipLoopFilterChanged(QString);
+    void vdLavcThreadsChanged(int);
     void speedChanged(double);
     void timeChanged(int);
     void volumeChanged(int);
@@ -187,6 +207,7 @@ signals:
     void debugChanged(bool);
     void subtitleVisibilityChanged(bool);
     void muteChanged(bool);
+    void eqEnabledChanged(bool);
 
     void messageSignal(QString m);
 
@@ -204,7 +225,10 @@ private:
                 screenshotDir,
                 suffix,
                 vo,
-                msgLevel;
+                msgLevel,
+                hwdec,
+                framedrop,
+                skipLoopFilter;
     double      speed = 1;
     int         time = 0,
                 lastTime = 0,
@@ -217,13 +241,15 @@ private:
                 contrast = 0,
                 saturation = 0,
                 gamma_ = 0,
-                hue = 0;
+                hue = 0,
+                vdLavcThreads = 0;
     std::unique_ptr<MediaInfoHelper> miHelper;
     QTimer     *bufferTimer = nullptr;
     bool        init = false,
                 playlistVisible = false,
                 subtitleVisibility = true,
-                mute = false;
+                mute = false,
+                eqEnabled = true;
     int         osdWidth,
                 osdHeight;
 };

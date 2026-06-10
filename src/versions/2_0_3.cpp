@@ -109,6 +109,7 @@ void NounoursEngine::Load2_0_3()
     mpv->saturation = QJsonValueRef2(mpv_json["saturation"]).toInt(0);
     mpv->gamma_     = QJsonValueRef2(mpv_json["gamma"]).toInt(0);
     mpv->hue        = QJsonValueRef2(mpv_json["hue"]).toInt(0);
+    mpv->eqEnabled  = QJsonValueRef2(mpv_json["eq-enabled"]).toBool(true);
     mpv->Volume(QJsonValueRef2(mpv_json["volume"]).toInt(100));
     mpv_json.remove("volume");
     mpv->Speed(QJsonValueRef2(mpv_json["speed"]).toDouble(1.0));
@@ -121,6 +122,14 @@ void NounoursEngine::Load2_0_3()
     mpv_json.remove("screenshot-directory");
     mpv->MsgLevel(QJsonValueRef2(mpv_json["msg-level"]).toString("status"));
     mpv_json.remove("msg-level");
+    mpv->Hwdec(QJsonValueRef2(mpv_json["hwdec"]).toString("no"));
+    mpv_json.remove("hwdec");
+    mpv->Framedrop(QJsonValueRef2(mpv_json["framedrop"]).toString("vo"));
+    mpv_json.remove("framedrop");
+    mpv->SkipLoopFilter(QJsonValueRef2(mpv_json["vd-lavc-skiploopfilter"]).toString("default"));
+    mpv_json.remove("vd-lavc-skiploopfilter");
+    mpv->VdLavcThreads(QJsonValueRef2(mpv_json["vd-lavc-threads"]).toInt(0));
+    mpv_json.remove("vd-lavc-threads");
     for(auto &key : mpv_json.keys())
         if(key != QString() && mpv_json[key].toString() != QString())
             mpv->SetOption(key, mpv_json[key].toString());
@@ -192,6 +201,7 @@ void NounoursEngine::SaveSettings()
     mpv_json["saturation"] = mpv->saturation;
     mpv_json["gamma"]      = mpv->gamma_;
     mpv_json["hue"]        = mpv->hue;
+    mpv_json["eq-enabled"] = mpv->eqEnabled;
     mpv_json["volume"] = mpv->volume;
     mpv_json["speed"] = mpv->speed;
     mpv_json["vo"] = mpv->vo;
@@ -199,6 +209,10 @@ void NounoursEngine::SaveSettings()
     mpv_json["screenshot-template"] = mpv->screenshotTemplate;
     mpv_json["screenshot-directory"] = QDir::fromNativeSeparators(mpv->screenshotDir);
     mpv_json["msg-level"] = mpv->msgLevel;
+    mpv_json["hwdec"] = mpv->hwdec;
+    mpv_json["framedrop"] = mpv->framedrop;
+    mpv_json["vd-lavc-skiploopfilter"] = mpv->skipLoopFilter;
+    mpv_json["vd-lavc-threads"] = mpv->vdLavcThreads;
     root["mpv"] = mpv_json;
 
     settings->setRoot(root);

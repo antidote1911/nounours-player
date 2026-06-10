@@ -48,11 +48,32 @@ PreferencesDialog::PreferencesDialog(NounoursEngine *nounours, QWidget *parent) 
     ui->templateLineEdit->setText(nounours->mpv->getScreenshotTemplate());
     ui->msgLvlComboBox->setCurrentText(nounours->mpv->getMsgLevel());
 
-    // Video output: show current vo; if not in list, add it so nothing is lost
+    // Video output: populate driver list, then select the current vo
+    // (if not in the list, add it as a custom entry so nothing is lost)
+    PopulateVoList();
     QString currentVo = nounours->mpv->getVo();
-    if(!currentVo.isEmpty() && ui->voComboBox->findText(currentVo) == -1)
-        ui->voComboBox->addItem(currentVo);
-    ui->voComboBox->setCurrentText(currentVo.isEmpty() ? "gpu-next" : currentVo);
+    if(ui->voComboBox->findData(currentVo) == -1)
+        ui->voComboBox->addItem(currentVo, currentVo);
+    ui->voComboBox->setCurrentIndex(ui->voComboBox->findData(currentVo));
+    UpdateVoDescription(currentVo);
+
+    // Hardware decoding: populate driver list, then select the current hwdec
+    PopulateHwdecList();
+    QString currentHwdec = nounours->mpv->getHwdec();
+    if(ui->hwdecComboBox->findData(currentHwdec) == -1)
+        ui->hwdecComboBox->addItem(currentHwdec, currentHwdec);
+    ui->hwdecComboBox->setCurrentIndex(ui->hwdecComboBox->findData(currentHwdec));
+    UpdateHwdecDescription(currentHwdec);
+
+    // Frame dropping
+    QString framedrop = nounours->mpv->getFramedrop();
+    ui->framedropCheckBox->setChecked(framedrop != "no");
+    ui->hardFramedropCheckBox->setChecked(framedrop == "decoder+vo");
+    ui->hardFramedropCheckBox->setEnabled(ui->framedropCheckBox->isChecked());
+
+    // Decoding threads and H.264 deblocking filter
+    ui->threadsSpinBox->setValue(nounours->mpv->getVdLavcThreads());
+    ui->deblockComboBox->setCurrentIndex(nounours->mpv->getSkipLoopFilter() == "all" ? 1 : 0);
 
     // add shortcuts
     saved = nounours->input;
@@ -62,6 +83,26 @@ PreferencesDialog::PreferencesDialog(NounoursEngine *nounours, QWidget *parent) 
             [=](bool b)
             {
                 ui->comboBox->setEnabled(b);
+            });
+
+    connect(ui->voComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            [=](int index)
+            {
+                UpdateVoDescription(ui->voComboBox->itemData(index).toString());
+            });
+
+    connect(ui->hwdecComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            [=](int index)
+            {
+                UpdateHwdecDescription(ui->hwdecComboBox->itemData(index).toString());
+            });
+
+    connect(ui->framedropCheckBox, &QCheckBox::toggled,
+            [=](bool b)
+            {
+                ui->hardFramedropCheckBox->setEnabled(b);
+                if(!b)
+                    ui->hardFramedropCheckBox->setChecked(false);
             });
 
     connect(ui->changeButton, &QPushButton::clicked,
@@ -168,7 +209,12 @@ PreferencesDialog::~PreferencesDialog()
         nounours->mpv->ScreenshotDirectory(screenshotDir);
         nounours->mpv->ScreenshotTemplate(ui->templateLineEdit->text());
         nounours->mpv->MsgLevel(ui->msgLvlComboBox->currentText());
-        nounours->mpv->Vo(ui->voComboBox->currentText());
+        nounours->mpv->Vo(ui->voComboBox->currentData().toString());
+        nounours->mpv->Hwdec(ui->hwdecComboBox->currentData().toString());
+        nounours->mpv->Framedrop(!ui->framedropCheckBox->isChecked() ? "no" :
+                                  ui->hardFramedropCheckBox->isChecked() ? "decoder+vo" : "vo");
+        nounours->mpv->VdLavcThreads(ui->threadsSpinBox->value());
+        nounours->mpv->SkipLoopFilter(ui->deblockComboBox->currentIndex() == 1 ? "all" : "default");
         nounours->window->MapShortcuts();
     }
     else
@@ -181,6 +227,74 @@ void PreferencesDialog::showPreferences(NounoursEngine *nounours, QWidget *paren
 {
     PreferencesDialog dialog(nounours, parent);
     dialog.exec();
+}
+
+void PreferencesDialog::PopulateVoList()
+{
+    ui->voComboBox->addItem(tr("Auto (recommended)"), "");
+    ui->voComboBox->addItem("gpu-next", "gpu-next");
+    ui->voComboBox->addItem("gpu", "gpu");
+    ui->voComboBox->addItem("x11", "x11");
+    ui->voComboBox->addItem("xv", "xv");
+    ui->voComboBox->addItem("wlshm", "wlshm");
+    ui->voComboBox->addItem("dmabuf-wayland", "dmabuf-wayland");
+    ui->voComboBox->addItem("vdpau", "vdpau");
+    ui->voComboBox->addItem("vaapi", "vaapi");
+}
+
+void PreferencesDialog::UpdateVoDescription(const QString &vo)
+{
+    static const QHash<QString, QString> descriptions = {
+        {"", tr("Let mpv pick the best available driver automatically.")},
+        {"gpu-next", tr("New GPU video output driver based on libplacebo. Recommended: best image quality and performance on modern systems.")},
+        {"gpu", tr("Default GPU video output driver, supports OpenGL, Vulkan and Direct3D. Stable and widely compatible.")},
+        {"x11", tr("Basic X11 output without hardware acceleration. Slow, only useful as a fallback.")},
+        {"xv", tr("X11 output using the Xv extension. Basic hardware acceleration for older X11 systems.")},
+        {"wlshm", tr("Wayland output using shared memory, without GPU acceleration. Compatible but less efficient.")},
+        {"dmabuf-wayland", tr("Hardware-accelerated zero-copy output for Wayland compositors that support DMA-BUF.")},
+        {"vdpau", tr("Hardware-accelerated output using VDPAU (NVIDIA GPUs on Linux).")},
+        {"vaapi", tr("Hardware-accelerated output using VA-API (Intel/AMD GPUs on Linux).")},
+    };
+
+    ui->label_vo_desc->setText(descriptions.value(vo, tr("Custom or unrecognized video output driver.")));
+}
+
+void PreferencesDialog::PopulateHwdecList()
+{
+    ui->hwdecComboBox->addItem(tr("Disabled"), "no");
+    ui->hwdecComboBox->addItem(tr("Auto (recommended)"), "auto");
+    ui->hwdecComboBox->addItem(tr("Auto (copy)"), "auto-copy");
+    ui->hwdecComboBox->addItem("VA-API", "vaapi");
+    ui->hwdecComboBox->addItem(tr("VA-API (copy)"), "vaapi-copy");
+    ui->hwdecComboBox->addItem("VDPAU", "vdpau");
+    ui->hwdecComboBox->addItem("NVDEC", "nvdec");
+    ui->hwdecComboBox->addItem(tr("NVDEC (copy)"), "nvdec-copy");
+    ui->hwdecComboBox->addItem("D3D11VA", "d3d11va");
+    ui->hwdecComboBox->addItem(tr("D3D11VA (copy)"), "d3d11va-copy");
+    ui->hwdecComboBox->addItem("DXVA2", "dxva2");
+    ui->hwdecComboBox->addItem("Vulkan", "vulkan");
+    ui->hwdecComboBox->addItem(tr("Vulkan (copy)"), "vulkan-copy");
+}
+
+void PreferencesDialog::UpdateHwdecDescription(const QString &hwdec)
+{
+    static const QHash<QString, QString> descriptions = {
+        {"no", tr("No hardware decoding: all video is decoded on the CPU.")},
+        {"auto", tr("Automatically pick the best hardware decoder for your system. Recommended.")},
+        {"auto-copy", tr("Like Auto, but copies decoded frames back to system memory so video filters keep working.")},
+        {"vaapi", tr("Hardware decoding via VA-API (Intel/AMD GPUs on Linux).")},
+        {"vaapi-copy", tr("VA-API with frames copied to system memory, for compatibility with video filters.")},
+        {"vdpau", tr("Hardware decoding via VDPAU (older NVIDIA GPUs on Linux).")},
+        {"nvdec", tr("Hardware decoding via NVDEC (NVIDIA GPUs).")},
+        {"nvdec-copy", tr("NVDEC with frames copied to system memory, for compatibility with video filters.")},
+        {"d3d11va", tr("Hardware decoding via Direct3D 11 (Windows).")},
+        {"d3d11va-copy", tr("D3D11VA with frames copied to system memory, for compatibility with video filters.")},
+        {"dxva2", tr("Hardware decoding via DirectX Video Acceleration 2 (Windows, legacy).")},
+        {"vulkan", tr("Hardware decoding via Vulkan video (cross-platform).")},
+        {"vulkan-copy", tr("Vulkan video decoding with frames copied to system memory, for compatibility with video filters.")},
+    };
+
+    ui->label_hwdec_desc->setText(descriptions.value(hwdec, tr("Custom or unrecognized hardware decoding mode.")));
 }
 
 void PreferencesDialog::PopulateLangs()

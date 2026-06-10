@@ -6,6 +6,7 @@
 #include <QSlider>
 #include <QSpinBox>
 #include <QPushButton>
+#include <QCheckBox>
 #include <QDialogButtonBox>
 
 #include "../mpvhandler.h"
@@ -17,6 +18,9 @@ VideoEqualizerDialog::VideoEqualizerDialog(MpvHandler *mpv, QWidget *parent)
     setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
+    enabledCheckBox = new QCheckBox(tr("Enable color adjustments"), this);
+    enabledCheckBox->setChecked(mpv->getEqEnabled());
+
     auto *form = new QFormLayout;
     form->setFieldGrowthPolicy(QFormLayout::ExpandingFieldsGrow);
 
@@ -26,13 +30,26 @@ VideoEqualizerDialog::VideoEqualizerDialog(MpvHandler *mpv, QWidget *parent)
     addRow(form, tr("Gamma"),      gammaSlider,      gammaSpinBox,      mpv->getGamma(),      &MpvHandler::Gamma);
     addRow(form, tr("Hue"),        hueSlider,        hueSpinBox,        mpv->getHue(),        &MpvHandler::Hue);
 
-    auto *resetBtn = new QPushButton(tr("Reset all"), this);
+    resetBtn = new QPushButton(tr("Reset all"), this);
     connect(resetBtn, &QPushButton::clicked, this, &VideoEqualizerDialog::resetAll);
+    eqWidgets.append(resetBtn);
+
+    for(auto *w : eqWidgets)
+        w->setEnabled(enabledCheckBox->isChecked());
+
+    connect(enabledCheckBox, &QCheckBox::toggled,
+            this, [=](bool checked)
+            {
+                mpv->EqEnabled(checked);
+                for(auto *w : eqWidgets)
+                    w->setEnabled(checked);
+            });
 
     auto *buttons = new QDialogButtonBox(QDialogButtonBox::Close, this);
     connect(buttons, &QDialogButtonBox::rejected, this, &QDialog::accept);
 
     auto *root = new QVBoxLayout(this);
+    root->addWidget(enabledCheckBox);
     root->addLayout(form);
     root->addWidget(resetBtn);
     root->addWidget(buttons);
@@ -57,15 +74,19 @@ void VideoEqualizerDialog::addRow(QFormLayout *form, const QString &label,
     connect(spin, QOverload<int>::of(&QSpinBox::valueChanged), slider, &QSlider::setValue);
     connect(slider, &QSlider::valueChanged, this, [=](int v) { (mpv->*setter)(v); });
 
-    auto *resetBtn = new QPushButton("↺", this);
-    resetBtn->setFixedWidth(26);
-    resetBtn->setToolTip(tr("Reset"));
-    connect(resetBtn, &QPushButton::clicked, this, [=] { slider->setValue(0); });
+    auto *rowResetBtn = new QPushButton("↺", this);
+    rowResetBtn->setFixedWidth(26);
+    rowResetBtn->setToolTip(tr("Reset"));
+    connect(rowResetBtn, &QPushButton::clicked, this, [=] { slider->setValue(0); });
+
+    eqWidgets.append(slider);
+    eqWidgets.append(spin);
+    eqWidgets.append(rowResetBtn);
 
     auto *row = new QHBoxLayout;
     row->addWidget(slider);
     row->addWidget(spin);
-    row->addWidget(resetBtn);
+    row->addWidget(rowResetBtn);
     form->addRow(label, row);
 }
 
