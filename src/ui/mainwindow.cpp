@@ -590,6 +590,8 @@ MainWindow::MainWindow(QWidget *parent):
     connect(mpv, &MpvHandler::playStateChanged,
             [=](Mpv::PlayState playState)
             {
+                nounours->jellyfin->UpdatePlaybackState(mpv->getFile(), playState);
+
                 switch(playState)
                 {
                 case Mpv::Loaded:

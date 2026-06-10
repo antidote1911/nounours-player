@@ -11,12 +11,19 @@
 #include <QJsonArray>
 #include <QSet>
 #include <QSharedPointer>
+#include <QRegularExpression>
+#include <QUuid>
 
 JellyfinManager::JellyfinManager(QObject *parent):
     QObject(parent),
     nounours(static_cast<NounoursEngine*>(parent)),
-    manager(new QNetworkAccessManager(this))
+    manager(new QNetworkAccessManager(this)),
+    playbackProgressTimer(new QTimer(this))
 {
+    // periodically report the playback position while a Jellyfin item is playing
+    playbackProgressTimer->setInterval(10000);
+    connect(playbackProgressTimer, &QTimer::timeout, this, &JellyfinManager::ReportPlaybackProgress);
+
     // continue playback into the next season once its episodes have been fetched
     connect(this, &JellyfinManager::episodesResultsSignal, this, [=](QString seasonId, QList<JellyfinItem> items)
     {
@@ -44,8 +51,17 @@ JellyfinManager::~JellyfinManager()
 
 QString JellyfinManager::AuthHeader() const
 {
-    return QString("MediaBrowser Client=\"Nounours Player\", Device=\"Desktop\", DeviceId=\"%0\", Version=\"%1\"")
+    return QString("MediaBrowser Client=\"Nounours Player\", Device=\"NounoursPlayer (%1)\", DeviceId=\"%0\", Version=\"%1\"")
             .arg(deviceId, NOUNOURS_PLAYER_VERSION);
+}
+
+QNetworkRequest JellyfinManager::BuildRequest(const QUrl &url)
+{
+    QNetworkRequest request(url);
+    // identify as the official-ish Nounours Player to reverse proxies that
+    // block requests with a generic/script User-Agent (e.g. Qt's default)
+    request.setHeader(QNetworkRequest::UserAgentHeader, QStringLiteral("NounoursPlayer/" NOUNOURS_PLAYER_VERSION));
+    return request;
 }
 
 void JellyfinManager::Connect(const QString &url, const QString &user, const QString &pass)
@@ -62,7 +78,7 @@ void JellyfinManager::Connect()
     if(url.endsWith('/'))
         url.chop(1);
 
-    QNetworkRequest request(QUrl(url + "/Users/AuthenticateByName"));
+    QNetworkRequest request = BuildRequest(QUrl(url + "/Users/AuthenticateByName"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setRawHeader("X-Emby-Authorization", AuthHeader().toUtf8());
 
@@ -105,7 +121,7 @@ void JellyfinManager::FetchServerName()
     if(url.endsWith('/'))
         url.chop(1);
 
-    QNetworkReply *reply = manager->get(QNetworkRequest(QUrl(url + "/System/Info/Public")));
+    QNetworkReply *reply = manager->get(BuildRequest(QUrl(url + "/System/Info/Public")));
     connect(reply, &QNetworkReply::finished, this, [=]
     {
         if(reply->error() == QNetworkReply::NoError)
@@ -129,7 +145,7 @@ void JellyfinManager::Search(const QString &term)
     // first list the user's libraries (media folders) so each result can be
     // tagged with the library it belongs to (Movies, Series, Animes, ...)
     QUrl viewsUrl(url + "/Users/" + userId + "/Views");
-    QNetworkRequest viewsRequest(viewsUrl);
+    QNetworkRequest viewsRequest = BuildRequest(viewsUrl);
     viewsRequest.setRawHeader("X-Emby-Token", accessToken.toUtf8());
 
     QNetworkReply *viewsReply = manager->get(viewsRequest);
@@ -179,7 +195,7 @@ void JellyfinManager::SearchAllLibraries(const QString &term, const QHash<QStrin
         QUrl requestUrl(url + "/Users/" + userId + "/Items");
         requestUrl.setQuery(query);
 
-        QNetworkRequest request(requestUrl);
+        QNetworkRequest request = BuildRequest(requestUrl);
         request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
         return request;
     };
@@ -266,7 +282,7 @@ void JellyfinManager::GetSeasons(const QString &seriesId)
     QUrl requestUrl(url + "/Shows/" + seriesId + "/Seasons");
     requestUrl.setQuery(query);
 
-    QNetworkRequest request(requestUrl);
+    QNetworkRequest request = BuildRequest(requestUrl);
     request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
 
     QNetworkReply *reply = manager->get(request);
@@ -318,7 +334,7 @@ void JellyfinManager::GetEpisodes(const QString &seriesId, const QString &season
     QUrl requestUrl(url + "/Shows/" + seriesId + "/Episodes");
     requestUrl.setQuery(query);
 
-    QNetworkRequest request(requestUrl);
+    QNetworkRequest request = BuildRequest(requestUrl);
     request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
 
     QNetworkReply *reply = manager->get(request);
@@ -373,7 +389,7 @@ void JellyfinManager::GetGenres()
     QUrl requestUrl(url + "/Genres");
     requestUrl.setQuery(query);
 
-    QNetworkRequest request(requestUrl);
+    QNetworkRequest request = BuildRequest(requestUrl);
     request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
 
     QNetworkReply *reply = manager->get(request);
@@ -425,7 +441,7 @@ void JellyfinManager::GetItemsByGenre(const QString &genreId)
     QUrl requestUrl(url + "/Users/" + userId + "/Items");
     requestUrl.setQuery(query);
 
-    QNetworkRequest request(requestUrl);
+    QNetworkRequest request = BuildRequest(requestUrl);
     request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
 
     QNetworkReply *reply = manager->get(request);
@@ -517,4 +533,95 @@ bool JellyfinManager::PlayNextSeason()
     pendingNextSeasonIndex = nowPlayingSeasonIndex + 1;
     GetEpisodes(nowPlayingSeriesId, nowPlayingSeasons[pendingNextSeasonIndex].id);
     return true;
+}
+
+QString JellyfinManager::ItemIdFromUrl(const QString &url)
+{
+    static const QRegularExpression re("/Videos/([^/]+)/stream");
+    QRegularExpressionMatch match = re.match(url);
+    return match.hasMatch() ? match.captured(1) : QString();
+}
+
+void JellyfinManager::PostSessionEvent(const QString &endpoint, QJsonObject body)
+{
+    if(accessToken.isEmpty())
+        return;
+
+    QString url = serverUrl;
+    if(url.endsWith('/'))
+        url.chop(1);
+
+    QNetworkRequest request = BuildRequest(QUrl(url + endpoint));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setRawHeader("X-Emby-Token", accessToken.toUtf8());
+
+    body["PlaySessionId"] = playSessionId;
+    body["IsPaused"] = activePlaybackPaused;
+    body["IsMuted"] = nounours->mpv->getMute();
+    body["VolumeLevel"] = nounours->mpv->getVolume();
+    body["PositionTicks"] = qint64(nounours->mpv->getTime()) * 10000000LL;
+    body["CanSeek"] = true;
+    body["PlayMethod"] = "DirectStream";
+
+    QNetworkReply *reply = manager->post(request, QJsonDocument(body).toJson());
+    connect(reply, &QNetworkReply::finished, reply, &QNetworkReply::deleteLater);
+}
+
+void JellyfinManager::ReportPlaybackStart(const QString &itemId)
+{
+    PostSessionEvent("/Sessions/Playing", {{"ItemId", itemId}});
+}
+
+void JellyfinManager::ReportPlaybackProgress()
+{
+    if(activePlaybackItemId.isEmpty())
+        return;
+
+    PostSessionEvent("/Sessions/Playing/Progress", {{"ItemId", activePlaybackItemId}});
+}
+
+void JellyfinManager::ReportPlaybackStopped()
+{
+    PostSessionEvent("/Sessions/Playing/Stopped", {{"ItemId", activePlaybackItemId}});
+}
+
+void JellyfinManager::UpdatePlaybackState(const QString &url, int playState)
+{
+    QString itemId = ItemIdFromUrl(url);
+
+    if(itemId != activePlaybackItemId)
+    {
+        if(!activePlaybackItemId.isEmpty())
+            ReportPlaybackStopped();
+
+        activePlaybackItemId = itemId;
+        playbackProgressTimer->stop();
+
+        if(activePlaybackItemId.isEmpty())
+            return;
+
+        playSessionId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+        activePlaybackPaused = (playState == Mpv::Paused);
+        ReportPlaybackStart(activePlaybackItemId);
+        playbackProgressTimer->start();
+        return;
+    }
+
+    if(activePlaybackItemId.isEmpty())
+        return;
+
+    if(playState == Mpv::Stopped || playState == Mpv::Idle)
+    {
+        ReportPlaybackStopped();
+        activePlaybackItemId.clear();
+        playbackProgressTimer->stop();
+        return;
+    }
+
+    bool paused = (playState == Mpv::Paused);
+    if(paused != activePlaybackPaused)
+    {
+        activePlaybackPaused = paused;
+        ReportPlaybackProgress();
+    }
 }

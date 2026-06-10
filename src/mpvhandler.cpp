@@ -36,6 +36,9 @@ MpvHandler::MpvHandler(int64_t wid, QObject *parent):
     mpv_set_option_string(mpv, "ytdl", "yes"); // youtube-dl support
     mpv_set_option_string(mpv, "sub-auto", "fuzzy"); // Automatic subfile detection
     mpv_set_option_string(mpv, "audio-client-name", "nounours-player"); // show correct icon in e.g. pavucontrol
+    // identify network requests (e.g. Jellyfin streams) as coming from this app,
+    // so reverse proxies that block generic/script user-agents let them through
+    mpv_set_option_string(mpv, "user-agent", "NounoursPlayer/" NOUNOURS_PLAYER_VERSION);
 
     bufferTimer = new QTimer(this);
     bufferTimer->setSingleShot(true);

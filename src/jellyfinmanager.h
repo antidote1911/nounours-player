@@ -3,11 +3,14 @@
 
 #include <QObject>
 #include <QNetworkAccessManager>
+#include <QNetworkRequest>
 #include <QString>
 #include <QList>
 #include <QHash>
 #include <QUrl>
 #include <QMetaType>
+#include <QTimer>
+#include <QJsonObject>
 
 class NounoursEngine;
 
@@ -62,6 +65,10 @@ public slots:
                        const QList<JellyfinItem> &episodes, int episodeIndex);
     bool PlayNextSeason();
 
+    // reports the current playback state to the Jellyfin server so it shows up
+    // in the server's "Now Playing" activity. playState matches Mpv::PlayState.
+    void UpdatePlaybackState(const QString &url, int playState);
+
 signals:
     void connectedSignal();
     void connectionFailedSignal(QString error);
@@ -88,9 +95,20 @@ private:
     int nowPlayingSeasonIndex = -1;
     int pendingNextSeasonIndex = -1;
 
+    // Jellyfin "now playing" session reporting
+    QString activePlaybackItemId, playSessionId;
+    bool activePlaybackPaused = false;
+    QTimer *playbackProgressTimer;
+
     QString AuthHeader() const;
+    static QNetworkRequest BuildRequest(const QUrl &url);
     void FetchServerName();
     void SearchAllLibraries(const QString &term, const QHash<QString, QString> &libraries);
+    static QString ItemIdFromUrl(const QString &url);
+    void PostSessionEvent(const QString &endpoint, QJsonObject body);
+    void ReportPlaybackStart(const QString &itemId);
+    void ReportPlaybackProgress();
+    void ReportPlaybackStopped();
 };
 
 #endif // JELLYFINMANAGER_H
