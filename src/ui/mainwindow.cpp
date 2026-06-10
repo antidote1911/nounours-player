@@ -352,8 +352,10 @@ MainWindow::MainWindow(QWidget *parent):
                             UpdateRecentFiles(); // update after initialization and only if the current file is different from the first recent
                             while(recent.length() > maxRecent-1)
                                 recent.removeLast();
+                            QString jellyfinTitle = nounours->jellyfin->getNowPlayingTitle(file);
                             recent.push_front(
                                 Recent(file,
+                                       !jellyfinTitle.isEmpty() ? jellyfinTitle :
                                        (mpv->getPath() == QString() || !Util::IsValidFile(file)) ?
                                            fileInfo.media_title : QString()));
                             current = &recent.front();
@@ -1387,6 +1389,10 @@ void MainWindow::UpdateRecentFiles()
         connect(action, &QAction::triggered,
                 [=]
                 {
+                    // restore the saved title so the window title and playlist
+                    // show it instead of the raw stream URL
+                    if(!f.title.isEmpty() && f.path.startsWith("http"))
+                        nounours->jellyfin->SetNowPlaying(f.path, f.title);
                     mpv->LoadFile(f);
                 });
     }

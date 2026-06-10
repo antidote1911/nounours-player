@@ -1,7 +1,7 @@
 # Maintainer: antidote1911 <antidote1911@gmail.com>
 pkgname=nounours-player-appimage
 _pkgname=nounours-player
-pkgver=2.5.0
+pkgver=2.5.1
 pkgrel=1
 pkgdesc="A simple libmpv-based multimedia player (AppImage)"
 arch=('x86_64')

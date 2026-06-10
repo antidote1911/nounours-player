@@ -87,7 +87,7 @@ QString ShortenPathToParent(const Recent &recent)
 {
     const int long_name = 100;
     if(recent.title != QString())
-        return QString("%0 (%1)").arg(recent.title, recent.path);
+        return recent.path.startsWith("http") ? recent.title : QString("%0 (%1)").arg(recent.title, recent.path);
     QString p = QDir::fromNativeSeparators(recent.path);
     int i = p.lastIndexOf('/');
     if(i != -1)

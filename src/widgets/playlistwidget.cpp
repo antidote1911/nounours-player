@@ -2,6 +2,7 @@
 
 #include "nounoursengine.h"
 #include "mpvhandler.h"
+#include "jellyfinmanager.h"
 
 #include <QFile>
 #include <QFileDialog>
@@ -87,7 +88,9 @@ void PlaylistWidget::Populate()
     {
         if(showAll || playlist[i].endsWith(suffix))
         {
-            QString text = (i < labels.size() && !labels[i].isEmpty()) ? labels[i] : playlist[i];
+            QString jellyfinTitle = nounours->jellyfin->getNowPlayingTitle(playlist[i]);
+            QString text = (i < labels.size() && !labels[i].isEmpty()) ? labels[i] :
+                           !jellyfinTitle.isEmpty() ? jellyfinTitle : playlist[i];
             QListWidgetItem *it = new QListWidgetItem(text);
             it->setData(Qt::UserRole, i + 1);
             it->setData(Qt::UserRole + 1, playlist[i]);
